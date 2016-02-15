@@ -1,0 +1,42 @@
+.mod-404 {
+    padding: 30px 0;
+    overflow: auto;
+}
+
+.mod-404 .desktop-page img.img{
+    border: none;
+}
+.desktop-page .mod-404 .text-404{
+    padding: 30px 15px 0 0;
+    font-size: 30px;
+    font-weight: 400;
+    float: right;
+    margin-right: 105px;
+    line-height: 1.4;
+}
+.desktop-page .mod-404 .img-404{
+    float: left;
+    margin-right: 36px;
+}
+
+.mobile-page .mod-404 {
+    padding: 60px 10px 60px;
+    overflow: auto;
+}
+
+.mobile-page .mod-404 .img-404{
+    float: none;
+}
+
+.mobile-page .mod-404 .img-404 img{
+    margin: 0 auto;
+}
+
+.mobile-page .mod-404 .text-404{
+    float: none;
+    font-size: 30px;
+    font-weight: 400;
+    text-align: center;
+    line-height: 1.4;
+    margin: 20px 0;
+}

@@ -1,0 +1,189 @@
+.mod-browse-by-vehicle-type h2 {
+    font-size: 1.5em;
+    font-weight: normal;
+    margin: 25px 0 15px;
+}
+
+.mod-browse-by-vehicle-type {
+    overflow: hidden;
+    width: 100%;
+    padding: 0 10px 30px;
+    margin-top: 10px;
+}
+
+.mod-browse-by-vehicle-type .tiles {
+    display: table;
+    width: 100%;
+    font-size: 0;
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.mod-browse-by-vehicle-type .tile {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    font-size: 18px;
+    margin-bottom: 4%;
+    overflow: hidden;
+    position: relative;
+    vertical-align: top;
+    width: 49%;
+}
+
+.mod-browse-by-vehicle-type li.tile:nth-child(odd) {
+    margin-right: 2%;
+}
+
+.mod-browse-by-vehicle-type .tile-link {
+    background-color: #edf3d0;
+    background-repeat: no-repeat;
+    color: #43a4a5;
+    display: block;
+    height: 100%;
+    padding: 100% 0 0;
+    text-decoration: none;
+    width: 100%;
+}
+
+.mod-browse-by-vehicle-type .tile-name {
+    display: block;
+    height: 100%;
+    left: 0;
+    line-height: 100%;
+    margin: -26.470588235294% 0 0;
+    position: absolute;
+    text-align: center;
+    top: 100%;
+    vertical-align: middle;
+    width: 100%;
+}
+
+.view-all-categories a{
+    font-size: 16px;
+    line-height: 16px;
+}
+
+.mod-browse-by-vehicle-type .tile-link {
+    /*background-image: url('/wp-content/themes/jeanknowscars/assets/img/mod-categories.svg');*/
+    background-image: url('/wp-content/themes/jeanknowscars/assets/img/mod-vehicle-type-tiles.png');
+    background-repeat: no-repeat;
+    /*background-size: 800px 1200px;*/
+    background-size: 588.235294117647% 882.352941176471%;
+}
+
+.mod-browse-by-vehicle-type .tile-link {
+    background-image: url('/wp-content/themes/jeanknowscars/assets/img/mod-vehicle-type-tiles.png');
+}
+
+.mod-browse-by-vehicle-type .tile-link:hover {
+    background-color: #a5c412;
+    color: #fff;
+}
+
+.mod-browse-by-vehicle-type .tile-family .tile-link {
+    background-position: -4.21686746987952% -1.03383458646617%;
+}
+
+.mod-browse-by-vehicle-type .tile-family .tile-link:hover {
+    background-position: -4.21686746987952% 55.5451127819549%;
+}
+
+.mod-browse-by-vehicle-type .tile-green .tile-link {
+    background-position: -2.56024096385542% 14.6616541353383%;
+}
+
+.mod-browse-by-vehicle-type .tile-green .tile-link:hover {
+    background-position: -2.56024096385542% 71.2406015037594%;
+}
+
+.mod-browse-by-vehicle-type .tile-convertible .tile-link {
+    background-position: -2.86144578313253% 33.2706766917293%;
+}
+
+.mod-browse-by-vehicle-type .tile-convertible .tile-link:hover {
+    background-position: -2.86144578313253% 89.8496240601504%;
+}
+
+.mod-browse-by-vehicle-type .tile-first-car .tile-link {
+    background-position: 26.2048192771084% -2.63157894736842%;
+}
+
+.mod-browse-by-vehicle-type .tile-first-car .tile-link:hover {
+    background-position: 26.2048192771084% 53.9473684210526%;
+}
+
+.mod-browse-by-vehicle-type .tile-luxury .tile-link {
+    background-position: 88.1024096385542% 34.8684210526316%;
+}
+
+.mod-browse-by-vehicle-type .tile-luxury .tile-link:hover {
+    background-position: 88.1024096385542% 91.4473684210526%;
+}
+
+.mod-browse-by-vehicle-type .tile-indulgence .tile-link {
+    background-position: 26.8072289156627% 16.6353383458647%;
+}
+
+.mod-browse-by-vehicle-type .tile-indulgence .tile-link:hover {
+    background-position: 26.8072289156627% 73.2142857142857%;
+}
+
+.mod-browse-by-vehicle-type .tile-crossover .tile-link {
+    background-position: 28.0120481927711% 34.3984962406015%;
+}
+
+.mod-browse-by-vehicle-type .tile-crossover .tile-link:hover {
+    background-position: 28.0120481927711% 90.9774436090226%;
+}
+
+.mod-browse-by-vehicle-type .tile-sporty .tile-link {
+    background-position: 57.5301204819277% -5.16917293233083%;
+}
+
+.mod-browse-by-vehicle-type .tile-sporty .tile-link:hover {
+    background-position: 57.5301204819277% 51.4097744360902%;
+}
+
+.mod-browse-by-vehicle-type .tile-sedan .tile-link {
+    background-position: 57.8313253012048% 14.5676691729323%;
+}
+
+.mod-browse-by-vehicle-type .tile-sedan .tile-link:hover {
+    background-position: 57.8313253012048% 71.1466165413534%;
+}
+
+.mod-browse-by-vehicle-type .tile-hatchback .tile-link {
+    background-position: 57.5301204819277% 33.8345864661654%;
+}
+
+.mod-browse-by-vehicle-type .tile-hatchback .tile-link:hover {
+    background-position: 57.5301204819277% 90.4135338345865%;
+}
+
+.mod-browse-by-vehicle-type .tile-adventure .tile-link {
+    background-position: 87.8012048192771% -2.16165413533835%;
+}
+
+.mod-browse-by-vehicle-type .tile-adventure .tile-link:hover {
+    background-position: 87.8012048192771% 54.4172932330827%;
+}
+
+.mod-browse-by-vehicle-type .tile-trucks .tile-link {
+    background-position: 87.9518072289157% 14.8496240601504%;
+}
+
+.mod-browse-by-vehicle-type .tile-trucks .tile-link:hover {
+    background-position: 87.9518072289157% 71.4285714285714%;
+}
+
+.lt-ie9 .mod-browse-by-vehicle-type .tile {
+    width: 20%;
+    margin: 2.5%;
+}
+
+.view-all-categories {
+    text-align: center;
+}

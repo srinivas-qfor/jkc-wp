@@ -1,0 +1,74 @@
+.mod-jean-driveway .mod-list-item-wrap {
+    background-color: #e7e7e7;
+}
+.mod-list-item-wrap{
+    padding: 0 10px;
+}
+.mod-list-item {
+    background-color: #fff;
+    border: 1px solid #bdbdbd;
+    border-radius: 10px;
+    display: block;
+    height: auto;
+    padding: 6px;
+    vertical-align: top;
+    margin-bottom: 15px;
+
+}
+.mod-list-item.item-ads {
+    border: none;
+    text-align: center;
+    width: 300px;
+    margin: 0 auto;
+}
+.mod-list-item a:hover {
+    text-decoration: underline;
+}
+
+.mod-list-item .img-wrap img {
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    display: block;
+}
+.mod-list-item .img-wrap a{
+    margin-bottom: 10px;
+}
+
+.mod-list-item .category {
+    margin: 10px 10px 10px;
+    padding: 0 0 10px;
+    line-height: 14px;
+    border-bottom: 1px dotted #999;
+}
+
+.mod-list-item .category a {
+    color: #999;
+    font-size: 14px;
+    line-height: 14px;
+}
+
+.mod-list-item .title-wrap {
+    margin: 0 10px 10px;
+    line-height: 20px;
+    max-height: 40px;
+}
+
+.mod-list-item .title-wrap a {
+    color: #0089ad;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 20px;
+}
+
+.mod-list-item .desc {
+    color: #666;
+    font-size: 16px;
+    line-height: 24px;
+    max-height: 72px;
+    overflow: hidden;
+    padding: 0 10px;
+}
+.mod-list-item img{
+    width: 100%;
+}

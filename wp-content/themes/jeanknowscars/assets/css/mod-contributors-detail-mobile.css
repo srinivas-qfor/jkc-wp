@@ -1,0 +1,221 @@
+.mod-contributors-detail-mobile {
+    padding: 50px 10px 0;
+}
+
+.mod-contributors-detail-mobile .bio {
+    padding: 20px 0;
+    position: relative;
+}
+.mobile-page .mod-contributors-detail-mobile .bio {
+  -pie-box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border: 0;
+}
+.mobile-page .mod-contributors-detail-mobile .bio {
+  margin-bottom: 10px;
+}
+.mod-contributors-detail-mobile .top-bar {
+  position: relative;
+}
+.mod-contributors-detail-mobile .top-bar .flag {
+  background: #90121d;
+  left: -20px;
+  position: absolute;
+  top: -10px;
+}
+.mod-contributors-detail-mobile .top-bar .flag .label {
+  font-family: "open-sans-n6","open-sans",sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  color: white;
+  line-height: 35px;
+  min-width: 180px;
+  padding: 0 10px;
+  text-transform: uppercase;
+}
+.right-column .mod-contributors-detail-mobile .top-bar .flag .label {
+  min-width: 280px;
+}
+.mod-contributors-detail-mobile .top-bar .flag:after {
+  border-color: #90121d transparent transparent transparent;
+  border-style: solid;
+  border-width: 35px 15px 0 0;
+  content: '';
+  height: 0;
+  position: absolute;
+  right: -15px;
+  top: 0;
+  width: 0;
+}
+.mod-contributors-detail-mobile .top-bar .flag .brand {
+  cursor: default;
+}
+.mod-contributors-detail-mobile .article-count {
+  color: #999999;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 30px;
+}
+.mod-contributors-detail-mobile .social {
+  overflow: hidden;
+}
+.mod-contributors-detail-mobile .social-icon {
+  background: #90121d;
+  color: white;
+  float: left;
+  font-size: 14px;
+  margin-right: 10px;
+  text-align: center;
+  width: 22px;
+}
+.mod-contributors-detail-mobile .editor-content {
+  font-size: 16px;
+  line-height: 200%;
+  padding: 0 1.55763% 0 2.9%;
+}
+.mobile-page .mod-contributors-detail-mobile .editor-content {
+  padding: 10px 0;
+}
+.editor-content h1{
+    border-bottom: 1px solid #dbdbdb;
+    font-size: 34px;
+    line-height: 34px;
+    margin: 0;
+    padding: 0 75px 15px 0;
+}
+.editor-content p{
+    color: #242424;
+    font-size: 18px;
+    margin: 0;
+}
+
+.page-title {
+    display: block;
+    font-size: 40px;
+    font-weight: bold;
+    letter-spacing: -1px;
+    line-height: 40px;
+    margin: 0 0 25px;
+}
+
+.social a {
+    color: #42a4a5;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.social span {
+    color: #242424;
+    font-size: 16px;
+    margin: 0 8px;
+}
+
+.mod-recent-stories-by-author h2 {
+    border-bottom: 1px solid #dbdbdb;
+    font-size: 22px;
+    font-weight: normal;
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+.mod-recent-stories-by-author .contributors-article {
+    border-bottom: 1px solid #dbdbdb;
+    padding: 20px 0;
+}
+
+.recent-image-container {
+    display: block;
+    margin: 0 auto 15px;
+    vertical-align: top;
+    width: 60%;
+}
+
+.recent-image-container img {
+    border: 1px solid #dbdbdb;
+    width: 100%;
+}
+
+.recent-story-container {
+    display: block;
+    padding-left: 2.33645%;
+    vertical-align: top;
+    width: 100%;
+}
+
+.recent-story-container .story-title h3 {
+    color: #43a4a5;
+    font-size: 22px;
+    font-weight: normal;
+    line-height: 22px;
+    margin: 0 0 10px;
+}
+
+.recent-story-container .story-date {
+    color: #666;
+    display: block;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.recent-story-container .story-text {
+    color: #242424;
+    display: block;
+}
+
+.with-share {
+    position: relative;
+}
+
+.with-share .share {
+    position: absolute;
+    right: 0;
+    top: 15px;
+}
+.with-share .share-btn {
+    color: #000;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1;
+    margin-top: 0;
+    padding: 1px 0 0 20px;
+    position: relative;
+    text-decoration: none;
+}
+.with-share .mod-addthis-hover {
+    background-clip: padding-box;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(142, 143, 141, 0.4), 0 0 0 1px rgba(182, 181, 181, 0.5);
+    display: none;
+    padding: 10px 15px;
+    position: absolute;
+    right: 0;
+    top: -2px;
+    z-index: 99999;
+}
+
+.with-share .mod-addthis-hover .addthis-share {
+    background: url("/wp-content/themes/jeanknowscars/assets/img/mod-confessions-ratings.png") no-repeat scroll -120px 0 rgba(0, 0, 0, 0);
+    color: #000;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding-left: 30px;
+    width: 5px;
+}
+
+.with-share .mod-addthis-hover .addthis_toolbox > a {
+    clear: both;
+    float: left;
+    height: 25px;
+}
+
+.editor-main img {
+    border: 3px solid #dbdbdb;
+    display: block;
+    margin: 0 auto 15px;
+    width: 50%;
+}

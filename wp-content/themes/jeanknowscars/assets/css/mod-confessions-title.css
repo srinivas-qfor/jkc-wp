@@ -1,0 +1,145 @@
+.mod-confessions-title {
+    background-color: #fcfcfc;
+    border: 1px solid #bdbdbd;
+    border-radius: 12px;
+    display: block;
+    margin-bottom: 15px;
+    padding: 7px;
+    position: relative;
+}
+.confessions-title-inner {
+    background-image: url('/wp-content/themes/jeanknowscars/assets/img/pg-car-confessions-header.jpg');
+    background-repeat: no-repeat;
+    border-radius: 6px;
+    display: block;
+}
+.mod-confessions-title h1 {
+    color: #fff;
+    display: inline-block;
+    font-size: 40px;
+    font-weight: normal;
+    margin: 20px 20px 0;
+}
+.confessions-title-inner > div {
+    color: #fff;
+    display: inline-block;
+    font-family: "proxima-nova-alt", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    line-height: 28px;
+    margin: 0 0 25px 20px;
+    width: 65%;
+}
+.mod-confessions-title .confession-subtitle {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.mod-confessions-title .confession-subtitle em {
+    font-style: normal;
+}
+.confessions-rules-link {
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    text-decoration: underline;
+}
+.confessions-rules {
+    background-color: #fff;
+    border: 1px solid #c1cc87;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    box-shadow: 1px 1px 3px #999;
+    color: #000;
+    cursor: default;
+    left: 65px;
+    padding: 10px 15px;
+    position: absolute;
+    top: 225px;
+    width: 220px;
+    z-index: 99999;
+}
+.confessions-rules .tooltip-close {
+    color: #666;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    width: 10px;
+}
+.confessions-rules:after {
+    background-image: url('/wp-content/themes/jeanknowscars/assets/img/tooltip-green-arrow.png');
+    content: "";
+    height: 12px;
+    left: 30px;
+    position: absolute;
+    top: -12px;
+    width: 18px;
+}
+
+/* Mobile */
+
+
+.mobile-page .mod-confessions-title {
+    border: medium none;
+    border-radius: 0;
+    margin-top: 10px;
+    padding: 50px 0 0;
+    position: relative;
+    width: 100%;
+}
+
+.mobile-page .confessions-title-inner {
+    background-position: right top;
+    background-size: 120% auto;
+    border-radius: 0;
+    height: 160px;
+    margin-top: 44px;
+}
+
+.mobile-page .mod-confessions-title h1 {
+    background-color: #90b72a;
+    background-image: linear-gradient(#90b72a 0%, #a0c72e 25%, #a0c72e 75%, #90b72a 100%);
+    color: #fff;
+    display: block;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 24px;
+    margin: 0;
+    padding: 5px 15px;
+    position: relative;
+    text-align: center;
+    top: -34px;
+}
+
+.mobile-page .mod-confessions-header-inner > div {
+    color: #fff;
+    display: inline-block;
+    font-size: 18px;
+    line-height: 28px;
+    margin: 0 0 25px 20px;
+    width: 65%;
+}
+
+.mobile-page .mod-confessions-title .confession-subtitle {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.mobile-page .mod-confessions-title .confession-subtitle em {
+    clear: both;
+    display: block;
+    font-size: 28px;
+    font-style: normal;
+}
+
+.mobile-page .confessions-title-inner .hide-for-mobile {
+    display: none;
+}
+
+
+
+
+

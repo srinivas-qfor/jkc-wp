@@ -1,0 +1,35 @@
+.mod-ask-jean-question {
+    background: #fff url("/wp-content/themes/jeanknowscars/assets/img/home-ask-jean.jpg") no-repeat left bottom;
+    border: 1px solid #bdbdbd;
+    border-radius: 10px;
+    padding: 30px 20px 30px 255px;
+    color: #666;
+}
+
+.mod-ask-jean-question h3 {
+    font-size: 28px;
+    font-weight: normal;
+    line-height: 28px;
+    margin-bottom: 10px;
+}
+
+.mod-ask-jean-question h2 {
+    font-size: 40px;
+    line-height: 40px;
+    margin-bottom: 15px;
+    white-space: nowrap;
+}
+
+.mod-ask-jean-question p {
+    border-color: #cecece;
+    border-style: dotted;
+    border-width: 1px 0;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 20px 0;
+}
+
+.mod-ask-jean-question .btn-main-cta {
+    float: right;
+    margin: 30px 0 0;
+}

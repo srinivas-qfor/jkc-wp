@@ -1,0 +1,127 @@
+.mod-filter-confessions-faq {
+    border-bottom: 1px solid #dbdbdb;
+    margin: 0;
+    padding: 0 0 25px;
+}
+
+.faq .mod-filter-confessions-faq {
+    border-bottom: none;
+    padding-top: 15px;
+}
+
+.mod-filter-confessions-faq h2 {
+    border-bottom: 1px solid #dbdbdb;
+    font-size: 42px;
+    line-height: 42px;
+    padding: 0 0 10px;
+}
+
+.faq .mod-filter-confessions-faq h2 {
+    border-bottom: none;
+}
+
+.mod-filter-confessions-faq .filter-wrap {
+    float: left;
+    margin: 25px 0 0;
+}
+
+.faq .mod-filter-confessions-faq .filter-wrap {
+    margin: 10px 0 0;
+}
+
+.mod-filter-confessions-faq .sort-wrap {
+    float: right;
+    margin: 23px 0 0;
+}
+
+.mod-filter-confessions-faq .label {
+    line-height: 29px;
+}
+
+.mod-filter-confessions-faq option {
+    font-size: 16px;
+}
+
+.mod-filter-confessions-faq .dropdown-custom {
+    height: 30px;
+    position: relative;
+    float: right;
+    margin-left: 10px;
+}
+.mod-filter-confessions-faq .dropdown-custom select {
+    cursor: pointer;
+    position: relative;
+    width: 205px;
+    height: 30px;
+    z-index: 10;
+}
+.mod-filter-confessions-faq .dropdown-custom select[disabled] {
+    cursor: default;
+}
+
+.mod-filter-confessions-faq .dropdown-custom-select {
+    bottom: 0;
+    display: inline-block;
+    font-family: "proxima-nova-alt", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    height: 30px;
+    left: 0;
+    line-height: 27px;
+    position: absolute;
+    white-space: nowrap;
+    z-index: 1;
+
+
+    border: 1px solid #bababa; /* inner stroke */
+    -moz-border-radius: 3px; /* from vector shape */
+    -webkit-border-radius: 3px; /* from vector shape */
+    border-radius: 3px; /* from vector shape */
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box; /* prevents bg color from leaking outside the border */
+    background-color: #fff; /* layer fill content */
+    -moz-box-shadow: 0 1px 1px rgba(0,0,0,.17); /* drop shadow */
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.17); /* drop shadow */
+    box-shadow: 0 1px 1px rgba(0,0,0,.17); /* drop shadow */ background-image: -moz-linear-gradient(90deg, #f4f3f3 0%, #fff 100%); /* gradient overlay */
+    background-image: -o-linear-gradient(#f5f5f5 0%, #e2e1e1 100%); /* gradient overlay */
+    background-image: -webkit-linear-gradient(#f5f5f5 0%, #e2e1e1 100%); /* gradient overlay */
+    background-image: linear-gradient(#f5f5f5 0%, #e2e1e1 100%); /* gradient overlay */
+
+    color: #666666; /* text color */
+
+    padding: 0 35px 0 15px;
+    width: 100%;
+}
+.mod-filter-confessions-faq .dropdown-custom-select.disabled {
+    background: #dbdbdb none;
+    color: #999;
+}
+.mod-filter-confessions-faq .dropdown-custom-select p {
+    display: block;
+    margin: 0;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.mod-filter-confessions-faq .dropdown-custom-select:after {
+    background: url('/wp-content/themes/jeanknowscars/assets/img/mod-shop-dropdown.gif') no-repeat right center transparent;
+    border-left: 1px solid #bababa;
+    content: "";
+    height: 30px;
+    padding-left: 10px;
+    position: absolute;
+    right: 10px;
+    top: 0;
+    width: 30px;
+}
+
+.mobile-page .mod-filter-confessions-faq {
+    padding: 0 10px 25px;
+}
+
+.management-link {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 18px;
+    margin-top: 10px;
+    height: 30px;
+}

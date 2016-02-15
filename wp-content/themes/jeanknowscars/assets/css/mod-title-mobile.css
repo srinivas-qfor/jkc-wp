@@ -1,0 +1,9 @@
+.mod-title-mobile h1 {
+    background: #90b72a linear-gradient(#90b72a 0%, #a0c72e 25%, #a0c72e 75%, #90b72a 100%);
+    color: #fff;
+    margin-top: 0;
+    padding: 5px 15px;
+    text-align: center;
+    font-size: 24px;
+    line-height: 24px;
+}

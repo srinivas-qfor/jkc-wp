@@ -1,0 +1,27 @@
+.mod-breadcrumbs {
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.mod-breadcrumbs .crumb-wrap {
+    float: left;
+}
+
+.mod-breadcrumbs .crumb-wrap a {
+    color: #43a4a5;
+    text-decoration: none;
+}
+
+.mod-breadcrumbs .crumb-wrap span.crumb {
+    font-weight: 700;
+}
+
+.mod-breadcrumbs .crumb-wrap:before {
+    content: ">";
+    margin: 0 5px;
+}
+
+.mod-breadcrumbs .crumb-wrap:first-child:before {
+    content: "";
+    margin: 0;
+}

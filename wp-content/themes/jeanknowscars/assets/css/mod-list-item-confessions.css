@@ -1,0 +1,119 @@
+.mod-list-item-confessions-wrap .mod-list-item-confessions {
+    border-bottom: 1px solid #dbdbdb;
+    padding: 30px 0;
+    position: relative;
+}
+
+.mod-list-item-confessions-wrap .mod-list-item-confessions .info h4.title-wrap {
+    border-right: 1px solid #666;
+    margin-right: 15px;
+    padding-right: 15px;
+    color: #82a51b;
+    display: inline-block;
+    font-size: 19px;
+    font-weight: bold;
+    line-height: 16px;
+    margin-bottom: 10px;
+    text-decoration: none;
+}
+
+.mod-list-item-confessions-wrap a.date {
+    color: #666;
+    display: inline-block;
+    font-family: "proxima-nova-alt",Helvetica,Arial,sans-serif;
+    font-size: 22px;
+    line-height: 16px;
+    text-decoration: none;
+}
+
+.mod-list-item-confessions-wrap .content-wrap {
+    color: #666;
+    display: block;
+    line-height: 28px;
+    margin: 25px 0 30px;
+}
+
+.confession-share .share-btn {
+    background-image: linear-gradient(#f4f3f3 0%, #fff 100%);
+    border: 1px solid #d3d3d3;
+    border-radius: 10px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.17);
+    color: #666;
+    display: block;
+    font-size: 14px;
+    line-height: 14px;
+    padding: 4px 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.confession-share {
+    position: relative;
+    top: -5px;
+}
+
+.confession-share .icon-share {
+    background-position: -150px 0 !important;
+    left: -5px;
+    position: absolute;
+    top: -15px;
+    cursor: pointer;
+}
+.confession-share .icon-share {
+    background: url("/wp-content/themes/jeanknowscars/assets/img/mod-confessions-ratings.png") no-repeat;
+    cursor: pointer;
+    float: left;
+    height: 30px;
+    width: 30px;
+}
+
+.mod-addthis-hover {
+    background-clip: padding-box;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(142, 143, 141, 0.4), 0 0 0 1px rgba(182, 181, 181, 0.5);
+    display: none;
+    padding: 10px 15px;
+    position: absolute;
+    z-index: 99999;
+    right: 0;
+}
+
+.confession-share .addthis-share {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    font-size: 16px;
+    margin-left: 20px;
+    padding-left: 35px;
+    color: #000;
+    float: left;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.mobile-page .mod-list-item-confessions-wrap {
+    padding: 0 10px;
+}
+
+.mobile-page .mod-list-item-confessions-wrap .mod-list-item-confessions .info h4.title-wrap {
+    border: none;
+    float: none;
+    display: block;
+    line-height: 30px;
+}
+
+.mobile-page .mod-list-item-confessions-wrap a.date {
+    float: none;
+    display: block;
+    line-height: 30px;
+}
+
+.mobile-page .mod-list-item-confessions-wrap .mod-list-item-confessions .info {
+    position: relative;
+}
+
+.mobile-page .confession-share {
+    position: absolute;
+    top: 0;
+    right: 0;
+    float: none;
+}

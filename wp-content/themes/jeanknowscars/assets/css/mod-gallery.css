@@ -1,0 +1,312 @@
+.mod-gallery-overlay {
+    background: rgba(0, 0, 0, 0.8);
+    bottom: 0;
+    left: 0;
+    overflow: scroll;
+    padding: 60px 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 100030;
+}
+
+.mod-gallery-overlay .close-btn {
+    background: #424242;
+    cursor: pointer;
+    font-size: 32px;
+    line-height: 47px;
+    color: #fff;
+    position: absolute;
+    right: -24px;
+    top: -24px;
+    width: 48px;
+    height: 48px;
+    text-align: center;
+    border-radius: 48px;
+    -moz-border-radius: 48px;
+    -webkit-border-radius: 48px;
+    -o-border-radius: 48px;
+    -khtml-border-radius: 48px;
+    z-index: 10;
+}
+
+.mod-gallery-overlay .gallery-wrap {
+    background: white;
+    position: relative;
+}
+
+.mod-gallery-overlay .main-column {
+    margin: 0;
+}
+
+.mod-gallery-overlay .right-column {
+    margin: 0;
+}
+
+.mod-gallery-overlay .back-to-article {
+    margin: 0;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.mod-gallery-overlay .full-size {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: block;
+    width: 28px;
+    height: 18px;
+    border: 2px solid #fff;
+    cursor: pointer;
+}
+
+.pg-overlay {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #dbdbdb;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+}
+
+.pg-overlay .large-slide {
+    border: 1px solid #d7d7d7;
+    border-top: none;
+    background: none repeat scroll 0 0 #000000;
+    display: none;
+    height: 426px;
+    position: relative;
+}
+
+.pg-overlay .large-slide img {
+    bottom: 0;
+    display: block;
+    left: 0;
+    margin: auto auto;
+    max-height: 100%;
+    max-width: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: auto;
+}
+
+.pg-overlay .large-slide .large-title {
+    background-color: rgba(0, 0, 0, 0.6);
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    padding: 9px;
+    color: #fff;
+    max-height: 76px;
+    overflow: hidden;
+    display: block;
+    float: left;
+    font: bold 14px/20px Arial,helvetica;
+}
+
+.pg-overlay .large-slide .large-record-num {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    font-size: 20px;
+    line-height: 100%;
+    color: #ffffff;
+}
+
+.pg-overlay .large-slide.current {
+    display: block;
+}
+
+.pg-overlay .large-slide-arrow.next {
+    -moz-user-select: none;
+    background: url("/wp-content/themes/jeanknowscars/assets/img/arrows.png") no-repeat scroll right bottom transparent;
+    cursor: pointer;
+    height: 58px;
+    opacity: 0.6;
+    position: absolute;
+    right: 0;
+    top: 45%;
+    width: 51px;
+    z-index: 50;
+}
+
+.pg-overlay .large-slide-arrow.next:hover {
+    opacity: 1;
+}
+
+.pg-overlay .large-slide-arrow.prev {
+    -moz-user-select: none;
+    background: url("/wp-content/themes/jeanknowscars/assets/img/arrows.png") no-repeat scroll left top transparent;
+    cursor: pointer;
+    height: 58px;
+    left: 0;
+    opacity: 0.6;
+    position: absolute;
+    top: 45%;
+    width: 51px;
+    z-index: 50;
+}
+
+.pg-overlay .large-slide-arrow.prev:hover {
+    opacity: 1;
+}
+
+.pg-control {
+    position: relative;
+    padding: 10px 0 0;
+
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+}
+
+.pg-control .pg-control-arrow {
+    width: 10px;
+    font-size: 14px;
+    line-height: 14px;
+    text-align: center;
+    cursor: pointer;
+    position: absolute;
+    top: 34px;
+    z-index: 1;
+    color: #e7aa00;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -o-border-radius: 3px;
+    -khtml-border-radius: 3px;
+}
+
+.pg-control .pg-control-arrow .fa {
+    font-size: 20px;
+    line-height: 13px;
+    font-weight: bold;
+}
+
+.pg-control .pg-control-arrow.next {
+    right: 1px;
+}
+
+.pg-control .pg-control-arrow.prev {
+    left: 2px;
+}
+
+.pg-control .pg-control-arrow.disabled {
+    color: #d7d7d7;
+    cursor: default !important;
+}
+
+.pg-control .thumbnail-list {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.thumbnail-item a {
+    display: block;
+}
+
+.mod-gallery {
+    margin-bottom: 40px;
+}
+
+.mod-gallery h1.page-title {
+    font-size: 40px;
+    font-weight: normal;
+    line-height: 48px;
+    margin: 0 0 5px;
+}
+
+.back-to-article {
+    color: #43a4a5;
+}
+
+.back-to-article .fa {
+    font-weight: bold;
+    margin-right: 10px;
+    line-height: 100%;
+}
+
+.mod-gallery .info .author {
+    color: #666666;
+}
+.mod-gallery .img-item {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    cursor: pointer;
+    margin: 0 1px 1px 0;
+    width: 24.8442%;
+    text-align: center;
+}
+
+.zoom-gallery {
+    background: url("/wp-content/themes/jeanknowscars/assets/img/zoom-in.png") no-repeat scroll center center transparent;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    z-index: 1;
+    cursor: pointer;
+    display: none;
+}
+
+.large-slide:hover .zoom-gallery {
+    display: block;
+}
+
+.mod-gallery .img-item img {
+    display: block;
+}
+
+.mod-gallery .social {
+    position: relative;
+}
+.mod-gallery .share-btn {
+    background: url("/wp-content/themes/jeanknowscars/assets/img/lnk-video-share.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    color: #000;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1;
+    margin-top: 0;
+    padding: 1px 0 0 20px;
+    position: relative;
+    text-decoration: none;
+    top: 5px;
+}
+.mod-gallery .mod-addthis-hover {
+    background-clip: padding-box;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(142, 143, 141, 0.4), 0 0 0 1px rgba(182, 181, 181, 0.5);
+    display: none;
+    padding: 10px 15px;
+    position: absolute;
+    left: -16px;
+    top: -2px;
+    z-index: 99999;
+}
+
+.mod-gallery .mod-addthis-hover .addthis-share {
+    background: url("/wp-content/themes/jeanknowscars/assets/img/lnk-video-share.png") no-repeat;
+    color: #000;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding-left: 20px;
+}
+
+.mod-gallery .mod-addthis-hover .addthis_toolbox > a {
+    clear: both;
+    float: left;
+    height: 25px;
+}

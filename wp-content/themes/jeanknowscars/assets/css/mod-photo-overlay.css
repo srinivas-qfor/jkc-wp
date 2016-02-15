@@ -1,0 +1,74 @@
+.mod-photo-overlay, .mod-photo-overlay .content-wrap img {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+.mod-photo-overlay {
+  background-color: hsla(0, 0%, 0%, 0.7);
+  position: fixed;
+  z-index: 100030;
+}
+.mod-photo-overlay .close-btn {
+    background: url("/wp-content/themes/jeanknowscars/assets/img/zoom-out.png") no-repeat scroll center center transparent;
+    cursor: pointer;
+    display: none;
+    left: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 113px;
+    height: 115px;
+    z-index: 40;
+    margin: auto;
+}
+.mod-photo-overlay .gallery-wrap {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.mod-photo-overlay .content-wrap {
+    bottom: 0;
+    display: block;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.mod-photo-overlay .content-wrap .content {
+    background: none repeat scroll 0 0 #000;
+    bottom: 0;
+    padding: 10px;
+    position: absolute;
+    width: 100%;
+}
+
+.mod-photo-overlay .gallery-wrap:hover .close-btn {
+    display: block;
+}
+
+.mod-photo-overlay .content-wrap img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  position: absolute;
+  margin: auto;
+}
+.mod-photo-overlay .content-wrap .caption {
+  color: #ffffff;
+  position: absolute;
+}
+
+.mod-photo-overlay .content-wrap .download {
+    color: #0096cb;
+    cursor: pointer;
+    display: block;
+    float: right;
+    font: bold 14px/20px Arial,helvetica;
+    text-decoration: underline;
+}

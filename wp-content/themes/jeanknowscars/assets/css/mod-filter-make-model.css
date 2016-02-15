@@ -1,0 +1,103 @@
+.mod-filter-make-model h2 {
+    font-size: 1.5em;
+    font-weight: normal;
+    margin: 15px 0;
+}
+
+.shop-wrapper {
+    padding: 10px 0;
+}
+
+.shop-wrapper .tease {
+    padding: 0 5px 0 0;
+    vertical-align: middle;
+    line-height: 30px;
+}
+
+.mod-shop-makemodel {
+    vertical-align: middle;
+    position: relative;
+}
+
+.mod-shop-makemodel.border-bottom {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.dropdown-custom {
+    display: inline-block;
+    height: 30px;
+    margin-right: 10px;
+    position: relative;
+}
+
+.mod-shop-makemodel .makeDropdown {
+    float: left;
+    vertical-align: middle;
+}
+
+.mod-shop-makemodel .modelDropdown {
+    float: left;
+    vertical-align: middle;
+}
+
+.dropdown-custom-select:after {
+    background: url("/wp-content/themes/jeanknowscars/assets/img/mod-shop-dropdown.gif") no-repeat scroll right center transparent;
+    border-left: 1px solid #bababa;
+    content: "";
+    height: 28px;
+    padding-left: 10px;
+    position: absolute;
+    right: 10px;
+    top: 0;
+    width: 29px;
+}
+
+.dropdown-custom-select.disabled {
+    background-color: #dbdbdb;
+    background-image: none;
+    color: #999;
+}
+
+.dropdown-custom-select {
+    background-clip: padding-box;
+    background-color: #fff;
+    background-image: linear-gradient(#f5f5f5 0%, #e2e1e1 100%);
+    border: 1px solid #bababa;
+    border-radius: 3px;
+    bottom: 0;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.17);
+    color: #666;
+    display: inline-block;
+    font-family: "proxima-nova-alt", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    height: 30px;
+    left: 0;
+    line-height: 31px;
+    padding: 0 35px 0 15px;
+    position: absolute;
+    white-space: nowrap;
+    z-index: 1;
+    width: 170px !important;
+}
+
+.dropdown-custom-select p {
+    display: block;
+    margin: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    line-height: 1.7;
+}
+
+.dropdown-custom select {
+    cursor: pointer;
+    height: 30px;
+    position: relative;
+    z-index: 10;
+}
+
+.shop-wrapper .mod-shop-cta {
+    line-height: 30px;
+    padding: 0 10px;
+    vertical-align: middle;
+}

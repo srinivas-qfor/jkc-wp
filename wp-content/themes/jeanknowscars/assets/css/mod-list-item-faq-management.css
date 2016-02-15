@@ -1,0 +1,79 @@
+.mod-list-item-faq-management table {
+    width: 100%;
+    border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    text-align: center;
+}
+
+.mod-list-item-faq-management table th,
+.mod-list-item-faq-management table td {
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    width: 50%;
+}
+
+.mod-list-item-faq-management table th {
+    background: #333;
+    color: #fff;
+    font-weight: bold;
+}
+
+.mod-list-item-faq-management .tag-link {
+    color: #43a4a5;
+}
+
+.mod-list-item-faq-management .thanks {
+    color: #00f;
+}
+
+.mod-list-item-faq-management .error {
+    color: #f00;
+}
+
+.mod-list-item-faq-management .answer-link,
+.mod-list-item-faq-management .cancel-answer-button {
+    color: #9fc82e;
+}
+
+.mod-list-item-faq-management .answer-wrap {
+    display: none;
+}
+
+.mod-list-item-faq-management .answer-wrap textarea {
+    width: 100%;
+    height: 50px;
+}
+
+.mod-list-item-faq-management .btn-secondary-cta.disabled,
+.mod-list-item-faq-management .btn-secondary-cta.disabled:hover {
+    background: #dbdbdb none;
+    color: #999;
+    cursor: default;
+    pointer-events: none;
+    text-shadow: none;
+}
+
+.mod-list-item-faq-management .btn-secondary-cta {
+    background-clip: padding-box;
+    background-color: #f4f3f3;
+    background-image: linear-gradient(#f4f3f3 0%, #fff 100%);
+    border: 1px solid #c8c8c8;
+    border-radius: 3px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.17);
+    color: #43a4a5;
+    display: inline-block;
+    font-size: 16px;
+    line-height: 100%;
+    padding: 5px 10px;
+    text-decoration: none;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.mod-list-item-faq-management .ajax-loader {
+    background-image: url("/wp-content/themes/jeanknowscars/assets/img/ajax-loader.gif");
+    display: none;
+    height: 16px;
+    width: 16px;
+}

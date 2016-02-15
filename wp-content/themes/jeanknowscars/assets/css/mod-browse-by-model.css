@@ -1,0 +1,16 @@
+.mod-browse-by-model h3 {
+    font-size: 22px;
+    font-weight: normal;
+    margin: 20px 0;
+}
+
+.mod-browse-by-model div {
+    padding: 5px 0;
+}
+
+.mod-browse-by-model a {
+    font-size: 18px;
+    line-height: 22px;
+    color: #43a4a5;
+    text-decoration: none;
+}

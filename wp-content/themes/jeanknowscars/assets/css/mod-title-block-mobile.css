@@ -1,0 +1,48 @@
+.mod-title-block-mobile{
+    margin-bottom: 20px;
+    padding: 30px 10px 0;
+}
+
+.mod-title-block-mobile .border-bottom {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.mod-title-block-mobile .headline {
+    border-left: 2px solid #b7d801;
+    display: block;
+    padding-left: 20px;
+}
+
+.mod-title-block-mobile .headline h2 {
+    color: #4d4d4d;
+    margin-bottom: 16px;
+    font-size: 38px;
+    line-height: 38px;
+    font-family: "proxima-nova-alt",Helvetica;
+}
+
+.mod-title-block-mobile .headline h2 a:hover {
+    text-decoration: underline;
+}
+
+.mod-title-block-mobile .headline h3 {
+    color: #4d4d4d;
+    font-size: 20px;
+    font-weight: 100;
+    line-height: 20px;
+    margin: 0;
+    font-family: "proxima-nova-alt",Helvetica;
+}
+
+.mod-car-guide-mobile .mod-title-block-mobile {
+    border-color: #dbdbdb;
+    border-style: solid;
+    border-width: 0 0 1px;
+    margin-bottom: 10px;
+    padding: 0 0 10px;
+}
+.mod-car-guide-mobile{
+    padding: 30px 10px 0;
+}

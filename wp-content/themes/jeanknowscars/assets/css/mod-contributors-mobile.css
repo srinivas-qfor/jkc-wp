@@ -1,0 +1,139 @@
+.mod-contributors-mobile {
+    padding: 0 10px;
+}
+
+.mobile-page .mod-staff-mobile .staff-item {
+  -pie-box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-bottom: 1px solid #dbdbdb;
+  padding: 20px 0;
+  position: relative;
+}
+
+.mod-staff-mobile .img-wrap {
+  position: relative;
+}
+
+.mod-staff-mobile .img {
+    border: 3px solid #dbdbdb;
+    display: block;
+    margin: 0 auto 15px;
+    width: 50%;
+}
+
+.mod-staff-mobile .info-wrap {
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+}
+
+.mod-staff-mobile .list-title {
+    color: #242424;
+    display: block;
+    font-size: 22px;
+    font-weight: normal;
+    line-height: 22px;
+    margin: 0 0 10px;
+    text-decoration: none;
+    font-family: "proxima-nova-alt";
+}
+
+.mod-staff-mobile .job-title {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.mod-staff-mobile .desc {
+    color: #242424;
+    font-size: 18px;
+    margin: 0;
+    padding-bottom: 20px;
+}
+
+.mod-staff .desc strong {
+    font-weight: bold;
+}
+
+.mod-staff-mobile .desc strong {
+    font-weight: bold;
+}
+
+.mod-staff-mobile .social {
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.mod-staff-mobile .social-icon {
+  background: #90121d;
+  color: white;
+  float: left;
+  font-size: 14px;
+  margin-right: 10px;
+  text-align: center;
+  width: 22px;
+}
+
+.mod-authors-listing-thanks {
+    padding-bottom: 20px;
+}
+
+.mod-authors-listing-thanks h4 {
+    font-size: 18px;
+    display: block;
+    font-weight: normal;
+    margin: 23px 0;
+    -webkit-margin-before: 1.33em;
+    -webkit-margin-after: 1.33em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+
+.mod-authors-listing-thanks ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.mod-authors-listing-thanks li {
+    display: inline-block;
+    font-size: 16px;
+    margin-bottom: 2px;
+    width: 49%;
+}
+
+.mod-staff-mobile h3 {
+    margin-top: 30px;
+    border-bottom: 1px solid #dbdbdb;
+    font-size: 34px;
+    line-height: 34px;
+    padding: 0 75px 15px 0;
+}
+
+.mod-staff-mobile h1.jkc-team {
+    border-bottom: 1px solid #dbdbdb;
+    font-size: 34px;
+    line-height: 34px;
+    margin: 0;
+    padding: 0 75px 15px 0;
+}
+
+.info-wrap .job-title {
+    color: #42a4a5;
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.social a {
+    color: #42a4a5;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.social span {
+    color: #242424;
+    font-size: 16px;
+    margin: 0 8px;
+}

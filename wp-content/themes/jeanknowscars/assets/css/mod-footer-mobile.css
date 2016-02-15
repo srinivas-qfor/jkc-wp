@@ -1,0 +1,314 @@
+.mod-footer-mobile {
+    background: #fcfff2;
+    color: #666666;
+    margin: 0 auto;
+    position: relative;
+}
+.mod-footer-mobile .footer-wrapper {
+    margin: 0 auto;
+    padding: 0 10px;
+    position: relative;
+}
+.footer-mobile-back-top {
+    display: none;
+}
+.footer-wrapper {
+    border-top: 7px solid #acc814;
+}
+.mod-footer-mobile .column-one {
+    width: 100%;
+}
+.mod-footer-mobile .column-one .nav-list {
+    font-size: 16px;
+}
+.mod-footer-mobile .column-one .nav-list {
+    width: 100%;
+    display: block;
+    vertical-align: top;
+    line-height: 1.11111111111111em;
+}
+.mod-footer-mobile .column-one li {
+    white-space: nowrap;
+}
+.mod-footer-mobile .hidden-desktop {
+    display: none;
+}
+.mod-footer-mobile .column-one .nav-list h5 {
+    color: #242424;
+    font-family: "proxima-nova-alt", Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    font-size: 1.125em;
+    margin: 0;
+    line-height: 1.125em;
+    margin-bottom: 15px;
+}
+.mod-footer-mobile .column-two-mobile {
+    background: url("/wp-content/themes/jeanknowscars/assets/img/mod-footer-jean-footer-mobile.png") no-repeat scroll right 75px / 108px auto rgba(0, 0, 0, 0);
+    padding: 0;
+    position: absolute;
+    top: 0;
+    width: 91%;
+    z-index: 1000;
+    height: 100%;
+}
+
+.mod-footer-mobile .logo {
+    background-image: url("/wp-content/themes/jeanknowscars/assets/img/jkc-mobile-sprite.png");
+    background: no-repeat;
+    background-position: 0 0;
+    background-size: 239px auto;
+    height: 38px;
+    margin: 8px 0 7px;
+    width: 239px;
+}
+.mod-footer-mobile .copyright {
+    color: #7b9110;
+    font-size: 10px;
+    padding: 90px 0 20px;
+    display: table;
+}
+.mod-footer-mobile .copyright-text{
+    font-family: Tahoma, Arial, sans-serif;
+    font-size: 9px;
+    line-height: 14px;
+    padding-left: 10px;
+    padding-bottom: 12px;
+    vertical-align: bottom;
+    display: table-cell;
+    white-space: pre-line;
+    text-align: left;
+}
+.mod-footer-mobile .nav-list span,
+.mod-footer-mobile .nav-list a,
+.mod-footer-mobile .nav-list a:hover,
+.mod-footer-mobile .nav-list a:active,
+.mod-footer-mobile .nav-list a:visited {
+    color: #acc814;
+    text-decoration: none;
+}
+.mod-footer-mobile .newsletter-wrapper {
+    text-align: center;
+}
+
+.mod-footer-mobile .column-one {
+    padding-top: 75px;
+    position: relative;
+    z-index: 2000;
+}
+.mod-footer-mobile .site-banner {
+    margin: 15px auto 0;
+}
+.mod-footer-mobile .logo {
+    background-image: url('/wp-content/themes/jeanknowscars/assets/img/jkc-mobile-sprite.png');
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: 239px auto;
+    height: 38px;
+    margin: 8px auto;
+    width: 239px;
+}
+
+.mod-footer-mobile .social-List {
+    border-top: 1px solid #e0e1dd;
+    border-bottom: 1px solid #e0e1dd;
+    margin: 30px 10px;
+    padding: 10px 0 6px 0;
+    text-align: center;
+}
+.mod-footer-mobile .social-item {
+    display: inline-block;
+    padding: 0 3%;
+}
+.mod-footer-mobile .pinterest i{
+    color: #db2129;
+}
+.mod-footer-mobile .google i{
+    color: #383636;
+}
+.mod-footer-mobile .facebook i{
+    color: #4268b9;
+}
+.mod-footer-mobile .twitter i{
+    color: #00acee;
+}
+.mod-footer-mobile .rss i{
+    color: #fe7938;
+}
+.mod-footer-mobile .column-one .social-List {
+    display: block;
+}
+.mod-footer-mobile .social-List li{
+    display: inline-block;
+    padding: 0 2%;
+}
+.mod-footer-mobile .social-List i{
+    font-size: 32px;
+}
+/*
+	Misc Site Links (Privacy, terms, etc)
+*/
+.mod-footer-mobile .adchoices:after {
+    content: '';
+    background:url('/wp-content/themes/jeanknowscars/assets/img/mod-footer-adchoices_12.png') right center no-repeat;
+    padding: 0 15px 0 0;
+}
+/* states and images */
+.simsd-close {
+    background-repeat: no-repeat;
+    background-image: url('/wp-content/themes/jeanknowscars/assets/img/mod-footer-headersitemap.png');
+    background-color: transparent;
+    background-position: 0 0;
+    display: block;
+    height: 43px;
+    margin: -18px -9px 0 0;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    text-indent: -99999px;
+    top: 0;
+    width: 43px;
+}
+.simsd-close:hover {
+    background-color: transparent;
+    background-position: 0 -93px;
+    height: 43px;
+    width: 43px;
+}
+/* dialog popups */
+.simsd-overlay {
+    background-color: #000000;
+    background-color: hsla(0,0%,0%,0.5);
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; /* first   -ms-filter must go before filter otherwise */
+    filter: alpha(opacity=50);				                          /* If you don’t use this order, IE8-as-IE7 doesn’t apply the opacity, although IE8 and a pure IE7  */
+}
+.ie7 .mod-footer-mobile  .simsd-overlay {
+    background-image: url('/wp-content/themes/jeanknowscars/assets/img/mod-footer-simoverlay.png');
+    background-color: transparent;
+    background-position: 0 0;
+}
+.simsd-container {
+    background: #ffffff;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    padding: 10px 0 10px 0;
+}
+.fed-privacypopup {
+    display: none;
+    margin: 0;
+    padding: 25px 0 25px 125px;
+}
+.fed-usercontentpopup {
+    display: none;
+    margin: 0;
+    padding: 25px 15px 25px 25px;
+}
+.fed-termspopup {
+    display: none;
+    margin: 0;
+    padding: 25px 0 25px 25px;
+}
+
+.mod-footer-mobile .footer-frm {
+    position: relative;
+}
+.footer-frm label {
+    cursor: default;
+}
+.mod-footer-mobile .input-email {
+    background: #fff;
+    border: 1px solid #C1CC88;
+    box-sizing: border-box;
+    color: #999999;
+    line-height: 2.1875em;
+    height: 2.1875em;
+    padding: 0 7% 0;
+    width: 100%;
+    font-size: 100%;
+    /*line-height: 1.875em;*/
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    -moz-box-shadow: 1px 1px 1px rgba(128, 166, 41, 0.5) /* drop shadow */, inset 0 1px 0 rgba(255, 255, 255, 0.35) /* inner shadow */;
+    -webkit-box-shadow: 1px 1px 1px rgba(128, 166, 41, 0.5) /* drop shadow */, inset 0 1px 0 rgba(255, 255, 255, 0.35) /* inner shadow */;
+    box-shadow: 1px 1px 1px rgba(128, 166, 41, 0.5) /* drop shadow */, inset 0 1px 0 rgba(255, 255, 255, 0.35) /* inner shadow */;
+}
+.mod-footer-mobile .input-email, x:-moz-any-link, x:default {
+    width: 85%;
+}
+.mod-footer-mobile .button {
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    height: auto;
+    line-height: 2.1875em;
+    margin: 0 0 0 5px;
+    padding: 1px 10px;
+    white-space: nowrap;
+}
+.mod-footer-mobile .frm-message {
+    bottom: -40px;
+    color: #000;
+    font-size: 0.875em;
+    font-weight: bold;
+    left: -50%;
+    margin: 0 0 0 0;
+    position: absolute;
+    text-align: center;
+    width: 200%;
+}
+.mod-footer-mobile .error {
+    color: #d73631;
+}
+.mod-footer-mobile .button {
+    border: none;
+}
+.nav-list-wrapper {
+    display: table;
+    width: 100%;
+}
+.nav-list ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.mod-footer-mobile .button {
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    height: auto;
+    line-height: 2.1875em;
+    margin: 0 0 0 5px;
+    padding: 1px 10px;
+    white-space: nowrap;
+    border: none;
+}
+.hidden{
+    display: none;
+}
+
+.mod-footer-mobile .mod-go-top:after {
+    border-bottom: 8px solid #acc814;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    content: "";
+    display: inline-block;
+    margin-left: 7px;
+}
+.mod-footer-mobile .mod-go-top {
+    background-color: #fff;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: normal;
+    margin: 0 auto;
+    padding: 5px 0;
+    text-align: center;
+    width: 100%;
+    border: none;
+    color: #666;
+    position: relative;
+    top: 0;
+}

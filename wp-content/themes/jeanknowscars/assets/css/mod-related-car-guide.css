@@ -1,0 +1,24 @@
+.mod-related-car-guide {
+    margin-bottom: 30px;
+}
+
+.mod-related-car-guide h3 {
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 32px;
+    margin: 0 0 10px;
+}
+
+.mod-related-car-guide .row {
+    padding-top: 10px;
+}
+
+.mod-related-car-guide .img-wrap {
+    padding-right: 10px;
+}
+
+.mod-related-car-guide .title-wrap a {
+    color: #43a4a5;
+    text-decoration: none;
+    font-weight: 400;
+}

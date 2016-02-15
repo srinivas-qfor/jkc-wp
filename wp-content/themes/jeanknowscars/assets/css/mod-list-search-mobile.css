@@ -1,0 +1,69 @@
+.mod-jean-driveway .mod-list-search-mobile {
+    background-color: #e7e7e7;
+}
+
+.mod-list-search-mobile{
+    padding: 0 10px;
+}
+
+.mod-list-item-search-mobile {
+    background-color: #fff;
+    border: 1px solid #bdbdbd;
+    border-radius: 10px;
+    display: block;
+    height: auto;
+    padding: 6px;
+    vertical-align: top;
+    margin-bottom: 15px;
+
+}
+
+.mod-list-item-search-mobile a:hover {
+    text-decoration: underline;
+}
+
+.mod-list-item-search-mobile .img-wrap img {
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    display: block;
+}
+
+.mod-list-item-search-mobile .img-wrap a{
+    margin-bottom: 10px;
+}
+
+.mod-list-item-search-mobile .title-wrap {
+    margin: 10px;
+    line-height: 20px;
+}
+
+.mod-list-item-search-mobile .title-wrap a {
+    color: #0089ad;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 20px;
+}
+
+.mod-list-item-search-mobile .desc {
+    color: #666;
+    font-size: 16px;
+    line-height: 24px;
+    max-height: 72px;
+    overflow: hidden;
+    padding: 0 10px;
+}
+.mod-list-item-search-mobile img{
+    width: 100%;
+}
+
+.mod-list-item-search-mobile .article-date{
+    font-size: 12px ;
+    color: #999999;
+    margin: 20px 0 0 10px;
+    display: block;
+}
+
+.mod-list-item-search-mobile .fa{
+    margin-right: 3px;
+}

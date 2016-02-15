@@ -1,0 +1,165 @@
+.mod-contributors-detail .bio {
+    padding: 20px 0;
+    position: relative;
+}
+.mobile-page .mod-contributors-detail .bio {
+  -pie-box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border: 0px;
+}
+.right-column .mod-contributors-detail .bio, .mobile-page .mod-contributors-detail .bio {
+  padding: 10px;
+}
+.mobile-page .mod-contributors-detail .bio {
+  margin-bottom: 10px;
+}
+.mod-contributors-detail .top-bar {
+  position: relative;
+}
+.mod-contributors-detail .top-bar .flag {
+  background: #90121d;
+  left: -20px;
+  position: absolute;
+  top: -10px;
+}
+.mod-contributors-detail .top-bar .flag .label {
+  font-family: "open-sans-n6","open-sans",sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  color: white;
+  float: left;
+  line-height: 35px;
+  min-width: 180px;
+  padding: 0 10px;
+  text-transform: uppercase;
+}
+.right-column .mod-contributors-detail .top-bar .flag .label {
+  min-width: 280px;
+}
+.mod-contributors-detail .top-bar .flag:after {
+  border-color: #90121d transparent transparent transparent;
+  border-style: solid;
+  border-width: 35px 15px 0 0;
+  content: '';
+  height: 0px;
+  position: absolute;
+  right: -15px;
+  top: 0;
+  width: 0px;
+}
+.mod-contributors-detail .top-bar .flag .brand {
+  cursor: default;
+}
+.mod-contributors-detail .article-count {
+  color: #999999;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 30px;
+}
+.mod-contributors-detail .social {
+  overflow: hidden;
+}
+.mod-contributors-detail .social-icon {
+  background: #90121d;
+  color: white;
+  float: left;
+  font-size: 14px;
+  margin-right: 10px;
+  text-align: center;
+  width: 22px;
+}
+.mod-contributors-detail .editor-content {
+  font-size: 16px;
+  line-height: 200%;
+  padding: 0 1.55763% 0 2.9%;
+}
+.mobile-page .mod-contributors-detail .editor-content {
+  padding: 10px 0;
+}
+.editor-content h1{
+    border-bottom: 1px solid #dbdbdb;
+    font-size: 34px;
+    line-height: 34px;
+    margin: 0;
+    padding: 0 75px 15px 0;
+}
+.editor-content p{
+    color: #242424;
+    font-size: 18px;
+    margin: 0;
+}
+
+.page-title {
+    display: block;
+    font-size: 40px;
+    font-weight: bold;
+    letter-spacing: -1px;
+    line-height: 40px;
+    margin: 0 0 25px;
+}
+
+.social a {
+    color: #42a4a5;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.social span {
+    color: #242424;
+    font-size: 16px;
+    margin: 0 8px;
+}
+
+.mod-recent-stories-by-author h2 {
+    border-bottom: 1px solid #dbdbdb;
+    font-size: 22px;
+    font-weight: normal;
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+.mod-recent-stories-by-author .contributors-article {
+    border-bottom: 1px solid #dbdbdb;
+    padding: 20px 0;
+}
+
+.recent-image-container {
+    display: inline-block;
+    padding-left: 1.55763%;
+    vertical-align: top;
+    width: 24.9221%;
+}
+
+.recent-image-container img {
+    border: 1px solid #dbdbdb;
+    width: 100%;
+}
+
+.recent-story-container {
+    display: inline-block;
+    padding-left: 2.33645%;
+    vertical-align: top;
+    width: 70.1838%;
+}
+
+.recent-story-container .story-title h3 {
+    color: #43a4a5;
+    font-size: 22px;
+    font-weight: normal;
+    line-height: 22px;
+    margin: 0 0 10px;
+}
+
+.recent-story-container .story-date {
+    color: #666;
+    display: block;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.recent-story-container .story-text {
+    color: #242424;
+    display: block;
+}

@@ -1,0 +1,77 @@
+.mod-faq-title-mobile {
+    text-align: center;
+    margin: 70px 0 20px;
+}
+
+.mod-faq-title-mobile .faq-title {
+    background-color: #90b72a;
+    background-image: linear-gradient(#90b72a 0%, #a0c72e 25%, #a0c72e 75%, #90b72a 100%);
+    color: #fff;
+    display: block;
+    font-size: 24px;
+    line-height: 24px;
+    margin: 10px 0 0;
+    padding: 5px 0;
+    text-align: center;
+    width: 100%;
+}
+
+.faq-wrap {
+    border: medium none;
+    border-radius: 0;
+    padding: 0;
+    position: relative;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.faq-inner {
+    background-image: url("/wp-content/themes/jeanknowscars/assets/img/pg-auto-know-header.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    display: block;
+    height: 0;
+    padding-bottom: 37.8205%;
+    text-align: left;
+}
+
+.mod-faq-title-mobile h1 {
+    font-size: 18px;
+    line-height: 18px;
+    margin: 10px 0 10px 15px;
+    display: inline-block;
+}
+
+.mod-faq-title-mobile .faq-text1 {
+    font-size: 12px;
+    line-height: 16px;
+    margin-left: 15px;
+    width: 105px;
+}
+
+.mod-faq-title-mobile .faq-text2 {
+    bottom: 20px;
+    color: #777f86;
+    font-size: 12px;
+    position: absolute;
+    right: 20px;
+}
+
+.faq-btn-alt-cta, .faq-btn-alt-cta:visited {
+    background-color: #718d00;
+    background-image: linear-gradient(#98bb0b 0%, #718d00 100%);
+    border: 1px solid #718d00;
+    border-radius: 3px;
+    color: #fff;
+    display: inline-block;
+    font-family: "proxima-nova-alt",Helvetica,Arial,sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 14px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    margin: 0 auto;
+    padding: 15px;
+}

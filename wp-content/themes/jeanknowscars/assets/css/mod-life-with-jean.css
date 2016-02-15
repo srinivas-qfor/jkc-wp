@@ -1,0 +1,44 @@
+.mod-life-with-jean {
+    background: url("/wp-content/themes/jeanknowscars/assets/img/mod-life-with-jean.jpg") no-repeat right top;
+    cursor: pointer;
+    height: 315px;
+}
+.right-column .mod-life-with-jean{
+    margin-top: -10px;
+}
+
+.mod-life-with-jean h2 {
+    color: #fff;
+    font-size: 32px;
+    font-weight: normal;
+    line-height: 53px;
+    padding: 0 29px 20px;
+}
+
+.mod-life-with-jean p {
+    color: #fff;
+    font-size: 14px;
+    line-height: 16px;
+    padding: 0 25px 20px;
+    width: 180px;
+}
+
+.mod-life-with-jean p .join {
+    display: inline-block;
+    padding-top: 10px;
+}
+
+.mod-life-with-jean .btn-main-cta {
+    margin-left: 25px;
+}
+
+.mod-life-with-jean:hover .btn-main-cta {
+    color: #a8cd42;
+}
+
+.mobile-page .mod-life-with-jean {
+    background-size: 100% auto;
+    height: 409px;
+    width: 94%;
+    margin: 0 auto;
+}

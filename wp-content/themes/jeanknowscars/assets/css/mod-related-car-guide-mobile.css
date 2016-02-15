@@ -1,0 +1,25 @@
+.mod-related-car-guide-mobile {
+    margin: 30px 0;
+    padding: 0 10px;
+}
+
+.mod-related-car-guide-mobile h3 {
+    font-size: 40px;
+    font-weight: normal;
+    line-height: 40px;
+    margin: 0 0 10px;
+}
+
+.mod-related-car-guide-mobile .row {
+    padding-top: 10px;
+}
+
+.mod-related-car-guide-mobile .img-wrap {
+    padding-right: 10px;
+}
+
+.mod-related-car-guide-mobile .title-wrap a {
+    color: #43a4a5;
+    text-decoration: none;
+    font-weight: 400;
+}

@@ -1,0 +1,23 @@
+.mod-title {
+    margin-bottom: 15px;
+}
+
+.mod-title .pagetitle {
+    font-size: 40px;
+    line-height: 40px;
+    padding: 0;
+    font-family: "proxima-nova-alt",Helvetica,Arial,sans-serif;
+    font-weight: 600;
+}
+
+.mod-title .desc {
+    margin-top: 5px;
+}
+
+.mod-title .desc strong {
+    font-weight: bold;
+}
+
+.mobile-page .mod-title {
+    padding: 60px 10px 0;
+}

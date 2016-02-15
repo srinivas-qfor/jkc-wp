@@ -1,0 +1,37 @@
+.mod-list-search .mod-list-item-search{
+    padding: 40px 0;
+    border-bottom: 1px solid #cccccc;
+}
+
+.mod-list-search .mod-list-item-search .col-7{
+    float: right;
+    padding-left: 20px;
+}
+
+.mod-list-search .mod-list-item-search .list-title{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    line-height: 24px;
+    display: block;
+    color: #000000;
+}
+
+.mod-list-search .mod-list-item-search .fa{
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+.mod-list-search .mod-list-item-search .article-date{
+    font-size: 12px;
+    display: inline-block;
+    line-height: 20px;
+    color: #999999;
+    margin: 0 10px 10px 0;
+}
+
+.mod-list-search .mod-list-item-search .desc{
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0;
+}

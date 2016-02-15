@@ -1,0 +1,50 @@
+.mod-stay-connect{
+    margin-bottom: 30px;
+}
+
+.mod-stay-connect h3 {
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 32px;
+    margin: 0 0 10px;
+}
+
+.mod-stay-connect .social-link {
+    padding: 8px 0;
+    vertical-align: top;
+}
+
+.mod-stay-connect .social-link a {
+    color: #43a4a5;
+    font-size: 16px;
+    line-height: 28px;
+    text-decoration: none;
+    vertical-align: top;
+}
+
+.mod-stay-connect .social-link i {
+    width: 28px;
+    height: 28px;
+    float: left;
+    margin-right: 10px;
+    text-align: center;
+    line-height: 28px;
+    font-size: 32px;
+    color: #fff;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.mod-stay-connect .follow-google i {
+    color: #383636;
+}
+
+.mod-stay-connect .follow-instagram i {
+    background: #986652;
+    font-size: 23px;
+}
+
+.mod-stay-connect .follow-rss i {
+    color: #FE7938;
+}

@@ -1,0 +1,39 @@
+.mod-title-block {
+    margin-bottom: 20px;
+}
+
+.mod-title-block.border-bottom {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.mod-title-block .headline {
+    border-left: 2px solid #b7d801;
+    display: block;
+    padding-left: 20px;
+}
+
+.mod-title-block .headline h2 {
+    font-size: 38px;
+    line-height: 38px;
+    margin: 0 0 15px;
+}
+
+.mod-title-block .headline h2 a {
+    color: #4c4c4c;
+}
+
+.mod-title-block .headline h2 a:hover {
+    text-decoration: underline;
+}
+
+.mod-title-block .headline h3 {
+    color: #4c4c4c;
+    font-size: 18px;
+    line-height: 18px;
+    margin: 0;
+}
+.mod-jean-driveway .mod-title-block-mobile{
+    background-color: #e7e7e7;
+}

@@ -1,0 +1,9 @@
+.mod-ad-mrec {
+    border: 1px solid #ccc;
+    background: #f0f0f0;
+    height: 250px;
+}
+
+.home .mod-ad-mrec {
+    margin-top: 91px;
+}

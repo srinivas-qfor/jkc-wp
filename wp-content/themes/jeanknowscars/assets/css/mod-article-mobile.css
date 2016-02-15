@@ -1,0 +1,532 @@
+.inline-img-caption, .stepbystep-img-caption, .single-img-caption {
+    font-size: 14px;
+    line-height: 100%;
+    font-style: italic;
+    color: #aeaeae;
+}
+.mod-article-mobile .article-head .info .timestamp, .mod-article-mobile .article-head .info .author span{
+    font-weight: bold;
+    text-decoration: none;
+    white-space: nowrap;
+    color: #4d4d4d;
+    display: inline;
+    font-size: 12px;
+    line-height: 18px;
+    margin-right: 5px;
+    font-style: normal;
+}
+.mod-article-mobile .article-head .info .separator-date-author{
+    color: #4d4d4d;
+    display: inline;
+    font-size: 16px;
+    line-height: 18px;
+    text-transform: capitalize;
+}
+
+.main-title {
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.mod-article-mobile {
+    position: relative;
+    padding: 50px 10px 0;
+}
+
+.mod-article-mobile .article-head .page-title {
+    font-size: 30px;
+    font-weight: normal;
+    line-height: 34px;
+    margin: 0 0 5px;
+}
+
+.mod-article-mobile .article-head .subtitle {
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 10px;
+}
+
+.mod-article-mobile .article-head .info {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.mod-article-mobile .article-head .info .author {
+    font-size: 14px;
+    line-height: 100%;
+    font-style: italic;
+    color: #666666;
+}
+
+.mod-article-mobile .mod-main-img,
+.mod-article-mobile .mod-article-photos-mobile,
+.mod-article-mobile .mod-article-mobile-stepbystep,
+.mod-article-mobile .mod-single-img,
+.mod-article-mobile .mod-video,
+.mod-article-mobile blockquote,
+.mod-article-mobile .mod-table,
+.mod-article-mobile .main-content h2,
+.mod-article-mobile .main-content h3,
+.mod-article-mobile .main-content h4,
+.mod-article-mobile .main-content h5,
+.mod-article-mobile .main-content h6 {
+    padding-bottom: 20px;
+}
+
+.mod-article-mobile .main-content h2,
+.mod-article-mobile .main-content h3,
+.mod-article-mobile .main-content h4,
+.mod-article-mobile .main-content h5,
+.mod-article-mobile .main-content h6 {
+    font-weight: bold;
+}
+
+.mod-article-mobile .main-content h2 {
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.mod-article-mobile .main-content h3 {
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.mod-article-mobile .main-content h4 {
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.mod-article-mobile blockquote {
+    border-bottom: 1px solid #c3c3c3;
+    border-top: 1px solid #c3c3c3;
+    color: #c3c3c3;
+    display: block;
+    font-size: 22px;
+    line-height: 32px;
+    margin: 30px auto;
+    padding: 25px 0 30px;
+    position: relative;
+    text-align: center;
+    width: 90%;
+    font-style: italic;
+}
+.mod-article-mobile blockquote:before,
+.mod-article-mobile blockquote:after {
+    background-color: #fff;
+    background-image: url('/wp-content/themes/jeanknowscars/assets/img/jkc-sprite-article.png');
+    background-repeat: no-repeat;
+    content: "";
+    height: 31px;
+    left: 45%;
+    position: absolute;
+    width: 59px;
+}
+.mod-article-mobile blockquote:before {
+    background-position: 10px 0;
+    content: "";
+    top: -20px;
+}
+.mod-article-mobile blockquote:after {
+    background-position: -40px 0;
+    bottom: -15px;
+    content: "";
+}
+
+.mod-text .mod-inline-img {
+    width: 100%;
+}
+
+.mod-text .mod-inline-img img {
+    width: 100%;
+}
+
+.mod-text iframe {
+    height: 100%;
+    width: 100%;
+}
+.mod-article-photos-mobile .photos-title {
+    float: left;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.mod-article-photos-mobile .photos-link {
+    float: right;
+    font-size: 14px;
+    font-style: italic;
+}
+
+.mod-article-photos-mobile .photos-grid {
+    border-left: 1px solid #e9e9e9;
+    border-top: 1px solid #e9e9e9;
+}
+
+.mod-article-photos-mobile .photos-grid .col-1-3 {
+    float: left;
+}
+
+.mod-article-photos-mobile .photos-grid .col-1-3 img {
+    display: block;
+    width: 213px;
+    height: 142px;
+    border-right: 1px solid #e9e9e9;
+    border-bottom: 1px solid #e9e9e9;
+}
+
+.mod-pagination {
+    margin: 0 0 20px 220px;
+}
+
+.mobile-page .mod-pagination {
+    margin: 20px 0;
+}
+
+.mod-pagination .grid {
+    border-left: 1px solid #aeaeae;
+    border-top: 1px solid #aeaeae;
+    float: left;
+}
+
+.mod-pagination .grid span,
+.mod-pagination .grid a {
+    line-height: 39px;
+    float: left;
+    padding: 0 15px;
+    border-right: 1px solid #aeaeae;
+    border-bottom: 1px solid #aeaeae;
+}
+
+.mod-pagination a {
+    color: #e7aa00;
+}
+
+.mod-pagination a.viewall {
+    line-height: 41px;
+    float: left;
+    padding: 0 0 0 15px;
+}
+
+
+.mod-pagination a:hover {
+    text-decoration: underline;
+}
+
+.mod-pagination span,
+.mod-pagination a.selected {
+    color: #aeaeae;
+}
+
+.mod-pagination .fa {
+    float: right;
+    font-size: 19px;
+    font-weight: bold;
+    line-height: 39px;
+}
+
+.mod-pagination .paging-number {
+    position: relative;
+    float: left;
+    margin-left: -1px;
+}
+
+.mod-pagination .paging-number .current-page {
+    cursor: pointer;
+}
+
+.mod-pagination .paging-number .paging .fa {
+    margin-left: 5px;
+}
+
+.mod-pagination .paging-number .paging-dropdown {
+    border-left: 1px solid #aeaeae;
+    width: 100%;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background: #fff;
+    z-index: 10;
+    display: none;
+}
+
+.mod-pagination .paging-number .paging-dropdown.expanded {
+    display: block;
+}
+
+.mod-pagination .paging-number .paging-dropdown a,
+.mod-pagination .paging-number .paging-dropdown span {
+    line-height: 39px;
+    display: block;
+    float: none;
+    padding: 0;
+    text-align: center;
+}
+
+a.photo-item {
+    position: relative;
+    display: block;
+}
+
+a.photo-item .fa {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #fff;
+    font-size: 20px;
+    line-height: 100%;
+    display: none;
+}
+
+a.photo-item:hover .fa {
+    display: block;
+}
+
+.mod-article-mobile .detail-share {
+    background-image: url("/wp-content/themes/jeanknowscars/assets/img/lnk-video-share.png");
+    background-repeat: no-repeat;
+    color: #000;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    padding-left: 20px;
+    position: absolute;
+    right: 0;
+    text-decoration: none;
+    top: 3px;
+}
+a {
+    color: #00e;
+}
+a:hover {
+    color: #06e;
+}
+.detail-content-footer {
+    border-color: #dbdbdb;
+    border-style: solid;
+    border-width: 0 0 1px;
+    display: inline-block;
+    padding: 20px 0;
+    width: 100%;
+}
+.mod-article-mobile .social {
+    position: relative;
+}
+.mod-article-mobile .share-btn {
+    background: url("/wp-content/themes/jeanknowscars/assets/img/lnk-video-share.png") no-repeat 0 4px;
+    color: #000;
+    font-size: 12px;
+    font-weight: bold;
+    padding-left: 20px;
+    cursor: pointer;
+}
+.mod-article-mobile .mod-addthis-hover {
+    background-clip: padding-box;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(142, 143, 141, 0.4), 0 0 0 1px rgba(182, 181, 181, 0.5);
+    display: none;
+    padding: 10px 15px;
+    position: absolute;
+    right: 0;
+    top: -10px;
+    z-index: 99999;
+}
+
+.mod-article-mobile .mod-addthis-hover .addthis-share {
+    background: url("/wp-content/themes/jeanknowscars/assets/img/lnk-video-share.png") no-repeat 0 4px;
+    color: #000;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding-left: 20px;
+}
+
+.mod-article-mobile .mod-addthis-hover .addthis_toolbox > a {
+    clear: both;
+    float: left;
+    height: 25px;
+}
+.photo-item {
+    border: 1px solid #dbdbdb;
+    border-radius: 10px;
+    margin: 0 0 20px;
+    padding: 8px;
+    position: relative;
+}
+.photo-item img{
+    width: 100%;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -o-border-radius: 10px;
+    -khtml-border-radius: 10px;
+}
+
+.mod-article-photos-mobile {
+    border-bottom: 1px solid #dbdbdb;
+    border-top: 1px solid #dbdbdb;
+    margin-bottom: 20px;
+    overflow: hidden;
+    padding: 25px 0;
+    margin-top: 40px;
+}
+
+.mod-article-photos-mobile ul {
+    font-size: 0;
+    list-style: none;
+    margin: 0 0 10px;
+    padding: 0;
+}
+.mod-article-photos-mobile li {
+    float: left;
+    margin-bottom: 2%;
+    width: 49%;
+}
+.mod-article-photos-mobile li:nth-child(odd){
+    margin-right: 2%;
+}
+.mod-article-photos-mobile li a {
+    background-color: #f0f0f0;
+    border: 1px solid #dbdbdb;
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+}
+.mod-article-photos-mobile li img {
+    border: 1px solid #dbdbdb;
+    margin-bottom: 10px;
+    width: 100%;
+    display: block;
+}
+.mod-article-photos-mobile li span {
+    color: #6b6b6b;
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    height: 28px;
+    line-height: 14px;
+    overflow: hidden;
+}
+
+.mod-article-photos-mobile .btn-see-photos {
+    background-color: #8a8c8e;
+    color: #fff;
+    font-size: 14px;
+    line-height: 27px;
+    margin-right: 20px;
+    padding: 5.5px 10px;
+    position: relative;
+    text-decoration: none;
+}
+.mod-article-photos-mobile .btn-see-photos:before {
+    background-color: #b1db0f;
+    content: "";
+    height: 27px;
+    left: -8px;
+    position: absolute;
+    width: 7px;
+}
+.mod-article-photos-mobile .btn-see-photos:after {
+    border-bottom: 14px solid transparent;
+    border-left: 20px solid #8a8c8e;
+    border-top: 13px solid transparent;
+    content: "";
+    position: absolute;
+    right: -20px;
+}
+
+.article-car-guide .mod-text .mod-inline-img {
+    float: left;
+    margin: 0 10px 10px 0;
+    width: 100px;
+}
+
+.article-car-guide .mod-text .mod-inline-img img {
+    border: none;
+}
+
+.btn-see-photos-mobile{
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+
+.article-car-guide .share-btn {
+    background: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+.article-car-guide .share-btn:before {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 0;
+    left: 0;
+    background: url("/wp-content/themes/jeanknowscars/assets/img/mod-confessions-ratings.png") no-repeat -120px -5px;
+}
+
+.article-car-guide .mod-addthis-hover .addthis-share {
+    background: none;
+    padding-left: 30px;
+    position: relative;
+}
+
+.article-car-guide .mod-addthis-hover .addthis-share:before {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 0;
+    left: 0;
+    background: url("/wp-content/themes/jeanknowscars/assets/img/mod-confessions-ratings.png") no-repeat -120px -5px;
+}
+
+.article-car-guide .mod-article-photos-mobile li {
+    background-color: #dbdbdb;
+    box-shadow: 0 0 0 1px #d3d3d3;
+    height: 0;
+    padding-bottom: 33.33%;
+    position: relative;
+}
+
+.article-car-guide .mod-article-photos-mobile li img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border: none;
+    width: auto;
+}
+
+.article-car-guide .mod-article-photos-mobile li a {
+    padding: 0;
+    background: none;
+    border: none;
+}
+
+.article-car-guide .mod-article-photos-mobile li span {
+    display: none;
+}
+
+.article-car-guide .mod-article-photos-mobile .guide-photos-image-all a {
+    color: #43a4a5;
+    font-size: 18px;
+    height: 80%;
+    padding: 15% 30% 0 10%;
+    text-decoration: none;
+    width: 100%;
+}
+
+.article-car-guide .guide-photos-image-all a:after {
+    color: #7e7e7e;
+    content: "▶";
+    position: absolute;
+    right: 15%;
+    top: 35%;
+}

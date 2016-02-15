@@ -1,0 +1,158 @@
+.mod-get-social {
+    background-color: #fff;
+    border: 1px solid #bdbdbd;
+    border-radius: 10px;
+    display: block;
+    height: 365px;
+    overflow: hidden;
+    padding: 15px 4px;
+}
+
+.mod-get-social h2 {
+    color: #666;
+    display: inline-block;
+    font-size: 22px;
+    font-weight: normal;
+    line-height: 34px;
+    margin: 0 0 0 11px;
+}
+.mod-get-social h2 strong {
+    font-weight: bold;
+}
+
+.mod-get-social .social-links {
+    float: right;
+    list-style: none;
+    margin: 0 11px 0 0;
+    padding: 0;
+}
+.mod-get-social .social-links li {
+    background-image: url('/wp-content/themes/jeanknowscars/assets/img/jkc-sprite-social.png');
+    background-repeat: no-repeat;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 0;
+    height: 35px;
+    margin: 0 0 0 10px;
+    vertical-align: top;
+    width: 34px;
+}
+.mod-get-social .social-link-facebook {
+    background-position: -8px -108px;
+}
+.mod-get-social .social-link-twitter {
+    background-position: -58px -108px;
+}
+.mod-get-social .social-link-instagram {
+    background-position: -108px -108px;
+}
+.mod-get-social .social-link-facebook.active,
+.mod-get-social .social-link-facebook:hover {
+    background-position: -8px -158px;
+}
+.mod-get-social .social-link-twitter.active,
+.mod-get-social .social-link-twitter:hover {
+    background-position: -58px -158px;
+}
+.mod-get-social .social-link-instagram.active,
+.mod-get-social .social-link-instagram:hover {
+    background-position: -108px -158px;
+}
+
+.mod-get-social .social-wrapper {
+    margin-top: 10px;
+}
+.mod-get-social .social-wrapper h3 {
+    border-top: 1px dotted #666;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 14px;
+    margin: 0 11px 20px;
+    padding-top: 15px;
+}
+.social-ctr-twitter,
+.social-ctr-instagram {
+    display: none;
+}
+
+.social-ctr-instagram .mod-instagram .instagram-wrapper {
+    border-radius: 0 0 5px 5px;
+    height: 250px;
+}
+.social-ctr-twitter iframe{
+    height: 245px !important;
+}
+
+
+.mod-instagram {
+    display: none;
+}
+.mod-instagram h3 {
+    font-size: 33px;
+    font-weight: bold;
+    line-height: 34px;
+    margin: 0 0 10px;
+}
+.mod-instagram .instagram-wrapper {
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 100%;
+    margin: 20px 0 0;
+}
+.mod-instagram .dummy {
+    margin: 100% 0 0;
+}
+.mod-instagram .instagram-thumbs {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: silver;
+    margin: 0 auto;
+}
+.mod-instagram .instagram-placeholder {
+    position: relative;
+    float: left;
+    width: 33.3333333333333%;
+    height: 92px;
+}
+.mod-instagram .instagram-placeholder img {
+    width: 100%;
+}
+.mod-instagram .instagram-placeholder .comment-count {
+    color: #fff;
+    width: 100%;
+    height: 18px;
+    line-height: 1.5;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    font-size: 13px;
+    font-weight: bold;
+    text-indent: 15px;
+}
+.mod-instagram .mod-cnt-image {
+    min-height: 136px;
+    margin: 0 auto;
+    width: 100%;
+}
+.mod-instagram .mod-cnt-image img {
+    width: 100%;
+}
+.mod-instagram .mod-instagram-date,
+.mod-instagram .mod-instagram-caption,
+.mod-instagram .mod-instagram-comments,
+.mod-instagram .mod-instagram-likes,
+.mod-instagram .mod-instagram-location,
+.mod-instagram .mod-instagram-tags {
+    display: none;
+}
+
+.mobile-page .mod-get-social {
+    width: 94%;
+    margin: 0 auto;
+}

@@ -1,0 +1,75 @@
+.ctr-home-mobile-recent {
+    border-bottom: 1px solid #cecece;
+    display: block;
+    padding: 8px 0;
+}
+
+.ctr-home-mobile-recent ul {
+    display: block;
+    font-size: 0;
+    list-style: none outside none;
+    margin: 0 15px;
+    padding: 0;
+}
+
+.ctr-home-mobile-recent li.btn-mobile-active {
+    background-color: #f0f0f0;
+    background-image: linear-gradient(#b7b7b7 0%, #949494 33%, #949494 66%, #b7b7b7 100%);
+    cursor: default;
+}
+
+.ctr-home-mobile-recent li:first-child {
+    border-radius: 5px 0 0 5px;
+    border-right-width: 0;
+}
+
+.ctr-home-mobile-recent li {
+    background-image: linear-gradient(#ebebeb 0%, #fff 100%);
+    border: 1px solid #8d8d8d;
+    border-radius: 0 5px 5px 0;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.17);
+    cursor: pointer;
+    display: inline-block;
+    width: 50%;
+}
+
+.ctr-home-mobile-recent li.btn-mobile-active .mobile-icon-calendar {
+    background-position: -75px -75px;
+}
+
+.ctr-home-mobile-recent li.btn-mobile-active span {
+    color: #fff;
+}
+
+.ctr-home-mobile-recent .mobile-icon-calendar, .ctr-home-mobile-recent .mobile-icon-list {
+    background-image: url("/wp-content/themes/jeanknowscars/assets/img/jkc-mobile-sprite.png");
+    background-position: -75px -50px;
+    height: 17px;
+    width: 17px;
+}
+
+.ctr-home-mobile-recent li span {
+    color: #5a5a5a;
+    display: inline-block;
+    font-size: 16px;
+    line-height: 17px;
+    margin: 10px 0 10px 8px;
+    vertical-align: top;
+}
+
+.ctr-home-mobile-recent li.btn-mobile-active span {
+    color: #fff;
+}
+
+.ctr-home-mobile-recent li span {
+    color: #5a5a5a;
+    display: inline-block;
+    font-size: 16px;
+    line-height: 17px;
+    margin: 10px 0 10px 8px;
+    vertical-align: top;
+}
+
+.ctr-home-mobile-recent .mobile-icon-list {
+    background-position: -100px -50px;
+}
