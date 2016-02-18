@@ -11,7 +11,7 @@ function render_blocks($atts) {
    if($atts['name']=="life-with-jean"):
 	   	wp_enqueue_style( 'mod-life-with-jean', get_template_directory_uri() . '/assets/css/mod-life-with-jean.css' );
 		?> 		
-		<div class="feature-right-wrap right col-18">
+		<div class="feature-right-wrap">
 		  <div class="mod-life-with-jean ctr-side" data-simflink="{&quot;url&quot;: &quot;/life-with-jean/&quot;}">
 		    <h2>Life with <strong>Jean</strong></h2>
 		    <p>I’ve written about<br>cars for 30 years,<br>so I know the secret<br>car-guy handshake.</p>
@@ -60,6 +60,29 @@ function render_gpt_add($atts) {
          </div>     
         </div>
     <?php endif;
+	
+	if($atts['name']=="gpt-mrec-ad"):
+        ?>
+         <div class="mod-ad-mrec ctr-side " itemscope itemtype="http://schema.org/WPAdBlock">          
+             <div id='div-gpt-ad-110057376862217179-2'>
+                 <script type='text/javascript'>
+                     googletag.cmd.push(function() { googletag.display('div-gpt-ad-110057376862217179-2'); });
+				</script>
+             </div>
+         </div> 
+    <?php endif;
+	
+	if($atts['name']=="gpt-mrec-ad-1"):
+        ?>
+         <div class="mod-ad-mrec ctr-side " itemscope itemtype="http://schema.org/WPAdBlock">          
+             <div id='div-gpt-ad-110057376862217179-3'>
+                 <script type='text/javascript'>
+                     googletag.cmd.push(function() { googletag.display('div-gpt-ad-110057376862217179-3'); });
+				</script>
+             </div>
+         </div> 
+    <?php endif;
+	
 }
 
 add_shortcode('gpt_add_block', 'render_gpt_add');
@@ -95,3 +118,41 @@ function render_social_links($atts) {
    <?php endif;
 }
  add_shortcode('social_links', 'render_social_links');
+
+ 
+function render_social_widget(){
+	?>
+	<div class="mod-get-social ctr-side">
+    <h2><strong>Get</strong> Social</h2>
+    <ul class="social-links">
+        <li data-rel="facebook" class="social-link-facebook active"><span></span></li>
+        <li data-rel="twitter" class="social-link-twitter"><span></span></li>
+        <li data-rel="instagram" class="social-link-instagram"><span></span></li>
+    </ul>
+    <div class="social-wrapper">
+        <div class="social-ctr-facebook">
+            <h3>Facebook Recent Activity</h3>
+            <div class="fb-activity" data-site="jeanknowscars.com" data-width="292" data-height="240" data-header="true" data-recommendations="false"></div>
+        </div>
+
+        <div class="social-ctr-twitter">
+            <h3>Twitter Recent Activity</h3>
+            <a class="twitter-timeline" href="https://twitter.com/JeanKnowsCars" data-widget-id="343096813714300928">Tweets by @JeanKnowsCars</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        </div>
+
+        <div class="social-ctr-instagram">
+            <div id="mod-instagram" class="mod-instagram">
+                <h3 class="title">Instagram Instant Activity</h3>
+                <div id="instagram-wrapper" class="instagram-wrapper">
+                    <div class="dummy"></div>
+                    <div class="instagram-thumbs"></div>
+<!--                    <iframe src="http://widget.websta.me/in/jeanknowscars/?s=93&w=3&h=10&b=0&p=-5" allowtransparency="true" frameborder="0" scrolling style="width:296px; height: 250px" ></iframe>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+	<?php 
+}
+add_shortcode('social_widget','render_social_widget');
