@@ -73,11 +73,15 @@ function render_gpt_add($atts) {
     <?php endif;
 	
 	if($atts['name']=="gpt-mrec-ad-1"):
+      $id= 'div-gpt-ad-110057376862217179';
+      $mrec_ad = $id .'-'. rand(2,7);
         ?>
          <div class="mod-ad-mrec ctr-side " itemscope itemtype="http://schema.org/WPAdBlock">          
-             <div id='div-gpt-ad-110057376862217179-3'>
+             <div id='<?php echo $mrec_ad;?>'>
                  <script type='text/javascript'>
-                     googletag.cmd.push(function() { googletag.display('div-gpt-ad-110057376862217179-3'); });
+                     googletag.cmd.push(function() { 
+                      googletag.display('<?php echo $mrec_ad;?>'); 
+                    });
 				</script>
              </div>
          </div> 
