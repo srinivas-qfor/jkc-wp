@@ -39,6 +39,6 @@ function jkc_template_body_class($classes = '') {
 	if(is_front_page()) $classes[] = 'desktop-page new-cars';
 	return $classes;
 }
-
-
-
+ /* To Enable Freatures Image box in the Post page */
+add_theme_support( 'post-thumbnails' );
+set_post_thumbnail_size( 1200, 9999 );

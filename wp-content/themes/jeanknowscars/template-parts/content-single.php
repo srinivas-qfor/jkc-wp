@@ -37,7 +37,7 @@ get_header(); ?>
 		<div class="mod-article article-detail" data-omnituremodule="">
 			<div class="article-head">
 				<h1 class="page-title" itemprop="name"><?php the_title(); ?></h1>
-                    <h2 class="subtitle"><?php the_field('sub_title');  ?></h2>
+                    <h2 class="subtitle"><?php //the_field('sub_title');  ?></h2>
 					<div class="info clearfix">
 						<span class="timestamp"><?php the_date(); ?></span>
                         <span class="separator-date-author">- by</span>
