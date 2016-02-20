@@ -21,6 +21,7 @@ wp_enqueue_style('mod-title-block', get_template_directory_uri() . '/assets/css/
 wp_enqueue_script('mod-filter-make-model', get_template_directory_uri() . '/assets/js/mod-filter-make-model.js', null, null, true);
 wp_enqueue_script('mod-get-instagram', get_template_directory_uri() . '/assets/js/mod-get-instagram.js', null, null, true);
 wp_enqueue_script('mod-load-more.js', get_template_directory_uri() . '/assets/js/mod-load-more.js', null, null, true);
+$pageNum = (int)get_query_var('paged', 1);
 ?>
 
 <!-- -->
@@ -81,7 +82,7 @@ wp_enqueue_script('mod-load-more.js', get_template_directory_uri() . '/assets/js
                         while (have_posts()) : the_post();
                             ?>
 
-                            <div class="mod-list-item left col-22 first-row <?php if ($i == 1) {
+                            <div class="mod-list-item-home left col-22 first-row <?php if ($i == 1) {
                         echo "first-col";
                     } ?>">
                                 <div class="row">
@@ -163,7 +164,7 @@ wp_enqueue_script('mod-load-more.js', get_template_directory_uri() . '/assets/js
                     while (have_posts()) : the_post();
                         ?>
 
-                        <div class="mod-list-item left col-18 first-row <?php if ($i == 1) {
+                        <div class="mod-list-item-home left col-18 first-row <?php if ($i == 1) {
                             echo "first-col";
                         } ?>">
                             <div class="row">
@@ -243,7 +244,7 @@ wp_enqueue_script('mod-load-more.js', get_template_directory_uri() . '/assets/js
                         while (have_posts()) : the_post();
                             ?>
 
-                            <div class="mod-list-item left col-22 first-row <?php if ($i == 1) {
+                            <div class="mod-list-item-home left col-22 first-row <?php if ($i == 1) {
                         echo "first-col";
                     } ?>">
                                 <div class="row">
@@ -376,10 +377,11 @@ wp_enqueue_script('mod-load-more.js', get_template_directory_uri() . '/assets/js
                 <?php
                 $posts = query_posts(array(
                     'post_status' => 'publish',
-                    'orderby' => 'menu_order',
+                    'orderby' => 'date',
                     'order' => 'DESC',
-                    'posts_per_page' => '9'
-                        ));
+                    'posts_per_page' => '9',
+                    'paged' => $pageNum
+                ));
 
                 if (have_posts()) :
                     ?>
@@ -391,17 +393,7 @@ wp_enqueue_script('mod-load-more.js', get_template_directory_uri() . '/assets/js
                         ?>
                         <div class="mod-list-item left col-18 <?php if ($i % 3 == 0) {
                             echo "first-col";
-                        } if ($i == 5) {
-                            echo " item-ads";
                         } ?>">
-
-                            <?php
-                            if ($i == 5) {
-
-                                echo do_shortcode('[gpt_add_block name="gpt-mrec-ad-1" ]');
-                            } else {
-                                ?>
-
                                 <div class="row">
                                     <div class="img-wrap">
                                         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
@@ -432,23 +424,11 @@ wp_enqueue_script('mod-load-more.js', get_template_directory_uri() . '/assets/js
                                         </div>
                                     </div>
                                 </div>
-                                <?php
-                            }
-                            ?>
-
                         </div>
         <?php
         // End the loop.
         $i++;
     endwhile;
-    wp_reset_postdata();
-
-    // Previous/next page navigation.
-    the_posts_pagination(array(
-        'prev_text' => __('Previous page', 'twentysixteen'),
-        'next_text' => __('Next page', 'twentysixteen'),
-        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __('Page', 'twentysixteen') . ' </span>',
-    ));
 
 // If no content, include the "No posts found" template.
 else :
@@ -457,6 +437,19 @@ else :
 endif;
 ?>
 
+            </div>
+            <div class="mod-load-more">
+            <?php
+            // Previous/next page navigation.
+            if ( have_posts() ) : 
+                the_posts_pagination(array(
+                    'prev_text' => __('Previous page', 'twentysixteen'),
+                    'next_text' => __('Next page', 'twentysixteen'),
+                    'before_page_number' => '<span class="meta-nav screen-reader-text">' . __('Page', 'twentysixteen') . ' </span>',
+                ));
+            endif;
+            wp_reset_postdata();
+            ?>
             </div>
         </div>
 
