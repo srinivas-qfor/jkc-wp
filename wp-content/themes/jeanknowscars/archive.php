@@ -161,7 +161,7 @@ if($pageNum >= 2 && $pageNum <= 6) {
 								<div class="info-wrap">
 								<h4 class="title-wrap">
 								<a class="list-title" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-								<?php echo $i; the_title(); ?>
+								<?php the_title(); ?>
 								</a>
 								</h4>
 								<div class="desc">
