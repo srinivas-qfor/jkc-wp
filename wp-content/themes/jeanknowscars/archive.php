@@ -49,11 +49,12 @@ if($pageNum >= 2 && $pageNum <= 6) {
 <!-- -->
 <div class="content-top-wrap">
 	<div class="row">
-		<?php get_template_part('template-parts/navigation','breadcrumb'); ?> 	</div>
+		<?php get_template_part('template-parts/navigation','breadcrumb'); ?> 	
 		<div class="mod-title">
 			<h1 class="pagetitle" itemprop="name"><?php printf(single_cat_title( '', false ));?></h1>
 			<div class="desc"><?php $term_description = term_description(); printf($term_description); ?></div>
 		</div> 
+	</div>
 </div>
 
 

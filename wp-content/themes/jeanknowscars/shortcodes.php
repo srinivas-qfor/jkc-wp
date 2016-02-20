@@ -171,3 +171,76 @@ function render_social_widget(){
 	<?php 
 }
 add_shortcode('social_widget','render_social_widget');
+
+/*
+* Helper functoin: Generate posts for widgets
+*/
+function render_jkc_posts_widget($atts) {
+    extract(shortcode_atts(array(
+        'title'        => 'Latest Articles',
+        'tagline'      => 'Read latest articles',
+        'cat'          => 0,
+        'num_posts'    => 3,
+        'per_row'      => 3,
+    ), $atts));
+
+    // get category object
+    if(isset($cat) && $cat > 0) {
+       $category = get_category($cat);
+    }
+
+    $args = array( 
+        'posts_per_page' => $num_posts,
+        'category' => $cat
+    );
+    $posts = get_posts($args);
+    //print_r("<pre>"); print_r($category); exit;
+    ?>
+    <div class="mod-title-block ">
+      <div class="headline">
+        <h2>
+        <?php if(!empty($category)) { ?>
+          <a href="<?=get_category_link($cat);?>" title="<?=$title;?>"><?=$title;?></a>
+        <?php }
+        else { 
+          echo $title;
+        } ?>
+        </h2>
+        <h3><?php echo $tagline; ?></h3>
+      </div>
+    </div>
+
+    <div class="mod-list-item-wrap">
+      <div class="load-more-disabled clearfix">
+        <?php 
+        if(!empty($posts)) :
+        $i = 0;
+        foreach($posts as $post) { ?>
+        <div class="mod-list-item left col-18<?php echo ($i<$per_row) ? ' first-row' : ''; echo ($i%$per_row == 0) ? ' first-col' : ''; ?>">
+          <div class="row">
+            <div class="img-wrap">
+              <a href="<?=get_permalink($post->ID);?>" title="<?=$post->post_title;?>">
+              <img src="http://image.jeanknowscars.com/f/99347533+w288+h140+re0+cr1+ar0/2017-hyundai-elantra-homepage.jpg" alt="<?=$post->post_title;?>" height="140" width="288" onerror="this.src='/img/jkc-no-image-288x140.jpg'">
+              </a>
+            </div>
+            <div class="category">
+              <?php $categories = get_the_category($post->ID); ?>
+              <a href="<?=get_category_link($categories[0]->cat_ID);?>"><?=$categories[0]->name;?></a>
+            </div>
+            <div class="info-wrap">
+              <h4 class="title-wrap"><a class="list-title" href="<?=get_permalink($post->ID);?>" title="<?=$post->post_title;?>"><?=$post->post_title;?></a></h4>
+              <div class="desc">
+                <?=$post->post_excerpt;?>
+              </div>
+            </div>
+          </div>
+        </div>
+        <?php $i++; } 
+        else : ?>
+        <p>No content found</p>
+        <?php endif; ?>
+      </div>
+    </div>
+    <?php 
+}
+add_shortcode('jkc_posts_widget','render_jkc_posts_widget');
