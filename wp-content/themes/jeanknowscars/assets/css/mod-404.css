@@ -6,7 +6,7 @@
 .mod-404 .desktop-page img.img{
     border: none;
 }
-.desktop-page .mod-404 .text-404{
+.mod-404 .desktop-page .text-404{
     padding: 30px 15px 0 0;
     font-size: 30px;
     font-weight: 400;
@@ -14,7 +14,7 @@
     margin-right: 105px;
     line-height: 1.4;
 }
-.desktop-page .mod-404 .img-404{
+.mod-404 .desktop-page .img-404{
     float: left;
     margin-right: 36px;
 }
