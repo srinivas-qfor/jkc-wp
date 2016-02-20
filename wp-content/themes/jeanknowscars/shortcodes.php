@@ -42,7 +42,8 @@ add_shortcode('add_block', 'render_blocks');
 
 function render_gpt_add($atts) {
    extract(shortcode_atts(array(
-      'name' => null,      
+      'name' => null,
+      'data-ads' => null
    ), $atts));
 
     if($atts['name']=="gpt-top-ad"):
@@ -71,16 +72,26 @@ function render_gpt_add($atts) {
              </div>
          </div> 
     <?php endif;
-	
-	if($atts['name']=="gpt-mrec-ad-1"):
-      $id= 'div-gpt-ad-110057376862217179';
-      $mrec_ad = $id .'-'. rand(2,7);
+
+  if($atts['name']=="gpt-mrec-ad-dyn"):
+        $adNum = !empty($atts['data-ads']) ? $atts['data-ads'] : 2;
         ?>
          <div class="mod-ad-mrec ctr-side " itemscope itemtype="http://schema.org/WPAdBlock">          
-             <div id='<?php echo $mrec_ad;?>'>
+             <div id='div-gpt-ad-110057376862217179-<?php echo $adNum; ?>'>
+                 <script type='text/javascript'>
+                     googletag.cmd.push(function() { googletag.display('div-gpt-ad-110057376862217179-<?php echo $adNum; ?>'); });
+        </script>
+             </div>
+         </div> 
+    <?php endif;
+	
+	if($atts['name']=="gpt-mrec-ad-1"):
+        ?>
+         <div class="mod-ad-mrec ctr-side " itemscope itemtype="http://schema.org/WPAdBlock">          
+             <div id='div-gpt-ad-110057376862217179-1'>
                  <script type='text/javascript'>
                      googletag.cmd.push(function() { 
-                      googletag.display('<?php echo $mrec_ad;?>'); 
+                      googletag.display('div-gpt-ad-110057376862217179-1'); 
                     });
 				</script>
              </div>
