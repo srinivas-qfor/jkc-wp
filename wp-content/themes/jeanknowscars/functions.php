@@ -1,5 +1,6 @@
 <?php
 
+add_theme_support('title-tag');
 
 include_once "shortcodes.php";	
 
