@@ -2,7 +2,7 @@
 
 add_theme_support('title-tag');
 
-include_once "shortcodes.php";	
+include_once "shortcodes.php";
 
 function load_front_end_scripts(){
 	## Loading CSS for Common pages
@@ -62,3 +62,5 @@ function jkc_change_author_slug() {
 	$wp_rewrite->author_base = 'contributors';
 }
 add_action('init', 'jkc_change_author_slug');
+
+include_once "admin".DIRECTORY_SEPARATOR."admin-functions.php";
