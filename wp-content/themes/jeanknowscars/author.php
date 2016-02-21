@@ -91,7 +91,9 @@ foreach(get_the_author_meta('userSocialLinks') as $social) {
 	            	?>
 	            	</div>
 	            </div>
-	            <?php if ( have_posts() ) : ?>
+	            <?php 
+	            global $wp_query;
+	            if ( have_posts() && $wp_query->max_num_pages > 1) : ?>
 	            <div class="mod-load-more-vehicle clearfix">
 	            	<a class="first page-numbers" href="<?=get_pagenum_link(1);?>"><i class="fa fa-step-backward"></i></a>
 	            	<?php
@@ -100,7 +102,6 @@ foreach(get_the_author_meta('userSocialLinks') as $social) {
 						'next_text'          => __( '<i class="fa fa-caret-right"></i>', 'twentysixteen' ),
 						'screen_reader_text' => __('', 'twentysixteen'),
 					) );
-					global $wp_query;
 	            	?>
 	            	<a class="last page-numbers" href="<?=get_pagenum_link($wp_query->max_num_pages);?>"><i class="fa fa-step-forward"></i></a>
 	            </div>
