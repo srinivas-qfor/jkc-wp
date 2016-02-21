@@ -5,7 +5,8 @@
 */
 function render_blocks($atts) {
    extract(shortcode_atts(array(
-      'name' => null,      
+      'name' => null,
+      'ad_col_wrap' => true
    ), $atts));
 
    if($atts['name']=="life-with-jean"):
@@ -24,7 +25,7 @@ function render_blocks($atts) {
    if($atts['name']=="car-confessions"):
             wp_enqueue_style( 'mod-car-confession', get_template_directory_uri() . '/assets/css/mod-car-confession.css' );
             ?> 	
-            <div class="ad-top-right-wrap right col-20">
+            <?php if($ad_col_wrap !== 'off') : ?><div class="ad-top-right-wrap right col-20"><?php endif; ?>
               <div class="mod-car-confession clearfix">
                 <div class="wrap">
                   <h3>Car Confessions</h3>
@@ -32,7 +33,7 @@ function render_blocks($atts) {
                   <a class="btn-alt-cta" href="/confessions/">Confess Here</a>
                 </div>
               </div>
-            </div>
+            <?php if($ad_col_wrap !== 'off') : ?></div><?php endif; ?>
    <?php endif;
 }
 
@@ -244,3 +245,5 @@ function render_jkc_posts_widget($atts) {
     <?php 
 }
 add_shortcode('jkc_posts_widget','render_jkc_posts_widget');
+
+include_once 'shortcodes/contributors.php';
