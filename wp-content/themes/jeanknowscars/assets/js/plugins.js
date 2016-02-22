@@ -168,11 +168,13 @@
 })(jQuery);
 
 (function ($) {
-    $('.mod-get-social .social-links li').on('click', function() {
-        $('.mod-get-social .social-links li').removeClass('active');
-        $('.social-wrapper > div').hide();
-        $('.social-ctr-' + $(this).data('rel')).show();
-        $(this).addClass('active');
+    $(document).on('ready', function() {
+        $('.mod-get-social .social-links li').on('click', function() {
+            $('.mod-get-social .social-links li').removeClass('active');
+            $('.social-wrapper > div').hide();
+            $('.social-ctr-' + $(this).data('rel')).show();
+            $(this).addClass('active');
+        });
     });
 })(jQuery);
 (function ($) {
@@ -205,8 +207,8 @@
 //			return $('<div>').addClass('instagram-placeholder').attr('id', 'empty').append($('<p>').html('No photos for this query'));
         },
         _getRequestUrl: function() {
-            var url = '/instagram/',
-                params = {show:this.options.show};
+            var url = jkc.ajax_url+'/',
+                params = {show:this.options.show, action: 'instagram'};
             this.options.maxId != null && (params.max_id = this.options.maxId);
             url += "?" + $.param(params);
             return url;

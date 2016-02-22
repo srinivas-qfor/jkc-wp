@@ -163,7 +163,6 @@ function render_social_widget(){
                 <div id="instagram-wrapper" class="instagram-wrapper">
                     <div class="dummy"></div>
                     <div class="instagram-thumbs"></div>
-<!--                    <iframe src="http://widget.websta.me/in/jeanknowscars/?s=93&w=3&h=10&b=0&p=-5" allowtransparency="true" frameborder="0" scrolling style="width:296px; height: 250px" ></iframe>-->
                 </div>
             </div>
         </div>
