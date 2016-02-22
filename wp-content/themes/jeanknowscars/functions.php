@@ -3,6 +3,7 @@
 add_theme_support('title-tag');
 
 include_once "shortcodes.php";
+include_once "functions/instagram.php";
 
 function load_front_end_scripts(){
 	## Loading CSS for Common pages
@@ -18,7 +19,7 @@ function load_front_end_scripts(){
         
 
 	## Loading JS for common pages        
-        wp_enqueue_script( 'type-kit','http://code.jquery.com/jquery-1.11.0.min.js');   
+        //wp_enqueue_script( 'type-kit','http://code.jquery.com/jquery-1.11.0.min.js');   
         wp_enqueue_script( 'type-kit','http://a.postrelease.com/serve/load.js?async=true');         
         wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/assets/js/modernizr.js');  
         wp_enqueue_script( 'jquery.cookie.min', get_template_directory_uri() . '/assets/js/jquery.cookie.min.js');  
@@ -26,6 +27,10 @@ function load_front_end_scripts(){
         wp_enqueue_script( 'global', get_template_directory_uri() . '/assets/js/global.js');                  
         wp_enqueue_script( 'mod-ad-header', get_template_directory_uri() . '/assets/js/mod-ad-header.js');
         wp_enqueue_script( 'mod-header', get_template_directory_uri() . '/assets/js/mod-header.js');
+
+        wp_localize_script( 'plugins', 'jkc', array(
+			'ajax_url' => admin_url( 'admin-ajax.php' )
+		));
         
 }
 
