@@ -72,9 +72,9 @@ global $post;
 	
 	<div class="right-column right col-18">
 		<?php echo do_shortcode( '[add_block name="life-with-jean"]' ) ?>
-		<?php echo do_shortcode( '[gpt_add_block name="gpt-mrec-ad"]' ) ?>
+		<?php echo do_shortcode( '[gpt_add_block name="gpt-mrec-ad-dyn" data-ads="2"]') ?>
 		<?php echo do_shortcode( '[social_widget]' ) ?>
-		<?php echo do_shortcode( '[gpt_add_block name="gpt-mrec-ad-1"]' ) ?>
+		<?php echo do_shortcode( '[gpt_add_block name="gpt-mrec-ad-dyn" data-ads="3"]') ?>
 	</div>
 </div>	
 
