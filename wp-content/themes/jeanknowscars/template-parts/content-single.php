@@ -23,7 +23,9 @@ wp_enqueue_script( 'mod-get-instagram', get_template_directory_uri() . '/assets/
 wp_enqueue_script( 'addthis_init', get_template_directory_uri() . '/assets/js/addthis_init.js',null,null,true);
 wp_enqueue_script( 'addthis_close', get_template_directory_uri() . '/assets/js/addthis_close.js"',null,null,true);
 
-get_header(); ?>
+get_header(); 
+global $post;
+?>
 
 <!--Breadcrumb-->
 <div class="content-top-wrap">
@@ -37,7 +39,7 @@ get_header(); ?>
 		<div class="mod-article article-detail" data-omnituremodule="">
 			<div class="article-head">
 				<h1 class="page-title" itemprop="name"><?php the_title(); ?></h1>
-                    <h2 class="subtitle"><?php //the_field('sub_title');  ?></h2>
+                    <h2 class="subtitle"><?php echo get_post_meta($post->ID, 'subTitle', true);  ?></h2>
 					<div class="info clearfix">
 						<span class="timestamp"><?php the_date(); ?></span>
                         <span class="separator-date-author">- by</span>
