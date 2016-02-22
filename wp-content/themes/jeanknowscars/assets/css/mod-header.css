@@ -166,7 +166,7 @@
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
 }
 
-.mod-header .nav-item.active a, .mod-header .nav-item.active a:hover {
+.mod-header .nav-item.active a, .current-post-ancestor a.button-link, .current-category-ancestor a.button-link, .mod-header .nav-item.active a:hover, .current-post-ancestor a.button-link:hover, .current-category-ancestor a.button-link:hover {
     background: #b3e625;
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3e625', endColorstr='#b3e625', GradientType=0 );
     color: #000;

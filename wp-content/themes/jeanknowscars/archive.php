@@ -45,15 +45,19 @@ if($pageNum >= 2 && $pageNum <= 6) {
 	$adBlock = $pageNum + 1;
 	//echo $adBlock; exit;
 }
+if (is_category()) {
+	$this_category = get_category($cat);
+}
 ?>
 <!-- -->
 <div class="content-top-wrap">
 	<div class="row">
-		<?php get_template_part('template-parts/navigation','breadcrumb'); ?> 	</div>
+		<?php get_template_part('template-parts/navigation','breadcrumb'); ?> 	
 		<div class="mod-title">
 			<h1 class="pagetitle" itemprop="name"><?php printf(single_cat_title( '', false ));?></h1>
 			<div class="desc"><?php $term_description = term_description(); printf($term_description); ?></div>
 		</div> 
+	</div>
 </div>
 
 
@@ -65,7 +69,7 @@ if($pageNum >= 2 && $pageNum <= 6) {
         <!--Flipper-->
         <?php
             if (class_exists( 'Flipper' ) && shortcode_exists( 'flipper' ))                    
-            echo do_shortcode( '[flipper name="home-flipper"]' ) 
+            echo do_shortcode( '[flipper name="home-flipper" cat="'.$this_category->cat_ID.'"]' ) 
         ?>                                  
             <!-- life-with-jean -->  
 		<div class="feature-right-wrap right col-18">
@@ -85,10 +89,6 @@ if($pageNum >= 2 && $pageNum <= 6) {
 </div>
 
 <?php
-
-    if (is_category()) {
-		$this_category = get_category($cat);
-    }
     $category_link = get_category_link( $cat );
     if($this_category->category_parent){
 		$this_category = wp_list_categories('orderby=id&show_count=0&title_li=&use_desc_for_title=1&child_of='.$this_category->category_parent.
@@ -144,7 +144,9 @@ if($pageNum >= 2 && $pageNum <= 6) {
 
 								if ( has_post_thumbnail() ) {
 								the_post_thumbnail('thumbnail');
-								} 
+								} else { ?>
+                                                                <img src="<?php bloginfo('template_directory'); ?>/assets/img/jkc-no-image-288x140.jpg" alt="<?php the_title(); ?>" draggable="false">
+                                                                 <?php }
 								?>
 								</a>
 								</div>
