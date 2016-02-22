@@ -10,7 +10,7 @@ function render_flipper($atts) {
 
         $args = array(
             'posts_per_page' => 10,
-            'meta_key' => '_featured-post',
+            'meta_key' => '_featured-post'.(is_home() ? '-home' : ''),
             'meta_value' => 1,
             'cat' => !empty($atts['cat']) ? $atts['cat'] : 0
         );
@@ -27,9 +27,21 @@ function render_flipper($atts) {
                         <ul class="slides">
                             <?php while($featured->have_posts()): $featured->the_post(); ?>
                             <li class="slide">
-                                <div class="img-wrap" data-title="<?=the_title();?>" data-smalltitle="<?=substr(the_title(), 0, 35);?>" data-text="<?=the_excerpt();?>" data-href="<?=the_permalink();?>">
+                                <div class="img-wrap" data-title="<?=the_title();?>" data-smalltitle="<?=substr(the_title(), 0, 35);?>" data-text="<?=get_the_excerpt();?>" data-href="<?=the_permalink();?>">
                                     <a href="<?=the_permalink();?>" title="<?=the_title();?>">
-                                        <img onerror="this.src='/img/jkc-no-image-650x317.jpg'" src="http://image.jeanknowscars.com/f/95937843+w650+h317+re0+cr1+ar0/volvo-s90-promolarge.jpg" alt="<?=the_title();?>" draggable="false">
+                                        <?php 
+                                        if ( has_post_thumbnail( ) ) :
+                                        $image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'single-post-thumbnail' );
+                                        $featured_alt = get_post_meta(
+                                            get_post_thumbnail_id( $post->ID ),
+                                            '_wp_attachment_image_alt', true ) ? : get_the_title();
+                                        $image = $image[0];
+
+                                        else : ?>
+                                            <img src="<?php bloginfo('template_directory'); ?>/assets/img/jkc-no-image-650x317.jpg" alt="'.the_title().'" draggable="false">';
+                                        <?php endif; 
+                                        ?>
+                                        <!--img onerror="this.src='/img/jkc-no-image-650x317.jpg'" src="http://image.jeanknowscars.com/f/95937843+w650+h317+re0+cr1+ar0/volvo-s90-promolarge.jpg" alt="<?=the_title();?>" draggable="false"-->
                                     </a>
                                 </div>
                             </li>

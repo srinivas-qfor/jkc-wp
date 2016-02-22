@@ -92,6 +92,9 @@ $pageNum = (int)get_query_var('paged', 1);
                                             if (has_post_thumbnail()) {
                                                 the_post_thumbnail('thumbnail');
                                             }
+                                            else { ?>
+                                                <img src="<?php bloginfo('template_directory'); ?>/assets/img/jkc-no-image-288x140.jpg" alt="<?php the_title(); ?>" draggable="false">
+                                            <?php }
                                             ?>
                                         </a>
                                     </div>
@@ -174,6 +177,9 @@ $pageNum = (int)get_query_var('paged', 1);
                                         if (has_post_thumbnail()) {
                                             the_post_thumbnail('thumbnail');
                                         }
+                                        else { ?>
+                                            <img src="<?php bloginfo('template_directory'); ?>/assets/img/jkc-no-image-288x140.jpg" alt="<?php the_title(); ?>" draggable="false">
+                                        <?php }
                                         ?>
                                     </a>
                                 </div>
@@ -254,6 +260,9 @@ $pageNum = (int)get_query_var('paged', 1);
                                             if (has_post_thumbnail()) {
                                                 the_post_thumbnail('thumbnail');
                                             }
+                                            else { ?>
+                                                <img src="<?php bloginfo('template_directory'); ?>/assets/img/jkc-no-image-288x140.jpg" alt="<?php the_title(); ?>" draggable="false">
+                                            <?php }
                                             ?>
                                         </a>
                                     </div>
@@ -401,6 +410,9 @@ $pageNum = (int)get_query_var('paged', 1);
                                             if (has_post_thumbnail()) {
                                                 the_post_thumbnail('thumbnail');
                                             }
+                                            else { ?>
+                                                <img src="<?php bloginfo('template_directory'); ?>/assets/img/jkc-no-image-288x140.jpg" alt="<?php the_title(); ?>" draggable="false">
+                                            <?php }
                                             ?>
                                         </a>
                                     </div>
