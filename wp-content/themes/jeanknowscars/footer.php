@@ -29,7 +29,6 @@
     </div>
 </footer>
 </div><!--Page End -->
-<script type="text/javascript" src="http://cdn.jeanknowscars.com/home_index/desktop/1450815450.8098concat.min.js"></script>
 <!--<script type="text/javascript" src="http://a.postrelease.com/serve/load.js?async=true"></script>-->
             
 <div class="third-party-scripts">
