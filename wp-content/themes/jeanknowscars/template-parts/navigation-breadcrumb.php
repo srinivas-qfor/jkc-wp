@@ -15,9 +15,13 @@ global $post;
         echo 'Home';
         echo '</a></div><div class="separator"></div>';
         if (is_category() || is_single()) {
-            $category = get_the_category();
+            $category = get_category(get_query_var('cat'));
+            if(is_single()) {
+                $category = get_the_category();
+            }
             if(!empty($category)) {
-                echo get_category_parents_custom($category[0]->cat_ID, true, '', false, array(), '<div class="crumb-wrap" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">', '</div>');
+                $cat_id = is_array($category) ? $category[0]->cat_ID : $category->cat_ID;
+                echo get_category_parents_custom($cat_id, true, '', false, array(), '<div class="crumb-wrap" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">', '</div>');
             }
             if (is_single()) {
                 echo '<div class="crumb-wrap" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><span class="crumb" itemprop="title">';
@@ -40,13 +44,18 @@ global $post;
 			} else {
                 echo '<div class="crumb-wrap" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><span class="crumb" itemprop="title"> '.get_the_title().'</span></div>';
             }
-		}
+		} elseif (is_author()) {
+            $output = '<div class="crumb-wrap" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="'.get_permalink(get_page_by_title('About Us')).'" title="About Us">About Us</a></div>';
+            $output .= '<div class="crumb-wrap" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><span class="crumb" itemprop="title"> '.get_the_author().'</span></div>';
+            echo $output;
+        }
 	}
     echo '</div>';
 
     function get_category_parents_custom( $id, $link = false, $separator = '/', $nicename = false, $visited = array(), $prepend = '', $append = '' ) {
         $chain = '';
         $parent = get_term( $id, 'category' );
+
         if ( is_wp_error( $parent ) )
             return $parent;
 
