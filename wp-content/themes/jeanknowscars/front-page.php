@@ -152,7 +152,7 @@ wp_enqueue_script('mod-load-more.js', get_template_directory_uri() . '/assets/js
                 $cat = 11;
                 $posts = query_posts(array(
                     'post_status' => 'publish',
-                    'category_name' => 'Kid in the Car',
+                    'category_name' => 'kids-in-the-car',
                     'orderby' => 'menu_order',
                     'order' => 'DESC',
                     'posts_per_page' => '3'
