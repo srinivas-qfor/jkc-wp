@@ -1,9 +1,9 @@
 <?php
 
-add_theme_support('title-tag');
-
 include_once "shortcodes.php";
 include_once "functions/instagram.php";
+include_once "custom-posts/askquestion.php";
+include_once "custom-posts/confessions.php";
 
 function load_front_end_scripts(){
 	## Loading CSS for Common pages

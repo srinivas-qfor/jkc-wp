@@ -151,13 +151,13 @@ if (is_category()) {
 								</a>
 								</div>
 								<div class="category">
-								<a href="<?php  get_category_link( $intCategoryId ); ?>">
 								<?php
-
 								$categories = get_the_category($the_post->ID);
-								print_r($categories[0]->name);
-
+								$intCategoryId = is_array($categories) ? $categories[0]->cat_ID : $categories->cat_ID;
+								$category_name = is_array($categories) ? $categories[0]->name : $categories->name;
 								?>
+								<a href="<?php echo get_category_link( $intCategoryId ); ?>">
+								<?=$category_name;?>
 								</a>
 								</div>
 								<div class="info-wrap">
