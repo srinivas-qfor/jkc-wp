@@ -5,7 +5,8 @@
 */
 function render_blocks($atts) {
    extract(shortcode_atts(array(
-      'name' => null,      
+      'name' => null,
+      'ad_col_wrap' => true
    ), $atts));
 
    if($atts['name']=="life-with-jean"):
@@ -24,15 +25,16 @@ function render_blocks($atts) {
    if($atts['name']=="car-confessions"):
             wp_enqueue_style( 'mod-car-confession', get_template_directory_uri() . '/assets/css/mod-car-confession.css' );
             ?> 	
-            <div class="ad-top-right-wrap right col-20">
+            <?php if($ad_col_wrap !== 'off') : ?><div class="ad-top-right-wrap right col-20"><?php endif; ?>
               <div class="mod-car-confession clearfix">
                 <div class="wrap">
                   <h3>Car Confessions</h3>
                   <h4>A Pretty Place for Ugly Secrets</h4>
-                  <a class="btn-alt-cta" href="/confessions/">Confess Here</a>
+                  <a class="btn-alt-cta">Confess Here</a>
+                   <!--<a class="btn-alt-cta" href="/confessions/">Confess Here</a>-->
                 </div>
               </div>
-            </div>
+            <?php if($ad_col_wrap !== 'off') : ?></div><?php endif; ?>
    <?php endif;
 }
 
@@ -162,7 +164,6 @@ function render_social_widget(){
                 <div id="instagram-wrapper" class="instagram-wrapper">
                     <div class="dummy"></div>
                     <div class="instagram-thumbs"></div>
-<!--                    <iframe src="http://widget.websta.me/in/jeanknowscars/?s=93&w=3&h=10&b=0&p=-5" allowtransparency="true" frameborder="0" scrolling style="width:296px; height: 250px" ></iframe>-->
                 </div>
             </div>
         </div>
@@ -171,3 +172,78 @@ function render_social_widget(){
 	<?php 
 }
 add_shortcode('social_widget','render_social_widget');
+
+/*
+* Helper functoin: Generate posts for widgets
+*/
+function render_jkc_posts_widget($atts) {
+    extract(shortcode_atts(array(
+        'title'        => 'Latest Articles',
+        'tagline'      => 'Read latest articles',
+        'cat'          => 0,
+        'num_posts'    => 3,
+        'per_row'      => 3,
+    ), $atts));
+
+    // get category object
+    if(isset($cat) && $cat > 0) {
+       $category = get_category($cat);
+    }
+
+    $args = array( 
+        'posts_per_page' => $num_posts,
+        'category' => $cat
+    );
+    $posts = get_posts($args);
+    //print_r("<pre>"); print_r($category); exit;
+    ?>
+    <div class="mod-title-block ">
+      <div class="headline">
+        <h2>
+        <?php if(!empty($category)) { ?>
+          <a href="<?=get_category_link($cat);?>" title="<?=$title;?>"><?=$title;?></a>
+        <?php }
+        else { 
+          echo $title;
+        } ?>
+        </h2>
+        <h3><?php echo $tagline; ?></h3>
+      </div>
+    </div>
+
+    <div class="mod-list-item-wrap">
+      <div class="load-more-disabled clearfix">
+        <?php 
+        if(!empty($posts)) :
+        $i = 0;
+        foreach($posts as $post) { ?>
+        <div class="mod-list-item left col-18<?php echo ($i<$per_row) ? ' first-row' : ''; echo ($i%$per_row == 0) ? ' first-col' : ''; ?>">
+          <div class="row">
+            <div class="img-wrap">
+              <a href="<?=get_permalink($post->ID);?>" title="<?=$post->post_title;?>">
+              <img src="http://image.jeanknowscars.com/f/99347533+w288+h140+re0+cr1+ar0/2017-hyundai-elantra-homepage.jpg" alt="<?=$post->post_title;?>" height="140" width="288" onerror="this.src='/img/jkc-no-image-288x140.jpg'">
+              </a>
+            </div>
+            <div class="category">
+              <?php $categories = get_the_category($post->ID); ?>
+              <a href="<?=get_category_link($categories[0]->cat_ID);?>"><?=$categories[0]->name;?></a>
+            </div>
+            <div class="info-wrap">
+              <h4 class="title-wrap"><a class="list-title" href="<?=get_permalink($post->ID);?>" title="<?=$post->post_title;?>"><?=$post->post_title;?></a></h4>
+              <div class="desc">
+                <?=$post->post_excerpt;?>
+              </div>
+            </div>
+          </div>
+        </div>
+        <?php $i++; } 
+        else : ?>
+        <p>No content found</p>
+        <?php endif; ?>
+      </div>
+    </div>
+    <?php 
+}
+add_shortcode('jkc_posts_widget','render_jkc_posts_widget');
+
+include_once 'shortcodes/contributors.php';

@@ -1,4 +1,5 @@
 ;var SorcWeb = SorcWeb || {}; // Global object
+(function($) {
 (function (sorcWeb, window) {
     sorcWeb.modGetSocial = {};
     var mod = sorcWeb.modGetSocial;
@@ -62,3 +63,4 @@
 
     return mod.init();
 })(SorcWeb, window);
+})(jQuery);

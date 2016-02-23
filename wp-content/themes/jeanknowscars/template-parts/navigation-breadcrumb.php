@@ -15,12 +15,18 @@ global $post;
         echo 'Home';
         echo '</a></div><div class="separator"></div>';
         if (is_category() || is_single()) {
-            echo '<div class="crumb-wrap" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">';
-            the_category(' </div><div class="separator"> </div><div class="crumb-wrap" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"> ');
+            $category = get_category(get_query_var('cat'));
+            if(is_single()) {
+                $category = get_the_category();
+            }
+            if(!empty($category)) {
+                $cat_id = is_array($category) ? $category[0]->cat_ID : $category->cat_ID;
+                echo get_category_parents_custom($cat_id, true, '', false, array(), '<div class="crumb-wrap" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">', '</div>');
+            }
             if (is_single()) {
-                echo '</div><div class="separator"> </div><div class="crumb-wrap" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">';
+                echo '<div class="crumb-wrap" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><span class="crumb" itemprop="title">';
                 the_title();
-                echo '</div>';
+                echo '</div></span>';
             }
         } elseif (is_page()) {
             if($post->post_parent){
@@ -35,8 +41,38 @@ global $post;
 				} else {
 					echo '<div class="crumb-wrap" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><strong> '.get_the_title().'</strong></div>';
 				}
-			}
-		}
+			} else {
+                echo '<div class="crumb-wrap" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><span class="crumb" itemprop="title"> '.get_the_title().'</span></div>';
+            }
+		} elseif (is_author()) {
+            $output = '<div class="crumb-wrap" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="'.get_permalink(get_page_by_title('About Us')).'" title="About Us">About Us</a></div>';
+            $output .= '<div class="crumb-wrap" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><span class="crumb" itemprop="title"> '.get_the_author().'</span></div>';
+            echo $output;
+        }
 	}
     echo '</div>';
+
+    function get_category_parents_custom( $id, $link = false, $separator = '/', $nicename = false, $visited = array(), $prepend = '', $append = '' ) {
+        $chain = '';
+        $parent = get_term( $id, 'category' );
+
+        if ( is_wp_error( $parent ) )
+            return $parent;
+
+        if ( $nicename )
+            $name = $parent->slug;
+        else
+            $name = $parent->name;
+
+        if ( $parent->parent && ( $parent->parent != $parent->term_id ) && !in_array( $parent->parent, $visited ) ) {
+            $visited[] = $parent->parent;
+            $chain .= get_category_parents_custom( $parent->parent, $link, $separator, $nicename, $visited, $prepend, $append );
+        }
+
+        if ( $link )
+            $chain .= $prepend.'<a href="' . esc_url( get_category_link( $parent->term_id ) ) . '">'.$name.'</a>' . $append . $separator;
+        else
+            $chain .= $name.$separator;
+        return $chain;
+    }
 

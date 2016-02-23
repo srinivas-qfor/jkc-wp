@@ -1,7 +1,9 @@
 <?php
 
-
-include_once "shortcodes.php";	
+include_once "shortcodes.php";
+include_once "functions/instagram.php";
+include_once "custom-posts/askquestion.php";
+include_once "custom-posts/confessions.php";
 
 function load_front_end_scripts(){
 	## Loading CSS for Common pages
@@ -17,7 +19,7 @@ function load_front_end_scripts(){
         
 
 	## Loading JS for common pages        
-        wp_enqueue_script( 'type-kit','http://code.jquery.com/jquery-1.11.0.min.js');   
+        //wp_enqueue_script( 'type-kit','http://code.jquery.com/jquery-1.11.0.min.js');   
         wp_enqueue_script( 'type-kit','http://a.postrelease.com/serve/load.js?async=true');         
         wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/assets/js/modernizr.js');  
         wp_enqueue_script( 'jquery.cookie.min', get_template_directory_uri() . '/assets/js/jquery.cookie.min.js');  
@@ -25,6 +27,10 @@ function load_front_end_scripts(){
         wp_enqueue_script( 'global', get_template_directory_uri() . '/assets/js/global.js');                  
         wp_enqueue_script( 'mod-ad-header', get_template_directory_uri() . '/assets/js/mod-ad-header.js');
         wp_enqueue_script( 'mod-header', get_template_directory_uri() . '/assets/js/mod-header.js');
+
+        wp_localize_script( 'plugins', 'jkc', array(
+			'ajax_url' => admin_url( 'admin-ajax.php' )
+		));
         
 }
 
@@ -41,4 +47,34 @@ function jkc_template_body_class($classes = '') {
 }
  /* To Enable Freatures Image box in the Post page */
 add_theme_support( 'post-thumbnails' );
-set_post_thumbnail_size( 1200, 9999 );
+set_post_thumbnail_size( 640, 407 );
+
+if (class_exists('MultiPostThumbnails')) {
+    new MultiPostThumbnails(
+        array(
+            'label' => 'Promo Image',
+            'id' => 'promo-image',
+            'post_type' => 'post'
+        )
+    );
+}
+/* Change number of posts for author listing page */
+function jkc_page_list_count($query) {
+	if (is_admin() || ! $query->is_main_query())
+		return;
+
+	if (is_author()) {
+		$query->set('posts_per_page', 10);
+		return;
+	}
+}
+add_action('pre_get_posts', 'jkc_page_list_count', 1);
+
+/* Re-write author URL to contributors */
+function jkc_change_author_slug() {
+	global $wp_rewrite; 
+	$wp_rewrite->author_base = 'contributors';
+}
+add_action('init', 'jkc_change_author_slug');
+
+include_once "admin".DIRECTORY_SEPARATOR."admin-functions.php";

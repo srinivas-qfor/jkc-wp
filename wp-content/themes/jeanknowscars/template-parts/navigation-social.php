@@ -12,8 +12,8 @@
         <!-- social-links-top -->                 
         <?php echo do_shortcode( '[social_links name="header"]' ) ?>
     </div>
-    <div class="search-cont">
+<!--    <div class="search-cont">
         <input class="search" type="text" placeholder="Type your search here..." tabindex="1">
         <div class="search-btn" tabindex="2"><i class="fa fa-search"></i></div>
-    </div>
+    </div>-->
 </div>

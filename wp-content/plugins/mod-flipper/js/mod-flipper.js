@@ -79,9 +79,9 @@
                         simflink = '{"url": "' + href + '"}',
                         page = slider.find('.slide').index($('.flex-active-slide'));
 
-                    this.vars.flipperTitle.text(smalltitle).attr('title', title).attr('href', href).fadeIn('slow');
-                    this.vars.flipperText.text(text).attr('data-simflink', simflink).fadeIn('slow');
-                    this.vars.flipperPagerText.text(page + ' of ' + this.vars.numSlides);
+                    this.vars.flipperTitle.html(smalltitle).attr('title', title).attr('href', href).fadeIn('slow');
+                    this.vars.flipperText.html(text).attr('data-simflink', simflink).fadeIn('slow');
+                    this.vars.flipperPagerText.html(page + ' of ' + this.vars.numSlides);
                     this.vars.flipperPager.fadeIn('slow');
                 }
             });

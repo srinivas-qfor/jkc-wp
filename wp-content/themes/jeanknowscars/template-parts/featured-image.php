@@ -9,7 +9,7 @@
  
  <?php 
  if ( has_post_thumbnail( $post->ID ) ) :
-    $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
+    $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'thumbnail' );
 	$featured_alt = get_post_meta(
 		get_post_thumbnail_id( $post->ID ),
 		'_wp_attachment_image_alt', true ) ? : get_the_title();
