@@ -1,7 +1,5 @@
 <?php
 
-add_theme_support('title-tag');
-
 include_once "shortcodes.php";
 include_once "functions/instagram.php";
 include_once "custom-posts/askquestion.php";
