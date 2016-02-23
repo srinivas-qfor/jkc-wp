@@ -31,13 +31,13 @@ function render_flipper($atts) {
                                     <a href="<?=the_permalink();?>" title="<?=the_title();?>">
                                         <?php 
                                         if ( has_post_thumbnail( ) ) :
-                                        $image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'single-post-thumbnail' );
+                                        $image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'thumbnail' );
                                         $featured_alt = get_post_meta(
                                             get_post_thumbnail_id( $post->ID ),
                                             '_wp_attachment_image_alt', true ) ? : get_the_title();
-                                        $image = $image[0];
-
-                                        else : ?>
+                                        $image = $image[0];?>
+                                             <img src="<?php echo $image; ?>" alt="<?php the_title()?>" draggable="false">
+                                        <?php else : ?>
                                             <img src="<?php bloginfo('template_directory'); ?>/assets/img/jkc-no-image-650x317.jpg" alt="'.the_title().'" draggable="false">';
                                         <?php endif; 
                                         ?>

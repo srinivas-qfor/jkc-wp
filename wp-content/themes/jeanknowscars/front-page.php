@@ -90,7 +90,7 @@ $pageNum = (int)get_query_var('paged', 1);
                                         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
                                             <?php
                                             if (has_post_thumbnail()) {
-                                                the_post_thumbnail('thumbnail');
+                                                the_post_thumbnail('promo-large');
                                             }
                                             else { ?>
                                                 <img src="<?php bloginfo('template_directory'); ?>/assets/img/jkc-no-image-288x140.jpg" alt="<?php the_title(); ?>" draggable="false">
@@ -109,8 +109,7 @@ $pageNum = (int)get_query_var('paged', 1);
                                     <div class="info-wrap">
                                         <h4 class="title-wrap">
                                             <a class="list-title" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                                <?php echo $i;
-                                                the_title(); ?>
+                                                <?php the_title(); ?>
                                             </a>
                                         </h4>
                                         <div class="desc">
@@ -176,7 +175,7 @@ $pageNum = (int)get_query_var('paged', 1);
                                         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
                                             <?php
                                             if (has_post_thumbnail()) {
-                                                the_post_thumbnail('thumbnail');
+                                                the_post_thumbnail('promo-large');
                                             }
                                             else { ?>
                                                 <img src="<?php bloginfo('template_directory'); ?>/assets/img/jkc-no-image-288x140.jpg" alt="<?php the_title(); ?>" draggable="false">
@@ -195,8 +194,7 @@ $pageNum = (int)get_query_var('paged', 1);
                                     <div class="info-wrap">
                                         <h4 class="title-wrap">
                                             <a class="list-title" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                                <?php echo $i;
-                                                the_title(); ?>
+                                                <?php the_title(); ?>
                                             </a>
                                         </h4>
                                         <div class="desc">
@@ -263,7 +261,7 @@ $pageNum = (int)get_query_var('paged', 1);
                                         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
                                             <?php
                                             if (has_post_thumbnail()) {
-                                                the_post_thumbnail('thumbnail');
+                                                the_post_thumbnail('promo-large');
                                             }
                                             else { ?>
                                                 <img src="<?php bloginfo('template_directory'); ?>/assets/img/jkc-no-image-288x140.jpg" alt="<?php the_title(); ?>" draggable="false">
@@ -282,8 +280,7 @@ $pageNum = (int)get_query_var('paged', 1);
                                     <div class="info-wrap">
                                         <h4 class="title-wrap">
                                             <a class="list-title" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-        <?php echo $i;
-        the_title(); ?>
+        <?php the_title(); ?>
                                             </a>
                                         </h4>
                                         <div class="desc">
@@ -363,7 +360,7 @@ $pageNum = (int)get_query_var('paged', 1);
                                         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
                                             <?php
                                             if (has_post_thumbnail()) {
-                                                the_post_thumbnail('thumbnail');
+                                                the_post_thumbnail('promo-large');
                                             }
                                             else { ?>
                                                 <img src="<?php bloginfo('template_directory'); ?>/assets/img/jkc-no-image-288x140.jpg" alt="<?php the_title(); ?>" draggable="false">
@@ -382,8 +379,7 @@ $pageNum = (int)get_query_var('paged', 1);
                                     <div class="info-wrap">
                                         <h4 class="title-wrap">
                                             <a class="list-title" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                                <?php echo $i;
-                                                the_title(); ?>
+                                                <?php the_title(); ?>
                                             </a>
                                         </h4>
                                         <div class="desc">
