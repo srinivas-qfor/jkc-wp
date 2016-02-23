@@ -1,5 +1,7 @@
 <?php
 
+include 'theme-options.php';
+
 /*
 * Enable featured meta box 
 */
@@ -80,3 +82,5 @@ function add_post_meta_tags($post) {
     echo "<label for='metaDescription'>".__('Description', '')."</label>";
     echo '<textarea name="metaDescription" id="metaDescription" style="width: 100%;">'.get_post_meta($post->ID, 'metaDescription', true).'</textarea>';
 }
+
+include 'admin-category.php';
