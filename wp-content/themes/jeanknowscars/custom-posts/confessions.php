@@ -12,6 +12,9 @@ function create_postConfessionType() {
         'public' => true,
         'has_archive' => true,
         'rewrite' => array('slug' => 'confessions'),
+        'taxonomies' => array('category'),
+        'supports' => array('title', 'editor', 'author', 'excerpt'),
+        'query_var' => true,
             )
     );
 }

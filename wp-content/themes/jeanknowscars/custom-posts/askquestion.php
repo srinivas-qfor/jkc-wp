@@ -13,6 +13,9 @@ function create_postQuestionType() {
         'public' => true,
         'has_archive' => true,
         'rewrite' => array('slug' => 'ask-jean-question'),
+        'taxonomies' => array('category'),
+        'supports' => array('title', 'editor', 'author', 'excerpt'),
+        'query_var' => true,
             )
     );
 }
