@@ -3,6 +3,7 @@
  * The template for displaying footer
  * @package Jean_Knows_Cars
  */
+//include_once "import_attachments.php";
 ?>
 
     <!--Footer-->
@@ -18,7 +19,7 @@
             </div>
             <div class="column column-two-mobile column-two clearfix">
                 <div class="site-banner">
-                    <a class="logo" href="http://www.jeanknowscars.com/" title="Jean Knows Cars">
+                    <a class="logo" href="<?php echo esc_url(home_url('/')); ?>" title="Jean Knows Cars">
                         <img height="124" width="172" itemprop="logo" alt="Jean Knows Cars" src="/wp-content/themes/jeanknowscars/assets/img//logo.png?v=1" class="logo-img">
                     </a>
                     <!-- social-links-footer -->                 

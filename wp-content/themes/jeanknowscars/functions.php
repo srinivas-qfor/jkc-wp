@@ -47,8 +47,17 @@ function jkc_template_body_class($classes = '') {
 }
  /* To Enable Freatures Image box in the Post page */
 add_theme_support( 'post-thumbnails' );
-set_post_thumbnail_size( 1200, 9999 );
+set_post_thumbnail_size( 640, 407 );
 
+if (class_exists('MultiPostThumbnails')) {
+    new MultiPostThumbnails(
+        array(
+            'label' => 'Promo Image',
+            'id' => 'promo-image',
+            'post_type' => 'post'
+        )
+    );
+}
 /* Change number of posts for author listing page */
 function jkc_page_list_count($query) {
 	if (is_admin() || ! $query->is_main_query())

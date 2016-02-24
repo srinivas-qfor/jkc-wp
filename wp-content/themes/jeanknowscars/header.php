@@ -9,9 +9,9 @@
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="msapplication-TileColor" content="#d8232a">              
-    <meta name="msapplication-TileImage" content="/assets/images/apple-touch-icon.png">
-    <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png" />
-    <link rel="shortcut icon" href="/assets/images/favicon.ico" />
+    <meta name="msapplication-TileImage" content="/wp-content/themes/jeanknowscars/assets/img/apple-touch-icon.png">
+    <link rel="apple-touch-icon" href="/wp-content/themes/jeanknowscars/assets/img/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/wp-content/themes/jeanknowscars/assets/img/favicon.ico" />
 
     <?php if ( is_singular() && pings_open( get_queried_object() ) ) : ?>
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
@@ -35,7 +35,7 @@
                 <div class="row">
                     <div itemscope="" itemtype="http://schema.org/Organization" class="logo-wrapper left">
                         <a class="logo" href="<?php echo esc_url(home_url('/')); ?>" title="<?php bloginfo('name'); ?>" itemprop="url">
-                            <img class="logo-img" src="http://cdn.jeanknowscars.com/img/logo.png?v=1" alt="<?php bloginfo('name'); ?>" height="112" width="155" itemprop="logo">
+                            <img class="logo-img" src="/wp-content/themes/jeanknowscars/assets/img/logo.png" alt="<?php bloginfo('name'); ?>" height="112" width="155" itemprop="logo">
                         </a>
                     </div>
 
