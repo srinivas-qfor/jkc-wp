@@ -77,8 +77,8 @@
     padding: 0 10px;
 }
 
-.mod-list-item .img-wrap img.attachment-promo-small, 
-.mod-list-item-home .img-wrap img.attachment-promo-small {
+.mod-list-item .img-wrap img.attachment-promo-large, 
+.mod-list-item-home .img-wrap img.attachment-promo-large {
    width: 288px ;
    height: 140px;
 }

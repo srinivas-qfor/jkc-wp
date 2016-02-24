@@ -143,7 +143,7 @@ if (is_category()) {
 
 
 								if ( has_post_thumbnail() ) {
-								the_post_thumbnail('promo-small');
+								the_post_thumbnail('promo-large');
 								} else { ?>
                                                                 <img src="<?php bloginfo('template_directory'); ?>/assets/img/jkc-no-image-288x140.jpg" alt="<?php the_title(); ?>" draggable="false">
                                                                  <?php }
