@@ -1,0 +1,16 @@
+.form-table th {
+    vertical-align: top;
+    text-align: left;
+    padding: 10px 10px 10px 0;
+    width: 200px;
+    line-height: 1;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.form-table td {
+    margin-bottom: 9px;
+    padding: 1px 10px;
+    line-height: 1;
+    vertical-align: middle;
+}

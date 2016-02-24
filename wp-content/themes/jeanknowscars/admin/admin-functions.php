@@ -9,6 +9,9 @@ function register_post_assets(){
     add_meta_box('featured-post', __('Featured Post'), 'add_featured_meta_box', 'post', 'side', 'default');
     add_meta_box('post-subtitle', __('Subtitle'), 'add_post_subtitle', 'post', 'normal', 'default');
     add_meta_box('meta-tags', __('Meta Tags'), 'add_post_meta_tags', 'post', 'normal', 'default');
+
+    // add meta boxes for pages as well
+    add_meta_box('meta-tags', __('Meta Tags'), 'add_post_meta_tags', 'page', 'normal', 'default');
 }
 add_action('admin_init', 'register_post_assets', 1);
 
@@ -54,7 +57,8 @@ function save_post_meta($post_id) {
     $meta_pairs = array(
         'subTitle'      => esc_attr($_POST['subTitle']),
         'metaTitle'     => esc_attr($_POST['metaTitle']),
-        'metaKeywords'  => esc_attr($_POST['metaKeywords'])
+        'metaKeywords'  => esc_attr($_POST['metaKeywords']),
+        'metaDescription'  => esc_attr($_POST['metaDescription'])
     );
 
     // update metas
