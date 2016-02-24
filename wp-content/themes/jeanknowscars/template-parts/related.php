@@ -35,7 +35,7 @@ if ( $the_query->have_posts() ) {
                         <a href="" title="<?php the_title(); ?>">
                              <?php
 								if ( has_post_thumbnail() ) {
-									the_post_thumbnail('thumbnail');
+									the_post_thumbnail('promo-large');
 								} ?>
                         </a>
                     </div>
