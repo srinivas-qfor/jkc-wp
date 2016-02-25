@@ -178,12 +178,12 @@ span[data-simflink] {
     padding: 9px;
     text-align: center;
     text-decoration: none;
-
+    border: none;
     font-size: 18px;
     line-height: 24px;
     font-weight: normal;
     letter-spacing: 0;
-
+    cursor: pointer;
     background-color: #010101;
     -moz-border-radius: 2px; /* from vector shape */
     -webkit-border-radius: 2px; /* from vector shape */
@@ -258,4 +258,9 @@ span[data-simflink] {
     display: inline-block;
     margin: 0 0 20px;
     width: 100%;
+}
+
+.mod-sort-by-category ul li.current-cat {
+    color: #4d4d4d;
+    font-weight: bold;
 }

@@ -161,11 +161,15 @@ if (is_category()) {
 								</a>
 								</div>
 								<div class="info-wrap">
-								<h4 class="title-wrap">
-								<a class="list-title" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-								<?php the_title(); ?>
-								</a>
-								</h4>
+								<?php 
+								$strFromatedtitleforReleatedArticle = get_the_title();
+								$formatedC = substr($strFromatedtitleforReleatedArticle, 0, 45 ).'...';?>
+
+									<h4 class="title-wrap">
+									<a class="list-title" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+									<?php echo $formatedC;?>
+									</a>
+									</h4>
 								<div class="desc">
 								<?php the_excerpt(); ?>
 								</div>
@@ -204,6 +208,10 @@ if (is_category()) {
 				) );
 			endif;
 			?>
+				<a class="button btn-main-cta btn-loading"
+                style = "display:none;" href="/" title="Load more">
+                <i class="fa fa-refresh fa-spin"></i>
+                </a>
 			</div>
 		</div>
 	</div>
