@@ -81,6 +81,19 @@
 			}, 500);
 		});
 
+		/* enable ajax loader..*/
+		$( document ).ajaxStart(function() {
+		$( ".btn-loading" ).css("display","");
+		});
+
+		$( document ).ajaxComplete(function() {
+		$( ".btn-loading" ).css("display","none");
+		});
+
+		 /* remove breadcrumd href..*/
+		 $(".crumb-wrap:last-child a").removeAttr("href");
+		 $(".crumb-wrap:last-child a").css("cursor","auto");
+
 		/*Show-Hide go to top with smartscroll*/
 		$(window).smartscroll(function(){
 			var scrollY = $(document).scrollTop();
