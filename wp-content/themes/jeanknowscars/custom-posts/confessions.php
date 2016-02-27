@@ -3,7 +3,7 @@
 // Our custom post type function for Car Confessions Section
 function create_postConfessionType() {
 
-    register_post_type('carconfessions',
+    register_post_type('confessions',
             array(
         'labels' => array(
             'name' => __('Confessions'),
@@ -13,8 +13,9 @@ function create_postConfessionType() {
         'has_archive' => true,
         'rewrite' => array('slug' => 'confessions'),
         'taxonomies' => array('category'),
-        'supports' => array('title', 'editor', 'author', 'excerpt'),
+        'supports' => array('title', 'editor', 'author', 'excerpt','thumbnail'),
         'query_var' => true,
+		'taxonomies' => array('category'),
             )
     );
 }
