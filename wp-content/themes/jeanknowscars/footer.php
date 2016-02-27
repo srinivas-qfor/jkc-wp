@@ -3,7 +3,13 @@
  * The template for displaying footer
  * @package Jean_Knows_Cars
  */
-//include_once "import_attachments.php";
+//import_scripts();
+
+function import_scripts(){
+   # include_once 'import-scripts/import_attachments.php';
+   # include_once 'import-scripts/import_article.php';
+   # include_once 'import-scripts/import_contributers.php';
+}
 ?>
 
     <!--Footer-->
