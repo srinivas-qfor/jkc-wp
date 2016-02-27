@@ -1,7 +1,1310 @@
-
-# BEGIN WordPress
 <IfModule mod_rewrite.c>
 RewriteEngine On
+
+RewriteCond %{REQUEST_URI} ^/(family|first-car|sporty|advanture|green|indulgence|sedan|trucks|convertible|crossover|hatchback|luxury)/(acura|aston-martin|audi|bmw|bentley|bugatti|buick|cadillac|chevrolet|chrysler|dodge|ferrari|fiat|fisker|ford|gmc|honda|hyundai|infiniti|jaguar|jeep|kia|lamborghini|land-rover|lexus|lincoln|lotus|mini|maserati|mazda|mclaren|mercedes-benz|mitsubishi|nissan|porsche|ram|rolls-royce|srt|scion|smart|subaru|suzuki|tesla|toyota|volkswagen|volvo)/(.*)$
+RewriteRule (.*) /%1/  [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/(family|first-car|sporty|advanture|green|indulgence|sedan|trucks|convertible|crossover|hatchback|luxury)/page([0-9]+)/$
+RewriteRule (.*) /%1/page-%2/  [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/(acura|aston-martin|audi|bmw|bentley|bugatti|buick|cadillac|chevrolet|chrysler|dodge|ferrari|fiat|fisker|ford|gmc|honda|hyundai|infiniti|jaguar|jeep|kia|lamborghini|land-rover|lexus|lincoln|lotus|mini|maserati|mazda|mclaren|mercedes-benz|mitsubishi|nissan|porsche|ram|rolls-royce|srt|scion|smart|subaru|suzuki|tesla|toyota|volkswagen|volvo)/page([0-9]+)/$
+RewriteRule (.*) /%1/page-%2/  [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/([0-9]+)/(acura|aston-martin|audi|bmw|bentley|bugatti|buick|cadillac|chevrolet|chrysler|dodge|ferrari|fiat|fisker|ford|gmc|honda|hyundai|infiniti|jaguar|jeep|kia|lamborghini|land-rover|lexus|lincoln|lotus|mini|maserati|mazda|mclaren|mercedes-benz|mitsubishi|nissan|porsche|ram|rolls-royce|srt|scion|smart|subaru|suzuki|tesla|toyota|volkswagen|volvo)/([a-zA-Z0-9-]+)/(.*)$
+RewriteRule (.*) /%2/%3/  [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/(jeans-driveway|you-auto-know|kids-in-the-car|cool-tech|car-life|life-with-jean)/page([0-9]+)/$
+RewriteRule (.*) /%1/page-%2/  [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/(jeans-driveway|you-auto-know|kids-in-the-car|cool-tech|car-life|life-with-jean)/(at-home|designer-walkaround|car-on-the-road|car-buying|car-driving-tips|fast-women|car-maintenance|babies|big-kids|teenagers|whole-famn-damily|aftermarket-car-parts|car-alt-fuel|car-apps|new-car-features|car-safety|car-tech-news|events|on-the-road|soapbox|style|the-mix|things-to-buy|about|the-road-trips|the-dogs|the-hats|the-lunacy)/page([0-9]+)/$
+RewriteRule (.*) /%1/%2/page-%3/  [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/(.*)/viewall/$
+RewriteRule (.*) /%1/ [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/world-of-ford/worldofford/(.*)$
+RewriteRule (.*) /world-of-ford/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/contributors/jean-jennings,-editor-in-chief/(.*)$
+RewriteRule (.*) /contributors/jean-jennings/ [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/contributors/jean-jennings,,/(.*)$
+RewriteRule (.*) /contributors/jean-jennings/ [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/contributors/(.*),(.*)$
+RewriteRule (.*) /contributors/%1%2 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/contributors/([a-zA-Z0-9-]+)/page([0-9]+)/$
+RewriteRule (.*) /contributors/%1/page-%2/  [R=301,L]
+
+#   old JKC redirection
+RewriteCond %{REQUEST_URI} ^/videos/$
+RewriteRule (.*) / [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/car-reviews/$
+RewriteRule (.*) /jeans-driveway/ [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/qa/$
+RewriteRule (.*) /you-auto-know/ [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/$
+RewriteRule (.*) / [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/$
+RewriteRule (.*) /car-life/style/ [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/$
+RewriteRule (.*) /cool-tech/car-safety/ [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-maintenance/$
+RewriteRule (.*) /you-auto-know/car-maintenance/ [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/driving-with-multiple-kids/(.*)$
+RewriteRule (.*) /kids-in-the-car/whole-famn-damily/driving-with-multiple-kids/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-maintenance/an-adventure-in-oil-changing/(.*)$
+RewriteRule (.*) /you-auto-know/car-maintenance/an-adventure-in-oil-changing/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/daytona-24-hours-in-photos/(.*)$
+RewriteRule (.*) /car-life/events/daytona-24-hours-in-photos/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/2015-aston-martin-v12-vantage-s/(.*)$
+RewriteRule (.*) /car-guide/real-world-review/2015-aston-martin-v12-vantage-s/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/me-and-my-fast-friends-auto-journalists/(.*)$
+RewriteRule (.*) /life-with-jean/the-lunacy/me-and-my-fast-friends-auto-journalists/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/qa/you-auto-know-monroney-sticker/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/you-auto-know-monroney-sticker/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/2013-mille-miglia-thursday/(.*)$
+RewriteRule (.*) /life-with-jean/the-road-trips/2013-mille-miglia-thursday/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/disney-track/(.*)$
+RewriteRule (.*) /kids-in-the-car/teenagers/disney-track/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/audi-drive-itself/(.*)$
+RewriteRule (.*) /cool-tech/car-tech-news/audi-drive-itself/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/volvo-brake-cyclist-detection/(.*)$
+RewriteRule (.*) /cool-tech/car-tech-news/volvo-brake-cyclist-detection/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/notorious-women-clara-bow/(.*)$
+RewriteRule (.*) /you-auto-know/fast-women/notorious-women-clara-bow/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/do-you-want-a-black-box/(.*)$
+RewriteRule (.*) /cool-tech/car-tech-news/do-you-want-a-black-box/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/qa/test-drive-tips/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/test-drive-tips/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/qa/prevent-car-theft-three-ways/(.*)$
+RewriteRule (.*) /you-auto-know/car-driving-tips/prevent-car-theft-three-ways/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/ford-open-source/(.*)$
+RewriteRule (.*) /cool-tech/aftermarket-car-parts/ford-open-source/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/holiday-shopping/(.*)$
+RewriteRule (.*) /car-life/things-to-buy/holiday-shopping/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/ford-driving-skills-for-life-turns-10/(.*)$
+RewriteRule (.*) /car-life/events/ford-driving-skills-for-life-turns-10/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/qa/you-auto-know-nhtsa-safercar-website/(.*)$
+RewriteRule (.*) /you-auto-know/car-maintenance/you-auto-know-nhtsa-safercar-website/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/car-reviews/jeans-driveway-hondas-at-sema/(.*)$
+RewriteRule (.*) /car-life/events/jeans-driveway-hondas-at-sema/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/mercedes-benz-fashion-week/(.*)$
+RewriteRule (.*) /life-with-jean/the-lunacy/mercedes-benz-fashion-week/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/citroen-crossover-inspires-a-contest/(.*)$
+RewriteRule (.*) /car-life/events/citroen-crossover-inspires-a-contest/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/designing-women-from-day-one/(.*)$
+RewriteRule (.*) /car-life/style/designing-women-from-day-one/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/qa/you-auto-know-about-spare-tires/(.*)$
+RewriteRule (.*) /you-auto-know/car-maintenance/you-auto-know-about-spare-tires/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/car-reviews/jeans-driveway-2012-ford-fiesta-se/(.*)$
+RewriteRule (.*) /jeans-driveway/at-home/jeans-driveway-2012-ford-fiesta-se/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/car-reviews/jeans-driveway-2013-lexus-gs450h/(.*)$
+RewriteRule (.*) /jeans-driveway/at-home/jeans-driveway-2013-lexus-gs450h/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/surprise-middle-aged-car-buyers-rule/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/surprise-middle-aged-car-buyers-rule/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/detroit-g7-summit/(.*)$
+RewriteRule (.*) /you-auto-know/fast-women/detroit-g7-summit/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/car-reviews/one-lap-of-daytona-24-hours/(.*)$
+RewriteRule (.*) /life-with-jean/the-road-trips/one-lap-of-daytona-24-hours/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/car-reviews/2013-nissan-juke/(.*)$
+RewriteRule (.*) /jeans-driveway/at-home/2013-nissan-juke/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/car-reviews/the-mille-miglia-by-jeancam/(.*)$
+RewriteRule (.*) /life-with-jean/the-road-trips/the-mille-miglia-by-jeancam/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/what-car-seat-when/(.*)$
+RewriteRule (.*) /kids-in-the-car/babies/what-car-seat-when/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/my-art-fair-hat-buying-trip/(.*)$
+RewriteRule (.*) /life-with-jean/the-hats/my-art-fair-hat-buying-trip/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/first-drivers-license/(.*)$
+RewriteRule (.*) /kids-in-the-car/teenagers/first-drivers-license/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/subaru-s-latest-gear-for-a-cause/(.*)$
+RewriteRule (.*) /car-life/style/subaru-s-latest-gear-for-a-cause/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-maintenance/money-to-buy-a-car-step-one/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/money-to-buy-a-car-step-one/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/cadillac-xts-screens/(.*)$
+RewriteRule (.*) /cool-tech/new-car-features/cadillac-xts-screens/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/find-gas-apps/(.*)$
+RewriteRule (.*) /cool-tech/car-apps/find-gas-apps/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/car-reviews/2013-buick-encore-awd/(.*)$
+RewriteRule (.*) /jeans-driveway/at-home/2013-buick-encore-awd/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-maintenance/sema-women-built-mustang/(.*)$
+RewriteRule (.*) /car-life/events/sema-women-built-mustang/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/wifi-hotspot/(.*)$
+RewriteRule (.*) /cool-tech/car-tech-news/wifi-hotspot/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/valentines-day-playlist/(.*)$
+RewriteRule (.*) /car-life/the-mix/valentines-day-playlist/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/pirelli-classic-marathon-rally/(.*)$
+RewriteRule (.*) /life-with-jean/the-road-trips/pirelli-classic-marathon-rally/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/the-baby-friendly-car/(.*)$
+RewriteRule (.*) /kids-in-the-car/babies/the-baby-friendly-car/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/speed-limit-ride-along/(.*)$
+RewriteRule (.*) /car-life/soapbox/speed-limit-ride-along/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/tires-that-show-wear/(.*)$
+RewriteRule (.*) /cool-tech/aftermarket-car-parts/tires-that-show-wear/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/kinetechs-pulsing-brake-light/(.*)$
+RewriteRule (.*) /cool-tech/aftermarket-car-parts/kinetechs-pulsing-brake-light/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/name-brand-stereos/(.*)$
+RewriteRule (.*) /cool-tech/car-tech-news/name-brand-stereos/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/notorious-women-elizabeth-junek/(.*)$
+RewriteRule (.*) /you-auto-know/fast-women/notorious-women-elizabeth-junek/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/varvatos-chrysler-300c/(.*)$
+RewriteRule (.*) /car-life/style/varvatos-chrysler-300c/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/qa/you-auto-know-changing-a-flat-tire/(.*)$
+RewriteRule (.*) /you-auto-know/car-maintenance/you-auto-know-changing-a-flat-tire/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/motorcycle-safety--a-rite-of-spring/(.*)$
+RewriteRule (.*) /car-life/soapbox/motorcycle-safety--a-rite-of-spring/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/qa/saving-money-at-the-pump/(.*)$
+RewriteRule (.*) /you-auto-know/car-driving-tips/saving-money-at-the-pump/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/car-reviews/jeans-driveway-2013-kia-sorento-sx-awd/(.*)$
+RewriteRule (.*) /jeans-driveway/at-home/jeans-driveway-2013-kia-sorento-sx-awd/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/future-ford-mobile-app-will-make-tracking-drivers-easier/(.*)$
+RewriteRule (.*) /cool-tech/car-apps/future-ford-mobile-app-will-make-tracking-drivers-easier/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/qa/winter-emergencies/(.*)$
+RewriteRule (.*) /you-auto-know/car-driving-tips/winter-emergencies/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/hey-kid-your-taxi-is-here/(.*)$
+RewriteRule (.*) /car-life/soapbox/hey-kid-your-taxi-is-here/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/teach-preschooler-to-drive/(.*)$
+RewriteRule (.*) /kids-in-the-car/big-kids/teach-preschooler-to-drive/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/fiat-lust-part-two-shopping-list/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/fiat-lust-part-two-shopping-list/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/text-stoppers/(.*)$
+RewriteRule (.*) /cool-tech/car-tech-news/text-stoppers/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/lamborghinis-spring-collection/(.*)$
+RewriteRule (.*) /car-life/style/lamborghinis-spring-collection/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/bosch-car-clinic/(.*)$
+RewriteRule (.*) /cool-tech/car-tech-news/bosch-car-clinic/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/honda-dvd-player/(.*)$
+RewriteRule (.*) /cool-tech/new-car-features/honda-dvd-player/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/lincolns-pothole-fighting-suspension/(.*)$
+RewriteRule (.*) /cool-tech/new-car-features/lincolns-pothole-fighting-suspension/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/11-plant-tours-youll-actually-enjoy/(.*)$
+RewriteRule (.*) /car-life/on-the-road/11-plant-tours-youll-actually-enjoy/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/car-reviews/jeans-driveway-mazda-cx-5/(.*)$
+RewriteRule (.*) /jeans-driveway/at-home/jeans-driveway-mazda-cx-5/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/ford-owners-have-a-video-snack/(.*)$
+RewriteRule (.*) /cool-tech/car-tech-news/ford-owners-have-a-video-snack/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/ford-fusion-allergy-fighter/(.*)$
+RewriteRule (.*) /cool-tech/car-tech-news/ford-fusion-allergy-fighter/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/car-reviews/jeans-driveway-2012-honda-crv-exl/(.*)$
+RewriteRule (.*) /jeans-driveway/at-home/jeans-driveway-2012-honda-crv-exl/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/car-reviews/jeans-driveway-2014-mazda-6/(.*)$
+RewriteRule (.*) /jeans-driveway/designer-walkaround/jeans-driveway-2014-mazda-6/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/qa/you-auto-know-about-fuel-economy/(.*)$
+RewriteRule (.*) /you-auto-know/car-driving-tips/you-auto-know-about-fuel-economy/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/notorious-women-movie-queens/(.*)$
+RewriteRule (.*) /you-auto-know/fast-women/notorious-women-movie-queens/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/qa/you-auto-know-fuel-economy-website/(.*)$
+RewriteRule (.*) /you-auto-know/car-maintenance/you-auto-know-fuel-economy-website/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/2013-toyota-avalon-charger/(.*)$
+RewriteRule (.*) /cool-tech/new-car-features/2013-toyota-avalon-charger/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/car-reviews/2014-range-rover-sport/(.*)$
+RewriteRule (.*) /jeans-driveway/designer-walkaround/2014-range-rover-sport/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/trunk-safety-reminder/(.*)$
+RewriteRule (.*) /kids-in-the-car/big-kids/trunk-safety-reminder/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/how-i-learned-to-drive-a-stick-shift/(.*)$
+RewriteRule (.*) /car-life/soapbox/how-i-learned-to-drive-a-stick-shift/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/aha-app/(.*)$
+RewriteRule (.*) /cool-tech/car-apps/aha-app/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/three-cool-things-from-sema/(.*)$
+RewriteRule (.*) /car-life/style/three-cool-things-from-sema/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/notorious-women-alice-ramsey/(.*)$
+RewriteRule (.*) /you-auto-know/fast-women/notorious-women-alice-ramsey/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/gm-front-center-airbags/(.*)$
+RewriteRule (.*) /cool-tech/car-tech-news/gm-front-center-airbags/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/sema-scratch-fixes-made-easy/(.*)$
+RewriteRule (.*) /cool-tech/aftermarket-car-parts/sema-scratch-fixes-made-easy/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/qa/you-auto-know-warning-lights/(.*)$
+RewriteRule (.*) /you-auto-know/car-maintenance/you-auto-know-warning-lights/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/tesla-model-s-100-heading-to-vegas/(.*)$
+RewriteRule (.*) /car-life/soapbox/tesla-model-s-100-heading-to-vegas/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/the-car-seat-years/(.*)$
+RewriteRule (.*) /kids-in-the-car/babies/the-car-seat-years/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/kid-friendly-vacation-trip-planning/(.*)$
+RewriteRule (.*) /kids-in-the-car/whole-famn-damily/kid-friendly-vacation-trip-planning/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/romance-through-cars/(.*)$
+RewriteRule (.*) /car-life/soapbox/romance-through-cars/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/piano-goes-forte-with-ferrari-inspired-design/(.*)$
+RewriteRule (.*) /car-life/style/piano-goes-forte-with-ferrari-inspired-design/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/notorious-women-helle-nice/(.*)$
+RewriteRule (.*) /you-auto-know/fast-women/notorious-women-helle-nice/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/660-000-distracted-drivers/(.*)$
+RewriteRule (.*) /car-life/soapbox/660-000-distracted-drivers/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/intersection-of-cars-and-high-fashion/(.*)$
+RewriteRule (.*) /car-life/style/intersection-of-cars-and-high-fashion/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/interactive-cars/(.*)$
+RewriteRule (.*) /cool-tech/car-tech-news/interactive-cars/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/car-reviews/2013-mercedes-benz-g63-amg/(.*)$
+RewriteRule (.*) /jeans-driveway/at-home/2013-mercedes-benz-g63-amg/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/peace-of-mind-tech-for-parents/(.*)$
+RewriteRule (.*) /kids-in-the-car/teenagers/peace-of-mind-tech-for-parents/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/notorious-women-anita-king/(.*)$
+RewriteRule (.*) /you-auto-know/fast-women/notorious-women-anita-king/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/connected-vehicle-update/(.*)$
+RewriteRule (.*) /cool-tech/car-tech-news/connected-vehicle-update/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-maintenance/five-reasons-to-want-diesel/(.*)$
+RewriteRule (.*) /cool-tech/car-alt-fuel/five-reasons-to-want-diesel/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/gm-signs-climate-change-declaration/(.*)$
+RewriteRule (.*) /cool-tech/car-tech-news/gm-signs-climate-change-declaration/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/qa/you-auto-know-tire-tips/(.*)$
+RewriteRule (.*) /you-auto-know/car-maintenance/you-auto-know-tire-tips/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-maintenance/how-your-car-works-book/(.*)$
+RewriteRule (.*) /car-life/things-to-buy/how-your-car-works-book/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/range-rover-driving-app/(.*)$
+RewriteRule (.*) /cool-tech/car-apps/range-rover-driving-app/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/more-toys-for-car-lovers/(.*)$
+RewriteRule (.*) /kids-in-the-car/big-kids/more-toys-for-car-lovers/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/car-reviews/jeans-driveway-2012-jeep-grand-cherokee-altitude-4x4/(.*)$
+RewriteRule (.*) /jeans-driveway/at-home/jeans-driveway-2012-jeep-grand-cherokee-altitude-4x4/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/honda-siri-eyes-free/(.*)$
+RewriteRule (.*) /cool-tech/car-tech-news/honda-siri-eyes-free/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/car-reviews/jeans-driveway-2013-cadillac-ats/(.*)$
+RewriteRule (.*) /jeans-driveway/at-home/jeans-driveway-2013-cadillac-ats/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/evs-coming-soon/(.*)$
+RewriteRule (.*) /cool-tech/car-alt-fuel/evs-coming-soon/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-maintenance/why-be-like-me-and-work-on-your-first-car/(.*)$
+RewriteRule (.*) /you-auto-know/car-maintenance/why-be-like-me-and-work-on-your-first-car/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/vw-smileage-slug-bug-goes-digital/(.*)$
+RewriteRule (.*) /cool-tech/car-apps/vw-smileage-slug-bug-goes-digital/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/the-futuristic-hats-of-jasmin-zorlu/(.*)$
+RewriteRule (.*) /life-with-jean/the-hats/the-futuristic-hats-of-jasmin-zorlu/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/toys-for-car-lovers/(.*)$
+RewriteRule (.*) /kids-in-the-car/whole-famn-damily/toys-for-car-lovers/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/los-angeles-auto-show/(.*)$
+RewriteRule (.*) /car-life/events/los-angeles-auto-show/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/safe-kids-car-seat-installation-event/(.*)$
+RewriteRule (.*) /kids-in-the-car/babies/safe-kids-car-seat-installation-event/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/18-reasons-for-a-road-trip/(.*)$
+RewriteRule (.*) /kids-in-the-car/teenagers/18-reasons-for-a-road-trip/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/g7-val-luepke/(.*)$
+RewriteRule (.*) /you-auto-know/fast-women/g7-val-luepke/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/corry-weller-off-road-truck-racer/(.*)$
+RewriteRule (.*) /you-auto-know/fast-women/corry-weller-off-road-truck-racer/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/bike-helmet-you-can-t-see/(.*)$
+RewriteRule (.*) /cool-tech/car-tech-news/bike-helmet-you-can-t-see/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/volvo-traffic-jam-assistance/(.*)$
+RewriteRule (.*) /cool-tech/car-tech-news/volvo-traffic-jam-assistance/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/land-rover-lr2-secret-snow-weapon/(.*)$
+RewriteRule (.*) /you-auto-know/car-driving-tips/land-rover-lr2-secret-snow-weapon/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/car-reviews/jeans-driveway-2013-buick-verano/(.*)$
+RewriteRule (.*) /jeans-driveway/at-home/jeans-driveway-2013-buick-verano/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-maintenance/money-to-buy-a-car-step-four/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/money-to-buy-a-car-step-four/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/automatic-stop-start-technology/(.*)$
+RewriteRule (.*) /cool-tech/car-tech-news/automatic-stop-start-technology/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/paris-auto-show-peugeot-pleyel-piano/(.*)$
+RewriteRule (.*) /car-life/style/paris-auto-show-peugeot-pleyel-piano/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/michigan-teens-hang-up-and-drive/(.*)$
+RewriteRule (.*) /car-life/soapbox/michigan-teens-hang-up-and-drive/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/is-your-dog-one-of-the-98-percent/(.*)$
+RewriteRule (.*) /life-with-jean/the-dogs/is-your-dog-one-of-the-98-percent/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/the-hot-police-cars-of-dubai/(.*)$
+RewriteRule (.*) /car-life/soapbox/the-hot-police-cars-of-dubai/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/mercedes-benz-morphs-car-into-fitness-studio/(.*)$
+RewriteRule (.*) /cool-tech/car-tech-news/mercedes-benz-morphs-car-into-fitness-studio/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/fast-women-helen-emsley/(.*)$
+RewriteRule (.*) /you-auto-know/fast-women/fast-women-helen-emsley/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/five-reasons-to-drive-stick-shift/(.*)$
+RewriteRule (.*) /you-auto-know/car-driving-tips/five-reasons-to-drive-stick-shift/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/nicko-mcbrain-and-me/(.*)$
+RewriteRule (.*) /life-with-jean/the-lunacy/nicko-mcbrain-and-me/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/car-reviews/2013-acura-ilx-tech/(.*)$
+RewriteRule (.*) /jeans-driveway/at-home/2013-acura-ilx-tech/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/i-tested-delphis-car-tracker/(.*)$
+RewriteRule (.*) /cool-tech/car-apps/i-tested-delphis-car-tracker/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/mercedes-benz-makes-buckling-up-easier/(.*)$
+RewriteRule (.*) /cool-tech/car-tech-news/mercedes-benz-makes-buckling-up-easier/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/car-reviews/2013-cadillac-xts/(.*)$
+RewriteRule (.*) /jeans-driveway/at-home/2013-cadillac-xts/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/teardrop-campers-small-is-beautiful/(.*)$
+RewriteRule (.*) /car-life/things-to-buy/teardrop-campers-small-is-beautiful/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/2013-chevrolet-malibu-passive-entry/(.*)$
+RewriteRule (.*) /cool-tech/new-car-features/2013-chevrolet-malibu-passive-entry/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/fords-good-food-finder-app/(.*)$
+RewriteRule (.*) /cool-tech/car-apps/fords-good-food-finder-app/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/car-reviews/2013-porsche-911-carrera-s/(.*)$
+RewriteRule (.*) /car-guide/real-world-review/2013-porsche-911-carrera-s/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/dont-stress-safety-of-plug-in-hybrids/(.*)$
+RewriteRule (.*) /cool-tech/car-alt-fuel/dont-stress-safety-of-plug-in-hybrids/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/driving-moccasins/(.*)$
+RewriteRule (.*) /car-life/style/driving-moccasins/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/qa/the-no-1-ladies-driving-academy-reverse/(.*)$
+RewriteRule (.*) /you-auto-know/car-driving-tips/the-no-1-ladies-driving-academy-reverse/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/dogs-on-wheels-book/(.*)$
+RewriteRule (.*) /car-life/things-to-buy/dogs-on-wheels-book/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/jean-in-paris/(.*)$
+RewriteRule (.*) /life-with-jean/about/jean-in-paris/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/commuter-tech-the-latest/(.*)$
+RewriteRule (.*) /cool-tech/car-tech-news/commuter-tech-the-latest/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/car-reviews/2014-mazda-cx-5/(.*)$
+RewriteRule (.*) /jeans-driveway/car-on-the-road/2014-mazda-cx-5/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/car-reviews/2013-mercedes-benz-sl63-amg-roadster/(.*)$
+RewriteRule (.*) /car-guide/real-world-review/2013-mercedes-benz-sl63-amg-roadster/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/car-reviews/f-type-walkaround-with-ian-callum/(.*)$
+RewriteRule (.*) /jeans-driveway/designer-walkaround/f-type-walkaround-with-ian-callum/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/detroit-auto-show-preview/(.*)$
+RewriteRule (.*) /car-life/events/detroit-auto-show-preview/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/g7-dolly-tittle/(.*)$
+RewriteRule (.*) /you-auto-know/fast-women/g7-dolly-tittle/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/voodoo-dolls/(.*)$
+RewriteRule (.*) /you-auto-know/fast-women/voodoo-dolls/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/what-is-mpge/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/what-is-mpge/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/qa/efficient-errands/(.*)$
+RewriteRule (.*) /you-auto-know/car-driving-tips/efficient-errands/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/road-atlas-joins-21st-century/(.*)$
+RewriteRule (.*) /car-life/on-the-road/road-atlas-joins-21st-century/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/under-five-feet-in-the-drivers-seat/(.*)$
+RewriteRule (.*) /car-life/soapbox/under-five-feet-in-the-drivers-seat/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/are-electric-cars-getting-affordable-/(.*)$
+RewriteRule (.*) /cool-tech/car-alt-fuel/are-electric-cars-getting-affordable-/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/driving-school-for-dogs/(.*)$
+RewriteRule (.*) /life-with-jean/the-dogs/driving-school-for-dogs/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/car-reviews/range-rover-evoque-road-trip/(.*)$
+RewriteRule (.*) /life-with-jean/the-road-trips/range-rover-evoque-road-trip/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/notorious-women-jean-harlow/(.*)$
+RewriteRule (.*) /you-auto-know/fast-women/notorious-women-jean-harlow/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-maintenance/get-a-gorgeous-car-body/(.*)$
+RewriteRule (.*) /you-auto-know/car-maintenance/get-a-gorgeous-car-body/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/fast-women-danica-patrick/(.*)$
+RewriteRule (.*) /you-auto-know/fast-women/fast-women-danica-patrick/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/5-ways-to-drive-better-in-snow/(.*)$
+RewriteRule (.*) /you-auto-know/car-driving-tips/5-ways-to-drive-better-in-snow/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/barbara-feinman-hats/(.*)$
+RewriteRule (.*) /life-with-jean/the-hats/barbara-feinman-hats/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/car-reviews/jeans-driveway-2012-fiat-500-sport/(.*)$
+RewriteRule (.*) /jeans-driveway/at-home/jeans-driveway-2012-fiat-500-sport/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/g7-jacqueline-dufek/(.*)$
+RewriteRule (.*) /you-auto-know/fast-women/g7-jacqueline-dufek/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/amelia-island-concours-d-elegance/(.*)$
+RewriteRule (.*) /life-with-jean/the-road-trips/amelia-island-concours-d-elegance/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/mercedes-benz-airscarf/(.*)$
+RewriteRule (.*) /cool-tech/new-car-features/mercedes-benz-airscarf/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/bmw-electronauts/(.*)$
+RewriteRule (.*) /cool-tech/car-alt-fuel/bmw-electronauts/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/qa/better-mileage-aerodynamics/(.*)$
+RewriteRule (.*) /jeans-driveway/car-on-the-road/better-mileage-aerodynamics/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/women-racing-mustangs/(.*)$
+RewriteRule (.*) /car-life/events/women-racing-mustangs/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/first-drivers-license-white/(.*)$
+RewriteRule (.*) /kids-in-the-car/teenagers/first-drivers-license-white/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/car-reviews/2013-lexus-es300h/(.*)$
+RewriteRule (.*) /jeans-driveway/car-on-the-road/2013-lexus-es300h/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-maintenance/dealer-vs-mechanic/(.*)$
+RewriteRule (.*) /you-auto-know/car-maintenance/dealer-vs-mechanic/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/2014-toyota-corolla-new---improved/(.*)$
+RewriteRule (.*) /car-guide/real-world-review/2014-toyota-corolla-new---improved/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/volvo-on-call/(.*)$
+RewriteRule (.*) /car-life/the-mix/volvo-on-call/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/gm-cars-to-be-rolling-hotspots/(.*)$
+RewriteRule (.*) /cool-tech/car-tech-news/gm-cars-to-be-rolling-hotspots/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/notorious-women-violette-morris/(.*)$
+RewriteRule (.*) /you-auto-know/fast-women/notorious-women-violette-morris/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/mean-jeans-humiliation/(.*)$
+RewriteRule (.*) /life-with-jean/the-lunacy/mean-jeans-humiliation/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/isaac-mizrahi-malibu/(.*)$
+RewriteRule (.*) /car-life/style/isaac-mizrahi-malibu/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/onstar-ev-apps/(.*)$
+RewriteRule (.*) /cool-tech/car-apps/onstar-ev-apps/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/jean-at-sema/(.*)$
+RewriteRule (.*) /life-with-jean/the-road-trips/jean-at-sema/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/qa/you-auto-know-jen-and-annie-change-the-oil/(.*)$
+RewriteRule (.*) /you-auto-know/car-maintenance/you-auto-know-jen-and-annie-change-the-oil/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/notorious-women-bertha-benz/(.*)$
+RewriteRule (.*) /you-auto-know/fast-women/notorious-women-bertha-benz/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/3-rearview-cameras-you-can-add-on/(.*)$
+RewriteRule (.*) /cool-tech/aftermarket-car-parts/3-rearview-cameras-you-can-add-on/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/fiat-lust/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/fiat-lust/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/notorious-women-bebe-daniels/(.*)$
+RewriteRule (.*) /you-auto-know/fast-women/notorious-women-bebe-daniels/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/teach-tween-to-drive/(.*)$
+RewriteRule (.*) /kids-in-the-car/whole-famn-damily/teach-tween-to-drive/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/owners-manual-for-teen-with-learners-permit/(.*)$
+RewriteRule (.*) /kids-in-the-car/teenagers/owners-manual-for-teen-with-learners-permit/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-maintenance/ev-shopping-things-to-know/(.*)$
+RewriteRule (.*) /cool-tech/car-alt-fuel/ev-shopping-things-to-know/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/contributors/more-about-jean/(.*)$
+RewriteRule (.*) /life-with-jean/about/more-about-jean/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/car-shopping-with-instrument/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/car-shopping-with-instrument/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/honda-odyssey-car-vac/(.*)$
+RewriteRule (.*) /cool-tech/new-car-features/honda-odyssey-car-vac/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/online-driver-education/(.*)$
+RewriteRule (.*) /you-auto-know/car-driving-tips/online-driver-education/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/play-our-summer-playlists/(.*)$
+RewriteRule (.*) /car-life/the-mix/play-our-summer-playlists/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/infotainment-on-the-cheap/(.*)$
+RewriteRule (.*) /cool-tech/aftermarket-car-parts/infotainment-on-the-cheap/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/car-reviews/2012-audi-a7/(.*)$
+RewriteRule (.*) /jeans-driveway/at-home/2012-audi-a7/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/active-grille-shutters/(.*)$
+RewriteRule (.*) /cool-tech/car-tech-news/active-grille-shutters/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/fiat-500-mopar/(.*)$
+RewriteRule (.*) /cool-tech/aftermarket-car-parts/fiat-500-mopar/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/older-driver-week-technology/(.*)$
+RewriteRule (.*) /car-life/soapbox/older-driver-week-technology/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/avoid-car-deer-collisions/(.*)$
+RewriteRule (.*) /you-auto-know/car-driving-tips/avoid-car-deer-collisions/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/auto-racing-101/(.*)$
+RewriteRule (.*) /car-life/soapbox/auto-racing-101/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/volvo-always-on-high-beams/(.*)$
+RewriteRule (.*) /cool-tech/new-car-features/volvo-always-on-high-beams/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/monterey-or-bust-by-300sl-gullwing/(.*)$
+RewriteRule (.*) /life-with-jean/the-road-trips/monterey-or-bust-by-300sl-gullwing/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/qa/you-auto-know-jumping-dead-battery/(.*)$
+RewriteRule (.*) /you-auto-know/car-maintenance/you-auto-know-jumping-dead-battery/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/us-drivers-most-hooked-on-phones/(.*)$
+RewriteRule (.*) /car-life/soapbox/us-drivers-most-hooked-on-phones/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/qa/technology-to-avoid-collisions/(.*)$
+RewriteRule (.*) /you-auto-know/car-driving-tips/technology-to-avoid-collisions/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/how-to-use-bluetooth/(.*)$
+RewriteRule (.*) /cool-tech/car-tech-news/how-to-use-bluetooth/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/g7-anna-eby/(.*)$
+RewriteRule (.*) /you-auto-know/fast-women/g7-anna-eby/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/one-lap-of-daytona-24-hours-race-x/(.*)$
+RewriteRule (.*) /car-life/events/one-lap-of-daytona-24-hours-race-x/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/qa/keeping-your-dog-safe-in-the-car/(.*)$
+RewriteRule (.*) /life-with-jean/the-dogs/keeping-your-dog-safe-in-the-car/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-maintenance/tires-for-all-seasons/(.*)$
+RewriteRule (.*) /cool-tech/aftermarket-car-parts/tires-for-all-seasons/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-maintenance/money-to-buy-a-car-step-three/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/money-to-buy-a-car-step-three/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/interstates-are-for-wimps/(.*)$
+RewriteRule (.*) /car-life/soapbox/interstates-are-for-wimps/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/horseless-carriages-in-central-park/(.*)$
+RewriteRule (.*) /car-life/soapbox/horseless-carriages-in-central-park/%1 [R=301,L]
+
+#RewriteCond %{REQUEST_URI} ^/contributors/jean-jennings/(.*)$
+#RewriteRule (.*) /life-with-jean/the-lunacy/jean-jennings/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/qa/q-a--formula-1-star-sebastian-vettel/(.*)$
+RewriteRule (.*) /life-with-jean/the-lunacy/q-a--formula-1-star-sebastian-vettel/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/detroit-auto-show-panel-invitation/(.*)$
+RewriteRule (.*) /car-life/events/detroit-auto-show-panel-invitation/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/notorious-women-josephine-baker/(.*)$
+RewriteRule (.*) /you-auto-know/fast-women/notorious-women-josephine-baker/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/g7-megan-sajewski/(.*)$
+RewriteRule (.*) /you-auto-know/fast-women/g7-megan-sajewski/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/buick-encore-noise-cancellation/(.*)$
+RewriteRule (.*) /cool-tech/new-car-features/buick-encore-noise-cancellation/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/fast-women-audis-simone-gronewald/(.*)$
+RewriteRule (.*) /you-auto-know/fast-women/fast-women-audis-simone-gronewald/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/qa/how-do-you-pick-a-good-salesperson/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/how-do-you-pick-a-good-salesperson/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/a-car-seat-that-talks/(.*)$
+RewriteRule (.*) /cool-tech/car-safety/a-car-seat-that-talks/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/accident-avoidance-mode/(.*)$
+RewriteRule (.*) /cool-tech/car-tech-news/accident-avoidance-mode/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/tesla-motors-repays-uncle-sam-early/(.*)$
+RewriteRule (.*) /cool-tech/car-tech-news/tesla-motors-repays-uncle-sam-early/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/2013-dodge-dart-sxt-multiair-turbo/(.*)$
+RewriteRule (.*) /car-guide/real-world-review/2013-dodge-dart-sxt-multiair-turbo/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/in-car-tech-infotainment/(.*)$
+RewriteRule (.*) /cool-tech/car-tech-news/in-car-tech-infotainment/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/notorious-women-gloria-swanson/(.*)$
+RewriteRule (.*) /you-auto-know/fast-women/notorious-women-gloria-swanson/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/car-reviews/2013-nissan-quest-3-5-le/(.*)$
+RewriteRule (.*) /jeans-driveway/at-home/2013-nissan-quest-3-5-le/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/car-reviews/2014-cadillac-cts/(.*)$
+RewriteRule (.*) /jeans-driveway/designer-walkaround/2014-cadillac-cts/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/qa/new-car-state-of-mind/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/new-car-state-of-mind/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/texting-and-driving/(.*)$
+RewriteRule (.*) /car-life/soapbox/texting-and-driving/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-maintenance/jamie-little-s-car-care-book/(.*)$
+RewriteRule (.*) /you-auto-know/car-maintenance/jamie-little-s-car-care-book/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/your-future-ford-may-help-you-to-quit-smoking-and-skip-the-big-mac/(.*)$
+RewriteRule (.*) /cool-tech/car-tech-news/your-future-ford-may-help-you-to-quit-smoking-and-skip-the-big-mac/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/car-reviews/a-conversation-with-stirling-moss/(.*)$
+RewriteRule (.*) /car-life/soapbox/a-conversation-with-stirling-moss/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/honda-cr-v-standard-text-to-voice-capability/(.*)$
+RewriteRule (.*) /cool-tech/new-car-features/honda-cr-v-standard-text-to-voice-capability/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/qa/test-driving-rules-of-engagement/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/test-driving-rules-of-engagement/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/direct-drive-wipers/(.*)$
+RewriteRule (.*) /cool-tech/new-car-features/direct-drive-wipers/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/mini-knitting-kits/(.*)$
+RewriteRule (.*) /car-life/style/mini-knitting-kits/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/so-you-want-to-buy-a-diesel/(.*)$
+RewriteRule (.*) /cool-tech/car-alt-fuel/so-you-want-to-buy-a-diesel/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/4-crossovers-that-carry-7-in-style/(.*)$
+RewriteRule (.*) /car-guide/comparisons/4-crossovers-that-carry-7-in-style/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/2014-gm-cars-to-get-free-remotelink/(.*)$
+RewriteRule (.*) /cool-tech/new-car-features/2014-gm-cars-to-get-free-remotelink/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/bench-seat-era-comes-to-an-end/(.*)$
+RewriteRule (.*) /car-life/soapbox/bench-seat-era-comes-to-an-end/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/drowsiness-detection-systems/(.*)$
+RewriteRule (.*) /cool-tech/car-tech-news/drowsiness-detection-systems/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/car-reviews/jaguar-xkr-s-convertible/(.*)$
+RewriteRule (.*) /jeans-driveway/car-on-the-road/jaguar-xkr-s-convertible/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/mille-miglia-by-mercedes-gullwing/(.*)$
+RewriteRule (.*) /life-with-jean/the-road-trips/mille-miglia-by-mercedes-gullwing/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/2013-chevrolet-cruze-smart-airbag/(.*)$
+RewriteRule (.*) /cool-tech/new-car-features/2013-chevrolet-cruze-smart-airbag/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/bring-your-bike-along-for-the-ride/(.*)$
+RewriteRule (.*) /car-life/soapbox/bring-your-bike-along-for-the-ride/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/2013-honda-civic-si/(.*)$
+RewriteRule (.*) /car-guide/should-you-buy/2013-honda-civic-si/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/decompress-your-music-in-the-car/(.*)$
+RewriteRule (.*) /car-life/the-mix/decompress-your-music-in-the-car/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/contributors/jeans-calendar-of-events/(.*)$
+RewriteRule (.*) /life-with-jean/about/jeans-calendar-of-events/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/mille-miglia-by-mercedes-epilogue/(.*)$
+RewriteRule (.*) /life-with-jean/the-road-trips/mille-miglia-by-mercedes-epilogue/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/warhol-s-bmw-m1-art-car-visits-la/(.*)$
+RewriteRule (.*) /car-life/style/warhol-s-bmw-m1-art-car-visits-la/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/ev-charging-brilliant-induction/(.*)$
+RewriteRule (.*) /cool-tech/car-alt-fuel/ev-charging-brilliant-induction/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/look-who-s-driving/(.*)$
+RewriteRule (.*) /kids-in-the-car/teenagers/look-who-s-driving/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/fast-women-elena-ristancevska/(.*)$
+RewriteRule (.*) /you-auto-know/fast-women/fast-women-elena-ristancevska/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/car-reviews/amelia-island-video/(.*)$
+RewriteRule (.*) /car-life/events/amelia-island-video/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/best-tech-parents/(.*)$
+RewriteRule (.*) /kids-in-the-car/whole-famn-damily/best-tech-parents/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/chevrolet-volt-remote-start-auto-heated-seats/(.*)$
+RewriteRule (.*) /cool-tech/new-car-features/chevrolet-volt-remote-start-auto-heated-seats/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/blackprint-car-art-is-kickstarter-hit/(.*)$
+RewriteRule (.*) /car-life/style/blackprint-car-art-is-kickstarter-hit/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/qa/john-oates-and-me/(.*)$
+RewriteRule (.*) /life-with-jean/the-lunacy/john-oates-and-me/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/how-green-is-your-driving/(.*)$
+RewriteRule (.*) /cool-tech/car-alt-fuel/how-green-is-your-driving/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/little-red-racing-car/(.*)$
+RewriteRule (.*) /kids-in-the-car/big-kids/little-red-racing-car/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/2014-subaru-forester-20xt-touring/(.*)$
+RewriteRule (.*) /car-guide/real-world-review/2014-subaru-forester-20xt-touring/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/6-fun-car-social-media-destinations/(.*)$
+RewriteRule (.*) /car-life/the-mix/6-fun-car-social-media-destinations/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/chevrolet-malibu-freshens-up-for-14/(.*)$
+RewriteRule (.*) /car-guide/real-world-review/chevrolet-malibu-freshens-up-for-14/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/our-favorite-road-trip-memories/(.*)$
+RewriteRule (.*) /car-life/car-on-the-road/our-favorite-road-trip-memories/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/notorious-women-mechanical-girls/(.*)$
+RewriteRule (.*) /you-auto-know/fast-women/notorious-women-mechanical-girls/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/car-reviews/jeans-driveway-2013-volvo-s60-t5-awd/(.*)$
+RewriteRule (.*) /jeans-driveway/at-home/jeans-driveway-2013-volvo-s60-t5-awd/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/connected-vehicle-study-update/(.*)$
+RewriteRule (.*) /cool-tech/car-tech-news/connected-vehicle-study-update/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/car-reviews/jeans-driveway-2013-dodge-dart-rallye/(.*)$
+RewriteRule (.*) /jeans-driveway/at-home/jeans-driveway-2013-dodge-dart-rallye/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/notorious-women-aloha-wanderwell/(.*)$
+RewriteRule (.*) /you-auto-know/fast-women/notorious-women-aloha-wanderwell/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/mercedes-benz-furniture/(.*)$
+RewriteRule (.*) /car-life/style/mercedes-benz-furniture/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-maintenance/want-a-tidy-car--5-must-haves/(.*)$
+RewriteRule (.*) /you-auto-know/car-maintenance/want-a-tidy-car--5-must-haves/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/eating-in-the-car/(.*)$
+RewriteRule (.*) /car-life/soapbox/eating-in-the-car/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/design-a-fuel-economy-app/(.*)$
+RewriteRule (.*) /cool-tech/car-apps/design-a-fuel-economy-app/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/mercedes-employees-work-for-charity/(.*)$
+RewriteRule (.*) /car-life/soapbox/mercedes-employees-work-for-charity/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/super-bowl-of-car-ads/(.*)$
+RewriteRule (.*) /car-life/soapbox/super-bowl-of-car-ads/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/qa/about-jean-knows-cars/(.*)$
+RewriteRule (.*) /life-with-jean/about/about-jean-knows-cars/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/qa/you-auto-know-semiannual-car-check/(.*)$
+RewriteRule (.*) /you-auto-know/car-maintenance/you-auto-know-semiannual-car-check/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/qa/winning-at-speed-bumps/(.*)$
+RewriteRule (.*) /you-auto-know/car-driving-tips/winning-at-speed-bumps/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-maintenance/3-ways-to-prep-your-car-for-spring/(.*)$
+RewriteRule (.*) /you-auto-know/car-maintenance/3-ways-to-prep-your-car-for-spring/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/nissan-gibson-repair-van/(.*)$
+RewriteRule (.*) /car-life/style/nissan-gibson-repair-van/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/our-rules-of-the-road/(.*)$
+RewriteRule (.*) /car-life/on-the-road/our-rules-of-the-road/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/daytona-danica-patrick/(.*)$
+RewriteRule (.*) /car-life/soapbox/daytona-danica-patrick/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/notorious-women-denise-mccluggage/(.*)$
+RewriteRule (.*) /you-auto-know/fast-women/notorious-women-denise-mccluggage/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-maintenance/money-to-buy-a-car-step-two/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/money-to-buy-a-car-step-two/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/notorious-women-dietrich-henie/(.*)$
+RewriteRule (.*) /you-auto-know/fast-women/notorious-women-dietrich-henie/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/2013-cadillac-srx-goes-vogue/(.*)$
+RewriteRule (.*) /car-life/style/2013-cadillac-srx-goes-vogue/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/g7-suzi-hileman/(.*)$
+RewriteRule (.*) /you-auto-know/fast-women/g7-suzi-hileman/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/traffic-strategies/(.*)$
+RewriteRule (.*) /you-auto-know/car-driving-tips/traffic-strategies/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/carmakers-react-to-hurricane-sandy/(.*)$
+RewriteRule (.*) /car-life/soapbox/carmakers-react-to-hurricane-sandy/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/car-reviews/jeans-driveway-with-posse/(.*)$
+RewriteRule (.*) /jeans-driveway/car-on-the-road/jeans-driveway-with-posse/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/green-cars-alternative-alternatives/(.*)$
+RewriteRule (.*) /cool-tech/car-alt-fuel/green-cars-alternative-alternatives/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/older-driver-week/(.*)$
+RewriteRule (.*) /car-life/soapbox/older-driver-week/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/text-blocker-apps-for-phone/(.*)$
+RewriteRule (.*) /cool-tech/car-apps/text-blocker-apps-for-phone/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/qa/the-no-1-ladies-driving-academy-weight-transfer/(.*)$
+RewriteRule (.*) /you-auto-know/car-driving-tips/the-no-1-ladies-driving-academy-weight-transfer/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/car-reviews/jeans-driveway-2013-ford-shelby-gt500/(.*)$
+RewriteRule (.*) /jeans-driveway/at-home/jeans-driveway-2013-ford-shelby-gt500/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/hyundai-blue-link-hits-all-bases/(.*)$
+RewriteRule (.*) /cool-tech/car-tech-news/hyundai-blue-link-hits-all-bases/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/notorious-women-fay-wray/(.*)$
+RewriteRule (.*) /you-auto-know/fast-women/notorious-women-fay-wray/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/qa/shopping-for-a-used-car/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/shopping-for-a-used-car/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/car-reviews/2013-porsche-cayenne-diesel/(.*)$
+RewriteRule (.*) /jeans-driveway/car-on-the-road/2013-porsche-cayenne-diesel/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-maintenance/certified-pre-owned/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/certified-pre-owned/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/driving-into-retirement/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/driving-into-retirement/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/counterfeit-airbag-danger/(.*)$
+RewriteRule (.*) /cool-tech/car-safety/counterfeit-airbag-danger/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/fairest-rearview-mirror/(.*)$
+RewriteRule (.*) /cool-tech/aftermarket-car-parts/fairest-rearview-mirror/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/car-reviews/jeans-driveway-2012-mini-cooper-countryman/(.*)$
+RewriteRule (.*) /jeans-driveway/at-home/jeans-driveway-2012-mini-cooper-countryman/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/qa/handle-the-snowpocalypse-in-style/(.*)$
+RewriteRule (.*) /you-auto-know/car-maintenance/handle-the-snowpocalypse-in-style/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/wit-and-wisdom-of-the-moss-carlssons/(.*)$
+RewriteRule (.*) /car-life/soapbox/wit-and-wisdom-of-the-moss-carlssons/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/fiat-500l-targets-moms/(.*)$
+RewriteRule (.*) /kids-in-the-car/whole-famn-damily/fiat-500l-targets-moms/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/victoria-beckham-has-designs-on-auto-industry/(.*)$
+RewriteRule (.*) /car-life/style/victoria-beckham-has-designs-on-auto-industry/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/notorious-women-pearl-white/(.*)$
+RewriteRule (.*) /you-auto-know/fast-women/notorious-women-pearl-white/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/nissan-leaf-taxis-hit-nyc-streets/(.*)$
+RewriteRule (.*) /cool-tech/car-alt-fuel/nissan-leaf-taxis-hit-nyc-streets/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/notorious-women-pat-moss/(.*)$
+RewriteRule (.*) /you-auto-know/fast-women/notorious-women-pat-moss/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-maintenance/going-for-300k/(.*)$
+RewriteRule (.*) /car-life/soapbox/going-for-300k/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/danica-patrick-racing-forerunner/(.*)$
+RewriteRule (.*) /you-auto-know/fast-women/danica-patrick-racing-forerunner/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/older-driver-week-conversation/(.*)$
+RewriteRule (.*) /car-life/soapbox/older-driver-week-conversation/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/indy-speedway-lets-the-dogs-out/(.*)$
+RewriteRule (.*) /car-life/events/indy-speedway-lets-the-dogs-out/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/whos-afraid-of-the-interstate-/(.*)$
+RewriteRule (.*) /car-life/soapbox/whos-afraid-of-the-interstate-/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/green-cars-how-to-decipher/(.*)$
+RewriteRule (.*) /cool-tech/car-alt-fuel/green-cars-how-to-decipher/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/post-black-friday-deals/(.*)$
+RewriteRule (.*) /car-life/things-to-buy/post-black-friday-deals/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/ships-that-pass-in-the-night/(.*)$
+RewriteRule (.*) /you-auto-know/car-driving-tips/ships-that-pass-in-the-night/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/2013-range-rover-pops-up-as-nyc-art/(.*)$
+RewriteRule (.*) /car-life/style/2013-range-rover-pops-up-as-nyc-art/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/i-stalked-my-teenager-driver/(.*)$
+RewriteRule (.*) /kids-in-the-car/teenagers/i-stalked-my-teenager-driver/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/notorious-women-dorothy-paget/(.*)$
+RewriteRule (.*) /you-auto-know/fast-women/notorious-women-dorothy-paget/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/fiat-lust-part-3-my-test-drives/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/fiat-lust-part-3-my-test-drives/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-maintenance/carstar-vision-shows-repair-process/(.*)$
+RewriteRule (.*) /you-auto-know/car-maintenance/carstar-vision-shows-repair-process/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/g7-sharon-long/(.*)$
+RewriteRule (.*) /you-auto-know/fast-women/g7-sharon-long/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/qa/the-no-1-ladies-driving-academy/(.*)$
+RewriteRule (.*) /you-auto-know/car-driving-tips/the-no-1-ladies-driving-academy/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/group-of-seven-test-small-crossovers/(.*)$
+RewriteRule (.*) /car-life/events/group-of-seven-test-small-crossovers/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/group-of-seven-janet-popper/(.*)$
+RewriteRule (.*) /car-life/events/group-of-seven-janet-popper/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/group-of-seven-heather-sager/(.*)$
+RewriteRule (.*) /car-life/events/group-of-seven-heather-sager/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/group-of-seven-terri-barker/(.*)$
+RewriteRule (.*) /car-life/events/group-of-seven-terri-barker/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/g-7-tests-small-crossovers-part-2/(.*)$
+RewriteRule (.*) /car-life/events/g-7-tests-small-crossovers-part-2/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/minivan-buyers-guide/(.*)$
+RewriteRule (.*) /car-life/events/minivan-buyers-guide/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/2014-mercedes-benz-e350/(.*)$
+RewriteRule (.*) /car-guide/real-world-review/2014-mercedes-benz-e350/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/2014-ford-f-150-tremor/(.*)$
+RewriteRule (.*) /car-guide/comparisons/2014-ford-f-150-tremor/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/wreckcheck-smartphone-app/(.*)$
+RewriteRule (.*) /cool-tech/car-apps/wreckcheck-smartphone-app/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/mercedes-benz-illuminates-its-iconic-star/(.*)$
+RewriteRule (.*) /cool-tech/new-car-features/mercedes-benz-illuminates-its-iconic-star/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/a-weekend-with-30-women-and-10-cars/(.*)$
+RewriteRule (.*) /car-life/events/a-weekend-with-30-women-and-10-cars/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/2013-nissan-altima-35sl/(.*)$
+RewriteRule (.*) /car-guide/should-you-buy/2013-nissan-altima-35sl/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/five-reasons-to-drive-stick-shift/(.*)$
+RewriteRule (.*) /you-auto-know/car-driving-tips/five-reasons-to-drive-stick-shift/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/can-a-cardboard-bike-save-the-world/(.*)$
+RewriteRule (.*) /car-life/things-to-buy/can-a-cardboard-bike-save-the-world/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/am-i-doing-this-right/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/am-i-doing-this-right/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/smart-body-panels/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/smart-body-panels/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/ford-one-liter-engine/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/ford-one-liter-engine/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/three-cute-cars-la-auto-show/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/three-cute-cars-la-auto-show/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/honda-accord-plug-in/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/honda-accord-plug-in/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/car-reviews/2013-volkswagen-jetta-sportwagen-tdi/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/2013-volkswagen-jetta-sportwagen-tdi/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/mustang-driving-in-the-city/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/mustang-driving-in-the-city/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/detroit-auto-show-5-we-like/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/detroit-auto-show-5-we-like/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/detroit-auto-show-our-picks/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/detroit-auto-show-our-picks/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/future-driving-toyota/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/future-driving-toyota/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/car-reviews/lincoln-mkc-concept/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/lincoln-mkc-concept/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/car-reviews/nissan-resonance-concept/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/nissan-resonance-concept/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/ford-myenergi-lifestyle/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/ford-myenergi-lifestyle/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/car-reviews/2014-lexus-is350/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/2014-lexus-is350/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/honda-fit-ev-east-coast/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/honda-fit-ev-east-coast/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/city-driver-lexus-ls460/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/city-driver-lexus-ls460/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/car-reviews/2013-new-york-auto-show/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/2013-new-york-auto-show/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/lamborghini-aventador-in-yellow/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/lamborghini-aventador-in-yellow/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/car-reviews/2013-chrysler-300srt8/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/2013-chrysler-300srt8/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/2013-porsche-cayenne-in-carmine-red/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/2013-porsche-cayenne-in-carmine-red/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/chevrolet-spark-ev-is-most-efficient/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/chevrolet-spark-ev-is-most-efficient/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/2013-bmw-m3-my-orange-crush/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/2013-bmw-m3-my-orange-crush/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/2014-corvette-stingray-prices-out/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/2014-corvette-stingray-prices-out/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/mercedes-benz-g63-amg-hits-the-beach/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/mercedes-benz-g63-amg-hits-the-beach/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/2013-volkswagen-beetle-powers-up/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/2013-volkswagen-beetle-powers-up/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/2013-mercedes-benz-glk250-bluetec/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/2013-mercedes-benz-glk250-bluetec/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/fiat-goes-electric-with-the-500e/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/fiat-goes-electric-with-the-500e/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/2014-mercedes-benz-sprinter/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/2014-mercedes-benz-sprinter/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/4-crossovers-that-carry-7-in-style/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/4-crossovers-that-carry-7-in-style/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/car-reviews/2013-mercedes-benz-sl63-amg-roadster/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/2013-mercedes-benz-sl63-amg-roadster/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/2015-aston-martin-v12-vantage-s/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/2015-aston-martin-v12-vantage-s/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/chevrolet-malibu-freshens-up-for-14/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/chevrolet-malibu-freshens-up-for-14/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/2013-honda-civic-si/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/2013-honda-civic-si/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/2014-toyota-corolla-new---improved/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/2014-toyota-corolla-new---improved/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/car-reviews/2013-porsche-911-carrera-s/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/2013-porsche-911-carrera-s/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/2013-dodge-dart-sxt-multiair-turbo/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/2013-dodge-dart-sxt-multiair-turbo/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/2014-subaru-forester-20xt-touring/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/2014-subaru-forester-20xt-touring/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/2014-mercedes-benz-e350/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/2014-mercedes-benz-e350/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/2014-ford-f-150-tremor/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/2014-ford-f-150-tremor/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/2013-nissan-altima-35sl/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/2013-nissan-altima-35sl/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/2013-hyundai-sonata-hybrid-limited/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/2013-hyundai-sonata-hybrid-limited/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/2013-cadillac-ats-premium/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/2013-cadillac-ats-premium/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/2014-fiat-500l/(.*)$
+RewriteRule (.*) /car-life/soapbox/2014-fiat-500l/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/2013-bmw-x1-xdrive-28i/(.*)$
+RewriteRule (.*) /jeans-driveway/at-home/2013-bmw-x1-xdrive-28i/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/dogs-in-heat/(.*)$
+RewriteRule (.*) /life-with-jean/the-dogs/dogs-in-heat/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/ford-thermal-imaging/(.*)$
+RewriteRule (.*) /cool-tech/car-tech-news/ford-thermal-imaging/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/thumbs-down-on-texting-while-driving/(.*)$
+RewriteRule (.*) /car-life/soapbox/thumbs-down-on-texting-while-driving/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/excuse-our-dust/(.*)$
+RewriteRule (.*) /car-life/soapbox/excuse-our-dust/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/qa/car-repair-how-to-talk-to-shop/(.*)$
+RewriteRule (.*) /you-auto-know/car-maintenance/car-repair-how-to-talk-shop/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/black-is-the-new-black/(.*)$
+RewriteRule (.*) /car-life/style/the-new-black/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/three-keys-to-finding-your-keys/(.*)$
+RewriteRule (.*) /cool-tech/car-tech-news/three-keys-to-finding-your-key/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/ford-fiesta-sync-services-with-sync-destinations/(.*)$
+RewriteRule (.*) /cool-tech/new-car-features/ford-fiesta-sync-destinations/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/qa/car-repair-how-to-talk-shop/(.*)$
+RewriteRule (.*) /you-auto-know/car-maintenance/car-repair-how-to-talk-shop/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/the-new-black/(.*)$
+RewriteRule (.*) /car-life/style/the-new-black/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/three-keys-to-finding-your-key/(.*)$
+RewriteRule (.*) /cool-tech/car-tech-news/three-keys-to-finding-your-key/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/ford-fiesta-sync-destinations/(.*)$
+RewriteRule (.*) /cool-tech/new-car-features/ford-fiesta-sync-destinations/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/qa/do-i-need-winter-tires/(.*)$
+RewriteRule (.*) /you-auto-know/car-maintenance/do-i-need-winter-tires/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/qa/high-tech-low-price/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/high-tech-low-price/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/touchscreen-friendly-gloves/(.*)$
+RewriteRule (.*) /car-life/things-to-buy/touchscreen-friendly-gloves/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/three-keys-to-finding-your-keys/(.*)$
+RewriteRule (.*) /car-life/things-to-buy/three-keys-to-finding-your-keys/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/car-reviews/2012-volkswagen-passat-tdi-se/(.*)$
+RewriteRule (.*) /jeans-driveway/at-home/2012-volkswagen-passat-tdi-se/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/detroit-auto-show-movie/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/detroit-auto-show-movie/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/car-safety/first-drivers-license-george/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/first-drivers-license-george/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/the-year-of-the-compact-crossover/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/year-of-the-compact-crossover/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/features/style/year-of-the-compact-crossover/(.*)$
+RewriteRule (.*) /you-auto-know/car-buying/year-of-the-compact-crossover/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/qa/dogs-in-heat/(.*)$
+RewriteRule (.*) /life-with-jean/the-dogs/dogs-in-heat/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/car-reviews/2014-kia-soul/(.*)$
+RewriteRule (.*) /jeans-driveway/designer-walkaround/2014-kia-soul/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/cool-tech/ford-hybrid-numbers-going-up/(.*)$
+RewriteRule (.*) /cool-tech/car-tech-news/ford-hybrid-numbers-going-up/%1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/videos/qa/ask-jean-question/$
+RewriteRule (.*) /ask-jean-question/ [R=301,L]
+
+#   non-www to www
+RewriteCond %{HTTP_HOST} ^jeanknowscars.com/*
+RewriteRule ^http://www.jeanknowscars.com/$1 [R=301,L]
+
+RewriteCond %{HTTPS} on [OR]
+RewriteCond %{HTTP:X-Forwarded-Proto} https
+RewriteRule ^ http://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+RewriteCond %{REQUEST_FILENAME} -s [OR]
+RewriteCond %{REQUEST_FILENAME} -l [OR]
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^.*$ - [NC,L]
+RewriteCond %{REQUEST_URI} !(\.|/$)
+RewriteRule ^.*$ %{REQUEST_URI}/ [R=301,L]
+RewriteRule ^.*$ index.php [NC,L]
+
+
+# BEGIN WordPress
 RewriteBase /
 RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
