@@ -34,9 +34,9 @@ if ( $the_query->have_posts() ) {
                     <div class="img-wrap">
                         <a href="" title="<?php the_title(); ?>">
                              <?php
-								if ( has_post_thumbnail() ) {
-									the_post_thumbnail('promo-large');
-								} ?>
+                                    if (class_exists('MultiPostThumbnails')) :
+                                        MultiPostThumbnails::the_post_thumbnail('post', 'home-image', NULL, 'large', NULL, false);
+                                    endif; ?>
                         </a>
                     </div>
                     <div class="category">

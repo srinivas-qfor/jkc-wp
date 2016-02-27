@@ -140,10 +140,9 @@ if (is_category()) {
 								<div class="img-wrap">
 								<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 								<?php
-
-
-								if ( has_post_thumbnail() ) {
-								the_post_thumbnail('promo-large');
+							
+                                                                if (class_exists('MultiPostThumbnails')){ 
+                                    +                                MultiPostThumbnails::the_post_thumbnail('post', 'flipper-image', NULL, 'full', NULL, false);
 								} else { ?>
                                                                 <img src="<?php bloginfo('template_directory'); ?>/assets/img/jkc-no-image-288x140.jpg" alt="<?php the_title(); ?>" draggable="false">
                                                                  <?php }

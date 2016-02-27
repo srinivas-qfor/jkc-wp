@@ -36,7 +36,11 @@ function render_flipper($atts) {
                                             get_post_thumbnail_id( $post->ID ),
                                             '_wp_attachment_image_alt', true ) ? : get_the_title();
                                         $image = $image[0];?>
-                                             <img src="<?php echo $image; ?>" alt="<?php the_title()?>" draggable="false">
+                                             <!--<img src="<?php echo $image; ?>" alt="<?php the_title()?>" draggable="false">-->
+                                        <?php  if (class_exists('MultiPostThumbnails')) :
+                                            MultiPostThumbnails::the_post_thumbnail('post', 'flipper-image', NULL, 'large', NULL, true);
+                                        endif;?>
+                                        
                                         <?php else : ?>
                                             <img src="<?php bloginfo('template_directory'); ?>/assets/img/jkc-no-image-650x317.jpg" alt="'.the_title().'" draggable="false">';
                                         <?php endif; 

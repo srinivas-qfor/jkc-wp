@@ -1,5 +1,5 @@
 <?php
-
+@ini_set( 'max_execution_time', '3000' );
 include_once "shortcodes.php";
 include_once "functions/instagram.php";
 include_once "custom-posts/askquestion.php";
@@ -52,8 +52,16 @@ set_post_thumbnail_size( 640, 407 );
 if (class_exists('MultiPostThumbnails')) {
     new MultiPostThumbnails(
         array(
-            'label' => 'Promo Image',
-            'id' => 'promo-image',
+            'label' => 'Home Image',
+            'id' => 'home-image',
+            'post_type' => 'post'
+        )
+    );
+    
+    new MultiPostThumbnails(
+        array(
+            'label' => 'Flipper Image',
+            'id' => 'flipper-image',
             'post_type' => 'post'
         )
     );
@@ -78,3 +86,37 @@ function jkc_change_author_slug() {
 add_action('init', 'jkc_change_author_slug');
 
 include_once "admin".DIRECTORY_SEPARATOR."admin-functions.php";
+
+
+
+function delete_post_media( $post_id ) {
+
+    $attachments = get_posts( array(
+        'post_type'      => 'attachment',
+        'posts_per_page' => -1,
+        'post_status'    => 'any',
+        'post_parent'    => $post_id
+    ) );
+
+    foreach ( $attachments as $attachment ) {
+        
+        $attachmentsChilds = get_posts( array(
+        'post_type'      => 'attachment',
+        'posts_per_page' => -1,
+        'post_status'    => 'any',
+        'post_parent'    =>  $attachment->ID
+        ) );
+        if(!empty($attachmentsChilds)){
+            foreach ( $attachmentsChilds as $attachmentsChild ) {
+                    if ( false === wp_delete_attachment( $attachmentsChild->ID ) ) {
+                        // Log failure to delete attachment.
+                    }
+           }
+         }
+         
+        if ( false === wp_delete_attachment( $attachment->ID ) ) {
+            // Log failure to delete attachment.
+        }
+    }
+}
+add_action('before_delete_post', 'delete_post_media');
