@@ -48,7 +48,16 @@ global $post;
             $output = '<div class="crumb-wrap" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="'.get_permalink(get_page_by_title('About Us')).'" title="About Us">About Us</a></div>';
             $output .= '<div class="crumb-wrap" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><span class="crumb" itemprop="title"> '.get_the_author().'</span></div>';
             echo $output;
-        }
+        } elseif ( is_post_type_archive() ) {
+			//hard coded for ask jean question and confessions custom post
+			if($post->post_type == 'ask-jean-question'){
+				$output .= '<div class="crumb-wrap" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><span class="crumb" itemprop="title">Ask Jean a Question</span></div>';
+				echo $output;
+			}elseif($post->post_type == 'confessions'){
+				$output .= '<div class="crumb-wrap" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><span class="crumb" itemprop="title">Car Confessions</span></div>';
+				echo $output;
+			}
+		}
 	}
     echo '</div>';
 
