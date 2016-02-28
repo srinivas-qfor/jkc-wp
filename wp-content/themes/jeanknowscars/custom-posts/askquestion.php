@@ -57,8 +57,6 @@ function jkc_ajq_save_post(){
 add_action( 'save_post', 'jkc_ajq_save_post' );
 add_action( 'new_to_publish', 'jkc_ajq_save_post' );
 
-add_action( 'wp_ajax_insert_faq_post', 'insert_faq_post' );
-
 function insert_faq_post() {
 	
 	$intUserId = '';
@@ -68,6 +66,7 @@ function insert_faq_post() {
 	$strQuestion = $_POST['question'];
 	$intCategoryId = get_cat_ID( $_POST['category'] );
 	$strPostType = $_POST['post_typee'];
+	$strQuestionar = $_POST['questionar_name'];
 	$defaults = '';
 	
 	$defaults = array(
@@ -80,6 +79,7 @@ function insert_faq_post() {
     );
 
 	$id = wp_insert_post( $defaults );
-	add_post_meta( $id, '_jkc_jaq_author', '' );
+	add_post_meta( $id, '_jkc_jaq_author', $strQuestionar );
 	return 'success';	
 }
+add_action( 'wp_ajax_insert_faq_post', 'insert_faq_post' );

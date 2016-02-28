@@ -62,6 +62,7 @@
                 var category = mod.select.val();
                 var fbUserId = $('.mod-header .user-info').attr('data-uid');
                 var fbUserName = $('.mod-header .user-info').attr('data-fname');
+				var fbQuestionDetails = fbUserName+' | '+fbUserId;
                 mod.select.attr('disabled', true);
                 mod.textArea.attr('disabled', true);
                 mod.form.find('.ajax-loader').show(); 
@@ -75,7 +76,7 @@
 						'question': strQuestion,
 						'category': strCategory,
 						'post_typee': 'ask-jean-question',
-						'questionar_name': fbUserId+'|'+fbUserName
+						'questionar_name': fbQuestionDetails
 					},function(response){
 						if(response == 0 ){
 							mod.form.addClass('hide');

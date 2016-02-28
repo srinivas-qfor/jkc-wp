@@ -38,7 +38,7 @@ wp_enqueue_script( 'mod-list-item-faq', get_template_directory_uri() . '/assets/
 	margin: -216px 0 15px 40px !important;
 }
 
-.faq-inner .wp-image-715268{ width:100%; }
+.faq-inner .wp-image-746134{ width:100%; }
 </style>
 <div class="content-top-wrap">
 	<div class="row">
@@ -52,17 +52,12 @@ wp_enqueue_script( 'mod-list-item-faq', get_template_directory_uri() . '/assets/
 
 <div class="row">
 	<div class="main-column left col-17">
+	<?php
+	$theAJQPage = '';
+	$theAJQPage = get_page_by_title( 'Ask Jean a Question', 'ARRAY_A', 'page' );
+	?>
 		<div class="mod-faq-title">
-			<div class="faq-wrap">
-				<div class="faq-inner" style="background-image: none;">
-				<img class="alignnone size-full wp-image-715268" src="http://local.jeanknowscars.com/wp-content/uploads/pg-auto-know-header.jpg" alt="pg-auto-know-header" width="624" height="236" />
-				<h1>Go ahead</h1>
-				<span class="faq-text1">ask me a question, I have the answers</span>
-				<span class="faq-text2">literally</span>
-
-				</div>
-			</div>
-			<a class="faq-btn-alt-cta askAQuestion">Ask Me a Question</a>
+			<?php echo $theAJQPage['post_content'] ;?>
 		</div>
 		
 		<div class="mod-faq-form hide">
@@ -83,7 +78,7 @@ wp_enqueue_script( 'mod-list-item-faq', get_template_directory_uri() . '/assets/
 					<span class="faq-tag-ctr">
 						<div class="dropdown-custom">
 							<select id='tagDropdown' class="tagDropdown" title="Tags" style="z-index: 10; opacity: 0;" >
-								<option data-alias="/ask-jean-question-1/" value="all">View All</option>
+								<option data-alias="/ask-jean-question/" value="all">View All</option>
 								<?php 
 								$childAJQCategroy = get_category_children('220');
 								$arrChildAJQCategroy = explode('/',$childAJQCategroy);
@@ -123,18 +118,21 @@ wp_enqueue_script( 'mod-list-item-faq', get_template_directory_uri() . '/assets/
 			<h2>Latest Q&amp;As</h2>
 			<div class="filter-wrap">
 				<span class="label">Filter by:</span>
-				<div class="dropdown-custom">
+				<div class="dropdown-custom">	
 					<select class="tagDropdown" title="Tags" style="z-index: 10; opacity: 0;" >
 						<option data-alias="/ask-jean-question/?tags=View All" value="all" >View All</option>
+						
 						<?php 
 						$childAJQCategroy = get_category_children('220');
 						$arrChildAJQCategroy = explode('/',$childAJQCategroy);
 						sort($arrChildAJQCategroy);
 						echo "<option value=\"Select a Tag\" selected=\"selected\">Select a Tag</option>";
 						foreach ($arrChildAJQCategroy as $intCatId){
+					
 							if(empty($intCatId)){
 									continue;
 							}
+							
 							$strCatName = '';
 							$strCatName =get_the_category_by_ID($intCatId);
 							if($strCatName == $strSelectedTag){
@@ -151,28 +149,57 @@ wp_enqueue_script( 'mod-list-item-faq', get_template_directory_uri() . '/assets/
 		
 		<?php 
 		if(isset($_REQUEST['tags']) && $_REQUEST['tags'] != ''){
+			
+			
+			
 			if($_REQUEST['tags'] == 'View All'){
 				$args = array(
 					'posts_per_page'   => -1,
+					'offset'=> 0,
 					'orderby'          => 'date',
 					'order'            => 'DESC',
 					'post_type'        => 'ask-jean-question',
-					'post_status'      => 'publish',
-					'suppress_filters' => true 
+					'post_status'      => 'publish'
 				);
 			}else{
-				$args = array(
-					'posts_per_page'   => -1,
-					'offset'           => 0,
-					'category_name'    => $strSelectedTag,
-					'orderby'          => 'date',
-					'order'            => 'DESC',
-					'post_type'        => 'ask-jean-question',
-					'post_status'      => 'publish',
-					'suppress_filters' => true 
-				);
+				if($_REQUEST['tags'] == 'Car Buying'){
+					 $categoryidObj = '';
+					 $categoryid = '';
+					 $categoryidObj = get_category_by_slug('car-buying-ajq'); 
+					 $categoryid = $categoryidObj->cat_ID;
+					 
+					$args = array(
+						'posts_per_page'   => -1,
+						'offset'=> 0,
+						'category'    => $categoryid,
+						'orderby'          => 'date',
+						'order'            => 'DESC',
+						'post_type'        => 'ask-jean-question',
+						'post_status'      => 'publish'
+					);
+				}elseif($_REQUEST['tags'] == 'Maintenances'){
+				
+					$args = array(
+						'posts_per_page'   => -1,
+						'offset'=> 0,
+						'category'    => $_REQUEST['tags'],
+						'orderby'          => 'date',
+						'order'            => 'DESC',
+						'post_type'        => 'ask-jean-question',
+						'post_status'      => 'publish'
+					);
+				}else{
+					$args = array(
+						'posts_per_page'   => -1,
+						'offset'=> 0,
+						'category_name'    => $strSelectedTag,
+						'orderby'          => 'date',
+						'order'            => 'DESC',
+						'post_type'        => 'ask-jean-question',
+						'post_status'      => 'publish'
+					);
+				}
 			}
-			
 			$isTagResults = get_posts( $args ); 
 		}
 		
@@ -195,7 +222,7 @@ wp_enqueue_script( 'mod-list-item-faq', get_template_directory_uri() . '/assets/
 					<div class="info-wrap date-author">
 						<span class="date"><?php $datepus = get_the_date( 'F d, Y', $strTagResult->ID ); echo $datepus; ?></span>
 						<span class="tag"><?php echo $categories[0]->cat_name; ?></span>
-						<span class="author-name"><?php echo get_post_meta($strTagResult->ID, '_jkc_jaq_author', true); ?></span>
+						<span class="author-name"><?php $strAuthorMetaData = get_post_meta($strTagResult->ID, '_jkc_jaq_author', true); $arrSplitAuthorName = explode('|',$strAuthorMetaData); echo $arrSplitAuthorName[0]; ?></span>
 					</div>
 					<div class="answer-wrap">
 						<div class="answer-label">See Jean's Answer</div>
