@@ -347,10 +347,19 @@ $pageNum = (int)get_query_var('paged', 1);
             <div class="load-more-well clearfix"> 
 
                 <?php
+                $categoryObj = get_category_by_slug('new-cars'); 
+                $categoryId = $categoryObj->term_id;
+                $subCategoriesId = null;
+                 $subCategories = get_categories( array( 'child_of' => $categoryId )); 
+                    foreach ( $subCategories as $category ) {
+                        $subCategoriesId[] =  $category->term_id;
+                    }
+                
                 $posts = query_posts(array(
                     'post_status' => 'publish',
                     'orderby' => 'date',
                     'order' => 'DESC',
+                    'category__not_in' => $subCategoriesId,
                     'posts_per_page' => '9',
                     'paged' => $pageNum
                 ));

@@ -30,7 +30,7 @@ function render_blocks($atts) {
                 <div class="wrap">
                   <h3>Car Confessions</h3>
                   <h4>A Pretty Place for Ugly Secrets</h4>
-                  <a class="btn-alt-cta">Confess Here</a>
+<!--                  <a class="btn-alt-cta">Confess Here</a>-->
                    <!--<a class="btn-alt-cta" href="/confessions/">Confess Here</a>-->
                 </div>
               </div>
