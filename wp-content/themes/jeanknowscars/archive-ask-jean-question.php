@@ -80,6 +80,7 @@ wp_enqueue_script( 'mod-list-item-faq', get_template_directory_uri() . '/assets/
 							<select id='tagDropdown' class="tagDropdown" title="Tags" style="z-index: 10; opacity: 0;" >
 								<option data-alias="/ask-jean-question/" value="all">View All</option>
 								<?php 
+								$childAJQCategroy = '';
 								$childAJQCategroy = get_category_children('220');
 								$arrChildAJQCategroy = explode('/',$childAJQCategroy);
 								sort($arrChildAJQCategroy);
@@ -90,14 +91,11 @@ wp_enqueue_script( 'mod-list-item-faq', get_template_directory_uri() . '/assets/
 									}
 									$strCatName = '';
 									$strCatName =get_the_category_by_ID($intCatId);
-									if($strCatName == $strSelectedTag){
-											$s = 'selected="selected"';
-									}
-									echo "<option ".$strCatName." ".$strSelectedTag." data-alias=\"/ask-jean-question/?tags=".$strCatName."\" value ='".$strCatName."' ".$s.">".$strCatName."</option>";
+									echo "<option ".$strCatName." ".$strSelectedTag." data-alias=\"/ask-jean-question/?tags=".$strCatName."\" value ='".$strCatName."'>".$strCatName."</option>";
 								}
 								?>
 							</select>
-							<span class="dropdown-custom-select"><?php echo $strSelectedTag; ?></span>
+							<span class="dropdown-custom-select">Select a Tag</span>
 						</div>
 					</span>
 					<a class="btn-secondary-cta disabled post-faq-button right" title="Submit Question">Submit Question</a>
@@ -112,8 +110,9 @@ wp_enqueue_script( 'mod-list-item-faq', get_template_directory_uri() . '/assets/
 				<a title="Post Another faq" class="btn-secondary-cta post-another-faq" href="#">Post Another Question</a>
 			</div>
 		</div>  
-		
-		<?php $strSelectedTag = ''; $strSelectedTag = $_REQUEST['tags']; ?>
+		<?php $strSelectedTag = ''; $strSelectedTag = $_REQUEST['tags']; if(isset($_REQUEST['Products'])){
+				$strSelectedTag = 'Tech &amp; Products';
+			} ?>
 		<div class="mod-filter-confessions-faq clearfix" style="border-bottom:none; padding:0;">
 			<h2>Latest Q&amp;As</h2>
 			<div class="filter-wrap">
@@ -148,11 +147,9 @@ wp_enqueue_script( 'mod-list-item-faq', get_template_directory_uri() . '/assets/
         </div>
 		
 		<?php 
-		if(isset($_REQUEST['tags']) && $_REQUEST['tags'] != ''){
-			
-			
-			
-			if($_REQUEST['tags'] == 'View All'){
+		
+		if($strSelectedTag != ''){
+			if($strSelectedTag == 'View All'){
 				$args = array(
 					'posts_per_page'   => -1,
 					'offset'=> 0,
@@ -162,12 +159,11 @@ wp_enqueue_script( 'mod-list-item-faq', get_template_directory_uri() . '/assets/
 					'post_status'      => 'publish'
 				);
 			}else{
-				if($_REQUEST['tags'] == 'Car Buying'){
+				if($strSelectedTag == 'Car Buying'){
 					 $categoryidObj = '';
 					 $categoryid = '';
 					 $categoryidObj = get_category_by_slug('car-buying-ajq'); 
 					 $categoryid = $categoryidObj->cat_ID;
-					 
 					$args = array(
 						'posts_per_page'   => -1,
 						'offset'=> 0,
@@ -177,12 +173,11 @@ wp_enqueue_script( 'mod-list-item-faq', get_template_directory_uri() . '/assets/
 						'post_type'        => 'ask-jean-question',
 						'post_status'      => 'publish'
 					);
-				}elseif($_REQUEST['tags'] == 'Maintenances'){
-				
+				}elseif($strSelectedTag == 'Maintenances'){
 					$args = array(
 						'posts_per_page'   => -1,
 						'offset'=> 0,
-						'category'    => $_REQUEST['tags'],
+						'category_name'    => $strSelectedTag,
 						'orderby'          => 'date',
 						'order'            => 'DESC',
 						'post_type'        => 'ask-jean-question',

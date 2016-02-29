@@ -25,8 +25,9 @@
         mod.button = $('.post-faq-button');
         mod.thanks = $('.post-faq-thanks');
         mod.another = $('.post-another-faq');
-    };
-
+		mod.ajqselectedvalue = $('#tagDropdown');
+    };		  
+		  
     mod.setEvents = function(){
         mod.textArea.keyup(function () {
             var charLength = $(this).val().length;
@@ -120,6 +121,11 @@
                     $(this).next().text(val);
                 })
         });
+		
+		mod.ajqselectedvalue.click(function(){
+			var strCategory = document.getElementById("tagDropdown").value;
+			$( ".dropdown-custom-select" ).html( strCategory );
+		});
     };
 
     return(mod.init());

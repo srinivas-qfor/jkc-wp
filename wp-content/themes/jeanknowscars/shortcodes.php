@@ -26,7 +26,7 @@ function render_blocks($atts) {
             wp_enqueue_style( 'mod-car-confession', get_template_directory_uri() . '/assets/css/mod-car-confession.css' );
             ?> 	
             <?php if($ad_col_wrap !== 'off') : ?><div class="ad-top-right-wrap right col-20"><?php endif; ?>
-              <div class="mod-car-confession clearfix">
+              <div class="mod-car-confession ctr-side clearfix">
                 <div class="wrap">
                   <h3>Car Confessions</h3>
                   <h4>A Pretty Place for Ugly Secrets</h4>
