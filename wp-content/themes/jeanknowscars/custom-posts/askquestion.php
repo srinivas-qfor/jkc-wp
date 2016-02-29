@@ -64,7 +64,7 @@ function insert_faq_post() {
 	$strQuestion = '';
 	$intUserId = get_current_user_id();
 	$strQuestion = $_POST['question'];
-	$intCategoryId = get_cat_ID( $_POST['category'] );
+	$intCategoryId = get_cat_ID( esc_attr($_POST['category'] ));
 	$strPostType = $_POST['post_typee'];
 	$strQuestionar = $_POST['questionar_name'];
 	$defaults = '';
