@@ -6,7 +6,7 @@
 //import_scripts();
 
 function import_scripts(){
-   # include_once 'import-scripts/import_attachments.php';
+   include_once 'import-scripts/import_attachments_1.php';
    # include_once 'import-scripts/import_article.php';
    # include_once 'import-scripts/import_contributers.php';
 }

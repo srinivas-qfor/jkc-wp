@@ -89,7 +89,7 @@ $pageNum = (int)get_query_var('paged', 1);
                                     <div class="img-wrap">
                                         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
                                             <?php
-                                           if (class_exists('MultiPostThumbnails')){ 
+                                           if (class_exists('MultiPostThumbnails') && MultiPostThumbnails::has_post_thumbnail('post','home-image')){ 
                                                 MultiPostThumbnails::the_post_thumbnail('post', 'home-image', NULL, 'large', NULL, false);
                                            }else { ?>
                                                 <img src="<?php bloginfo('template_directory'); ?>/assets/img/jkc-no-image-288x140.jpg" alt="<?php the_title(); ?>" draggable="false">
@@ -98,19 +98,25 @@ $pageNum = (int)get_query_var('paged', 1);
                                         </a>
                                     </div>
                                     <div class="category">
-                                        <a href="<?php get_category_link($intCategoryId); ?>">
-                                            <?php
-                                            $categories = get_the_category($the_post->ID);
-                                            print_r($categories[0]->name);
-                                            ?>
+                                        <?php
+                                        $categories = get_the_category($the_post->ID);
+                                        $intCategoryId = is_array($categories) ? $categories[0]->cat_ID : $categories->cat_ID;
+                                        $category_name = is_array($categories) ? $categories[0]->name : $categories->name;
+                                        ?>
+                                        <a href="<?php echo get_category_link( $intCategoryId ); ?>">
+                                        <?=$category_name;?>
                                         </a>
                                     </div>
                                     <div class="info-wrap">
-                                        <h4 class="title-wrap">
-                                            <a class="list-title" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                                <?php the_title(); ?>
-                                            </a>
-                                        </h4>
+                                        <?php 
+                                $strFromatedtitleforReleatedArticle = get_the_title();
+                                $formatedC = substr($strFromatedtitleforReleatedArticle, 0, 45 ).'...';?>
+
+                                    <h4 class="title-wrap">
+                                    <a class="list-title" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                                    <?php echo $formatedC;?>
+                                    </a>
+                                    </h4>
                                         <div class="desc">
         <?php the_excerpt(); ?>
                                         </div>
@@ -173,7 +179,7 @@ $pageNum = (int)get_query_var('paged', 1);
                                     <div class="img-wrap">
                                         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
                                             <?php
-                                            if (class_exists('MultiPostThumbnails')){ 
+                                            if (class_exists('MultiPostThumbnails') && MultiPostThumbnails::has_post_thumbnail('post','home-image')){ 
                                                 MultiPostThumbnails::the_post_thumbnail('post', 'home-image', NULL, 'large', NULL, false);
                                            }else {  ?>
                                                 <img src="<?php bloginfo('template_directory'); ?>/assets/img/jkc-no-image-288x140.jpg" alt="<?php the_title(); ?>" draggable="false">
@@ -182,19 +188,25 @@ $pageNum = (int)get_query_var('paged', 1);
                                         </a>
                                     </div>
                                     <div class="category">
-                                        <a href="<?php get_category_link($intCategoryId); ?>">
-                                            <?php
-                                            $categories = get_the_category($the_post->ID);
-                                            print_r($categories[0]->name);
-                                            ?>
+                                        <?php
+                                        $categories = get_the_category($the_post->ID);
+                                        $intCategoryId = is_array($categories) ? $categories[0]->cat_ID : $categories->cat_ID;
+                                        $category_name = is_array($categories) ? $categories[0]->name : $categories->name;
+                                        ?>
+                                        <a href="<?php echo get_category_link( $intCategoryId ); ?>">
+                                        <?=$category_name;?>
                                         </a>
                                     </div>
                                     <div class="info-wrap">
-                                        <h4 class="title-wrap">
-                                            <a class="list-title" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                                <?php the_title(); ?>
-                                            </a>
-                                        </h4>
+                                        <?php 
+                                $strFromatedtitleforReleatedArticle = get_the_title();
+                                $formatedC = substr($strFromatedtitleforReleatedArticle, 0, 45 ).'...';?>
+
+                                    <h4 class="title-wrap">
+                                    <a class="list-title" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                                    <?php echo $formatedC;?>
+                                    </a>
+                                    </h4>
                                         <div class="desc">
             <?php the_excerpt(); ?>
                                         </div>
@@ -258,8 +270,8 @@ $pageNum = (int)get_query_var('paged', 1);
                                     <div class="img-wrap">
                                         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
                                             <?php
-                                            if (class_exists('MultiPostThumbnails')){ 
-                                                MultiPostThumbnails::the_post_thumbnail('post', 'flipper-image', NULL, 'large', NULL, false);
+                                            if (class_exists('MultiPostThumbnails')&& MultiPostThumbnails::has_post_thumbnail('post','home-image')){ 
+                                                MultiPostThumbnails::the_post_thumbnail('post', 'home-image', NULL, 'large', NULL, false);
                                            }else {  ?>
                                                 <img src="<?php bloginfo('template_directory'); ?>/assets/img/jkc-no-image-288x140.jpg" alt="<?php the_title(); ?>" draggable="false">
                                             <?php }
@@ -267,21 +279,27 @@ $pageNum = (int)get_query_var('paged', 1);
                                         </a>
                                     </div>
                                     <div class="category">
-                                        <a href="<?php get_category_link($intCategoryId); ?>">
-                                            <?php
-                                            $categories = get_the_category($the_post->ID);
-                                            print_r($categories[0]->name);
-                                            ?>
+                                        <?php
+                                        $categories = get_the_category($the_post->ID);
+                                        $intCategoryId = is_array($categories) ? $categories[0]->cat_ID : $categories->cat_ID;
+                                        $category_name = is_array($categories) ? $categories[0]->name : $categories->name;
+                                        ?>
+                                        <a href="<?php echo get_category_link( $intCategoryId ); ?>">
+                                        <?=$category_name;?>
                                         </a>
                                     </div>
                                     <div class="info-wrap">
-                                        <h4 class="title-wrap">
-                                            <a class="list-title" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-        <?php the_title(); ?>
-                                            </a>
-                                        </h4>
+                                        <?php 
+                                $strFromatedtitleforReleatedArticle = get_the_title();
+                                $formatedC = substr($strFromatedtitleforReleatedArticle, 0, 45 ).'...';?>
+
+                                    <h4 class="title-wrap">
+                                    <a class="list-title" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                                    <?php echo $formatedC;?>
+                                    </a>
+                                    </h4>
                                         <div class="desc">
-        <?php the_excerpt(); ?>
+                                        <?php the_excerpt(); ?>
                                         </div>
                                     </div>
                                 </div>
@@ -356,8 +374,8 @@ $pageNum = (int)get_query_var('paged', 1);
                                     <div class="img-wrap">
                                         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
                                             <?php
-                                           if (class_exists('MultiPostThumbnails')){ 
-                                                MultiPostThumbnails::the_post_thumbnail('post', 'flipper-image', NULL, 'full', NULL, false);
+                                           if (class_exists('MultiPostThumbnails') && MultiPostThumbnails::has_post_thumbnail('post','home-image')){ 
+                                                MultiPostThumbnails::the_post_thumbnail('post', 'home-image', NULL, 'full', NULL, false);
                                            }else {  ?>
                                                 <img src="<?php bloginfo('template_directory'); ?>/assets/img/jkc-no-image-288x140.jpg" alt="<?php the_title(); ?>" draggable="false">
                                             <?php }
@@ -365,19 +383,25 @@ $pageNum = (int)get_query_var('paged', 1);
                                         </a>
                                     </div>
                                     <div class="category">
-                                        <a href="<?php get_category_link($intCategoryId); ?>">
-                                            <?php
-                                            $categories = get_the_category($the_post->ID);
-                                            print_r($categories[0]->name);
-                                            ?>
+                                        <?php
+                                        $categories = get_the_category($the_post->ID);
+                                        $intCategoryId = is_array($categories) ? $categories[0]->cat_ID : $categories->cat_ID;
+                                        $category_name = is_array($categories) ? $categories[0]->name : $categories->name;
+                                        ?>
+                                        <a href="<?php echo get_category_link( $intCategoryId ); ?>">
+                                        <?=$category_name;?>
                                         </a>
                                     </div>
                                     <div class="info-wrap">
-                                        <h4 class="title-wrap">
-                                            <a class="list-title" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                                <?php the_title(); ?>
-                                            </a>
-                                        </h4>
+                                        <?php 
+                                $strFromatedtitleforReleatedArticle = get_the_title();
+                                $formatedC = substr($strFromatedtitleforReleatedArticle, 0, 45 ).'...';?>
+
+                                    <h4 class="title-wrap">
+                                    <a class="list-title" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                                    <?php echo $formatedC;?>
+                                    </a>
+                                    </h4>
                                         <div class="desc">
                                             <?php the_excerpt(); ?>
                                         </div>
@@ -409,6 +433,10 @@ endif;
             endif;
             wp_reset_postdata();
             ?>
+                <a class="button btn-main-cta btn-loading"
+                style = "display:none;" href="/" title="Load more">
+                <i class="fa fa-refresh fa-spin"></i>
+                </a>
             </div>
         </div>
 
