@@ -72,8 +72,6 @@ $pageNum = (int)get_query_var('paged', 1);
                     $posts = query_posts(array(
                         'post_status' => 'publish',
                         'category_name' => 'jeans-driveway',
-                        'orderby' => 'menu_order',
-                        'order' => 'DESC',
                         'posts_per_page' => '2'
                             ));
 
@@ -162,8 +160,6 @@ $pageNum = (int)get_query_var('paged', 1);
                     $posts = query_posts(array(
                         'post_status' => 'publish',
                         'category_name' => 'kids-in-the-car',
-                        'orderby' => 'menu_order',
-                        'order' => 'DESC',
                         'posts_per_page' => '2'
                             ));
 
@@ -253,9 +249,9 @@ $pageNum = (int)get_query_var('paged', 1);
                     $cat = 10;
                     $posts = query_posts(array(
                         'post_status' => 'publish',
-                        'category_name' => 'You Auto know',
-                        'orderby' => 'menu_order',
-                        'order' => 'DESC',
+                        'category_name' => 'you-auto-know',
+//                        'orderby' => 'menu_order',
+//                        'order' => 'DESC',
                         'posts_per_page' => '3'
                             ));
                     if (have_posts()) :
