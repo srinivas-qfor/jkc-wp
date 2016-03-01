@@ -5,6 +5,10 @@ function render_flipper($atts) {
       'name' => null,      
    ), $atts));
 
+   $featuredCategory = get_category($atts['cat']);
+   $featuredCategoryParent = $featuredCategory->category_parent;
+   $flipperCategory = (!empty($featuredCategoryParent))?$featuredCategoryParent:$atts['cat'];
+
    if($atts['name']=="home-flipper"):
 	   	wp_enqueue_style( 'mod-flipper');
 
@@ -12,7 +16,7 @@ function render_flipper($atts) {
             'posts_per_page' => 10,
             'meta_key' => '_featured-post'.(is_home() ? '-home' : ''),
             'meta_value' => 1,
-            'cat' => !empty($atts['cat']) ? $atts['cat'] : 0
+            'cat' => !empty($flipperCategory) ? $flipperCategory : 0
         );
 
         $featured = new WP_Query($args);
