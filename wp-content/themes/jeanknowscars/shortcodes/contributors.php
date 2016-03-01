@@ -62,11 +62,26 @@ function render_jkc_contributor($atts) {
 					</div>
 				</div>
 				<div class="col-2 columns">
-					<div class="img-wrap">
-						<a href="/contributors/jean-jennings/" title="Jean Jennings">
-						<img class="img" src="http://image.yetiplatform.com/f/2305844941765389817/jean-jennings.jpg" alt="Jean Jennings" onerror="this.src=\'/img/noimage.jpg\'" height="auto" width="113">
-						</a>
-					</div>
+					<div class="img-wrap">';
+
+
+							if($id == 39){
+					$content .='<a href="/contributors/jean-jennings/" title="Jean Jennings">
+                                <img class="img" src="/wp-content/themes/jeanknowscars/assets/img/jean-jennings.jpg" alt="Jean Jennings"  height="auto" width="113">
+                                </a>';
+
+				}else if($id == 15){
+					$content .='<a href="/contributors/laura-sky-brown/" title="Laura Sky Brown">
+                               <img class="img" src="/wp-content/themes/jeanknowscars/assets/img/laura-sky-brown.jpg" alt="Laura Sky Brown"  height="174" width="261">
+                                </a>';
+
+				}else if($id == 28){
+					$content .='<a href="/contributors/molly-jean/" title="Molly Jean">
+                               <img class="img" src="/wp-content/themes/jeanknowscars/assets/img/molly-jean.jpg" alt="Molly Jean"  height="174" width="261">
+                                </a>';
+				}	
+
+					$content .='</div>
 				</div>
 			</div>
 		</div>

@@ -18,27 +18,31 @@ $the_query = new WP_Query( $args );
 // The Loop
 echo '<h3>Related Articles</h3>';
 if ( $the_query->have_posts() ) {
-	$i = 0;
-	while ( $the_query->have_posts() ) { 
-	
-		if($post->ID == the_ID){
-			continue;
-		}
-		$the_query->the_post();
-		$strFromatedtitleforReleatedArticle = get_the_title();
-		$intStringLength = 30;
-		$formatedC = substr($strFromatedtitleforReleatedArticle, 0, 25 );
-		?>
+    $i = 0;
+    while ( $the_query->have_posts() ) { 
+    
+        if($post->ID == the_ID){
+            continue;
+        }
+        $the_query->the_post();
+        $strFromatedtitleforReleatedArticle = get_the_title();
+        $intStringLength = 30;
+        $formatedC = substr($strFromatedtitleforReleatedArticle, 0, 25 );
+        ?>
             <div class="mod-list-item left <?php if($i == 0 ){ echo "first-col "; } ?>first-row">
                 <div class="row">
                     <div class="img-wrap">
-                        <a href="" title="<?php the_title(); ?>">
-                             <?php
-                                    if (class_exists('MultiPostThumbnails')) :
-                                        MultiPostThumbnails::the_post_thumbnail('post', 'home-image', NULL, 'large', NULL, false);
-                                    endif; ?>
-                        </a>
-                    </div>
+                                <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                                <?php
+                            
+                                                                if (class_exists('MultiPostThumbnails')){ 
+                                    +                                MultiPostThumbnails::the_post_thumbnail('post', 'flipper-image', NULL, 'full', NULL, false);
+                                } else { ?>
+                                                                <img src="<?php bloginfo('template_directory'); ?>/assets/img/jkc-no-image-288x140.jpg" alt="<?php the_title(); ?>" draggable="false">
+                                                                 <?php }
+                                ?>
+                                </a>
+                                </div>
                     <div class="category">
                         <a href="<?php  get_category_link( $intCategoryId ); ?>"><?php echo $strCategoryName;?></a>
                     </div>
@@ -48,10 +52,10 @@ if ( $the_query->have_posts() ) {
                     </div>
                 </div>
             </div>
-		<?php	
-$i++;		
-	}
+        <?php   
+$i++;       
+    }
 } else {
-	echo "no posts found";
+    echo "no posts found";
 }
 ?>
