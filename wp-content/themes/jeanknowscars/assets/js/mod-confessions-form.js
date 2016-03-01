@@ -62,22 +62,28 @@
             mod.select.attr('disabled', true);
             mod.textArea.attr('disabled', true);
             mod.form.find('.ajax-loader').show();
-            $.ajax({
-                url: '/confessions/post/',
-                data: {category : category, text : text, uid : userInfo.attr('data-uid'), uname : userInfo.attr('data-uname'), fname : userInfo.attr('data-fname')},
-                type: "POST",
-                dataType: 'JSON'
-            }).done(function(data) {
-                if (data.status == 'success') {
-                    mod.form.addClass('hide');
+			var fbUserId = $('.mod-header .user-info').attr('data-uid');
+			var fbUserName = $('.mod-header .user-info').attr('data-fname');
+			var fbConfessionsDetails = fbUserName+' | '+fbUserId; 
+			var strQuestion = document.getElementById("confession-textarea").value;
+			var strCategory = document.getElementById("tagDropdown").value;
+				
+			jQuery.post(
+			ajaxurl, 
+			{
+				'action': 'insert_confessions_post',
+				'question': strQuestion,
+				'category': strCategory,
+				'post_typee': 'confessions',
+				'confessions_name': fbConfessionsDetails
+			},function(response){
+				if(response == 0 ){
+					mod.form.addClass('hide');
                     mod.thanks.removeClass('hide');
-                }
-                else {
-                    mod.form.replaceWith('<div class="post-confession-error">'+data.message+'</div>')
-                }
-            }).error(function(){
-                mod.form.replaceWith('<div class="post-confession-error">Post was not successful, please try again or contact an administrator.</div>')
-            });
+				}else {
+					mod.form.replaceWith('<div class="post-confession-error">Post was not successful, please try again or contact an administrator.</div>')
+				}  
+			});	
         });
 
         mod.another.click(function(){
