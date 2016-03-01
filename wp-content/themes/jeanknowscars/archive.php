@@ -141,8 +141,8 @@ if (is_category()) {
 								<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 								<?php
 							
-                                                                if (class_exists('MultiPostThumbnails')){ 
-                                    +                                MultiPostThumbnails::the_post_thumbnail('post', 'home-image', NULL, 'full', NULL, false);
+                                                                if (class_exists('MultiPostThumbnails') && MultiPostThumbnails::has_post_thumbnail('post','home-image')){ 
+                                                                   MultiPostThumbnails::the_post_thumbnail('post', 'home-image', NULL, 'large', NULL, false);
 								} else { ?>
                                                                 <img src="<?php bloginfo('template_directory'); ?>/assets/img/jkc-no-image-288x140.jpg" alt="<?php the_title(); ?>" draggable="false">
                                                                  <?php }
