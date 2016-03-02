@@ -117,6 +117,111 @@ if (is_category()) {
 			?>
 
 		<div class="mod-list-item-wrap">
+
+			<!--after 7th load if($pageNum > 6)-->
+			<?php if($pageNum > 6){ ?>
+
+				<div class="load-more-well clearfix"> 
+
+				<?php
+
+				$slugs = explode('/', get_query_var('category_name'));
+				$currentCategory = get_category_by_slug('/'.end($slugs));
+				$cat_nam = $currentCategory->name;
+
+				$posts = query_posts(array(
+				 'posts_per_page' => '9',
+				 'category_name' => $cat_nam,
+				 'paged' => $pageNum
+				 ));
+
+				if (have_posts()) :
+				?>
+
+				<?php
+				$i = 0;
+				// Start the Loop.
+				while (have_posts()) : the_post();
+				?>
+				<div class="mod-list-item left col-18 <?php if ($i % 3 == 0) {
+				echo "first-col";
+				} ?>">
+				<div class="row">
+				<div class="img-wrap">
+				<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+				<?php
+				if (class_exists('MultiPostThumbnails')){ 
+				MultiPostThumbnails::the_post_thumbnail('post', 'flipper-image', NULL, 'full', NULL, false);
+				}else {  ?>
+				<img src="<?php bloginfo('template_directory'); ?>/assets/img/jkc-no-image-288x140.jpg" alt="<?php the_title(); ?>" draggable="false">
+				<?php }
+				?>
+				</a>
+				</div>
+				<div class="category">
+				<?php
+				$categories = get_the_category($the_post->ID);
+				$intCategoryId = is_array($categories) ? $categories[0]->cat_ID : $categories->cat_ID;
+				$category_name = is_array($categories) ? $categories[0]->name : $categories->name;
+				?>
+				<a href="<?php echo get_category_link( $intCategoryId ); ?>">
+				<?=$category_name;?>
+				</a>
+				</div>
+				<div class="info-wrap">
+				<?php 
+				$strFromatedtitleforReleatedArticle = get_the_title();
+				$formatedC = substr($strFromatedtitleforReleatedArticle, 0, 45 ).'...';?>
+
+				<h4 class="title-wrap">
+				<a class="list-title" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+				<?php echo $formatedC;?>
+				</a>
+				</h4>
+				<div class="desc">
+				<?php the_excerpt(); ?>
+				</div>
+				</div>
+				</div>
+				</div>
+				<?php
+				// End the loop.
+				$i++;
+				endwhile;
+
+				// If no content, include the "No posts found" template.
+				else :
+				get_template_part('template-parts/content', 'none');
+
+				endif;
+				?>
+
+				</div>
+
+				<!--loadmore-->
+				<div class="mod-load-more">
+				<?php
+				// Previous/next page navigation.
+				if ( have_posts() ) : 
+				the_posts_pagination(array(
+				'prev_text' => __('Previous page', 'twentysixteen'),
+				'next_text' => __('Next page', 'twentysixteen'),
+				'before_page_number' => '<span class="meta-nav screen-reader-text">' . __('Page', 'twentysixteen') . ' </span>',
+				));
+				endif;
+				//wp_reset_postdata();
+				?>
+				<a class="button btn-main-cta btn-loading"
+				style = "display:none;" href="/" title="Load more">
+				<i class="fa fa-refresh fa-spin"></i>
+				</a>
+				</div>
+				<?php 
+			}?>
+
+
+			<?php if($pageNum <= 6){ ?>
+			<!--normal load-->
 			<div class="load-more-well clearfix"> 
 				<?php if ( have_posts() ) : ?>
 
@@ -219,6 +324,10 @@ if (is_category()) {
                 <i class="fa fa-refresh fa-spin"></i>
                 </a>
 			</div>
+			<?php } ?>
+
+
+
 		</div>
 	</div>
 </div>
