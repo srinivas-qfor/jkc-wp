@@ -39,9 +39,7 @@ class Flipper {
     public function flipper_register_scripts_and_styles(){
         //Register scripts
         wp_register_script('mod-flipper',plugins_url( 'js/mod-flipper.js' , __FILE__ ),null,null,true);
-        wp_enqueue_script( 'jquery.flexslider-min',plugins_url( 'js/jquery.flexslider-min.js' , __FILE__ ),null,null,true);
-        //Register styles
-        wp_register_style( 'mod-flipper', plugins_url('css/mod-flipper.css', __FILE__),null,null,'screen');                
+        wp_enqueue_script( 'jquery.flexslider-min',plugins_url( 'js/jquery.flexslider-min.js' , __FILE__ ),nu                
     }
 
     /**

@@ -42,7 +42,7 @@ function render_flipper($atts) {
                                         $image = $image[0];?>
                                              <!--<img src="<?php echo $image; ?>" alt="<?php the_title()?>" draggable="false">-->
                                         <?php  if (class_exists('MultiPostThumbnails')) :
-                                            MultiPostThumbnails::the_post_thumbnail('post', 'flipper-image', NULL, 'large', NULL, true);
+                                            MultiPostThumbnails::the_post_thumbnail('post', 'flipper-image', NULL, 'large', NULL, false);
                                         endif;?>
                                         
                                         <?php else : ?>
