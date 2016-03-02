@@ -17,10 +17,12 @@ function render_jkc_contributor($atts) {
 
 	// get user social links
 	$userSocialLinks = array();
-	foreach(get_user_meta($id, 'userSocialLinks', true) as $social) {
+	foreach(get_user_meta($id, 'userSocialLinks', true) as $social) {		
 		$userSocialLinks[$social->LinkType] = $social->LinkUrl;
 	}
 
+	$arrContributorPageURL = '';
+	$arrContributorPageURL = array('39'=>'/contributors/jean-jennings/','15'=>'/contributors/laura-sky-brown/','28'=>'/contributors/molly-jean/');
 	// Show output
 	$content = '';
 	$content .= 
@@ -28,9 +30,8 @@ function render_jkc_contributor($atts) {
 		<div class="staff-item">
 			<div class="row">
 				<div class="col-10 columns">
-					<div class="info-wrap">
-
-						<h2><a class="list-title" href="'.get_author_posts_url('url', $id).'" title="'.$user->data->display_name.'">'.$user->data->display_name.'</a></h2>
+					<div class="info-wrap"> 
+						<h2><a class="list-title" href="'.$arrContributorPageURL[$id].'" title="'.$user->data->display_name.'">'.$user->data->display_name.'</a></h2>
 						<div class="job-title">
 							'.get_user_meta($id, 'userJobTitle', true).'
 						</div>
