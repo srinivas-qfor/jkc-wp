@@ -5,22 +5,6 @@
  */
 get_header();
 
-## Loading CSS for front page
-wp_enqueue_style('lay-home', get_template_directory_uri() . '/assets/css/lay-home.css', null, null, "screen");
-wp_enqueue_style('mod-ad-top', get_template_directory_uri() . '/assets/css/mod-ad-top.css', null, null, "screen");
-wp_enqueue_style('mod-ad-mrec', get_template_directory_uri() . '/assets/css/mod-ad-mrec.css', null, null, "screen");
-wp_enqueue_style('mod-filter-make-model', get_template_directory_uri() . '/assets/css/mod-filter-make-model.css', null, null, "screen");
-wp_enqueue_style('mod-browse-by-vehicle-type', get_template_directory_uri() . '/assets/css/mod-browse-by-vehicle-type.css', null, null, "screen");
-wp_enqueue_style('mod-ask-jean-question', get_template_directory_uri() . '/assets/css/mod-ask-jean-question.css', null, null, "screen");
-wp_enqueue_style('mod-get-social', get_template_directory_uri() . '/assets/css/mod-get-social.css', null, null, "screen");
-wp_enqueue_style('mod-list-item', get_template_directory_uri() . '/assets/css/mod-list-item.css', null, null, "screen");
-wp_enqueue_style('mod-load-more', get_template_directory_uri() . '/assets/css/mod-load-more.css', null, null, "screen");
-wp_enqueue_style('mod-title-block', get_template_directory_uri() . '/assets/css/mod-title-block.css', null, null, "screen");
-
-## Loading js for front page
-wp_enqueue_script('mod-filter-make-model', get_template_directory_uri() . '/assets/js/mod-filter-make-model.js', null, null, true);
-wp_enqueue_script('mod-get-instagram', get_template_directory_uri() . '/assets/js/mod-get-instagram.js', null, null, true);
-wp_enqueue_script('mod-load-more.js', get_template_directory_uri() . '/assets/js/mod-load-more.js', null, null, true);
 $pageNum = (int)get_query_var('paged', 1);
 ?>
 
