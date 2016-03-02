@@ -171,7 +171,14 @@ if (is_category()) {
 				<div class="info-wrap">
 				<?php 
 				$strFromatedtitleforReleatedArticle = get_the_title();
-				$formatedC = substr($strFromatedtitleforReleatedArticle, 0, 45 ).'...';?>
+				$strlen = strlen($strFromatedtitleforReleatedArticle);
+
+				if($strlen >= 45){
+				$formatedC = substr($strFromatedtitleforReleatedArticle, 0, 45 ).'...';	
+				}else{
+				$formatedC = $strFromatedtitleforReleatedArticle;
+				}
+				?>
 
 				<h4 class="title-wrap">
 				<a class="list-title" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
