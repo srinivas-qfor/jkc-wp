@@ -22,7 +22,6 @@
 
     mod.setEvents = function(){
         mod.module.on('click',function() {
-            alert('inside funciton');
             $(this).parent().find('.answer-container').toggle('normal');
             /*
             // commaned this lines which hides 2nd item social widgets
