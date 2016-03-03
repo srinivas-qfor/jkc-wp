@@ -17,18 +17,22 @@
     };
 
     mod.setSelectors = function(){
-        mod.module = $('.mod-list-item-faq-wrap');
+        mod.module = $('.mod-list-item-faq .answer-label');
     };
 
     mod.setEvents = function(){
-        mod.module.on('click', '.answer-label', function() {
+        mod.module.on('click',function() {
+            alert('inside funciton');
             $(this).parent().find('.answer-container').toggle('normal');
+            /*
+            // commaned this lines which hides 2nd item social widgets
             if ($(this).hasClass('active')) {
                 $(this).removeClass('active').next().slideUp('fast');
             } else {
                 $('.active').removeClass('active').next().slideUp('fast');
                 $(this).addClass('active').next().slideDown('slow');
             }
+            */
         });
     };
 
