@@ -14,9 +14,16 @@ function render_flipper($atts) {
 
         $args = array(
             'posts_per_page' => 10,
-            'meta_key' => '_featured-post'.(is_home() ? '-home' : ''),
-            'meta_value' => 1,
-            'cat' => !empty($flipperCategory) ? $flipperCategory : 0
+            'meta_key' => '_featured-post'.(is_home() ? '-home' : '').'-order',
+            'cat' => !empty($flipperCategory) ? $flipperCategory : 0,
+            'order' => 'ASC',
+            'orderby'   => 'meta_value_num', 
+            'meta_query' => array(
+                array(
+                    'key' => '_featured-post'.(is_home() ? '-home' : ''),
+                    'value' => 1
+                )
+            )
         );
 
         $featured = new WP_Query($args);
