@@ -1,0 +1,157 @@
+.mod-flipper {
+
+}
+
+.mod-flipper .flex-container{
+    position: relative;
+}
+
+.mod-flipper .flexslider {
+    overflow: hidden;
+    width: 100%;
+    height: 317px;
+    border-radius: 6px;
+}
+
+.mod-flipper .flexslider .slide img {
+	width: 650px;
+    display: block;
+}
+
+.mod-flipper-content{
+
+}
+.mod-flipper-content li{
+    height: 100%;
+    float: left;
+}
+
+.mod-flipper .flipper-main-left,
+.mod-flipper .flipper-main-right {
+    background-image: url('/wp-content/themes/jeanknowscars/assets/img/mod-flipper-sprite.png');
+    background-repeat: no-repeat;
+    cursor: pointer;
+    display: block;
+    height: 42px;
+    opacity: 1;
+    position: absolute;
+    text-indent: -9999px;
+    top: 45%;
+    -webkit-transition: none;
+    -moz-transition: none;
+    -o-transition: none;
+    transition: none;
+    width: 34px;
+    z-index: 1000;
+}
+.mod-flipper .flipper-main-left {
+    left: 0;
+}
+.mod-flipper .flipper-main-right {
+    background-position: -34px 0;
+    right: 0;
+}
+.mod-flipper .flipper-main-left:hover {
+    background-position: 0 -42px;
+}
+.mod-flipper .flipper-main-right:hover {
+    background-position: -34px -42px;
+}
+
+.mod-flipper article {
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+}
+.mod-flipper .slide-content {
+    background-color: rgb(240, 240, 240);
+    background-color: rgba(240, 240, 240, 0.8);
+    border-radius: 5px;
+    left: 0;
+    margin: 25px 0 0 2.551020408163265%;
+    padding: 20px 30px;
+    position: absolute;
+    top: 0;
+    width: 40%;
+}
+
+.mod-flipper .flipper-info-box {
+    background-color: rgb(100, 100, 100);
+    background-color: rgba(0, 0, 0, 0.7);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#66000000,endColorstr=#66000000);
+    border-radius: 0 0 6px 6px;
+    /*bottom: -22px;*/
+    display: block;
+    height: 90px;
+    left: 0;
+    top: auto;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+}
+
+.mod-flipper .flipper-info-title,
+.mod-flipper .flipper-info-text {
+    color: #fff;
+    margin: 0 20px;
+    overflow: hidden;
+    width: 609px;
+}
+.mod-flipper .flipper-info-title {
+    display: inline-block;
+    font-family: "proxima-nova-alt", Helvetica, Arial, sans-serif;
+    font-size: 27px;
+    font-weight: 600;
+    line-height: 25px;
+    margin-top: 10px;
+    margin-bottom: 2px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+.mod-flipper .flipper-info-title:hover {
+    text-decoration: underline;
+}
+.mod-flipper .flipper-info-text {
+    color: #fff;
+    display: block;
+    font-size: 13px;
+    height: 16px;
+    line-height: 12px;
+}
+.mod-flipper .flipper-info-pager {
+    bottom: 3px;
+    line-height: 100%;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+.mod-flipper .flipper-info-left,
+.mod-flipper .flipper-info-right {
+    background-image: url('/wp-content/themes/jeanknowscars/assets/img/mod-flipper-sprite.png');
+    background-repeat: no-repeat;
+    cursor: pointer;
+    display: inline-block;
+    height: 16px;
+    width: 12px;
+}
+.mod-flipper .flipper-info-left {
+    background-position: 0 -84px;
+}
+.mod-flipper .flipper-info-right {
+    background-position: -12px -84px;
+}
+.mod-flipper .flipper-info-left:hover {
+    background-position: -24px -84px;
+}
+.mod-flipper .flipper-info-right:hover {
+    background-position: -36px -84px;
+}
+.mod-flipper .flipper-info-pager-text {
+    color: #b5b5b5;
+    display: inline-block;
+    font: bold 14px/14px Arial;
+    margin: 0 15px;
+    text-shadow: 1px 1px #000;
+    vertical-align: top;
+}
