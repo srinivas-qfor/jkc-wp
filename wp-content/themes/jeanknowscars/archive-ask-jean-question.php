@@ -1,36 +1,6 @@
 <?php
 get_header(); 
 
-wp_enqueue_style( 'lay-one-column', get_template_directory_uri() . '/assets/css/lay-one-column.css',[],true,"screen" );
-wp_enqueue_style( 'mod-breadcrumbs', get_template_directory_uri() . '/assets/css/mod-breadcrumbs.css',null,null,"screen" );
-wp_enqueue_style( 'mod-reset', get_template_directory_uri() . '/assets/css/reset.css',null,null,"screen" );
-wp_enqueue_style( 'mod-global', get_template_directory_uri() . '/assets/css/global.css',null,null,"screen" );
-wp_enqueue_style( 'mod-footer', get_template_directory_uri() . '/assets/css/mod-footer.css',null,null,"screen" );
-wp_enqueue_style( 'mod-header', get_template_directory_uri() . '/assets/css/mod-header.css',null,null,"screen" );
-wp_enqueue_style( 'mod-life-with-jean', get_template_directory_uri() . '/assets/css/mod-life-with-jean.css',null,null,"screen" );
-wp_enqueue_style( 'mod-car-confession', get_template_directory_uri() . '/assets/css/mod-car-confession.css',null,null,"screen" );
-wp_enqueue_style( 'mod-get-social', get_template_directory_uri() . '/assets/css/mod-get-social.css',null,null,"screen" );
-wp_enqueue_style( 'mod-load-more', get_template_directory_uri() . '/assets/css/mod-load-more.css',null,null,"screen" );
-wp_enqueue_style( 'grid', get_template_directory_uri() . '/assets/css/grid.css',null,null,"screen" );
-wp_enqueue_style( 'mod-filter-confessions-faq', get_template_directory_uri() . '/assets/css/mod-filter-confessions-faq.css',null,null,"screen" );
-wp_enqueue_style( 'mod-faq-title', get_template_directory_uri() . '/assets/css/mod-faq-title.css',null,null,"screen" );
-wp_enqueue_style( 'mod-faq-form', get_template_directory_uri() . '/assets/css/mod-faq-form.css',null,null,"screen" );
-wp_enqueue_style( 'mod-list-item-faq-css', get_template_directory_uri() . '/assets/css/mod-list-item-faq.css',null,null,"screen" );
-
-wp_enqueue_script( 'selectivizr-min.js', get_template_directory_uri() . '/assets/js/selectivizr-min.js',null,null,true); 
-wp_enqueue_script( 'mod-ad-header', get_template_directory_uri() . '/assets/js/mod-ad-header.js',null,null,true); 
-wp_enqueue_script( 'usetypekitnet', 'use.typekit.net/hcl6hob.js',null,null,true); 
-wp_enqueue_script( 'jquerycokokie', get_template_directory_uri() . '/assets/js/jquery.cookie.min.js',null,null,true); 
-wp_enqueue_script( 'postrelease', 'http://a.postrelease.com/serve/load.js?async=true',null,null,true);
-wp_enqueue_script( 'plugins', get_template_directory_uri() . '/assets/js/plugins.js',null,null,true); 
-wp_enqueue_script( 'global', get_template_directory_uri() . '/assets/js/global.js',null,null,true); 
-wp_enqueue_script( 'mod-header', get_template_directory_uri() . '/assets/js/mod-header.js',null,null,true); 
-wp_enqueue_script( 'mod-get-instagram', get_template_directory_uri() . '/assets/js/mod-get-instagram.js',null,null,true); 
-wp_enqueue_script( 'mod-load-more', get_template_directory_uri() . '/assets/js/mod-load-more.js',null,null,true); 
-wp_enqueue_script( 'mod-filter-confessions-faq.js', get_template_directory_uri() . '/assets/js/mod-filter-confessions-faq.js',null,null,true); 
-wp_enqueue_script( 'mod-faq-form', get_template_directory_uri() . '/assets/js/mod-faq-form.js',null,null,true); 
-wp_enqueue_script( 'mod-list-item-faq', get_template_directory_uri() . '/assets/js/mod-list-item-faq.js',null,null,true); 
-
 ?>
 <style>
 .mod-faq-title h1{
@@ -44,7 +14,7 @@ wp_enqueue_script( 'mod-list-item-faq', get_template_directory_uri() . '/assets/
 		<?php get_template_part('template-parts/navigation','breadcrumb'); ?> 	
 		<div class="mod-title">
 			<h1 class="pagetitle" itemprop="name"><?php printf(single_cat_title( '', false ));?></h1>
-			<div class="desc"><?php $term_description = term_description(); printf($term_description); ?></div>
+			<div class="desc"><?php $term_description = term_description(); echo strip_tags($term_description); ?></div>
 		</div> 
 	</div>
 </div>

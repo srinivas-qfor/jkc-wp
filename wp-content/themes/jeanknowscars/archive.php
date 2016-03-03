@@ -55,7 +55,7 @@ if (is_category()) {
 		<?php get_template_part('template-parts/navigation','breadcrumb'); ?> 	
 		<div class="mod-title">
 			<h1 class="pagetitle" itemprop="name"><?php printf(single_cat_title( '', false ));?></h1>
-			<div class="desc"><?php $term_description = term_description(); printf($term_description); ?></div>
+			<div class="desc"><?php $term_description = term_description(); echo strip_tags($term_description); ?></div>
 		</div> 
 	</div>
 </div>
@@ -91,17 +91,13 @@ if (is_category()) {
 <?php
     $category_link = get_category_link( $cat );
     if($this_category->category_parent){
-		$this_category = wp_list_categories('orderby=id&show_count=0&title_li=&use_desc_for_title=1&child_of='.$this_category->category_parent.
+		$this_category = wp_list_categories('orderby=date&show_count=0&title_li=&use_desc_for_title=1&child_of='.$this_category->category_parent.
     "&echo=0"); 
 	}else{
-    $this_category = wp_list_categories('orderby=id&depth=1&show_count=0&title_li=&use_desc_for_title=1&child_of='.$this_category->cat_ID.
+    $this_category = wp_list_categories('orderby=date&depth=1&show_count=0&title_li=&use_desc_for_title=1&child_of='.$this_category->cat_ID.
     "&echo=0");
 	}
-
-
 ?>
-
-<!-- -->
 
 <div class="row row-padding">
 	<div class="main-column">
