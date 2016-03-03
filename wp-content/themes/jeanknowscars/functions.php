@@ -55,7 +55,8 @@ function load_front_end_scripts(){
 
         wp_enqueue_script( 'selectivizr-min.js', get_template_directory_uri() . '/assets/js/selectivizr-min.js',null,null,true); 
         wp_enqueue_script( 'mod-ad-header', get_template_directory_uri() . '/assets/js/mod-ad-header.js',null,null,true); 
-        wp_enqueue_script( 'usetypekitnet', 'use.typekit.net/hcl6hob.js',null,null,true); 
+        wp_enqueue_script( 'usetypekitnet', 'https://use.typekit.net/hcl6hob.js',null,null,true); 
+        ?> <script type="text/javascript"> try{Typekit.load();}catch(e){} </script><?php 
         wp_enqueue_script( 'jquerycokokie', get_template_directory_uri() . '/assets/js/jquery.cookie.min.js',null,null,true); 
         wp_enqueue_script( 'postrelease', 'http://a.postrelease.com/serve/load.js?async=true',null,null,true);
         wp_enqueue_script( 'plugins', get_template_directory_uri() . '/assets/js/plugins.js',null,null,true); 

@@ -45,11 +45,12 @@ if($pageNum >= 2 && $pageNum <= 6) {
 	$adBlock = $pageNum + 1;
 	//echo $adBlock; exit;
 }
+
 if (is_category()) {
 	$this_category = get_category($cat);
 }
 ?>
-<!-- -->
+
 <div class="content-top-wrap">
 	<div class="row">
 		<?php get_template_part('template-parts/navigation','breadcrumb'); ?> 	
@@ -59,9 +60,6 @@ if (is_category()) {
 		</div> 
 	</div>
 </div>
-
-
-
 
 <!-- -->
 <div class="feature-wrap">
@@ -90,6 +88,12 @@ if (is_category()) {
 
 <?php
     $category_link = get_category_link( $cat );
+    $this_category_has_parent = $this_category->parent;
+	if($this_category_has_parent != '0'){
+		$category_link = get_category_link($this_category_has_parent);
+	}
+
+
     if($this_category->category_parent){
 		$this_category = wp_list_categories('orderby=date&show_count=0&title_li=&use_desc_for_title=1&child_of='.$this_category->category_parent.
     "&echo=0"); 
@@ -105,8 +109,13 @@ if (is_category()) {
 				  <div class="mod-sort-by-category">
 					<h3>Sort by Category</h3>
 					<ul class="clearfix">
-					<li><a href="<?php $category_link;?>"><span> View All</span></a></li>
-					<?php  print_r($this_category); ?>
+					<?php 
+					if($this_category_has_parent == '0') { ?>
+						<li class='current-cat'><a href="<?php echo $category_link;?>"><span> View All</span></a></li>
+					<?php }else{ ?>
+						<li><a href="<?php echo $category_link;?>"> View All</a></li>
+					<?php } ?>					
+					<?php print_r($this_category); ?>
 					</ul>	
 				  </div>    
 			<?php }  
