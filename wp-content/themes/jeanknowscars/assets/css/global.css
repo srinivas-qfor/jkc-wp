@@ -262,5 +262,7 @@ span[data-simflink] {
 
 .mod-sort-by-category ul li.current-cat {
     color: #4d4d4d;
-    font-weight: bold;
+    pointer-events: none; 
+	font-weight: bold;
+	cursor:default;  
 }

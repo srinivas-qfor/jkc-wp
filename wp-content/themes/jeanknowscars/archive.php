@@ -19,25 +19,6 @@
 get_header(); ?>
 
 <?php
-wp_enqueue_style( 'lay-one-column', get_template_directory_uri() . '/assets/css/lay-one-column.css',null,null,"screen" );
-wp_enqueue_style( 'mod-breadcrumbs', get_template_directory_uri() . '/assets/css/mod-breadcrumbs.css',null,null,"screen" );
-wp_enqueue_style( 'mod-ad-top', get_template_directory_uri() . '/assets/css/mod-ad-top.css',null,null,"screen" );
-wp_enqueue_style( 'mod-flipper', get_template_directory_uri() . '/assets/css/mod-flipper.css',null,null,"screen" );
-wp_enqueue_style( 'mod-life-with-jean', get_template_directory_uri() . '/assets/css/mod-life-with-jean.css',null,null,"screen" );
-wp_enqueue_style( 'mod-car-confession', get_template_directory_uri() . '/assets/css/mod-car-confession.css',null,null,"screen" );
-wp_enqueue_style( 'mod-list-item', get_template_directory_uri() . '/assets/css/mod-list-item.css',null,null,"screen" );
-wp_enqueue_style( 'mod-load-more', get_template_directory_uri() . '/assets/css/mod-load-more.css',null,null,"screen" );
-wp_enqueue_style( 'mod-sort-by-category', get_template_directory_uri() . '/assets/css/mod-sort-by-category.css',null,null,"screen" );
-wp_enqueue_style( 'mod-title', get_template_directory_uri() . '/assets/css/mod-title.css',null,null,"screen" );
-wp_enqueue_style( 'grid', get_template_directory_uri() . '/assets/css/grid.css',null,null,"screen" );
-wp_enqueue_script( 'jquery11', 'http://code.jquery.com/jquery-1.11.0.min.js',null,null,true); 
-wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/assets/js/modernizr.js',null,null,true); 
-wp_enqueue_script( 'mod-ad-header', get_template_directory_uri() . '/assets/js/mod-ad-header.js',null,null,true); 
-wp_enqueue_script( 'typekit', 'http://use.typekit.net/hcl6hob.js',null,null,true); 
-wp_enqueue_script( 'jquery-cookie', get_template_directory_uri() . '/assets/js/jquery.cookie.min.js',null,null,true); 
-wp_enqueue_script( 'plugins', get_template_directory_uri() . '/assets/js/plugins.js',null,null,true); 
-wp_enqueue_script( 'jquery.flexslider', get_template_directory_uri() . '/assets/js/jquery.flexslider-min.js',null,null,true);
-wp_enqueue_script( 'mod-load-more', get_template_directory_uri() . '/assets/js/mod-load-more.js',null,null,true); 
 
 $adBlock = 2;
 $pageNum = (int)get_query_var('paged', 0);
@@ -45,23 +26,28 @@ if($pageNum >= 2 && $pageNum <= 6) {
 	$adBlock = $pageNum + 1;
 	//echo $adBlock; exit;
 }
+
 if (is_category()) {
 	$this_category = get_category($cat);
 }
 ?>
-<!-- -->
+
 <div class="content-top-wrap">
 	<div class="row">
 		<?php get_template_part('template-parts/navigation','breadcrumb'); ?> 	
 		<div class="mod-title">
-			<h1 class="pagetitle" itemprop="name"><?php printf(single_cat_title( '', false ));?></h1>
+			<h1 class="pagetitle" itemprop="name">
+				<?php 
+					if( $cat == '126') {
+						 echo "What's in Jean's Driveway";
+					}else{
+					  printf(single_cat_title( '', false )); 
+					} 
+				?></h1>
 			<div class="desc"><?php $term_description = term_description(); echo strip_tags($term_description); ?></div>
 		</div> 
 	</div>
 </div>
-
-
-
 
 <!-- -->
 <div class="feature-wrap">
@@ -90,6 +76,12 @@ if (is_category()) {
 
 <?php
     $category_link = get_category_link( $cat );
+    $this_category_has_parent = $this_category->parent;
+	if($this_category_has_parent != '0'){
+		$category_link = get_category_link($this_category_has_parent);
+	}
+
+
     if($this_category->category_parent){
 		$this_category = wp_list_categories('orderby=date&show_count=0&title_li=&use_desc_for_title=1&child_of='.$this_category->category_parent.
     "&echo=0"); 
@@ -105,8 +97,13 @@ if (is_category()) {
 				  <div class="mod-sort-by-category">
 					<h3>Sort by Category</h3>
 					<ul class="clearfix">
-					<li><a href="<?php $category_link;?>"><span> View All</span></a></li>
-					<?php  print_r($this_category); ?>
+					<?php 
+					if($this_category_has_parent == '0') { ?>
+						<li class='current-cat'><a href="<?php echo $category_link;?>"><span> View All</span></a></li>
+					<?php }else{ ?>
+						<li><a href="<?php echo $category_link;?>"> View All</a></li>
+					<?php } ?>					
+					<?php print_r($this_category); ?>
 					</ul>	
 				  </div>    
 			<?php }  
