@@ -70,7 +70,7 @@ function insert_faq_post() {
 	$defaults = '';
 	
 	$defaults = array(
-        'post_author' => $intUserId,
+        'post_author' => 1,
         'post_content' => '',
         'post_title' => $strQuestion,
         'post_status' => 'pending',
