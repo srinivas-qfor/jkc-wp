@@ -63,7 +63,7 @@ if (is_category()) {
 					  printf(single_cat_title( '', false )); 
 					} 
 				?></h1>
-			<div class="desc"><?php $term_description = term_description(); echo strip_tags($term_description); ?></div>
+			<div class="desc"><?php $term_description = term_description(); echo $term_description; ?></div>
 		</div> 
 	</div>
 </div>
