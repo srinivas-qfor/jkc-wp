@@ -53,7 +53,6 @@ get_header();
 								$childAJQCategroy = get_category_children('220');
 								$arrChildAJQCategroy = explode('/',$childAJQCategroy);
 								sort($arrChildAJQCategroy);
-								echo "<option value=\"Select a Tag\" selected=\"selected\">Select a Tag</option>";
 								foreach ($arrChildAJQCategroy as $intCatId){
 									if(empty($intCatId)){
 											continue;
@@ -94,7 +93,6 @@ get_header();
 						$childAJQCategroy = get_category_children('220');
 						$arrChildAJQCategroy = explode('/',$childAJQCategroy);
 						sort($arrChildAJQCategroy);
-						echo "<option value=\"Select a Tag\" selected=\"selected\">Select a Tag</option>";
 						foreach ($arrChildAJQCategroy as $intCatId){
 					
 							if(empty($intCatId)){
@@ -110,7 +108,7 @@ get_header();
 						}
 						?>
 					</select>
-					<span class="dropdown-custom-select"><?php if(empty($strSelectedTag)){ echo "View All"; }else {echo $strSelectedTag;} ?></span>
+					<span class="dropdown-custom-select"><?php if(empty($strSelectedTag)){ echo "Tags"; }else {echo $strSelectedTag;} ?></span>
 				</div>
 			</div>
         </div>
