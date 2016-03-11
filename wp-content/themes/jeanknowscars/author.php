@@ -65,7 +65,7 @@ $id = get_post();
             					<p><?php the_author_meta( 'description' ); ?></p>
 							<?php endif; ?>							
 							<div class="social">
-								<a rel="nofollow" href="<?=get_author_posts_url(the_author_meta('ID'))?>" title="<?=the_author_meta('display_name')?>">Bio</a>
+								<a rel="nofollow" href="<?=get_author_posts_url(get_the_author_meta('ID'))?>" title="<?=the_author_meta('display_name')?>">Bio</a>
 								<?php if(!empty($userSocialLinks['Email'])) { ?>
 								<span>|</span>
 								<a rel="nofollow" target="_blank" itemprop="follows" href="mailto:<?=$userSocialLinks['Email']?>" title="Send email to <?=the_author_meta('display_name')?>?>">Email</a>
