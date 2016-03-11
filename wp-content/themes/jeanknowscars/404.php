@@ -27,9 +27,8 @@ wp_enqueue_script( 'plugins', get_template_directory_uri() . '/assets/js/plugins
         <div class="mod-404">
             <div class="row desktop-page">
                 <h1 class="text-404">Oooops - 404! We couldn't find your page.</h1>
-                <div class="clearfix"></div>
                 <div class="img-404">
-                    <img class="img" src="http://cdn.jeanknowscars.com/img/mod-404-jean.jpg?v=1" alt="404" height="340" width="264">
+                    <img class="img" src="<?=get_template_directory_uri();?>/assets/img/mod-404-jean.jpg" alt="404" height="340" width="264" alt="404" title="404">
                 </div>
             </div>
         </div>
