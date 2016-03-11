@@ -13,10 +13,13 @@ wp_enqueue_style( 'mod-title', get_template_directory_uri() . '/assets/css/mod-t
 wp_enqueue_style( 'mod-stay-connected', get_template_directory_uri() . '/assets/css/mod-stay-connected.css',null,null,"screen" );
 wp_enqueue_style( 'mod-load-more-vehicle', get_template_directory_uri() . '/assets/css/mod-load-more-vehicle.css',null,null,"screen" );
 
+
 $userSocialLinks = array();
 foreach(get_the_author_meta('userSocialLinks') as $social) {
 	$userSocialLinks[$social->LinkType] = $social->LinkUrl;
 }
+
+$id = get_post();
 
 ?>
 
@@ -34,7 +37,26 @@ foreach(get_the_author_meta('userSocialLinks') as $social) {
             	<div class="bio" itemscope="" itemtype="http://schema.org/Person">
             		<div class="row">
             			<div class="editor-main col-2 columns clearfix">
-            				<img class="editor-img left" itemprop="image" onerror="this.src='/img/noimage.jpg'" src="http://image.yetiplatform.com/f/2305845393762264092/molly-jean.jpg" alt="Molly Jean" height="82" width="123">
+
+            			<?php
+            			if($id->post_author == 39){ ?>
+					
+                               <img class="img" src="/wp-content/themes/jeanknowscars/assets/img/jean-jennings.jpg" alt="Jean Jennings"  height="auto" width="113">
+
+							<?php }
+							else if ($id->post_author == 15) {
+								?>
+
+								<img class="img" src="/wp-content/themes/jeanknowscars/assets/img/laura-sky-brown.jpg" alt="Laura Sky Brown"  height="174" width="261">
+                                
+							
+							<?php } else if ($id->post_author == 28) { ?>
+								<img class="img" src="/wp-content/themes/jeanknowscars/assets/img/molly-jean.jpg" alt="Molly Jean"  height="174" width="261">
+
+							<?php }
+
+            			?>
+
             			</div>
             			<div class="editor-content col-10 columns" itemprop="description">
             				<h1 class="article-title" itemprop="name"><?=the_author_meta('display_name')?></h1>
