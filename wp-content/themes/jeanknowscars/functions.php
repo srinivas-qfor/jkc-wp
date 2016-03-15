@@ -170,3 +170,30 @@ function delete_post_media( $post_id ) {
     }
 }
 add_action('before_delete_post', 'delete_post_media');
+
+add_filter('wp_dropdown_users', 'jkc_post_author_override');
+function jkc_post_author_override($output)
+{
+	global $user_ID; global $post;
+  // return if this isn't the theme author override dropdown
+  if (!preg_match('/post_author_override/', $output)) return $output;
+
+  // return if we've already replaced the list (end recursion)
+  if (preg_match ('/post_author_override_replaced/', $output)) return $output;
+
+  // replacement call to wp_dropdown_users 
+  // excluding wpengine (userid #47) user from the dropdown list 
+	$output = wp_dropdown_users(array(
+		'echo' => 0,
+		'who' => 'authors',
+		'exclude' => 47,
+		'name' => 'post_author_override_replaced',
+		'selected' => empty($post->ID) ? $user_ID : $post->post_author,
+		'include_selected' => true
+	));
+
+	// put the original name back
+	$output = preg_replace('/post_author_override_replaced/', 'post_author_override', $output);
+
+  return $output;
+}
