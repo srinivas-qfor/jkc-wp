@@ -25,9 +25,6 @@ if ( $the_query->have_posts() ) {
             continue;
         }
         $the_query->the_post();
-        $strFromatedtitleforReleatedArticle = get_the_title();
-        $intStringLength = 30;
-        $formatedC = substr($strFromatedtitleforReleatedArticle, 0, 45 );
         ?>
             <div class="mod-list-item left <?php if($i == 0 ){ echo "first-col "; } ?>first-row">
                 <div class="row">
@@ -47,7 +44,17 @@ if ( $the_query->have_posts() ) {
                         <a href="<?php  get_category_link( $intCategoryId ); ?>"><?php echo $strCategoryName;?></a>
                     </div>
                     <div class="info-wrap">
-                        <h4 class="title-wrap"><a class="list-title" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php echo $formatedC; ?> ...</a></h4>
+						<?php 
+							$strFromatedtitleforReleatedArticle = get_the_title();
+							$strlen = strlen($strFromatedtitleforReleatedArticle);
+
+							if($strlen >= 45){
+							$formatedC = substr($strFromatedtitleforReleatedArticle, 0, 45 ).'...'; 
+							}else{
+							$formatedC = $strFromatedtitleforReleatedArticle;
+							}
+						?>
+                        <h4 class="title-wrap"><a class="list-title" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php echo $formatedC; ?></a></h4>
                         <div class="desc"><?php the_excerpt(); ?></div>
                     </div>
                 </div>
