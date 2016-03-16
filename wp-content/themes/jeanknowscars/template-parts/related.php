@@ -27,7 +27,7 @@ if ( $the_query->have_posts() ) {
         $the_query->the_post();
         $strFromatedtitleforReleatedArticle = get_the_title();
         $intStringLength = 30;
-        $formatedC = substr($strFromatedtitleforReleatedArticle, 0, 25 );
+        $formatedC = substr($strFromatedtitleforReleatedArticle, 0, 45 );
         ?>
             <div class="mod-list-item left <?php if($i == 0 ){ echo "first-col "; } ?>first-row">
                 <div class="row">
