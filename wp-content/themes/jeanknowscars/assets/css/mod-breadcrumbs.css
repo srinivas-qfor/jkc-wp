@@ -25,3 +25,9 @@
     content: "";
     margin: 0;
 }
+
+.mod-breadcrumbs .crumb-wrap:last-child a{
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+}

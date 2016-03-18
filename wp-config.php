@@ -77,9 +77,22 @@ $table_prefix  = 'wp_';
  *
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
+
+/** Setting home url */
+define('WP_HOME', 'http://local.jeanknowscars.com/');
+define('WP_SITEURL', 'http://local.jeanknowscars.com/');
+
+/** Debugging disabled */
 define('WP_DEBUG', false);
 
+/** Automatic updates disabled */
+define( 'AUTOMATIC_UPDATER_DISABLED', true );
+
+/** Automatic database optimization */
+define('WP_ALLOW_REPAIR', true);
+
 /* That's all, stop editing! Happy blogging. */
+
 
 /** Absolute path to the WordPress directory. */
 if ( !defined('ABSPATH') )

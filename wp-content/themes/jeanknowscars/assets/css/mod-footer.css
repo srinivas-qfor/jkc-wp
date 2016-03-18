@@ -291,3 +291,8 @@
 .third-party-scripts {
     display: none;
 }
+
+.mod-footer .nav-list-wrapper .nav-list .nav-item a.button-link{
+    background: transparent;
+    color: #acc814;
+} 

@@ -25,8 +25,9 @@
         mod.button = $('.post-faq-button');
         mod.thanks = $('.post-faq-thanks');
         mod.another = $('.post-another-faq');
-    };
-
+		mod.ajqselectedvalue = $('#tagDropdown');
+    };		  
+		  
     mod.setEvents = function(){
         mod.textArea.keyup(function () {
             var charLength = $(this).val().length;
@@ -60,26 +61,31 @@
             if (!$(this).hasClass('disabled')) {
                 var text = mod.textArea.val();
                 var category = mod.select.val();
-                var userInfo = $('.mod-header .user-info');
+                var fbUserId = $('.mod-header .user-info').attr('data-uid');
+                var fbUserName = $('.mod-header .user-info').attr('data-fname');
+				var fbQuestionDetails = fbUserName+' | '+fbUserId;
                 mod.select.attr('disabled', true);
                 mod.textArea.attr('disabled', true);
-                mod.form.find('.ajax-loader').show();
-                $.ajax({
-                    url: '/ask-jean-question/post/',
-                    data: {category : category, text : text, uid : userInfo.attr('data-uid'), uname : userInfo.attr('data-uname'), fname : userInfo.attr('data-fname')},
-                    type: "POST",
-                    dataType: 'JSON'
-                }).done(function(data) {
-                        if (data.status == 'success') {
-                            mod.form.addClass('hide');
+                mod.form.find('.ajax-loader').show(); 
+				var strQuestion = document.getElementById("faq-textarea").value;
+				var strCategory = document.getElementById("tagDropdown").value;
+			
+				jQuery.post(
+					ajaxurl, 
+					{
+						'action': 'insert_faq_post',
+						'question': strQuestion,
+						'category': strCategory,
+						'post_typee': 'ask-jean-question',
+						'questionar_name': fbQuestionDetails
+					},function(response){
+						if(response == 0 ){
+							mod.form.addClass('hide');
                             mod.thanks.removeClass('hide');
-                        }
-                        else {
-                            mod.form.replaceWith('<div class="post-faq-error">'+data.message+'</div>')
-                        }
-                    }).error(function(){
-                        mod.form.replaceWith('<div class="post-faq-error">Post was not successful, please try again or contact an administrator.</div>')
-                    });
+						}else {
+                            mod.form.replaceWith('<div class="post-faq-error">Post was not successful, please try again or contact an administrator.</div>')
+                        }  
+					});	
             }
         });
 
@@ -115,6 +121,11 @@
                     $(this).next().text(val);
                 })
         });
+		
+		mod.ajqselectedvalue.click(function(){
+			var strCategory = document.getElementById("tagDropdown").value;
+			$( ".dropdown-custom-select" ).html( strCategory );
+		});
     };
 
     return(mod.init());
