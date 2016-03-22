@@ -64,7 +64,7 @@ class JkcRouterHelper {
 	}
 
 	function query_vars($public_query_vars){
-		array_push($public_query_vars, 'model');
+		array_push($public_query_vars, 'make-model');
 		return $public_query_vars;
 	}
 }

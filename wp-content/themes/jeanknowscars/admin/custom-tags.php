@@ -25,7 +25,7 @@ function create_vehicle_model_tags() {
 		'rewrite'         => array('slug' => 'model' ),
 	));
 }
-add_action( 'init', 'create_vehicle_model_tags' );
+//add_action( 'init', 'create_vehicle_model_tags' );
 
 // hierarchial make model test
 function create_vehicle_make_model_hierarcial_tags() {
