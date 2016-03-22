@@ -1,6 +1,6 @@
 <?php
-/* Plugin Name: Make Model Custom Route
-Description: Custom URL
+/* Plugin Name: JKC Custom Routes
+Description: Route builder for custom URL patterns such as make model listings, post gallery etc.,
 Version: 0.1.0
 Author: BK 
 */
@@ -51,15 +51,11 @@ class JkcRouterHelper {
 			}
 		}
 
-		/*$rules = array(
-	      //'category/(.+?)/feed/(feed|rdf|rss|rss2|atom)/?$'  => 'index.php?except_category_name=$matches[1]&feed=$matches[2]',
-	      //'category/(.+?)/(feed|rdf|rss|rss2|atom)/?$'       => 'index.php?except_category_name=$matches[1]&feed=$matches[2]',
-	      //'category/(.+?)/page/?([0-9]{1,})/?$'              => 'index.php?except_category_name=$matches[1]&paged=$matches[2]',
-	      //'category/(.+?)/?$'                                => 'index.php?except_category_name=$matches[1]',
-			//'category/model/?$'                                => 'index.php?category_name=$matches[1]&model=$matches[2]',
-			'(acura)/(rlx)/?$'                                => 'index.php?category_name=$matches[1]&make-model=$matches[2]',
-	      );*/
-		//$category_rewrite[ '(' . $category_nicename . ')/?$' ] = 'index.php?category_name=$matches[1]';
+	    // post gallery routes
+	    // adding in this plugin to minimize number of plugins
+	    $rules['([^)]+)/([^)]+)/(photo-\d+)?$'] = 'index.php?category_name=$matches[1]&name=$matches[2]&photo=$matches[3]';
+		$rules['([^)]+)/([^)]+)/(photo-\d+)?.html$'] = 'index.php?category_name=$matches[1]&name=$matches[2]&photo=$matches[3]';  
+
 	    $wp_rewrite->rules = $rules + (array)$wp_rewrite->rules;
 	}
 
