@@ -74,8 +74,8 @@ wp_enqueue_script( 'mod-confessions-title', get_template_directory_uri() . '/ass
 					<span class="confession-tag-ctr">
 						<label>Tag it!</label>
 						<div class="dropdown-custom">
-							<select id='tagDropdown' class="tagDropdown" title="Tags" style="z-index: 10; opacity: 0;" >
-								<option data-alias="<?php echo $url ?>" value="all">View All</option>
+							<select id="tagDropdown" class="confession-tag" title="Select a Tag" style="z-index: 10; opacity: 0;" >
+								<option value="Select a Tag">Select a Tag</option>
 								<?php 
 								$childAJQCategroy = '';
 								$childAJQCategroy = get_category_children('231');
@@ -91,6 +91,7 @@ wp_enqueue_script( 'mod-confessions-title', get_template_directory_uri() . '/ass
 								}
 								?>
 							</select>
+							<span class="custom dropdown-custom-select ">Select a Tag</span>
 						</div>
 					</span>
 					<a disabled class="btn-secondary-cta disabled post-confession-button right" title="Post Your Confession">Post Your Confession</a>
@@ -110,7 +111,7 @@ wp_enqueue_script( 'mod-confessions-title', get_template_directory_uri() . '/ass
 			<div class="filter-wrap">
 				<span class="label">Filter by:</span>
 				<div class="dropdown-custom">
-					<select id='tagDropdown' class="tagDropdown" title="Tags" style="z-index: 10; opacity: 0;" >
+					<select class="tagDropdown" title="Tags" style="z-index: 10; opacity: 0;" >
 						<option data-alias="<?php echo $url ?>" value="all">View All</option>
 						<?php 
 						$childAJQCategroy = '';
@@ -122,7 +123,7 @@ wp_enqueue_script( 'mod-confessions-title', get_template_directory_uri() . '/ass
 									continue;
 							}
 							$strCatName = '';
-							$strCatName =get_the_category_by_ID($intCatId);
+							$strCatName = get_the_category_by_ID($intCatId);
 							echo "<option data-alias=\"/confessions/?tags=".$strCatName."\" value ='".$strCatName."' >#".strtolower($strCatName)."</option>";
 						}
 						?>
@@ -139,11 +140,12 @@ wp_enqueue_script( 'mod-confessions-title', get_template_directory_uri() . '/ass
 		<div class="mod-list-item-confessions-wrap">
 			<div class="load-more-well clearfix">
 				<?php 
+                                        $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 					$args = array(
-						'posts_per_page'   => -1,
-						'offset'=> 0,
+						'posts_per_page'   => 4,
 						'category_name'    => $strTagSelected,
 						'orderby'          => 'date',
+                                                'paged' => $paged,
 						'order'            => 'DESC',
 						'post_type'        => 'confessions',
 						'post_status'      => 'publish'
@@ -151,20 +153,23 @@ wp_enqueue_script( 'mod-confessions-title', get_template_directory_uri() . '/ass
 					
 					
 					$the_query = new WP_Query( $args );
-					
+                                        
+					$intTotalRecords = '';
+                                        $intTotalRecords = count($the_query->posts);
+                                        
 					while ($the_query->have_posts()){
 					$the_query->the_post(); 
 					?>
-					<div class="mod-list-item-confessions">
+					<div class="mod-list-item-confessions mod-list-item">
 							<div class="info clearfix"> 
 								<?php ?>
 									<h4 class="title-wrap left">#<?php echo $the_query->query['category_name']; ?></h4>
-									<a href="<?php the_guid(); ?>" class="left date"><?php $datepus= ''; $datepus = get_the_date( 'F d, Y'); echo $datepus; ?></a>
+                                                                        <a href="<?php the_permalink(); ?>" class="left date"><?php $datepus= ''; $datepus = get_the_date( 'F d, Y'); echo $datepus; ?></a>
 									<div class="confession-share right">
 										<span class="icon-share"></span>
 										<span class="share-btn">Share</span>
 										<div class="mod-addthis-hover">
-											<div class="addthis_toolbox" addthis:url="<?php  ?>"">
+											<div class="addthis_toolbox" addthis:url="<?php  the_permalink(); ?>">
 												<span class="addthis-share">Share</span>
 											</div>
 										</div>
@@ -177,6 +182,24 @@ wp_enqueue_script( 'mod-confessions-title', get_template_directory_uri() . '/ass
 					}
 					?>
 			</div>
+                    <div class="mod-load-more">
+			<?php
+                        if($intTotalRecords > 3) {
+			// Previous/next page navigation.
+                            if ( have_posts() ) : 
+                                    the_posts_pagination( array(
+                                    'prev_text'          => __( 'Previous page', 'twentysixteen' ),
+                                    'next_text'          => __( 'Next page', 'twentysixteen' ),
+                                    'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentysixteen' ) . ' </span>',
+                                    ) );
+                           endif;
+                        
+			?>
+                        <a class="button btn-main-cta btn-loading" style = "display:none;" href="/" title="Load more">
+                            <i class="fa fa-refresh fa-spin"></i>
+                        </a>
+                        <?php } ?>
+                    </div>
 		</div>
 		<?php } ?>
 	</div>

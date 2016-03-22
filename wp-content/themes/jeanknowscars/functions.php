@@ -68,7 +68,13 @@ function load_front_end_scripts(){
         wp_enqueue_script( 'mod-list-item-faq', get_template_directory_uri() . '/assets/js/mod-list-item-faq.js',null,null,true); 
     }
 
-
+        // Includes the below files for photo gallery pages.
+	$pattern = '/photo-(.*?).html/';
+	preg_match($pattern,$_SERVER['REQUEST_URI'],$matches);
+	if(is_single() && $matches ){			
+		wp_enqueue_style( 'mod-mod-gallery', get_template_directory_uri() . '/assets/css/mod-gallery.css',null,null,"screen" );
+		wp_enqueue_style( 'mod-photo-overlay', get_template_directory_uri() . '/assets/css/mod-photo-overlay.css',null,null,"screen" );
+	}
 	## Loading JS for common pages        
 	wp_enqueue_script( 'jqueryjs','http://code.jquery.com/jquery-1.11.0.min.js');   
 	wp_enqueue_script( 'type-kit','http://a.postrelease.com/serve/load.js?async=true');         

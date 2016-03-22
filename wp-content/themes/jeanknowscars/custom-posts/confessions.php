@@ -70,21 +70,27 @@ function insert_confessions_post() {
 	$strPostType = $_POST['post_typee'];
 	$strQuestionar = $_POST['confessions_name'];
 	$strFBId = explode('|',$strQuestionar);
-	$strGuidURL =  current_time('Y-m-d').'-'.$_REQUEST['category'].'-fb'.trim($strFBId[1]).'-'.current_time( 'timestamp', true );
+	$dtOPublishDate = date('Y-m-d H:i:s');
+	//$strGuidURL =  home_url().'/'.$strPostType.'/'.current_time('Y-m-d').'-'.$_REQUEST['category'].'-fb'.trim($strFBId[1]).'-'.current_time( 'timestamp', true );
+        $strGuidURL =  current_time('Y-m-d').'-'.$_REQUEST['category'].'-fb'.trim($strFBId[1]).'-'.current_time( 'timestamp', true );
 	$defaults = '';
+	
 	$defaults = array(
-        'post_author' => $intUserId,
+        'post_author' => 1,
         'post_content' => '',
         'post_title' => $strQuestion,
-		'post_status' => 'publish',
-		'post_category' => array($intCategoryId),
-        'post_type' => $strPostType
-    );
+        'post_status' => 'publish',
+        'post_category' => array($intCategoryId),
+        'post_type' => $strPostType,
+        'post_date' => $dtOPublishDate,
+        'post_date_gmt' => $dtOPublishDate,
+        'post_modified' => $dtOPublishDate,
+        'post_modified_gmt' => $dtOPublishDate,
+        'post_name' => $strGuidURL,
+    );	
 	$id = '';
 	$id = wp_insert_post( $defaults );
 	add_post_meta( $id, '_jkc_confessions_author', $strQuestionar );
-	//$updatePostOptions = array( 'ID' => $id, 'guid' => $strGuidURL);
-	//wp_update_post( $updatePostOptions );
 	return 'success';
 }
 add_action( 'wp_ajax_insert_confessions_post', 'insert_confessions_post' );

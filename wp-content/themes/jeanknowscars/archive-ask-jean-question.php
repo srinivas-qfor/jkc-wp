@@ -46,8 +46,8 @@ get_header();
 					<textarea class="faq-textarea" id="faq-textarea"></textarea>
 					<span class="faq-tag-ctr">
 						<div class="dropdown-custom">
-							<select id='tagDropdown' class="tagDropdown" title="Tags" style="z-index: 10; opacity: 0;" >
-								<option data-alias="/ask-jean-question/" value="all">View All</option>
+							<select id='tagDropdown' class="tagDropdown" title="Select a Tag" style="z-index: 10; opacity: 0;" >
+								<option value="Select a Tag">Select a Tag</option>
 								<?php 
 								$childAJQCategroy = '';
 								$childAJQCategroy = get_category_children('220');
@@ -63,7 +63,7 @@ get_header();
 								}
 								?>
 							</select>
-							<span class="dropdown-custom-select">Select a Tag</span>
+							<span class="custom dropdown-custom-select">Select a Tag</span>
 						</div>
 					</span>
 					<a class="btn-secondary-cta disabled post-faq-button right" title="Submit Question">Submit Question</a>
@@ -101,8 +101,10 @@ get_header();
 							
 							$strCatName = '';
 							$strCatName =get_the_category_by_ID($intCatId);
+                                                        $s = '';
 							if($strCatName == $strSelectedTag){
-									$s = 'selected="selected"';
+                                                            
+                                                            $s = 'selected="selected"';
 							}
 							echo "<option ".$strCatName." ".$strSelectedTag." data-alias=\"/ask-jean-question/?tags=".$strCatName."\" value ='".$strCatName."' ".$s.">".$strCatName."</option>";
 						}
