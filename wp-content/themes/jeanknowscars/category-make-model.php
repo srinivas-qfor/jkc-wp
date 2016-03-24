@@ -37,12 +37,6 @@ if (is_category()) {
 }
 
 $cat_nam = $this_category->name;
-
-$posts = query_posts(array(
-                 'posts_per_page' => '10',
-                 'category_name' => $cat_nam,
-                 'order' => 'DESC'
-                ));
 ?>
 
 <!-- -->
@@ -195,15 +189,16 @@ $posts = query_posts(array(
                     <div class="columns col-4"> 
                 <?php 
                     $parent = term_exists($cat_nam, 'make-model');
+                    $parent_category = get_term_by('id', $parent['term_id'], 'make-model');
                     $categories = get_terms( 'make-model', array(
                                 'child_of' => $parent['term_id']
                                 ) );
                     $i =0;
                     foreach($categories as $category) { 
-                        
+                        $model_link = site_url('/'.$parent_category->slug.'/'.$category->slug.'/');
                         ?>
                             <div>       
-                            <a class="filter-item first-row" href="<?php echo $category->slug ;?>" title="<?php echo $category->name ;?>"><?php echo $category->name ;?></a>
+                            <a class="filter-item first-row" href="<?php echo $model_link ;?>" title="<?php echo $category->name ;?>"><?php echo $category->name ;?></a>
                             </div>
                             
                     

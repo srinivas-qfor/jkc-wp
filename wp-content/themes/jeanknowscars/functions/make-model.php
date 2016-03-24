@@ -45,3 +45,19 @@ function filter_make_model_posts($query) {
     //print_r("<pre>"); print_r($query); print_r("</pre>"); exit;
 }
 add_action( 'pre_get_posts', 'filter_make_model_posts' );
+
+/*
+ * Set posts limit for make model listings
+ */
+function limit_make_model_posts($query) {
+    if(is_category()) {
+        $category = get_queried_object(); 
+        $parent_id = $category->category_parent;
+        $parent = get_category( $parent_id );
+        $vehicleModel = get_query_var('make-model', false);
+        if($parent->slug == 'new-cars' && (!empty($vehicleModel))) {
+            $query->set('posts_per_page', 10);
+        }
+    }
+}
+add_action( 'pre_get_posts', 'limit_make_model_posts' );
