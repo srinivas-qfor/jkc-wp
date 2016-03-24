@@ -34,7 +34,9 @@ $pageNum = (int)get_query_var('paged', 1);
     </div>
 </div>
 
-<!--home1 --> 
+<!--home1 -->
+
+ 
 <div class="homeA-wrap grey-wrap">
     <div class="row row-padding">
         <div class="homeA-left-wrap left col-17">
@@ -67,6 +69,7 @@ $pageNum = (int)get_query_var('paged', 1);
                             <div class="mod-list-item-home left col-22 first-row <?php if ($i == 1) {
                         echo "first-col";
                     } ?>">
+                   
                                 <div class="row">
                                     <div class="img-wrap">
                                         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
@@ -130,9 +133,110 @@ $pageNum = (int)get_query_var('paged', 1);
 </div>
 
 
+<!--car guide -->
+<?php
+$categories_carguide = get_categories( array(
+    'orderby' => 'name',
+    'order'   => 'ASC',
+     'parent' => 119
+    ) );
+
+?>
+ 
+<div class="homeA-wrap ">
+    <div class="row row-padding">
+        <div class="homeA-left-wrap left col-17">
+            <div class="mod-title-block border-bottom">
+                <div class="headline">
+                    <h2>
+                        <a href="/new-cars/" title="You Auto Know">
+                            Car Guide
+                        </a>
+                    </h2>
+                    <h3>Find Your Best Car Here.</h3>
+                </div>
+            </div>
+            <!--make and model-->
+            <div class="mod-filter-make-model">
+            <div class="shop-wrapper clearfix">
+                    <span class="tease">I already have a vehicle in mind: </span>
+                <div class="right">
+                    <!-- make -->
+                    <div class="dropdown-custom">
+                    <select id = "makes" style="z-index: 10; opacity: 0; width: 170px;">
+                            <option value="">Choose Make</option>
+                        
+                                <?php 
+                                    foreach( $categories_carguide as $category ) {
+                                         $name = $category->cat_name;
+                                         $slug_tx = $category->slug;
+                                         ?>
+                                         <option value="<?php echo $name ;?>" data-slug="<?php echo $slug_tx;?>"><?php echo $name ;?></option>
+                                         <?php
+                                             }
+
+                                         ?>
+                    </select>
+                    <span class="dropdown-custom-select mk" style="width: 118px;">
+                    <p class="make_top">Choose Make</p>
+                    </span>
+                    </div>
+                    <!-- model-->
+                    <div class="dropdown-custom">
+                    <select id = "model" style="z-index: 10; opacity: 0; width: 170px;" disabled="disabled">
+                    <option value="">Choose model</option>
+
+
+                    </select>
+                    <span class="dropdown-custom-select disabled md" style="width: 118px;">
+                    <p class="model_top">Choose model</p>
+                    </div>
+
+                    <!-- go button-->
+
+                    <a href="" id= "make_model_go" class="mod-shop-cta btn-main-cta disabled btn-vehicle-dropdown">Go</a>
+            
+                </div>
+            </div>
+
+
+
+        <!--car vehiletype-->    
+        <div class="mod-browse-by-vehicle-type">
+            <h2>Browse by Vehicle Type</h2>
+            <ul class="tiles">
+                <li class="tile tile-family">
+                    <a href="/family/" class="tile-link" title="Family">
+                    <span class="tile-name">Family</span>
+                    </a>
+                </li>
+                <li class="tile tile-first-car">
+                <a href="/first-car/" class="tile-link" title="First Car"><span class="tile-name">First Car</span></a>
+                </li>
+                <li class="tile tile-sporty">
+                <a href="/sporty/" class="tile-link" title="Sporty"><span class="tile-name">Sporty</span></a>
+                </li>
+                <li class="tile tile-adventure">
+                <a href="/adventure/" class="tile-link" title="Adventure"><span class="tile-name">Adventure</span></a>
+                </li>
+            </ul>
+
+            <div class="view-all-categories">
+            <a class="btn-alt-cta" href="/new-cars/" title="View All 12 Categories">View All 12 Categories</a>
+            </div>
+        </div>
+
+
+
+
+        </div>        
+    </div>
+</div>
+<!--car guide end-->
+
 <!--home2 -->
 
-<div class="homec-wrap">
+<div class="homec-wrap grey-wrap">
     <div class="row row-padding">
         <div class="homeA-left-wrap left col-17">
             <div class="mod-title-block ">
@@ -228,7 +332,7 @@ $pageNum = (int)get_query_var('paged', 1);
 
 <!--home3 -->
 
-<div class="homeC-wrap grey-wrap">
+<div class="homeC-wrap ">
     <div class="row row-padding">
             <div class="mod-title-block ">
                 <div class="headline">
@@ -322,7 +426,7 @@ $pageNum = (int)get_query_var('paged', 1);
 </div>
 
 <!--home4-->
-<div class="homeD-wrap">
+<div class="homeD-wrap grey-wrap">
     <div class="row row-padding">
         <div class="homeE-left-wrap left col-17">
             <div class="mod-ask-jean-question clearfix">
@@ -461,4 +565,61 @@ endif;
 </div>
 
 
-<?php get_footer(); ?>  
+<?php get_footer(); ?> 
+<script type="text/javascript">
+    $(document).ready(function(){ 
+         
+            var ajax_url = "<?php echo admin_url('admin-ajax.php'); ?>";
+
+            var maketext = "";
+
+              $("#makes").change(function () {
+                    $("select#model").html('');
+                    $(".model_top").text('Choose model');
+                    
+                    $(".make_top").text($('#makes option:selected').text());
+                    maketext = $('#makes option:selected').text();
+                    makelink = $('#makes option:selected').data('slug');
+                    
+                    $.ajax({
+                        url :ajax_url,
+                        type: "POST",
+                        data : {
+                            action : 'post_make_model',
+                            name : maketext
+                        }, 
+                        success: function(data){
+                            var models = JSON.parse(data);
+                            $.each(models, function( index, value ) {
+                              $("#model").append("<option value=" + value.name + " data-slug = "+'"'+ value.slug +'"' + ">" + value.name +"</option>");
+                                });
+
+                            $("#make_model_go").removeClass('disabled');
+                            $(".dropdown-custom span").removeClass('disabled');
+                            $("select#model").removeAttr('disabled');
+                             $("a#make_model_go").attr('href',
+                                "<?php echo site_url();?>" +'/'+makelink); 
+                            
+                        }});
+
+
+                        
+
+                });
+
+                var modeltext = "";
+                $("#model").change(function () {  
+                    $(".model_top").text($('#model option:selected').text());
+                    modeltext = $('#model option:selected').text();
+                    modellink = $('#model option:selected').data('slug');
+
+                    $("a#make_model_go").attr('href',"<?php echo site_url();?>" +'/'+makelink +'/'+ modellink); 
+
+                }); 
+
+
+                               
+
+    });
+
+</script> 

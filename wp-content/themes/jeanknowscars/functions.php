@@ -76,7 +76,9 @@ function load_front_end_scripts(){
 	wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/assets/js/modernizr.js');  
 	wp_enqueue_script( 'jquery.cookie.min', get_template_directory_uri() . '/assets/js/jquery.cookie.min.js');  
 	wp_enqueue_script( 'plugins', get_template_directory_uri() . '/assets/js/plugins.js');          
-	wp_enqueue_script( 'global', get_template_directory_uri() . '/assets/js/global.js');                  
+	wp_enqueue_script( 'global', get_template_directory_uri() . '/assets/js/global.js');    
+    wp_enqueue_script( 'addthis_init', get_template_directory_uri() . '/assets/js/addthis_init.js');
+    wp_enqueue_script( 'addthis_close', get_template_directory_uri() . '/assets/js/addthis_close.js');              
 	wp_enqueue_script( 'mod-ad-header', get_template_directory_uri() . '/assets/js/mod-ad-header.js');
 	wp_enqueue_script( 'mod-header', get_template_directory_uri() . '/assets/js/mod-header.js');
 
@@ -197,4 +199,31 @@ function jkc_post_author_override($output)
 	$output = preg_replace('/post_author_override_replaced/', 'post_author_override', $output);
 
   return $output;
+}
+
+add_action( 'wp_ajax_nopriv_post_make_model', 'post_make_model' );
+add_action( 'wp_ajax_post_make_model', 'post_make_model' );
+
+function post_make_model() {
+
+   
+    if(!empty($_POST)){
+         $name = $_POST['name'];
+        $parent = term_exists($name, 'make-model');
+         $categories = get_terms( 'make-model', array(
+                                'child_of' => $parent['term_id']
+                                ) );
+         $model_list = array();
+
+         foreach($categories as $category) { 
+
+                $single['name'] = $category->name;
+                $single['slug'] = $category->slug;
+                $model_list[] = $single;
+
+                }
+                echo json_encode($model_list);
+                die();
+    }
+     
 }
