@@ -29,12 +29,14 @@ wp_enqueue_style( 'mod-browse-by-model', get_template_directory_uri() . '/assets
 ## Loading js for front page
 wp_enqueue_script( 'mod-filter-make-model', get_template_directory_uri() . '/assets/js/mod-filter-make-model.js',null,null,true);
 
+$pageNum = (int)get_query_var('paged', 1);
 
 
 $cat_nam = get_query_var('vehicle-type');
 $parent = term_exists($cat_nam, 'vehicle-type');
 $posts = query_posts( array(  
-    'post_type' => 'post', 
+    'post_type' => 'post',
+    'paged' => $pageNum, 
     'posts_per_page' => 10, 
     'tax_query' => array( 
         array( 
@@ -136,20 +138,7 @@ $posts = query_posts( array(
 
 
                             </div>
-                        </div>        
-
-                                
-
-
-
-
-
-
-
-
-
-
-
+                        </div>
 
                             <?php 
                              $i++;
@@ -164,28 +153,28 @@ $posts = query_posts( array(
                     </div>
 
             <!-- pagination-->
-            <!-- <div class="mod-load-more-vehicle clearfix">
-                <div class="right"> -->
+            <div class="mod-load-more-vehicle clearfix">
+                <div class="right">
                         <!-- <span class="first"><i class="fa fa-step-backward"></i></span>
                         <span class="prev"><i class="fa fa-caret-left"></i></span> -->
                  
-                <?php 
-                if ( have_posts() ) :
-                the_posts_pagination( array(
-                'prev_text'          => __( 'Previous page', 'twentyfifteen' ),
-                'next_text'          => __( 'Next page', 'twentyfifteen' ),
-                'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentyfifteen' ) . ' </span>',
-                ) );
-                endif;
-
-                ?>
+                        <?php 
+                        if ( have_posts() ) :
+                        the_posts_pagination( array(
+                        'mid_size' => 2,
+                        //'format'             => 'page-%#%',
+                        'prev_text'          => __( '' ),
+                        'next_text'          => __( '' ),
+                        ) );
+                        endif;
+                        ?>
 
                         <!-- <span class="next"><i class="fa fa-caret-right"></i></span>
                         <span class="last"><i class="fa fa-step-forward"></i></span> -->
                         
             
-                <!-- </div>
-            </div> -->
+                </div>
+            </div>
 
 
         </div>
@@ -231,52 +220,6 @@ $posts = query_posts( array(
 <!--End -->
 <?php get_footer(); ?>  
 
-<script type="text/javascript">
 
-    $(document).ready(function(){ 
-              
-
-
-                            
-                 
-
-                
-
-    });
-
-</script>
-
-
-<!-- -->
-        <!--new -->
-
-        <!-- <div class="mod-list-item-vehicle left col-21 first-page first-col first-row">
-            <div class="row">
-                <div class="img-wrap">
-                    <img src="http://image.staging1.int.jeanknowscars.com/f/142426688+w620+h387+re0+cr1+ar0/acura-rlx-sport-hybrid-2016-header.jpg" alt="2016 Acura RLX" height="387" width="620" onerror="this.src='/img/jkc-no-image-620x387.jpg'" />
-                    <a href="/new-cars/acura/2016-acura-rlx/" title="2016 Acura RLX" class="img-hover">
-                        <span>
-                            See this model
-                        </span>
-                    </a>
-                </div>
-                <div class="info-wrap">
-                    <h4 class="title-wrap"><a class="list-title" href="/new-cars/acura/2016-acura-rlx/" title="2016 Acura RLX">2016 Acura RLX</a></h4>
-                                        <div class="tags-wrap clearfix">
-                                                    <div class="year">Year: <span>2016</span></div>
-                                            </div>
-                                        <div class="desc">On technology alone, don't overlook this luxury sedan.</div>
-                </div>
-                <div class="social clearfix">
-                    <span class="share-btn left">Share</span>
-                    <div class="mod-addthis-hover">
-                        <div class="addthis_toolbox" addthis:url="http://local.jeanknowscars.com//new-cars/acura/2016-acura-rlx/" addthis:title="2016 Acura RLX">
-                            <span class="addthis-share left">Share</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-         <!-- end new -->
 
         
