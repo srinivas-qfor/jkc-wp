@@ -104,7 +104,7 @@ $categories = get_categories( array(
 <div class="mod-filter-make-model">
     <div class="shop-wrapper clearfix">
                     <h2>Already Know What You’re Looking For?</h2>
-        <div class="mod-shop-makemodel border-bottom">
+        <div class="border-bottom">
             <div class="dropdown-custom">
                 <select id = "makes" style="z-index: 10; opacity: 0; width: 170px;">
                         <option value="">Choose Make</option>
@@ -120,7 +120,7 @@ $categories = get_categories( array(
 
                                      ?>
                 </select>
-                <span class="dropdown-custom-select" style="width: 118px;">
+                <span class="dropdown-custom-select mk" style="width: 118px;">
                 <p class="make_top">Choose Make</p>
                 </span>
             </div>
@@ -131,7 +131,7 @@ $categories = get_categories( array(
                                 
                                         
                 </select>
-                <span class="dropdown-custom-select disabled" style="width: 118px;">
+                <span class="dropdown-custom-select disabled md" style="width: 118px;">
                 <p class="model_top">Choose model</p>
             </div>
 
@@ -162,7 +162,7 @@ $categories = get_categories( array(
            </div>
            
             <?php
-            if(($i==17) || ($i==34)){ 
+            if(($i % 17) == 0){ 
             ?>
                  </div>
                  <div class="columns col-4"> 
@@ -219,6 +219,9 @@ $categories = get_categories( array(
             var maketext = "";
 
               $("#makes").change(function () {
+                    $("select#model").html('');
+                    $(".model_top").text('Choose model');
+                    
                     $(".make_top").text($('#makes option:selected').text());
                     maketext = $('#makes option:selected').text();
                     makelink = $('#makes option:selected').data('slug');
@@ -227,7 +230,7 @@ $categories = get_categories( array(
                         url :ajax_url,
                         type: "POST",
                         data : {
-                            action : 'post_love_add_love',
+                            action : 'post_make_model',
                             name : maketext
                         }, 
                         success: function(data){
@@ -243,7 +246,12 @@ $categories = get_categories( array(
                                 "<?php echo site_url();?>" +'/'+makelink); 
                             
                         }});
-                }); 
+
+
+                        
+
+                });
+
                 var modeltext = "";
                 $("#model").change(function () {  
                     $(".model_top").text($('#model option:selected').text());
