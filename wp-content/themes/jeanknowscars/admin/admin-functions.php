@@ -94,3 +94,4 @@ function add_post_meta_tags($post) {
 }
 
 include 'admin-category.php';
+include 'custom-tags.php';

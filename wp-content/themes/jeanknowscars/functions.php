@@ -2,6 +2,7 @@
 @ini_set( 'max_execution_time', '3000' );
 include_once "shortcodes.php";
 include_once "functions/instagram.php";
+include_once "functions/make-model.php";
 include_once "custom-posts/askquestion.php";
 include_once "custom-posts/confessions.php";
 
