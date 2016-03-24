@@ -33,12 +33,19 @@ class Meta
 
         // default fallback to home
         $page = 'home';
-
+        
         if(is_single()) {
             $page = 'detail';
         }
         else if(is_category()) {
             $page = 'listing';
+            $model = get_query_var('make-model');
+            if(!empty($model)) {
+                $page = 'make-model';
+            }
+        }
+        else if(is_tax()) {
+            $page = 'taxonomy';
         }
         else if(is_author()) {
             $page = 'author';
@@ -68,7 +75,25 @@ class Meta
                 break;
 
             case 'listing':
-                $this->getCategoryPage();
+                $category = get_queried_object();
+                // special treatment for make category
+                if($category->parent === 119) {
+                    $this->getTaxonomyPage($category, true);
+                }
+                else {
+                    $this->getCategoryPage();
+                }                
+                break;
+
+            case 'taxonomy':
+                $taxonomy = get_queried_object();
+                $this->getTaxonomyPage($taxonomy);
+                break;
+
+            case 'make-model':
+                $model = get_query_var('make-model');
+                $taxonomy = get_term_by('slug', $model, 'make-model');
+                $this->getTaxonomyPage($taxonomy);
                 break;
             
             case 'detail':
@@ -174,6 +199,49 @@ class Meta
         $this->setDescriptionTag($desc);
 
         $this->tags->offsetSet('keywords', new MetaEntity('keywords', get_term_meta($cat, 'meta-keywords', true), '', 'keywords'));
+
+        $this->tags->offsetSet('og:type', new MetaEntity('', 'website', 'og:type'));
+    }
+
+    /**
+     * Sets tags for tags archive page
+     * @param null
+     * @return null
+     */
+    private function getTaxonomyPage($tag = '', $useSettings = false) {
+        if(empty($tag)) $tag = get_queried_object();
+        $model = get_query_var('make-model');
+
+        $meta = get_term_meta($tag->term_id);
+        $settings = get_option('jkc_settings', array());
+        $category = get_the_category();
+        if(is_array($category)) {
+            $category = $category[0];
+        }
+
+        $page_num = get_query_var('paged');
+
+        $tokens = array(
+            "[[[site_name]]]"    => get_bloginfo('name'),
+            "[[[current_year]]]" => date('Y'),
+            "[[[next_year]]]"    => (int)date('Y') + 1,
+            "[[[last_year]]]"    => (int)date('Y') - 1,
+            "[[[vehicle_make]]]" => $category->name,
+            "[[[vehicle_model]]]"=> $tag->name,
+            "[[[page_num]]]"     => ($page_num > 0) ? $page_num : ''
+        );
+
+        $title = isset($meta['meta-title'][0]) ? $meta['meta-title'][0] : '';
+        if($useSettings) {
+            $title = !empty($settings['meta_title_make_mode_pagi']) ? strtr($settings['meta_title_make_mode_pagi'], $tokens) : '';
+        }
+        $title = !empty($title) ? $title : get_bloginfo('name');
+        $this->setTitleTag($title);
+
+        $desc = isset($meta['meta-description'][0]) ? $meta['meta-description'][0] : '';
+        $this->setDescriptionTag($desc);
+
+        $this->tags->offsetSet('keywords', new MetaEntity('keywords', (isset($meta['meta-description'][0]) ? $meta['meta-description'][0] : ''), '', 'keywords'));
 
         $this->tags->offsetSet('og:type', new MetaEntity('', 'website', 'og:type'));
     }
