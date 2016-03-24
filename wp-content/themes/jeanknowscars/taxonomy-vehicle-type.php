@@ -31,17 +31,19 @@ wp_enqueue_script( 'mod-filter-make-model', get_template_directory_uri() . '/ass
 
 
 
-if (is_category()) {
-    $this_category = get_category($cat);
-}
+$cat_nam = get_query_var('vehicle-type');
+$parent = term_exists($cat_nam, 'vehicle-type');
+$posts = query_posts( array(  
+    'post_type' => 'post', 
+    'posts_per_page' => 10, 
+    'tax_query' => array( 
+        array( 
+            'taxonomy' => 'vehicle-type',
+            'terms' => $parent['term_id']
+        ) 
+    ) 
+) );
 
-$cat_nam = $this_category->name;
-
-$posts = query_posts(array(
-                 'posts_per_page' => '10',
-                 'category_name' => $cat_nam,
-                 'order' => 'DESC'
-                ));
 ?>
 
 <!-- -->
@@ -63,7 +65,8 @@ $posts = query_posts(array(
                         <h3>Browse all <?php echo $cat_nam; ?> Cars</h3>
                     <div class="load-more-well clearfix">
 
-         <?php               
+                     <?php   
+
                         if (have_posts()) :
                             $i = 1;
                             while (have_posts()) : the_post();
@@ -188,42 +191,7 @@ $posts = query_posts(array(
         </div>
         <!-- listing -->
 
-            <div class="mod-browse-by-model clearfix">
-                <h3>Browse by Vehicle Model</h3>
-
-                    <div class="columns col-4"> 
-                <?php 
-                    $parent = term_exists($cat_nam, 'make-model');
-                    $categories = get_terms( 'make-model', array(
-                                'child_of' => $parent['term_id']
-                                ) );
-                    $i =0;
-                    foreach($categories as $category) { 
-                        
-                        ?>
-                            <div>       
-                            <a class="filter-item first-row" href="<?php echo $category->slug ;?>" title="<?php echo $category->name ;?>"><?php echo $category->name ;?></a>
-                            </div>
-                            
-                    
-                    <?php 
-                        $i++;
-
-                            if(($i % 4) == 0){
-                                ?>
-                                </div>
-                                <div class="columns col-4">
-                            <?php
-                                }
-
-                        }
-
-
-                    ?>
-                </div>
-            </div>
-        
-          
+                      
 
         </div>
         <!--left side-->

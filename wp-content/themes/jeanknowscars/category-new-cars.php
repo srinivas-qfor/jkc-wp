@@ -221,6 +221,7 @@ $categories = get_categories( array(
               $("#makes").change(function () {
                     $("select#model").html('');
                     $(".model_top").text('Choose model');
+                    $("#model").append('<option value="">Choose model</option>');
                     
                     $(".make_top").text($('#makes option:selected').text());
                     maketext = $('#makes option:selected').text();
