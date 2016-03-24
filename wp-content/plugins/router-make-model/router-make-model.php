@@ -48,13 +48,29 @@ class JkcRouterHelper {
 				$rKey = '('.$make->slug.')/('.$model->slug.')/?$';
 				//$rValue = 'index.php?category_name=$matches[1]&make-model=$matches[2]';
 				$rules[$rKey] = 'index.php?category_name=$matches[1]&make-model=$matches[2]';
+
+				// make/model pagination
+				$rPageKey = '('.$make->slug.')/('.$model->slug.')/page/(2)/?$';
+				$rules[$rPageKey] = 'index.php?category_name=$matches[1]&make-model=$matches[2]&paged=$matches[3]'; 
+
+				// make pagination - using vehicle-make-model taxonomy to generate the routes
+				$rPageTKey = '('.$make->slug.')/page/(2)/?$';
+				$rules[$rPageTKey] = 'index.php?category_name=$matches[1]&paged=$matches[2]'; 
 			}
 		}
 
 	    // post gallery routes
 	    // adding in this plugin to minimize number of plugins
 	    $rules['([^)]+)/([^)]+)/(photo-\d+)?$'] = 'index.php?category_name=$matches[1]&name=$matches[2]&photo=$matches[3]';
-		$rules['([^)]+)/([^)]+)/(photo-\d+)?.html$'] = 'index.php?category_name=$matches[1]&name=$matches[2]&photo=$matches[3]';  
+		$rules['([^)]+)/([^)]+)/(photo-\d+)?.html$'] = 'index.php?category_name=$matches[1]&name=$matches[2]&photo=$matches[3]'; 
+
+		// vehicle type rewrites
+		$vehicle_types = get_terms('vehicle-type', array('hide_empty' => false));
+		foreach ($vehicle_types as $vehicle_type) {
+			$rules['(' . $vehicle_type->slug . ')/(?:feed/)?(feed|rdf|rss|rss2|atom)/?$'] = 'index.php?vehicle-type=$matches[1]&feed=$matches[2]';
+			$rules['(' . $vehicle_type->slug . ')/page/?([0-9]{1,})/?$' ] = 'index.php?vehicle-type=$matches[1]&paged=$matches[2]';
+			$rules[ '(' . $vehicle_type->slug . ')/?$' ] = 'index.php?vehicle-type=$matches[1]';
+		}
 
 	    $wp_rewrite->rules = $rules + (array)$wp_rewrite->rules;
 	}
