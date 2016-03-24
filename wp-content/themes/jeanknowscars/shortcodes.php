@@ -30,12 +30,39 @@ function render_blocks($atts) {
                 <div class="wrap">
                   <h3>Car Confessions</h3>
                   <h4>A Pretty Place for Ugly Secrets</h4>
-<!--                  <a class="btn-alt-cta">Confess Here</a>-->
-                   <!--<a class="btn-alt-cta" href="/confessions/">Confess Here</a>-->
+                   <a class="btn-alt-cta" href="/confessions/">Confess Here</a>
                 </div>
               </div>
             <?php if($ad_col_wrap !== 'off') : ?></div><?php endif; ?>
    <?php endif;
+   
+   if($atts['name'] == 'stay-conntected'){ ?>
+	   <div class="mod-stay-connect">
+    <h3>Stay Connected</h3>
+    <ul>
+        <li class="social-link follow-facebook">
+            <div class="fb-like" data-href="https://www.facebook.com/JeanKnowsCars" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false">Follow us on Facebook</div>
+        </li>
+        <li class="social-link follow-twitter">
+            <a class="twitter-follow-button" href="https://twitter.com/jeanknowscars" data-show-count="true" data-size="medium" data-show-screen-name="true">Follow @jeanknowscars</a>
+        </li>
+        <li class="social-link follow-google">
+            <a href="https://plus.google.com/112100834357947783048/" class="social-google" target="_blank">
+                <i class="fa fa-google-plus-square"></i>Follow us on Google+
+            </a>
+        </li>
+        <li class="social-link follow-instagram">
+            <a href="http://instagram.com/jeanknowscars" class="social-instagram" target="_blank">
+                <i class="fa fa-instagram"></i>Follow us on Instagram
+            </a>
+        </li>
+    </ul>
+    <script>
+        // Twitter Follow
+        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+    </script>
+</div>
+   <?php }
 }
 
 add_shortcode('add_block', 'render_blocks');

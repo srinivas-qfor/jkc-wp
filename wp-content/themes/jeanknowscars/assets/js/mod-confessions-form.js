@@ -53,6 +53,9 @@
             } else if (charLength > 0 && charLength <= mod.vars.charLimit) {
                 mod.button.removeAttr('disabled').removeClass('disabled');
             }
+            
+            var strCategory = document.getElementById("tagDropdown").value;
+            $( ".custom.dropdown-custom-select" ).html( strCategory );
         });
 
         mod.button.click(function(){

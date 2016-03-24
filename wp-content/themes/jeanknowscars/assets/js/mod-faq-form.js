@@ -25,7 +25,6 @@
         mod.button = $('.post-faq-button');
         mod.thanks = $('.post-faq-thanks');
         mod.another = $('.post-another-faq');
-		mod.ajqselectedvalue = $('#tagDropdown');
     };		  
 		  
     mod.setEvents = function(){
@@ -55,6 +54,9 @@
             } else if (charLength > 0 && charLength <= mod.vars.charLimit) {
                 mod.button.removeClass('disabled');
             }
+            
+            var strCategory = document.getElementById("tagDropdown").value;
+            $( ".custom.dropdown-custom-select" ).html( strCategory );
         });
 
         mod.button.click(function(){
@@ -121,11 +123,6 @@
                     $(this).next().text(val);
                 })
         });
-		
-		mod.ajqselectedvalue.click(function(){
-			var strCategory = document.getElementById("tagDropdown").value;
-			$( ".dropdown-custom-select" ).html( strCategory );
-		});
     };
 
     return(mod.init());

@@ -8,10 +8,15 @@
  */
 
 		while ( have_posts() ) : the_post();
-
+                        
+                        $pattern = '/photo-(.*?).html/';
+			preg_match($pattern,$_SERVER['REQUEST_URI'],$matches);
 			// Include the single post content template.
-			get_template_part( 'template-parts/content', 'single' );
-
+			if($matches){
+				get_template_part( 'template-parts/content', 'gallery' );
+			}else{
+				get_template_part( 'template-parts/content', 'single' );
+			}
 			// End of the loop.
 		endwhile;
 ?>

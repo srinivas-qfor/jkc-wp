@@ -87,6 +87,7 @@ label {
     height: 30px;
     z-index: 10;
     width: 225px;
+	font-size:100%;	
 }
 
 .mod-contact .dropdown-custom select option {
@@ -209,4 +210,62 @@ label {
 
 .mobile-page #contact-us-form input, .mobile-page #contact-us-form textarea {
     width: 100%;
+}
+
+.contact-form .row .input-cont .wpcf7-text{
+    background-color: #fff;
+    border: 1px solid #c1cc87;
+    border-radius: 3px;
+    color: #282828;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 93%;
+    font-size: 100%;
+    font-family: sans-serif;
+}
+
+.contact-form .row .input-cont .wpcf7-textarea{
+    background-color: #fff;
+    border: 1px solid #c1cc87;
+    border-radius: 3px;
+    color: #282828;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 93%;
+    font-size: 100%;
+    font-family: sans-serif;
+	height:60px;
+}
+
+
+.contact-form .btn-cont .input-cont .wpcf7-submit{
+	background-color: #010101;
+    background-image: linear-gradient(#2c2c2c 0,#010101 100%);
+    border-radius: 2px;
+    color: #fff;
+    display: block;
+    font-size: 18px;
+    font-weight: normal;
+    letter-spacing: 0;
+    line-height: 24px;
+    padding: 8.5px;
+    text-align: center;
+    text-decoration: none;
+    margin-bottom: 0;
+	width:93%;
+}
+	
+span.wpcf7-not-valid-tip{
+	padding-left:25%;
+}
+
+.mod-contact .dropdown-custom select {
+  background-image: linear-gradient(#f5f5f5 0px, #e2e1e1 100%);
+  border: 2px solid #e2e1e1;
+  border-radius: 3px;
+  width: 100%;
+  margin:0 10px 25px 0;
+}
+.mod-sort-by-category-mobile .wpcf7-not-valid-tip {
+  padding-left: 0;
 }
