@@ -1,5 +1,6 @@
 <?php
 include 'theme-options-social.php';
+include 'theme-options-pagination-meta.php';
 add_action( 'admin_menu', 'jkc_add_admin_menu' );
 add_action( 'admin_init', 'jkc_settings_init' );
 
@@ -141,6 +142,7 @@ function jkc_options_page(  ) {
         <?php
         settings_fields( 'jkcThemeOptionPage' );
         do_settings_sections( 'jkcThemeOptionPage' );
+        do_settings_sections( 'jkcThemeOptionPagiMetaPage' );
         do_settings_sections( 'jkcThemeOptionSocialPage' );
         submit_button();
         ?>
