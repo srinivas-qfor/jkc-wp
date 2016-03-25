@@ -1,0 +1,121 @@
+.flex-direction-nav
+{
+    display: none;
+}
+
+.mod-flipper-mobile,
+.mod-flipper-mobile .flexslider .slide img,
+.mod-flipper-mobile .flipper-info-box {
+    border-radius: 0;
+}
+
+.mod-flipper-mobile .flexslider {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.flex-viewport{
+    overflow: hidden;
+}
+
+.mod-flipper-mobile .flexslider .slides{
+    overflow: hidden;
+    width: 1000%;
+}
+
+.mod-flipper-mobile .flexslider .slides li {
+    float: left;
+    width: 10%;
+}
+
+.mod-flipper-mobile {
+    height: auto;
+    padding-bottom: 0;
+}
+
+.mod-flipper-mobile .flexslider {
+    border-bottom: none;
+}
+.mod-flipper-mobile .flexslider .slide img {
+    height: auto;
+    display: block;
+}
+
+.mod-flipper-mobile .flipper-info-box {
+    background-color: rgba(0,0,0,1);
+    min-height: 112px;
+    height: 112px;
+    position: relative;
+}
+.mod-flipper-mobile .flipper-info-title {
+    font-size: 18px;
+    color: #ffffff;
+    line-height: 22px;
+    margin: 10px 20px 5px;
+    display: inline-block;
+    font-family: "proxima-nova-alt",Helvetica,Arial,sans-serif;
+    font-weight: normal;
+    text-decoration: none;
+    white-space: nowrap;
+}
+.mod-flipper-mobile .flipper-info-title:hover {
+    text-decoration: underline;
+}
+.mod-flipper-mobile .flipper-info-text {
+    color: #b5b5b5;
+    font-size: 12px;
+    line-height: 16px;
+    height: 32px;
+    margin: 5px 20px 10px;
+    overflow: hidden;
+    display: block;
+}
+.flipper-info-pager{
+    text-align: center;
+    position: relative;
+}
+.mod-flipper-mobile .flipper-info-left,
+.mod-flipper-mobile .flipper-info-right {
+    background-image: url('/wp-content/themes/jeanknowscars/assets/img/mod-flipper-sprite.png');
+    background-repeat: no-repeat;
+    cursor: pointer;
+    display: inline-block;
+    height: 16px;
+    width: 12px;
+}
+.mod-flipper-mobile .flipper-info-left {
+    background-position: 0 -84px;
+}
+.mod-flipper-mobile .flipper-info-right {
+    background-position: -12px -84px;
+}
+
+.mod-flipper-mobile .flipper-info-pager-text {
+    color: #b5b5b5;
+    display: inline-block;
+    font: bold 14px/14px Arial;
+    margin: 0 15px;
+    text-shadow: 1px 1px #000;
+    vertical-align: top;
+}
+
+.mod-flipper-mobile.category .flipper-info-box {
+    text-align: center;
+    min-height: 0;
+}
+
+.mod-flipper-mobile.category .flipper-info-box .flipper-info-title {
+    font-size: 24px;
+    line-height: 28px;
+    margin: 10px;
+    white-space: normal;
+}
+
+.mod-flipper-mobile.category .flipper-info-box .flipper-info-text {
+    display: block;
+    font-size: 14px;
+    line-height: 18px;
+    margin: 0 10px;
+    height: auto;
+}
