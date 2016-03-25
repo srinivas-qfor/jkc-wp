@@ -21,8 +21,9 @@ function add_featured_meta_box($post){
     $featured_cat = get_post_meta($post->ID, '_featured-post', true);
     if($featured_cat == 1) $field_id_checked = 'checked="checked"'; 
     echo "<li><input type='checkbox' name='_featured-post' id='featured-post' value='1' ".$field_id_checked." />";
-    echo "<label for='_featured-post'>".__('&nbsp; Promote to Category Index page?', '')."</label><br><label for='_featured-post-order'>Order #: </label>";
-    echo "<input type='text' name='_featured-post-order' placeholder='order' value='".get_post_meta($post->ID, '_featured-post-order', true)."' />";
+    echo "<label for='_featured-post'>".__('&nbsp; Promote to Category Index page?', '')."</label>";
+    /*<br><label for='_featured-post-order'>Order #: </label>";
+    echo "<input type='text' name='_featured-post-order' placeholder='order' value='".get_post_meta($post->ID, '_featured-post-order', true)."' />";*/
     echo "</li>";
 
     // home featured flipper
