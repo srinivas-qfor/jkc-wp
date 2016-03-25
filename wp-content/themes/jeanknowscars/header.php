@@ -52,6 +52,7 @@
                             </div>
                             <!-- Display Social Links -->
                             <?php get_template_part('template-parts/navigation', 'social'); ?> 
+                            <?php get_search_form(); ?>
                         </div>
                         <!-- Display Main Menu -->
                         <?php get_template_part('template-parts/navigation', 'top'); ?>                

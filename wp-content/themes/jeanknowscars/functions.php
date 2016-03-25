@@ -68,6 +68,15 @@ function load_front_end_scripts(){
         wp_enqueue_script( 'mod-faq-form', get_template_directory_uri() . '/assets/js/mod-faq-form.js',null,null,true); 
         wp_enqueue_script( 'mod-list-item-faq', get_template_directory_uri() . '/assets/js/mod-list-item-faq.js',null,null,true); 
     }
+    if(is_search()){
+        wp_enqueue_style( 'lay-two-column', get_template_directory_uri() . '/assets/css/lay-two-column.css',[],true,"screen" );
+        wp_enqueue_style( 'mod-car-confession', get_template_directory_uri() . '/assets/css/mod-car-confession.css',null,null,"screen" );
+        wp_enqueue_style( 'mod-load-more', get_template_directory_uri() . '/assets/css/mod-load-more.css',null,null,"screen" );
+        wp_enqueue_style( 'mod-stay-connected', get_template_directory_uri() . '/assets/css/mod-stay-connected.css',null,null,"screen" );
+        wp_enqueue_style( 'mod-title', get_template_directory_uri() . '/assets/css/mod-title.css',null,null,"screen" );
+        wp_enqueue_style( 'mod-search', get_template_directory_uri() . '/assets/css/mod-search.css',null,null,"screen" );
+        wp_enqueue_style( 'mod-list-search', get_template_directory_uri() . '/assets/css/mod-list-search.css',null,null,"screen" );
+    }
 
         // Includes the below files for photo gallery pages.
 	$pattern = '/photo-(.*?).html/';
@@ -233,3 +242,10 @@ function post_make_model() {
     }
      
 }
+
+function jkc_limit_posts_in_search_page(  $query ) {
+        if ( is_search() ) {
+             $query->set( 'posts_per_page', 15 );
+        }
+}
+add_filter('pre_get_posts', 'jkc_limit_posts_in_search_page');
