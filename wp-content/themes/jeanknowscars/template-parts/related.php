@@ -6,14 +6,14 @@
 ?>
 <?php
 //print_r($post);
+$intCurrentPostId = ''; $categories = ''; $intCategoryId = ''; $strCategoryName = '';
 $categories = get_the_category( $post->ID);
 $intCategoryId = $categories[0]->cat_ID;
 $strCategoryName = $categories[0]->cat_name;
-$args = array( 'cat' => $intCategoryId ,'order'   => 'DESC' , 'posts_per_page' =>'2');
+$intCurrentPostId = get_the_ID();
+$args = array( 'cat' => $intCategoryId ,'order'   => 'DESC' , 'posts_per_page' =>'2', 'post__not_in' => array($intCurrentPostId) );
 // The Query
 $the_query = new WP_Query( $args );
-
-
 
 // The Loop
 echo '<h3>Related Articles</h3>';
@@ -21,9 +21,6 @@ if ( $the_query->have_posts() ) {
     $i = 0;
     while ( $the_query->have_posts() ) { 
     
-        if($post->ID == the_ID){
-            continue;
-        }
         $the_query->the_post();
         ?>
             <div class="mod-list-item left <?php if($i == 0 ){ echo "first-col "; } ?>first-row">
