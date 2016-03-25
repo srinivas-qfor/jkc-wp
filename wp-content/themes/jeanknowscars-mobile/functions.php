@@ -12,12 +12,12 @@ function load_front_end_scripts(){
 	wp_enqueue_style( 'mod-footer-mobile', get_template_directory_uri() . '/assets/css/mod-footer-mobile.css' );
 	wp_enqueue_style( 'mod-header-mobile', get_template_directory_uri() . '/assets/css/mod-header-mobile.css' );
 	wp_enqueue_style( 'font-awsome', "http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css",null,null,"screen");
+	wp_enqueue_style('mod-ad-bottom-mobile', get_template_directory_uri() . '/assets/css/mod-ad-bottom-mobile.css', null, null, "screen");
+    wp_enqueue_style('mod-ad-mrec-bottom-mobile', get_template_directory_uri() . '/assets/css/mod-ad-mrec-bottom-mobile.css', null, null, "screen");
+    wp_enqueue_style('mod-ad-mrec-mobile', get_template_directory_uri() . '/assets/css/mod-ad-mrec-mobile.css', null, null, "screen");
     
     if( is_home() || is_front_page() ){
         wp_enqueue_style('lay-mobile', get_template_directory_uri() . '/assets/css/lay-mobile.css', null, null, "screen");
-        wp_enqueue_style('mod-ad-bottom-mobile', get_template_directory_uri() . '/assets/css/mod-ad-bottom-mobile.css', null, null, "screen");
-        wp_enqueue_style('mod-ad-mrec-bottom-mobile', get_template_directory_uri() . '/assets/css/mod-ad-mrec-bottom-mobile.css', null, null, "screen");
-        wp_enqueue_style('mod-ad-mrec-mobile', get_template_directory_uri() . '/assets/css/mod-ad-mrec-mobile.css', null, null, "screen");
         wp_enqueue_style('mod-filter-make-model-mobile', get_template_directory_uri() . '/assets/css/mod-filter-make-model-mobile.css', null, null, "screen");
         wp_enqueue_style('mod-browse-by-vehicle-type-mobile', get_template_directory_uri() . '/assets/css/mod-browse-by-vehicle-type-mobile.css', null, null, "screen");
         //wp_enqueue_style('mod-ask-jean-question', get_template_directory_uri() . '/assets/css/mod-ask-jean-question.css', null, null, "screen");
@@ -32,17 +32,8 @@ function load_front_end_scripts(){
     }
 
     if( is_post_type_archive()){
-        wp_enqueue_style( 'lay-one-column', get_template_directory_uri() . '/assets/css/lay-one-column.css',[],true,"screen" );
-        wp_enqueue_style( 'mod-breadcrumbs', get_template_directory_uri() . '/assets/css/mod-breadcrumbs.css',null,null,"screen" );
-        wp_enqueue_style( 'mod-reset', get_template_directory_uri() . '/assets/css/reset.css',null,null,"screen" );
-        wp_enqueue_style( 'mod-global', get_template_directory_uri() . '/assets/css/global.css',null,null,"screen" );
-        wp_enqueue_style( 'mod-footer', get_template_directory_uri() . '/assets/css/mod-footer.css',null,null,"screen" );
-        wp_enqueue_style( 'mod-header', get_template_directory_uri() . '/assets/css/mod-header.css',null,null,"screen" );
-        wp_enqueue_style( 'mod-life-with-jean', get_template_directory_uri() . '/assets/css/mod-life-with-jean.css',null,null,"screen" );
-        wp_enqueue_style( 'mod-car-confession', get_template_directory_uri() . '/assets/css/mod-car-confession.css',null,null,"screen" );
-        wp_enqueue_style( 'mod-get-social', get_template_directory_uri() . '/assets/css/mod-get-social.css',null,null,"screen" );
+        wp_enqueue_style( 'lay-mobile', get_template_directory_uri() . '/assets/css/lay-mobile.css',[],true,"screen" );
         wp_enqueue_style( 'mod-load-more', get_template_directory_uri() . '/assets/css/mod-load-more.css',null,null,"screen" );
-        wp_enqueue_style( 'grid', get_template_directory_uri() . '/assets/css/grid.css',null,null,"screen" );
         wp_enqueue_style( 'mod-filter-confessions-faq', get_template_directory_uri() . '/assets/css/mod-filter-confessions-faq.css',null,null,"screen" );
         wp_enqueue_style( 'mod-faq-title', get_template_directory_uri() . '/assets/css/mod-faq-title.css',null,null,"screen" );
         wp_enqueue_style( 'mod-faq-form', get_template_directory_uri() . '/assets/css/mod-faq-form.css',null,null,"screen" );
