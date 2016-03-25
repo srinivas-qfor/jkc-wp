@@ -50,11 +50,11 @@ class JkcRouterHelper {
 				$rules[$rKey] = 'index.php?category_name=$matches[1]&make-model=$matches[2]';
 
 				// make/model pagination
-				$rPageKey = '('.$make->slug.')/('.$model->slug.')/page/(2)/?$';
+				$rPageKey = '('.$make->slug.')/('.$model->slug.')/page/?([0-9]{1,})/?$';
 				$rules[$rPageKey] = 'index.php?category_name=$matches[1]&make-model=$matches[2]&paged=$matches[3]'; 
 
 				// make pagination - using vehicle-make-model taxonomy to generate the routes
-				$rPageTKey = '('.$make->slug.')/page/(2)/?$';
+				$rPageTKey = '('.$make->slug.')/page/?([0-9]{1,})/?$';
 				$rules[$rPageTKey] = 'index.php?category_name=$matches[1]&paged=$matches[2]'; 
 			}
 		}

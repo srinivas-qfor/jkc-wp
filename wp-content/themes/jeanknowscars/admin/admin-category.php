@@ -66,3 +66,19 @@ function update_feature_meta( $term_id, $tt_id ){
         update_term_meta( $term_id, 'meta-description', $description );
     }
 }
+
+/* Create meta fields for custom taxonomies
+ * Vehicle Type, Make Model
+ * NOTE: Re-used functions of category 
+ */
+// Vehicle Type
+add_action( 'vehicle-type_add_form_fields', 'add_category_seo_field' );
+add_action( 'created_vehicle-type', 'save_feature_category_meta', 10, 2 );
+add_action( 'vehicle-type_edit_form_fields', 'edit_category_seo_field' );
+add_action( 'edited_vehicle-type', 'update_feature_meta', 10, 2 );
+
+// Vehicle Make Model
+add_action( 'make-model_add_form_fields', 'add_category_seo_field' );
+add_action( 'created_make-model', 'save_feature_category_meta', 10, 2 );
+add_action( 'make-model_edit_form_fields', 'edit_category_seo_field' );
+add_action( 'edited_make-model', 'update_feature_meta', 10, 2 );
