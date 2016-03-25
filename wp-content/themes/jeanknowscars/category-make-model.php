@@ -30,13 +30,13 @@ wp_enqueue_style( 'mod-browse-by-model', get_template_directory_uri() . '/assets
 wp_enqueue_script( 'mod-filter-make-model', get_template_directory_uri() . '/assets/js/mod-filter-make-model.js',null,null,true);
 
 
-//$currentCategory = get_query_var('category');
-
 if (is_category()) {
     $this_category = get_category($cat);
 }
 
 $cat_nam = $this_category->name;
+$sub_cat = strtoupper(get_query_var('make-model'));
+$sub_str = (!empty($sub_cat)) ? '-'.' '.$sub_cat : ' ';
 ?>
 
 <!-- -->
@@ -49,16 +49,16 @@ $cat_nam = $this_category->name;
                 <!-- breadcrumb-->
                 <?php get_template_part('template-parts/navigation','breadcrumb'); ?>   
                 <div class="mod-title">
-                    <h1 class="pagetitle" itemprop="name"><?php printf(single_cat_title( '', false ));?></h1>
+                    <h1 class="pagetitle" itemprop="name"><?php printf(single_cat_title( '', false ) . " " . $sub_str . " " ."Guide");?></h1>
                     <div class="desc"><?php $term_description = term_description(); echo strip_tags($term_description); ?></div>
                 </div>
                 <!-- -->
         <!-- listing -->
         <div class="mod-list-item-vehicle-wrap">
-                        <h3>Browse all <?php echo $cat_nam; ?> Cars</h3>
+                        <h3>Browse all <?php echo $cat_nam .' '. $sub_str; ?> Cars</h3>
                     <div class="load-more-well clearfix">
 
-         <?php               
+                        <?php               
                         if (have_posts()) :
                             $i = 1;
                             while (have_posts()) : the_post();
@@ -129,20 +129,6 @@ $cat_nam = $this_category->name;
 
                             </div>
                         </div>        
-
-                                
-
-
-
-
-
-
-
-
-
-
-
-
                             <?php 
                              $i++;
                             endwhile;
@@ -156,18 +142,18 @@ $cat_nam = $this_category->name;
                     </div>
 
             <!-- pagination-->
-            <!-- <div class="mod-load-more-vehicle clearfix">
-                <div class="right"> -->
+            <div class="mod-load-more-vehicle clearfix">
+                <div class="right">
                         <!-- <span class="first"><i class="fa fa-step-backward"></i></span>
                         <span class="prev"><i class="fa fa-caret-left"></i></span> -->
                  
                 <?php 
                 if ( have_posts() ) :
                 the_posts_pagination( array(
-                'prev_text'          => __( 'Previous page', 'twentyfifteen' ),
-                'next_text'          => __( 'Next page', 'twentyfifteen' ),
-                'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentyfifteen' ) . ' </span>',
-                ) );
+                'mid_size' => 2,
+                'prev_text'          => __( '' ),
+                'next_text'          => __( '' ),
+                 ) );
                 endif;
 
                 ?>
@@ -176,8 +162,8 @@ $cat_nam = $this_category->name;
                         <span class="last"><i class="fa fa-step-forward"></i></span> -->
                         
             
-                <!-- </div>
-            </div> -->
+                </div>
+            </div>
 
 
         </div>

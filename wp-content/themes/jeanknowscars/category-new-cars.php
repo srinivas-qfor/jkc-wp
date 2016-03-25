@@ -30,7 +30,8 @@ wp_enqueue_script( 'mod-filter-make-model', get_template_directory_uri() . '/ass
 $categories = get_categories( array(
     'orderby' => 'name',
     'order'   => 'ASC',
-     'parent' => 119
+     'parent' => 119,
+     'exclude' => array(138,146,148,152,154,157,192,167,171,175,176,177,181,182)
     ) );
 
 
@@ -139,6 +140,7 @@ $categories = get_categories( array(
 
             <a href="" id= "make_model_go" class="mod-shop-cta btn-main-cta disabled btn-vehicle-dropdown">Go</a>
 
+
         </div>
     </div>
 </div>
@@ -221,6 +223,7 @@ $categories = get_categories( array(
               $("#makes").change(function () {
                     $("select#model").html('');
                     $(".model_top").text('Choose model');
+                    $("#model").append('<option value="">Choose model</option>');
                     
                     $(".make_top").text($('#makes option:selected').text());
                     maketext = $('#makes option:selected').text();
@@ -244,11 +247,7 @@ $categories = get_categories( array(
                             $("select#model").removeAttr('disabled');
                              $("a#make_model_go").attr('href',
                                 "<?php echo site_url();?>" +'/'+makelink); 
-                            
                         }});
-
-
-                        
 
                 });
 
@@ -261,10 +260,6 @@ $categories = get_categories( array(
                     $("a#make_model_go").attr('href',"<?php echo site_url();?>" +'/'+makelink +'/'+ modellink); 
 
                 }); 
-
-
-                               
-
     });
 
 </script>

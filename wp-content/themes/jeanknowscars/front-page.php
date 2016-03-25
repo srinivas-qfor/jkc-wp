@@ -138,7 +138,8 @@ $pageNum = (int)get_query_var('paged', 1);
 $categories_carguide = get_categories( array(
     'orderby' => 'name',
     'order'   => 'ASC',
-     'parent' => 119
+    'parent' => 119,
+    'exclude' => array(138,146,148,152,154,157,192,167,171,175,176,177,181,182)
     ) );
 
 ?>
@@ -576,6 +577,7 @@ endif;
               $("#makes").change(function () {
                     $("select#model").html('');
                     $(".model_top").text('Choose model');
+                     $("#model").append('<option value="">Choose model</option>');
                     
                     $(".make_top").text($('#makes option:selected').text());
                     maketext = $('#makes option:selected').text();
