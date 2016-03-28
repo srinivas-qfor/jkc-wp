@@ -5,25 +5,27 @@
 
 ?>
 <?php
-
-$single_id = $post->ID;
+//print_r($post);
 $categories = get_the_category( $post->ID);
 $intCategoryId = $categories[0]->cat_ID;
 $strCategoryName = $categories[0]->cat_name;
-$args = array( 'cat' => $intCategoryId ,'order'   => 'DESC' , 'posts_per_page' =>'3');
+$args = array( 'cat' => $intCategoryId ,'order'   => 'DESC' , 'posts_per_page' =>'2');
 // The Query
 $the_query = new WP_Query( $args );
 
+
+
 // The Loop
-echo '<h3>Related Articles</h3>';
+echo '<h4>Related Articles</h4>';
 if ( $the_query->have_posts() ) {
     $i = 0;
     while ( $the_query->have_posts() ) { 
     
+        if($post->ID == the_ID){
+            continue;
+        }
         $the_query->the_post();
-
-            if($single_id != $post->ID){
-            ?>
+        ?>
             <div class="mod-list-item left <?php if($i == 0 ){ echo "first-col "; } ?>first-row">
                 <div class="row">
                     <div class="img-wrap">
@@ -58,9 +60,7 @@ if ( $the_query->have_posts() ) {
                 </div>
             </div>
         <?php   
-$i++; 
-
-        }     
+$i++;       
     }
 } else {
     echo "no posts found";

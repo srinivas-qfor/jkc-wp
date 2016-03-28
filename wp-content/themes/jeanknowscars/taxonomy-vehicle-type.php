@@ -28,6 +28,8 @@ wp_enqueue_style( 'mod-browse-by-model', get_template_directory_uri() . '/assets
 
 ## Loading js for front page
 wp_enqueue_script( 'mod-filter-make-model', get_template_directory_uri() . '/assets/js/mod-filter-make-model.js',null,null,true);
+
+$sub_cat = get_query_var('vehicle-type');
 ?>
 
 <!-- -->
@@ -40,13 +42,13 @@ wp_enqueue_script( 'mod-filter-make-model', get_template_directory_uri() . '/ass
                 <!-- breadcrumb-->
                 <?php get_template_part('template-parts/navigation','breadcrumb'); ?>   
                 <div class="mod-title">
-                    <h1 class="pagetitle" itemprop="name"><?php printf(single_cat_title( '', false ));?></h1>
+                    <h1 class="pagetitle" itemprop="name"><?php printf(single_cat_title( '', false ). " " ."Guide");?></h1>
                     <div class="desc"><?php $term_description = term_description(); echo strip_tags($term_description); ?></div>
                 </div>
                 <!-- -->
         <!-- listing -->
         <div class="mod-list-item-vehicle-wrap">
-                        <h3>Browse all <?php echo $cat_nam; ?> Cars</h3>
+                        <h3>Browse all <?php echo $sub_cat; ?> Cars</h3>
                     <div class="load-more-well clearfix">
 
                      <?php   
