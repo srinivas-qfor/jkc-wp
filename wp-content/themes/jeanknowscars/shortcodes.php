@@ -72,7 +72,8 @@ add_shortcode('add_block', 'render_blocks');
 function render_gpt_add($atts) {
    extract(shortcode_atts(array(
       'name' => null,
-      'data-ads' => null
+      'data-ads' => null,
+      'cont-class'  => null,
    ), $atts));
 
     if($atts['name']=="gpt-top-ad"):
@@ -123,6 +124,19 @@ function render_gpt_add($atts) {
                       googletag.display('div-gpt-ad-110057376862217179-1'); 
                     });
 				</script>
+             </div>
+         </div> 
+    <?php endif;
+
+    if($atts['name']=="gpt-mrec-ad-mobile-dyn"):
+        $adNum = !empty($atts['data-ads']) ? $atts['data-ads'] : 2;
+        $appendContClass = !empty($atts['cont-class']) ? $atts['cont-class'] : '';
+        ?>
+         <div class="mod-ad-mrec-mobile <?=$appendContClass;?>" itemscope itemtype="http://schema.org/WPAdBlock">          
+             <div id='div-gpt-ad-416149396091328938-<?php echo $adNum; ?>'>
+                 <script type='text/javascript'>
+                     googletag.cmd.push(function() { googletag.display('div-gpt-ad-416149396091328938-<?php echo $adNum; ?>'); });
+        </script>
              </div>
          </div> 
     <?php endif;

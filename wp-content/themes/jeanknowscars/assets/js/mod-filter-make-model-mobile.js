@@ -18,10 +18,12 @@
             $('.mod-shop-cta').addClass('disabled');
             if(make) {
                 $.ajax({
-                    url: "/vehicle-dropdown/model/",
+                    url: jkc.ajax_url,
                     type: "POST",
                     data: {
-                        make: make
+                        action : 'post_make_model',
+                        name : make,
+                        response : 'html'
                     }
                 }).done(function(output){
                     $('.modelDropdown .dropdown-custom-select p').html('Choose Model');
