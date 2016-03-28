@@ -23,7 +23,7 @@
     position: relative;
 }
 
-.mod-shop-makemodel.border-bottom {
+.border-bottom {
     padding-bottom: 20px;
     border-bottom: 1px solid #dbdbdb;
 }
@@ -31,21 +31,13 @@
 .dropdown-custom {
     display: inline-block;
     height: 30px;
-    margin-right: 10px;
     position: relative;
-}
-
-.mod-shop-makemodel .makeDropdown {
     vertical-align: middle;
     margin: 0 auto 15px;
+
 }
 
-.mod-shop-makemodel .modelDropdown {
-    vertical-align: middle;
-    margin: 0 auto 15px;
-}
-
-.dropdown-custom-select:after {
+ .dropdown-custom-select:after {
     background: url("/wp-content/themes/jeanknowscars/assets/img/mod-shop-dropdown.gif") no-repeat scroll right center transparent;
     border-left: 1px solid #bababa;
     content: "";
