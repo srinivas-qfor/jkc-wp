@@ -167,20 +167,14 @@ $categories = get_categories( array(
   <!-- dynamic make end -->
 
 
-<div class="mod-ad-mrec-mobile mod-ad-mrec-bottom-mobile " itemscope="" itemtype="http://schema.org/WPAdBlock">
-     <!--Beginning Async AdSlot 5 for Ad unit trb.latimes/jeanknowscars  ### size: [[300,250]] -->
-    <!-- Adslot's refresh function: googletag.pubads().refresh([gptadslots[5]]) -->
-    <div id="div-gpt-ad-416149396091328938-5">
-        <script type="text/javascript">
-            googletag.cmd.push(function() { googletag.display('div-gpt-ad-416149396091328938-5'); });
-        </script>
-    <div id="google_ads_iframe_/4011/trb.latimes/jeanknowscars_4__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/4011/trb.latimes/jeanknowscars_4" title="3rd party ad content" name="google_ads_iframe_/4011/trb.latimes/jeanknowscars_4" width="300" height="250" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" src="javascript:&quot;<html><body style='background:transparent'></body></html>&quot;" style="border: 0px; vertical-align: bottom;"></iframe></div><iframe id="google_ads_iframe_/4011/trb.latimes/jeanknowscars_4__hidden__" title="" name="google_ads_iframe_/4011/trb.latimes/jeanknowscars_4__hidden__" width="0" height="0" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" src="javascript:&quot;<html><body style='background:transparent'></body></html>&quot;" style="border: 0px; vertical-align: bottom; visibility: hidden; display: none;"></iframe>
-    </div>
-    <!-- End AdSlot 5 -->
-</div>
-
 <?php 
-get_footer(); ?>
+
+echo do_shortcode( '[gpt_add_block name="gpt-mrec-ad-mobile-dyn" data-ads="2"]'); 
+ 
+ get_footer();
+
+
+?>
 
 <script type="text/javascript">
     $(document).ready(function(){ 
