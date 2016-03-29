@@ -5,6 +5,7 @@
 
 ?>
 <?php
+
 $single_id = $post->ID;
 $categories = get_the_category( $post->ID);
 $intCategoryId = $categories[0]->cat_ID;
@@ -13,16 +14,12 @@ $args = array( 'cat' => $intCategoryId ,'order'   => 'DESC' , 'posts_per_page' =
 // The Query
 $the_query = new WP_Query( $args );
 
-
 // The Loop
 echo '<h3>Related Articles</h3>';
 if ( $the_query->have_posts() ) {
     $i = 0;
     while ( $the_query->have_posts() ) { 
     
-        if($post->ID == the_ID){
-            continue;
-        }
         $the_query->the_post();
 
             if($single_id != $post->ID){

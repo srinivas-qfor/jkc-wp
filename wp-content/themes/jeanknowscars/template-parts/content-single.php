@@ -44,13 +44,13 @@ get_header();
                         <span class="separator-date-author">- by</span>
 						<span class="author" itemprop="creator author" itemscope="" itemtype="http://schema.org/Person">
 							<span itemprop="name"><?php the_author(); ?></span>
-						</span> <!--
+						</span>
                         <div class="social right">
 							<span class="share-btn left">Share</span>
 							<div class="mod-addthis-hover">
 								<div class="addthis_toolbox"></div>
 							</div>
-						</div> -->
+						</div>
 						<?php get_template_part('template-parts/featured-image');  ?>
 					</div>
 					<div class="main-content" itemprop="articleBody">
@@ -84,7 +84,7 @@ get_header();
 						$strImageURL = $strDefaultUploadBaseURL."/".$arrAttachedImageDetails['file'];
 						?>
 			 <li>
-				<a href="<?php the_permalink(); ?>?photo-0<?php echo $key+2; ?>.html" title="<?php echo $arrAttachedImagePostDetails->post_title; ?>">
+				<a href="<?php the_permalink(); ?>photo-0<?php echo $key+2; ?>.html" title="<?php echo $arrAttachedImagePostDetails->post_title; ?>">
 					<img src="<?php echo $strImageURL;?>" alt="<?php echo $arrAttachedImagePostDetails->post_title; ?>" height="200" width="320"/>
 					<span><?php echo $arrAttachedImagePostDetails->post_title; ?></span>
 				</a>
@@ -92,7 +92,7 @@ get_header();
 			<?php } ?>
 		</ul>
 		<?php if(count($arrAttachedImages[0]) > 4) { ?>
-		<a href="<?php the_permalink(); ?>?photo-01.html" title="See All Photos of the <?php ?> - JeanKnowsCars.com" class="btn-see-photos">See All Photos</a>
+		<a href="<?php the_permalink(); ?>photo-01.html" title="See All Photos of the <?php ?> - JeanKnowsCars.com" class="btn-see-photos">See All Photos</a>
 		<?php } ?>
 	</div>
 	

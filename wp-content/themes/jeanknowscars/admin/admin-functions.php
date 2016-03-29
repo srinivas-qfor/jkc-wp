@@ -21,15 +21,16 @@ function add_featured_meta_box($post){
     $featured_cat = get_post_meta($post->ID, '_featured-post', true);
     if($featured_cat == 1) $field_id_checked = 'checked="checked"'; 
     echo "<li><input type='checkbox' name='_featured-post' id='featured-post' value='1' ".$field_id_checked." />";
-    echo "<label for='_featured-post'>".__('&nbsp;Feature this post?', '')."</label> <label for='_featured-post-order'>Order</label>";
-    echo "<input type='text' name='_featured-post-order' placeholder='order' value='".get_post_meta($post->ID, '_featured-post-order', true)."' />";
+    echo "<label for='_featured-post'>".__('&nbsp; Promote to Category Index page?', '')."</label>";
+    /*<br><label for='_featured-post-order'>Order #: </label>";
+    echo "<input type='text' name='_featured-post-order' placeholder='order' value='".get_post_meta($post->ID, '_featured-post-order', true)."' />";*/
     echo "</li>";
 
     // home featured flipper
     $featured_home = get_post_meta($post->ID, '_featured-post-home', true);
     if($featured_home == 1) $field_id_checked_home = 'checked="checked"'; 
     echo "<li><input type='checkbox' name='_featured-post-home' id='featured-post-home' value='1' ".$field_id_checked_home." />";
-    echo "<label for='_featured-post-home'>".__('&nbsp;Feature this post on home page?', '')."</label> <label for='_featured-post-home-order'>Order</label>";
+    echo "<label for='_featured-post-home'>".__('&nbsp; Promote to Homepage Flipper?', '')."</label><br><label for='_featured-post-home-order'>Order #: </label>";
     echo "<input type='text' name='_featured-post-home-order' placeholder='order' value='".get_post_meta($post->ID, '_featured-post-home-order', true)."' />";
     echo "</li>";
 
