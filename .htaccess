@@ -37,6 +37,11 @@ RewriteRule (.*) /contributors/%1%2 [R=301,L]
 RewriteCond %{REQUEST_URI} ^/contributors/([a-zA-Z0-9-]+)/page([0-9]+)/$
 RewriteRule (.*) /contributors/%1/page-%2/  [R=301,L]
 
+#Gallery redirection to articles
+RewriteCond %{REQUEST_URI} ^/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/photo-[0-9]+.html(.*)$
+RewriteRule (.*) /%1/%2/%3/ [R=301,L]
+
+
 #   old JKC redirection
 RewriteCond %{REQUEST_URI} ^/videos/$
 RewriteRule (.*) / [R=301,L]
