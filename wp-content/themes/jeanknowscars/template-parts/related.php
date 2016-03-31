@@ -9,7 +9,7 @@ $single_id = $post->ID;
 $categories = get_the_category( $post->ID);
 $intCategoryId = $categories[0]->cat_ID;
 $strCategoryName = $categories[0]->cat_name;
-$args = array( 'cat' => $intCategoryId ,'order'   => 'DESC' , 'posts_per_page' =>'3','post__not_in' =>array($single_id));
+$args = array( 'cat' => $intCategoryId ,'order'   => 'DESC' , 'posts_per_page' =>'2','post__not_in' =>array($single_id));
 // The Query
 $the_query = new WP_Query( $args );
 
