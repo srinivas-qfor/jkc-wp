@@ -2,42 +2,11 @@
 
 get_header(); 
 
-wp_enqueue_style( 'lay-two-column', get_template_directory_uri() . '/assets/css/lay-two-column.css',null,null,"screen" );
-wp_enqueue_style( 'mod-breadcrumbs', get_template_directory_uri() . '/assets/css/mod-breadcrumbs.css',null,null,"screen" );
-wp_enqueue_style( 'mod-grid', get_template_directory_uri() . '/assets/css/grid.css',null,null,"screen" );
-wp_enqueue_style( 'mod-reset', get_template_directory_uri() . '/assets/css/reset.css',null,null,"screen" );
-wp_enqueue_style( 'mod-global', get_template_directory_uri() . '/assets/css/global.css',null,null,"screen" );
-wp_enqueue_style( 'mod-footer', get_template_directory_uri() . '/assets/css/mod-footer.css',null,null,"screen" );
-wp_enqueue_style( 'mod-header', get_template_directory_uri() . '/assets/css/mod-header.css',null,null,"screen" );
-wp_enqueue_style( 'mod-life-with-jean', get_template_directory_uri() . '/assets/css/mod-life-with-jean.css',null,null,"screen" );
-wp_enqueue_style( 'mod-car-confession', get_template_directory_uri() . '/assets/css/mod-car-confession.css',null,null,"screen" );
-wp_enqueue_style( 'mod-confessions-title', get_template_directory_uri() . '/assets/css/mod-confessions-title.css',null,null,"screen" );
-wp_enqueue_style( 'mod-get-social', get_template_directory_uri() . '/assets/css/mod-get-social.css',null,null,"screen" );
-wp_enqueue_style( 'mod-load-more', get_template_directory_uri() . '/assets/css/mod-load-more.css',null,null,"screen" );
-wp_enqueue_style( 'mod-confessions-form', get_template_directory_uri() . '/assets/css/mod-confessions-form.css',null,null,"screen" );
-wp_enqueue_style( 'mod-list-item-confessions', get_template_directory_uri() . '/assets/css/mod-list-item-confessions.css',null,null,"screen" );
-wp_enqueue_style( 'mod-filter-confessions-faq', get_template_directory_uri() . '/assets/css/mod-filter-confessions-faq.css',null,null,"screen" );
-
-wp_enqueue_script( 'load', 'http://a.postrelease.com/serve/load.js?async=true',null,null,true); 
-wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/assets/js/modernizr.js',null,null,true); 
-wp_enqueue_script( 'mod-ad-header', get_template_directory_uri() . '/assets/js/mod-ad-header.js',null,null,true); 
-wp_enqueue_script( 'typekit', 'http://use.typekit.net/hcl6hob.js',null,null,true); 
-wp_enqueue_script( 'jquery-cookie', get_template_directory_uri() . '/assets/js/jquery.cookie.min.js',null,null,true);
-wp_enqueue_script( 'global', get_template_directory_uri() . '/assets/js/global.js',null,null,true);
-wp_enqueue_script( 'mod-header', get_template_directory_uri() . '/assets/js/mod-header.js',null,null,true); 
-wp_enqueue_script( 'mod-get-instagram', get_template_directory_uri() . '/assets/js/mod-get-instagram.js',null,null,true); 
-wp_enqueue_script( 'mod-load-more', get_template_directory_uri() . '/assets/js/mod-load-more.js',null,null,true); 
-wp_enqueue_script( 'mod-confessions-form', get_template_directory_uri() . '/assets/js/mod-confessions-form.js',null,null,true); 
-wp_enqueue_script( 'mod-filter-confessions-faq', get_template_directory_uri() . '/assets/js/mod-filter-confessions-faq.js',null,null,true); 
-wp_enqueue_script( 'addthis_init', get_template_directory_uri() . '/assets/js/addthis_init.js',null,null,true); 
-wp_enqueue_script( 'addthis_close', get_template_directory_uri() . '/assets/js/addthis_close.js',null,null,true); 
-wp_enqueue_script( 'mod-confessions-title', get_template_directory_uri() . '/assets/js/mod-confessions-title.js',null,null,true); 
-
 ?>
 <style>
-.confessions-title-inner .wp-image-746186{ width:100%; }
-.confessions-title-inner .test{ margin-top: -250px;position: absolute; }
-.mod-confessions-title h1{ margin-left:0 !important; }
+ .mod-confessions-title{ position: relative; }
+ .mod-confessions-title >img { position: absolute; }
+.confessions-title-inner{ position: relative; }
 </style>
 <div class="content-top-wrap">
 	<div class="row">
@@ -47,7 +16,7 @@ wp_enqueue_script( 'mod-confessions-title', get_template_directory_uri() . '/ass
 			<div class="desc"><?php $term_description = term_description(); printf($term_description); ?></div>
 		</div> 
 	</div>
-</div>
+</div>  
 <div class="row">
 	<div class="main-column left col-17">
 	<?php

@@ -93,7 +93,7 @@
         });
 
         mod.doSearch = function(value) {
-            var url = '/search/?q=' + value;
+            var url = '/?s=' + value;
             window.location.href = url;
         };
 	};

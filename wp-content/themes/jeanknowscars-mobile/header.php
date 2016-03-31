@@ -40,14 +40,14 @@
     </div>
 
     <div class="right" itemscope itemtype="http://schema.org/Organization">
-        <a class="logo-mobile" href="<?php echo SORC_WEB_DOMAIN . '/' ?>" title="Jean Knows Cars" itemprop="url"></a>
+        <a class="logo-mobile" href="<?php echo esc_url(home_url('/')); ?>" title="Jean Knows Cars" itemprop="url"></a>
     </div>
 </header>
 
 <div class="main-menu hide">
     <div class="header-column-wrapper clearfix">
         <div class="logo-mobile-img" itemscope itemtype="http://schema.org/Organization">
-            <a class="logo-mobile" href="<?php echo SORC_WEB_DOMAIN . '/' ?>" title="Jean Knows Cars" itemprop="url"></a>
+            <a class="logo-mobile" href="<?php echo esc_url(home_url('/')); ?>" title="Jean Knows Cars" itemprop="url"></a>
         </div>
         <div class="menu-wrap">
             <nav>
@@ -87,8 +87,10 @@
         </div>
     </div>
 </div>
-<div class="search-content hide">
-    <input class="search" type="search" name="search" placeholder="Type your search here...">
-    <button class="search-button" class="search-btn" tabindex="1"><i class="fa fa-search"></i></button>
+<div class="search-content search-cont hide">
+    <form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+            <input class="search" type="search" class="search-field" placeholder="<?php echo esc_attr_x( 'Type your search here...', 'placeholder', '' ); ?>" value="<?php echo get_search_query(); ?>" name="s" title="<?php echo esc_attr_x( 'Search for:', 'label', '' ); ?>" />
+            <button class="search-button search-btn" tabindex="1" style="border:none;"><i class="fa fa-search"></i></button>
+    </form>
 </div>
 <div class="mobile-column">
