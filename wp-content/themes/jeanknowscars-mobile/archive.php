@@ -34,7 +34,7 @@ wp_enqueue_style('mod-list-item-mobile', get_template_directory_uri() . '/assets
 // scripts
 wp_enqueue_script( 'mod-sort-by-category-mobile', get_template_directory_uri() . '/assets/js/mod-sort-by-category-mobile.js',null,null,true); 
 
-$adBlock = 2;
+$adBlock = 4;
 $pageNum = (int)get_query_var('paged', 0);
 if($pageNum >= 2 && $pageNum <= 6) {
 	$adBlock = $pageNum + 1;
