@@ -2,27 +2,29 @@
 /**
  * Partial: Related article for main article
  */
-
 ?>
 <?php
-
 $single_id = $post->ID;
+echo $single_id;
 $categories = get_the_category( $post->ID);
 $intCategoryId = $categories[0]->cat_ID;
 $strCategoryName = $categories[0]->cat_name;
-$args = array( 'cat' => $intCategoryId ,'order'   => 'DESC' , 'posts_per_page' =>'3');
+$args = array( 'cat' => $intCategoryId ,'order'   => 'DESC' , 'posts_per_page' =>'2','post__not_in' =>array($single_id));
 // The Query
 $the_query = new WP_Query( $args );
-
 // The Loop
 echo '<h3>Related Articles</h3>';
 if ( $the_query->have_posts() ) {
     $i = 0;
     while ( $the_query->have_posts() ) { 
     
+        if($post->ID == the_ID){
+            continue;
+        }
         $the_query->the_post();
-
             if($single_id != $post->ID){
+
+                echo $post->ID; 
             ?>
             <div class="mod-list-item left <?php if($i == 0 ){ echo "first-col "; } ?>first-row">
                 <div class="row">
@@ -42,16 +44,15 @@ if ( $the_query->have_posts() ) {
                         <a href="<?php  get_category_link( $intCategoryId ); ?>"><?php echo $strCategoryName;?></a>
                     </div>
                     <div class="info-wrap">
-						<?php 
-							$strFromatedtitleforReleatedArticle = get_the_title();
-							$strlen = strlen($strFromatedtitleforReleatedArticle);
-
-							if($strlen >= 45){
-							$formatedC = substr($strFromatedtitleforReleatedArticle, 0, 45 ).'...'; 
-							}else{
-							$formatedC = $strFromatedtitleforReleatedArticle;
-							}
-						?>
+                        <?php 
+                            $strFromatedtitleforReleatedArticle = get_the_title();
+                            $strlen = strlen($strFromatedtitleforReleatedArticle);
+                            if($strlen >= 45){
+                            $formatedC = substr($strFromatedtitleforReleatedArticle, 0, 45 ).'...'; 
+                            }else{
+                            $formatedC = $strFromatedtitleforReleatedArticle;
+                            }
+                        ?>
                         <h4 class="title-wrap"><a class="list-title" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php echo $formatedC; ?></a></h4>
                         <div class="desc"><?php the_excerpt(); ?></div>
                     </div>
@@ -59,7 +60,6 @@ if ( $the_query->have_posts() ) {
             </div>
         <?php   
 $i++; 
-
         }     
     }
 } else {
