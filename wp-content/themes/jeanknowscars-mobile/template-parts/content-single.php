@@ -53,7 +53,7 @@ get_header();
 				$strImageURL = $strDefaultUploadBaseURL."/".$arrAttachedImageDetails['file'];
 				?>
 			<li>
-				<a href="<?php the_permalink(); ?>?photo-0<?php echo $key+2; ?>.html" title="<?php echo $arrAttachedImagePostDetails->post_title; ?>">
+				<a href="<?php the_permalink(); ?>photo-0<?php echo $key+2; ?>.html" title="<?php echo $arrAttachedImagePostDetails->post_title; ?>">
 					<img src="<?php echo $strImageURL;?>" alt="<?php echo $arrAttachedImagePostDetails->post_title; ?>" height="200" width="320"/>
 					<span><?php echo $arrAttachedImagePostDetails->post_title; ?></span>
 				</a>

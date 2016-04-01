@@ -9,7 +9,7 @@
 
 		while ( have_posts() ) : the_post();
                         
-            $pattern = '/photo-(.*?).html/';
+                         $pattern = '/photo-(.*?).html/';
 			preg_match($pattern,$_SERVER['REQUEST_URI'],$matches);
 			// Include the single post content template.
 			if($matches){

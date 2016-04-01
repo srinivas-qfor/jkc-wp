@@ -34,7 +34,7 @@ wp_enqueue_script( 'addthis_close', get_template_directory_uri() . '/assets/js/a
 				<div class="gallery-wrap row">
 					<span class="close-btn" data-s-object-id="PhotoGallery:MainImage:Close"></span>
 					<div class="clearfix content-wrap large-slide">
-						<img src="/img/loading.gif" alt="" />
+						<img src="<?php echo bloginfo('template_url'); ?>/assets/img/loading.gif" alt="" />
 						<div class="content clearfix">
 							<div class="caption left"></div>
 							<a href="#" class="download right">View Full Size Image</a>
@@ -86,15 +86,13 @@ wp_enqueue_script( 'addthis_close', get_template_directory_uri() . '/assets/js/a
 								<span itemprop="caption" class="hide"><?php echo $arrAttachedImagePostDetails->post_title; ?></span>
 							</div>
 							<span class="full-size" data-fullsize="<?php echo $strImageURL; ?> "><?php echo $arrAttachedImagePostDetails->post_title; ?></span>
-							<div class="large-title">
-                            <?php echo $arrAttachedImagePostDetails->post_title; ?>
-							</div>
+							<div class="large-title"><?php echo trim($arrAttachedImagePostDetails->post_title); ?></div>
 						</div>
 						<?php 
 					}
 				?>
-					<div class="large-slide-arrow next" data-s-object-id="PhotoGallery:MainImage:Arrows:Right"></div>
-					<div class="large-slide-arrow prev" data-s-object-id="PhotoGallery:MainImage:Arrows:Left"></div>
+					<div class="large-slide-arrow next"></div>
+					<div class="large-slide-arrow prev"></div>
 				</div> 
 				
 				<div class="pg-control">
@@ -135,7 +133,7 @@ wp_enqueue_script( 'addthis_close', get_template_directory_uri() . '/assets/js/a
 						?>
 						 <div id="" class="img-item left thumbnail-<?php echo ( $key+1) ;?> thumbnail-item <?php echo $a; ?>">
 							<a class="thumbnail-link" href="<?php echo $strImageURL; ?>" title="<?php echo $arrAttachedImagePostDetails->post_title;?>" data-count="<?php echo ( $key+1 ); ?>">
-								<img src="<?php echo $strImageURL; ?>" alt="<?php echo $arrAttachedImagePostDetails->post_title; ?>" width="160" height="100" />
+								<img src="<?php echo $strImageURL; ?>" alt="<?php echo $arrAttachedImagePostDetails->post_title; ?>" width="160" height="100" onerror="this.src='<?php bloginfo('template_url'); ?>/assets/img/noimage.jpg'"/>
 							</a>
 						</div>
 						<?php } ?>			

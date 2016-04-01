@@ -90,7 +90,7 @@ function slider_order_main_menu_page() {
                         <td><a href="<?php the_permalink()?>" target="_blank"><?php echo get_the_title() ?></a></td>
                         <td><?php echo $arrCategoryName[0]->name ?></td>
                         <td><input type="hidden" name="postid[]" value="<?php echo get_the_ID(); ?>"><input type="text" name="updateFlipperOrderNumber[]" size="2" value="<?php echo get_post_meta(get_the_ID(),'_featured-post-home-order',true); ?>"></td>
-                        <td><a href="?page=jkc-slider-order-main-menu&defid=<?php echo the_ID(); ?>">Remove the Flipper</a></td>
+                        <td><a href="?page=jkc-slider-order-main-menu&defid=<?php echo the_ID(); ?>">Remove</a></td>
                     </tr>
                 <?php
                      $i++;

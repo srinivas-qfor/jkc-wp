@@ -63,6 +63,9 @@ function insert_faq_post() {
 	$strCategory = '';
 	$strQuestion = '';
 	$intUserId = get_current_user_id();
+        if(empty($intUserId)){
+            $intUserId = '1';
+        }
 	$strQuestion = $_POST['question'];
 	$intCategoryId = get_cat_ID( esc_attr($_POST['category'] ));
 	$strPostType = $_POST['post_typee'];
@@ -70,11 +73,11 @@ function insert_faq_post() {
 	$defaults = '';
 	
 	$defaults = array(
-        'post_author' => 1,
+        'post_author' => $intUserId,
         'post_content' => '',
         'post_title' => $strQuestion,
         'post_status' => 'pending',
-		'post_category' => array($intCategoryId),
+	'post_category' => array($intCategoryId),
         'post_type' => $strPostType,
     );
 
@@ -82,4 +85,5 @@ function insert_faq_post() {
 	add_post_meta( $id, '_jkc_jaq_author', $strQuestionar );
 	return 'success';	
 }
+add_action( 'wp_ajax_nopriv_insert_faq_post', 'insert_faq_post' );
 add_action( 'wp_ajax_insert_faq_post', 'insert_faq_post' );

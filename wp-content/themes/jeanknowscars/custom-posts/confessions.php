@@ -64,7 +64,10 @@ function insert_confessions_post() {
 	$strQuestion = '';
 	$strCategoryName = '';
 	$strQuestionar = '';
-	$intUserId = get_current_user_id();
+        $intUserId = get_current_user_id();
+        if(empty($intUserId)){
+            $intUserId = '1';
+        }
 	$strQuestion = $_POST['question'];
 	$intCategoryId = get_cat_ID( esc_attr($_REQUEST['category']));
 	$strPostType = $_POST['post_typee'];
@@ -76,7 +79,7 @@ function insert_confessions_post() {
 	$defaults = '';
 	
 	$defaults = array(
-        'post_author' => 1,
+        'post_author' => $intUserId,
         'post_content' => '',
         'post_title' => $strQuestion,
         'post_status' => 'publish',
@@ -93,4 +96,5 @@ function insert_confessions_post() {
 	add_post_meta( $id, '_jkc_confessions_author', $strQuestionar );
 	return 'success';
 }
+add_action( 'wp_ajax_nopriv_insert_confessions_post', 'insert_confessions_post' );
 add_action( 'wp_ajax_insert_confessions_post', 'insert_confessions_post' );
