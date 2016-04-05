@@ -38,7 +38,7 @@
         <i class="fa fa-bars"></i>
         <i class="fa fa-search"></i>
     </div>
-
+        
     <div class="right" itemscope itemtype="http://schema.org/Organization">
         <a class="logo-mobile" href="<?php echo esc_url(home_url('/')); ?>" title="Jean Knows Cars" itemprop="url"></a>
     </div>
@@ -49,41 +49,10 @@
         <div class="logo-mobile-img" itemscope itemtype="http://schema.org/Organization">
             <a class="logo-mobile" href="<?php echo esc_url(home_url('/')); ?>" title="Jean Knows Cars" itemprop="url"></a>
         </div>
-        <div class="menu-wrap">
-            <nav>
-                <ul class="primary-menu clearfix">
-                    <li class="nav-item first <?php echo (in_array('jeans-driveway', $section) ? 'active' : '') ?>">
-                        <a id="Header-jeans-driveway" class="button-link" href="/jeans-driveway/" title="Jean's Driveway">Jean's Driveway</a>
-                    </li>
-                    <li class="nav-item <?php echo (in_array('you-auto-know', $section) ? 'active' : '') ?>">
-                        <a id="Header-you-auto-know" class="button-link" href="/you-auto-know/" title="You Auto Know">You Auto Know</a>
-                    </li>
-                    <li class="nav-item <?php echo (in_array('kids-in-the-car', $section) ? 'active' : '') ?>">
-                        <a id="Header-kids-in-the-car" class="button-link" href="/kids-in-the-car/" title="Kids in the Car">Kids in the Car</a>
-                    </li>
-                    <li class="nav-item <?php echo (in_array('cool-tech', $section) ? 'active' : '') ?>">
-                        <a id="Header-cool-tech" class="button-link" href="/cool-tech/" title="Cool Tech">Cool Tech</a>
-                    </li>
-                    <li class="nav-item <?php echo (in_array('car-life', $section) ? 'active' : '') ?>">
-                        <a id="Header-car-life" class="button-link" href="/car-life/" title="Car Life">Car Life</a>
-                    </li>
-                    <li class="nav-item <?php echo (in_array('life-with-jean', $section) ? 'active' : '') ?>">
-                        <a id="Header-life-with-jean" class="button-link" href="/life-with-jean/" title="Car Life">Life with Jean</a>
-                    </li>
-                    <li class="nav-item last <?php echo (in_array('new-cars', $section) ? 'active' : '') ?>">
-                        <a id="Header-car-guide" class="button-link" href="/new-cars/" title="Car Guide">Car Guide</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-        <div class="u-option u-option-social-mobile">
-            <h4 class="logo"><a class="title-link noHighlight" href="#" title="Jean Knows Cars"><span class="hidden">Jean Knows Cars</span></a></h4>
-            <ul class="social-List">
-                <li class="social-item"><a target="_blank" class="social-Link pinterest" href="<?php echo $links['pinterest']; ?>" title="Pinterest"><i class="fa fa-pinterest-square"></i><span class="hidden">Pinterest</span></a></li>
-                <li class="social-item"><a target="_blank" class="social-Link google" href="<?php echo $links['googleplus']; ?>" title="Google"><i class="fa fa-google-plus-square"></i><span class="hidden">Google</span></a></li>
-                <li class="social-item"><a target="_blank" class="social-Link facebook" href="<?php echo $links['facebook']; ?>" title="Facebook"><i class="fa fa-facebook-square"></i><span class="hidden">Facebook</span></a></li>
-                <li class="social-item"><a target="_blank" class="social-Link twitter" href="<?php echo $links['twitter']; ?>" title="Twitter"><i class="fa fa-twitter-square"></i><span class="hidden">Twitter</span></a></li>
-            </ul>
+        <?php get_template_part('template-parts/navigation', 'mobile-top'); ?>
+        <div class='u-option u-option-social-mobile'>
+               <h4 class="logo"><a class="title-link noHighlight" href="<?php echo esc_url(home_url('/')); ?>" title="Jean Knows Cars"><span class="hidden">Jean Knows Cars</span></a></h4>
+              <?php echo do_shortcode( '[social_links name="footer"]' ) ?>
         </div>
     </div>
 </div>

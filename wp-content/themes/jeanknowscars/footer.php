@@ -17,7 +17,7 @@ function import_scripts(){
     <div class="mod-footer">
         <span class="footer-mobile-back-top">Back to Top</span>
         <div class="footer-wrapper clearfix">
-            <h4 class="logo-tablet hidden-desktop"><a class="title-link noHighlight" href="/" title="Jean Knows Cars"><span class="hidden">Jean Knows Cars</span></a></h4>
+            <h4 class="logo-tablet hidden-desktop"><a class="title-link noHighlight" href="<?php esc_url(home_url('/')); ?>" title="Jean Knows Cars"><span class="hidden">Jean Knows Cars</span></a></h4>
             <div class="column column-one">
                 <div class="nav-list-wrapper" id="nav-obf"></div>
                 <!--Navigation-Links-->
@@ -25,8 +25,8 @@ function import_scripts(){
             </div>
             <div class="column column-two-mobile column-two clearfix">
                 <div class="site-banner">
-                    <a class="logo" href="<?php echo esc_url(home_url('/')); ?>" title="Jean Knows Cars">
-                        <img height="124" width="172" itemprop="logo" alt="Jean Knows Cars" src="/wp-content/themes/jeanknowscars/assets/img//logo.png?v=1" class="logo-img">
+                    <a class="logo" href="#" title="Jean Knows Cars">
+                        <img height="124" width="172" itemprop="logo" alt="Jean Knows Cars" src="<?php bloginfo('template_url');?>/assets/img/logo.png?v=1" class="logo-img">
                     </a>
                     <!-- social-links-footer -->                 
                     <?php echo do_shortcode( '[social_links name="footer"]' ) ?>
