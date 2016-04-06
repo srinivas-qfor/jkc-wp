@@ -4,9 +4,13 @@ get_header();
 
 ?>
 <style>
- .mod-confessions-title{ position: relative; }
- .mod-confessions-title >img { position: absolute; }
+.mod-confessions-title{ position: relative; }
 .confessions-title-inner{ position: relative; }
+.mod-confessions-title h1 { margin: 20px 20px 0; margin-top: -222px; float: left; position: relative; margin-bottom: 0; }
+.confessions-title-inner > div{ position: relative; float: left; margin-top: -194px; }
+.confessions-rules { top:170px; }
+.confessions-title-inner >img { border-radius: 6px; height: 236px;}
+.mod-confessions-title { height: 252px; }
 </style>
 <div class="content-top-wrap">
 	<div class="row">
