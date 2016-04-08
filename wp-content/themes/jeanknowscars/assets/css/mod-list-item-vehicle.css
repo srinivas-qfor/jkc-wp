@@ -29,6 +29,7 @@
 
 .mod-list-item-vehicle.first-col {
     margin-left: 0;
+    clear: left;
 }
 
 .mod-list-item-vehicle.normal-page.first-col {

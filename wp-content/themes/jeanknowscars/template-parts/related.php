@@ -5,7 +5,6 @@
 ?>
 <?php
 $single_id = $post->ID;
-echo $single_id;
 $categories = get_the_category( $post->ID);
 $intCategoryId = $categories[0]->cat_ID;
 $strCategoryName = $categories[0]->cat_name;
@@ -24,7 +23,6 @@ if ( $the_query->have_posts() ) {
         $the_query->the_post();
             if($single_id != $post->ID){
 
-                echo $post->ID; 
             ?>
             <div class="mod-list-item left <?php if($i == 0 ){ echo "first-col "; } ?>first-row">
                 <div class="row">
