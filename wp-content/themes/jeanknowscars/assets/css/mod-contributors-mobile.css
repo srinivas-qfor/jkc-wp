@@ -2,7 +2,7 @@
     padding: 0 10px;
 }
 
-.mobile-page .mod-staff-mobile .staff-item {
+.mobile-page .mod-staff .staff-item {
   -pie-box-shadow: none;
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
@@ -12,24 +12,24 @@
   position: relative;
 }
 
-.mod-staff-mobile .img-wrap {
+.mod-staff .img-wrap {
   position: relative;
 }
 
-.mod-staff-mobile .img {
+.mod-staff .img {
     border: 3px solid #dbdbdb;
     display: block;
     margin: 0 auto 15px;
     width: 50%;
 }
 
-.mod-staff-mobile .info-wrap {
+.mod-staff .info-wrap {
     display: inline-block;
     position: relative;
     vertical-align: top;
 }
 
-.mod-staff-mobile .list-title {
+.mod-staff .list-title {
     color: #242424;
     display: block;
     font-size: 22px;
@@ -40,12 +40,12 @@
     font-family: "proxima-nova-alt";
 }
 
-.mod-staff-mobile .job-title {
+.mod-staff .job-title {
   font-weight: 700;
   margin-bottom: 10px;
 }
 
-.mod-staff-mobile .desc {
+.mod-staff .desc {
     color: #242424;
     font-size: 18px;
     margin: 0;
@@ -56,16 +56,16 @@
     font-weight: bold;
 }
 
-.mod-staff-mobile .desc strong {
+.mod-staff .desc strong {
     font-weight: bold;
 }
 
-.mod-staff-mobile .social {
+.mod-staff .social {
   margin-bottom: 10px;
   overflow: hidden;
 }
 
-.mod-staff-mobile .social-icon {
+.mod-staff .social-icon {
   background: #90121d;
   color: white;
   float: left;
@@ -103,7 +103,7 @@
     width: 49%;
 }
 
-.mod-staff-mobile h3 {
+.mod-staff h3 {
     margin-top: 30px;
     border-bottom: 1px solid #dbdbdb;
     font-size: 34px;
@@ -111,7 +111,7 @@
     padding: 0 75px 15px 0;
 }
 
-.mod-staff-mobile h1.jkc-team {
+.mod-staff h1.jkc-team {
     border-bottom: 1px solid #dbdbdb;
     font-size: 34px;
     line-height: 34px;
