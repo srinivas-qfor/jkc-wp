@@ -7,10 +7,22 @@ class Grid {
 	}
 
 	function loopItems($posts) {
-		if(empty($posts)) return;
+        GLOBAL $this_category;
+        GLOBAL $adBlock;
+        GLOBAL $pageNum;
 
+		if(empty($posts)) return;
+        $i=1;
         global $post;
-		foreach ( $posts as $post ) : setup_postdata( $post ); ?> 
+		foreach ( $posts as $post ) : setup_postdata( $post ); 
+            if(!empty($this_category)){
+
+                        if($i==6){
+                            
+                            echo do_shortcode( '[gpt_add_block name="gpt-mrec-ad-mobile-dyn" data-ads="'.$adBlock.'"]' );
+                        }
+                }
+        ?> 
         <div class="mod-list-item first-col first-row">
             <div class="row">
                 <div class="img-wrap">
@@ -48,7 +60,9 @@ class Grid {
                 </div>
             </div>
         </div>
-        <?php endforeach; 
-        wp_reset_postdata(); 
+        <?php 
+        $i++;
+        endforeach; 
+        //wp_reset_postdata(); 
 	}
 }

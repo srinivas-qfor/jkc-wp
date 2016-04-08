@@ -40,7 +40,7 @@
                 $('.mobile-column').animate({'right' : -240}, 300);
 			}
             else {
-                $(this).removeClass('expanded');
+                $('.main-menu').removeClass('expanded');
                 $('.main-menu').addClass('hide');
                 $('.mobile-page').css({'overflow' : 'auto'}).animate({'margin-right' : 0}, 300);
                 $('.mod-header-mobile').animate({'right' : 0}, 300);

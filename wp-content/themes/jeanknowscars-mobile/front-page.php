@@ -10,6 +10,8 @@ wp_enqueue_style( 'mod-title-block-mobile', get_template_directory_uri() . '/ass
 wp_enqueue_style( 'mod-jean-driveway-mobile', get_template_directory_uri() . '/assets/css/mod-jean-driveway-mobile.css',null,null,"screen" );
 wp_enqueue_style( 'mod-kids-in-the-car-mobile', get_template_directory_uri() . '/assets/css/mod-kids-in-the-car-mobile.css',null,null,"screen" );
 
+wp_enqueue_style( 'mod-flipper-mobile', get_template_directory_uri() . '/assets/css/mod-flipper-mobile.css',null,null,"screen" );
+
 // scripts
 wp_enqueue_script( 'mod-tab', get_template_directory_uri() . '/assets/js/mod-tab.js',null,null,true); 
 
@@ -19,6 +21,12 @@ get_header();
 
 $pageNum = (int)get_query_var('paged', 1);
 ?>
+    <!--Flipper-->
+        <?php
+        if (class_exists('Flipper') && shortcode_exists('flipper'))
+            echo do_shortcode('[flipper name="home-flipper-mobile"]')
+         ?>                                  
+    <!-- -->
 
 <div class="ctr-home-row ctr-home-mobile-recent">
     <ul>
@@ -220,3 +228,5 @@ endif;
 </div>
 <?php
 get_footer();
+
+?>
