@@ -310,3 +310,7 @@
     float: left;
     height: 25px;
 }
+
+.pg-control .thumbnail-1 .thumbnail-link img{
+    height: 99px;
+}
