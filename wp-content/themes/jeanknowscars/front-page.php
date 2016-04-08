@@ -168,6 +168,10 @@ $categories_carguide = get_categories( array(
                             <option value="">Choose Make</option>
                         
                                 <?php 
+                                    foreach ($categories_carguide as $key => $row) {
+                                        $mid[$key]  = $row->cat_name;
+                                    }
+                                 array_multisort($mid, SORT_ASC, $categories_carguide);
                                     foreach( $categories_carguide as $category ) {
                                          $name = $category->cat_name;
                                          $slug_tx = $category->slug;
