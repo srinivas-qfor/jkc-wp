@@ -5,7 +5,7 @@
  */
 
 wp_enqueue_style( 'mod-breadcrumbs', get_template_directory_uri() . '/assets/css/mod-breadcrumbs.css');
-    					
+                        
 global $post;
     echo '<div class="mod-breadcrumbs clearfix">';
     if (!is_home()) {
@@ -28,37 +28,56 @@ global $post;
                 the_title();
                 echo '</div></span>';
             }
+            if($category->category_parent == 119){
+
+               $category = get_category(get_query_var('cat'));
+               $sub_category = get_query_var('make-model');
+               if(!empty($sub_category)){
+                 $output .= '<div class="crumb-wrap" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><span class="crumb" itemprop="title">'.strtoupper($sub_category).'</span></div>';
+
+                echo $output;
+               }
+               
+
+                
+            }
         } elseif (is_page()) {
             if($post->post_parent){
-				if($post->post_parent){
-					$anc = get_post_ancestors( $post->ID );
-					$title = get_the_title();
-					foreach ( $anc as $ancestor ) {
-						$output = '<div class="crumb-wrap" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="'.get_permalink($ancestor).'" title="'.get_the_title($ancestor).'">'.get_the_title($ancestor).'</a></div> <div class="separator">/</div>';
-					}
-					echo $output;
-					echo '<strong title="'.$title.'"> '.$title.'</strong>';
-				} else {
-					echo '<div class="crumb-wrap" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><strong> '.get_the_title().'</strong></div>';
-				}
-			} else {
+                if($post->post_parent){
+                    $anc = get_post_ancestors( $post->ID );
+                    $title = get_the_title();
+                    foreach ( $anc as $ancestor ) {
+                        $output = '<div class="crumb-wrap" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="'.get_permalink($ancestor).'" title="'.get_the_title($ancestor).'">'.get_the_title($ancestor).'</a></div> <div class="separator">/</div>';
+                    }
+                    echo $output;
+                    echo '<strong title="'.$title.'"> '.$title.'</strong>';
+                } else {
+                    echo '<div class="crumb-wrap" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><strong> '.get_the_title().'</strong></div>';
+                }
+            } else {
                 echo '<div class="crumb-wrap" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><span class="crumb" itemprop="title"> '.get_the_title().'</span></div>';
             }
-		} elseif (is_author()) {
+        } elseif (is_author()) {
             $output = '<div class="crumb-wrap" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="'.get_permalink(get_page_by_title('About Us')).'" title="About Us">About Us</a></div>';
             $output .= '<div class="crumb-wrap" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><span class="crumb" itemprop="title"> '.get_the_author().'</span></div>';
             echo $output;
         } elseif ( is_post_type_archive() ) {
-			//hard coded for ask jean question and confessions custom post
-			if($post->post_type == 'ask-jean-question'){
-				$output .= '<div class="crumb-wrap" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><span class="crumb" itemprop="title">Ask Jean a Question</span></div>';
-				echo $output;
-			}elseif($post->post_type == 'confessions'){
-				$output .= '<div class="crumb-wrap" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><span class="crumb" itemprop="title">Car Confessions</span></div>';
-				echo $output;
-			}
-		}
-	}
+            //hard coded for ask jean question and confessions custom post
+            if($post->post_type == 'ask-jean-question'){
+                $output .= '<div class="crumb-wrap" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><span class="crumb" itemprop="title">Ask Jean a Question</span></div>';
+                echo $output;
+            }elseif($post->post_type == 'confessions'){
+                $output .= '<div class="crumb-wrap" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><span class="crumb" itemprop="title">Car Confessions</span></div>';
+                echo $output;
+            }
+        }elseif(is_tax()){
+            $sub_cat = get_query_var('vehicle-type');
+            $output .= '<div class="crumb-wrap" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a class="crumb" href="/new-cars/" title="Ultimate Car Guide" itemprop="url"><span itemprop="title">Ultimate Car Guide</span></a></div>'.
+                '<div class="crumb-wrap" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><span class="crumb" itemprop="title">'.ucwords($sub_cat).'</span></div>';
+
+                echo $output;
+        }
+    }
     echo '</div>';
 
     function get_category_parents_custom( $id, $link = false, $separator = '/', $nicename = false, $visited = array(), $prepend = '', $append = '' ) {
