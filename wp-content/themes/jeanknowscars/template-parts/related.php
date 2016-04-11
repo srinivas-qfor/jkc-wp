@@ -17,12 +17,8 @@ if ( $the_query->have_posts() ) {
     $i = 0;
     while ( $the_query->have_posts() ) { 
     
-        if($post->ID == the_ID){
-            continue;
-        }
         $the_query->the_post();
             if($single_id != $post->ID){
-
             ?>
             <div class="mod-list-item left <?php if($i == 0 ){ echo "first-col "; } ?>first-row">
                 <div class="row">
