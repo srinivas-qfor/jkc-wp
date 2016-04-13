@@ -22,6 +22,12 @@ get_header();
 			<span class="timestamp"><?php the_date(); ?></span>
 			<span class="separator-date-author">- by</span>
 			<span class="author" itemprop="creator author" itemscope="" itemtype="http://schema.org/Person"><span itemprop="name"><?php the_author(); ?></span></span>
+                        <div class="social right">
+                                <span class="share-btn left">Share</span>
+                                <div class="mod-addthis-hover">
+                                        <div class="addthis_toolbox"></div>
+                                </div>
+                        </div>
 		</div>
 		<?php get_template_part('template-parts/featured-image');  ?>
 	</div>
