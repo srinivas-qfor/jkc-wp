@@ -259,3 +259,13 @@ function jkc_limit_posts_in_search_page(  $query ) {
         }
 }
 add_filter('pre_get_posts', 'jkc_limit_posts_in_search_page');
+
+/*
+function fb_change_search_url_rewrite() {
+	if ( is_search() && ! empty( $_GET['s'] ) ) {
+		wp_redirect( home_url( "/search/?q=" ) . urlencode( get_query_var( 's' ) ) );
+		exit();
+	}	
+}
+add_action( 'template_redirect', 'fb_change_search_url_rewrite' );
+*/

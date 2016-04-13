@@ -60,7 +60,7 @@ function import_scripts(){
 <script> 
     function checkmeNotEmpty(){
             var x = document.getElementById("jkc_searchfield").value;
-            if( x.length == 0  ){
+            if( (x.trim()).length == 0  ){
                 return false;
             }
     }
