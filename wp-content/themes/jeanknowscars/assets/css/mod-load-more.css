@@ -22,7 +22,7 @@
 }
 
 .no-js .mod-load-more.hide {
-    display: block;
+    display: none;
 }
 .mobile-page .mod-load-more{
     margin-top: 0;

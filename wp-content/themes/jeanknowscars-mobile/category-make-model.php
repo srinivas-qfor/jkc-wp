@@ -132,28 +132,23 @@ $sub_str = (!empty($sub_cat)) ? '-'.' '.$sub_cat : ' ';
                     </div>
 
             <!--pagination -->
-            <div class="mod-load-more-vehicle clearfix">
-                <div class="right">
-                        <!-- <span class="first"><i class="fa fa-step-backward"></i></span>
-                        <span class="prev"><i class="fa fa-caret-left"></i></span> -->
-                 
-                <?php 
-                if ( have_posts() ) :
-                the_posts_pagination( array(
-                'mid_size' => 2,
-                'prev_text'          => __( '' ),
-                'next_text'          => __( '' ),
-                 ) );
-                endif;
-
-                ?>
-
-                        <!-- <span class="next"><i class="fa fa-caret-right"></i></span>
-                        <span class="last"><i class="fa fa-step-forward"></i></span> -->
-                        
-            
+            <?php
+                global $wp_query;
+                if ( have_posts() && $wp_query->max_num_pages > 1) : ?>
+                <div class="mod-load-more-vehicle clearfix">
+                   
+                    <a class="first page-numbers" href="<?=get_pagenum_link(1);?>"><i class="fa fa-step-backward"></i></a>
+                    <?php
+                    the_posts_pagination( array(
+                        'prev_text'          => __( '<i class="fa fa-caret-left"></i>', 'twentysixteen' ),
+                        'next_text'          => __( '<i class="fa fa-caret-right"></i>', 'twentysixteen' ),
+                        'screen_reader_text' => __('', 'twentysixteen'),
+                    ) );
+                    ?>
+                    <a class="last page-numbers" href="<?=get_pagenum_link($wp_query->max_num_pages);?>"><i class="fa fa-step-forward"></i></a>
+                   
                 </div>
-            </div>
+                <?php endif; ?>
 
     </div>
     <!-- listing -->
@@ -170,6 +165,11 @@ $sub_str = (!empty($sub_cat)) ? '-'.' '.$sub_cat : ' ';
                                 'child_of' => $parent['term_id']
                                 ) );
                     $i =0;
+                     foreach ($categories as $key => $row) {
+                            $mid[$key] = $row->name;
+                         }
+                        
+                         array_multisort($mid, SORT_ASC, $categories);
                     foreach($categories as $category) { 
                         $model_link = site_url('/'.$parent_category->slug.'/'.$category->slug.'/');
                         ?>
