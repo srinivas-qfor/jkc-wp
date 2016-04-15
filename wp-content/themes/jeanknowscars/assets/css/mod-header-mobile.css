@@ -15,6 +15,7 @@
 
 .mobile-page .mobile-column {
     position: relative;
+    background-color: #fff;
 }
 
 .mod-header-mobile .logo-mobile, .main-menu .logo-mobile {
@@ -170,8 +171,4 @@
     z-index: 99;
     border: none;
     border-left: solid 1px #ccc;
-}
-
-.search-results .mobile-column{
-    background-color:#fff;
 }
