@@ -67,6 +67,7 @@ function load_front_end_scripts(){
         wp_enqueue_style( 'mod-search', get_template_directory_uri() . '/assets/css/mod-search.css',null,null,"screen" );
         wp_enqueue_style( 'mod-list-search', get_template_directory_uri() . '/assets/css/mod-list-search.css',null,null,"screen" );
         wp_enqueue_style( 'mod-list-search-mobile', get_template_directory_uri() . '/assets/css/mod-list-search-mobile.css',null,null,"screen" );
+        wp_enqueue_style('mod-title-mobile', get_template_directory_uri() . '/assets/css/mod-title-mobile.css', null, null, "screen");
       //  wp_enqueue_script('mod-search-js', get_template_directory_uri() . '/assets/js/mod-search.js', null, null, true);
     }
 

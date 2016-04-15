@@ -24,6 +24,8 @@ wp_enqueue_script( 'addthis_init', get_template_directory_uri() . '/assets/js/ad
 wp_enqueue_script( 'addthis_close', get_template_directory_uri() . '/assets/js/addthis_close.js"',null,null,true);
 
 get_header(); 
+global $post;
+$noByline = array(226083);
 ?>
 
 <!--Breadcrumb-->
@@ -40,19 +42,25 @@ get_header();
 				<h1 class="page-title" itemprop="name"><?php the_title(); ?></h1>
                     <h2 class="subtitle"><?php echo get_post_meta($post->ID, 'subTitle', true);  ?></h2>
 					<div class="info clearfix">
+                                            <?php
+                                            if(get_the_author() == 'admin' && in_array(get_the_ID(), $noByline)){ ?>
+                                                    <span class="timestamp"><?php the_date(); ?></span>
+                                            <?php } ?>
+                                            <?php if(!in_array(get_the_ID(), $noByline) && get_the_author() !== 'admin') { ?>
 						<span class="timestamp"><?php the_date(); ?></span>
-                        <span class="separator-date-author">- by</span>
+                                                <span class="separator-date-author">- by</span>
 						<span class="author" itemprop="creator author" itemscope="" itemtype="http://schema.org/Person">
 							<span itemprop="name"><?php the_author(); ?></span>
 						</span>
-                        <div class="social right">
+                                            <?php } ?>
+                                                <div class="social right">
 							<span class="share-btn left">Share</span>
 							<div class="mod-addthis-hover">
 								<div class="addthis_toolbox"></div>
 							</div>
 						</div>
-						<?php get_template_part('template-parts/featured-image');  ?>
 					</div>
+                                        <?php get_template_part('template-parts/featured-image');  ?>
 					<div class="main-content" itemprop="articleBody">
 					<?php the_content(); ?>
 					</div>    

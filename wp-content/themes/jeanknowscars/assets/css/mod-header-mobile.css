@@ -15,6 +15,7 @@
 
 .mobile-page .mobile-column {
     position: relative;
+    background-color: #fff;
 }
 
 .mod-header-mobile .logo-mobile, .main-menu .logo-mobile {
