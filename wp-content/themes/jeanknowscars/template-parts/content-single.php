@@ -17,6 +17,9 @@ wp_enqueue_style( 'mod-get-social', get_template_directory_uri() . '/assets/css/
 wp_enqueue_style( 'mod-article', get_template_directory_uri() . '/assets/css/mod-article.css',null,null,"screen" );
 wp_enqueue_style( 'mod-related', get_template_directory_uri() . '/assets/css/mod-related.css',null,null,"screen" );
 wp_enqueue_style( 'mod-facebook-comment', get_template_directory_uri() . '/assets/css/mod-facebook-comment.css',null,null,"screen" );
+wp_enqueue_style( 'mod-stay-connected', get_template_directory_uri() . '/assets/css/mod-stay-connected.css',null,null,"screen" );
+wp_enqueue_style( 'mod-car-confession', get_template_directory_uri() . '/assets/css/mod-car-confession.css',null,null,"screen" );
+wp_enqueue_style( 'mod-related-car-guide', get_template_directory_uri() . '/assets/css/mod-related-car-guide.css',null,null,"screen" );
 
 wp_enqueue_script( 'typeit', '//use.typekit.net/hcl6hob.js',null,null,true);
 wp_enqueue_script( 'mod-get-instagram', get_template_directory_uri() . '/assets/js/mod-get-instagram.js',null,null,true);
@@ -26,6 +29,10 @@ wp_enqueue_script( 'addthis_close', get_template_directory_uri() . '/assets/js/a
 get_header(); 
 global $post;
 $noByline = array(226083);
+
+$slugs = explode('/', get_query_var('category_name'));
+$currentCategory = get_category_by_slug('/'.end($slugs));
+
 ?>
 
 <!--Breadcrumb-->
@@ -104,19 +111,111 @@ $noByline = array(226083);
 		<?php } ?>
 	</div>
 	
+	<?php 
+	if($currentCategory->category_parent != 119){
+	?>
 	<div class="mod-related-articles">
         <?php get_template_part('template-parts/related');  ?>
     </div>
+    <?php
+    }
+    ?>
+
 	<div class="facebook-comment">
 		<div class="fb-comments" data-href="<?php the_permalink(); ?>" data-width="100%" data-numposts="5" data-colorscheme="light"></div>
 	</div>
 </div>
-	<div class="right-column right col-18">
+<!-- sidebar -->
+	<?php 
+	if($currentCategory->category_parent == 119){
+	?>	
+
+		<div class="right-column right col-18">
+		<div class="mod-car-confession clearfix">
+                <div class="wrap">
+                <h3>Car Confessions</h3>
+                <h4>A Pretty Place for Ugly Secrets</h4>
+                <a class="btn-alt-cta" href="/confessions/">Confess Here</a>
+                </div>
+            </div>
+		
+		<?php echo do_shortcode( '[gpt_add_block name="gpt-mrec-ad-dyn" data-ads="2"]') ?>
+<!-- related -->
+<?php
+				$cat_name = $currentCategory->name;
+				$args = array( 'category_name' => $cat_name ,
+				'order'   => 'DESC' , 
+				'posts_per_page' =>'5',
+				'post__not_in' =>array($single_id));
+
+				$the_query = new WP_Query( $args );
+				
+				?>
+			<div class="mod-related-car-guide">
+				<h3>More <?php echo $cat_name;?></h3>
+
+		 <?php 
+			if ( $the_query->have_posts() ) {
+				$i = 0;
+				while ( $the_query->have_posts() ) { 
+				$the_query->the_post();
+				?>
+                <div class="row">
+                    <div class="img-wrap left col-13">
+                                <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                                <?php
+                            
+                                 if (class_exists('MultiPostThumbnails')){ 
+                                    +                                MultiPostThumbnails::the_post_thumbnail('post', 'flipper-image', NULL, 'full', NULL, false);
+                                } else { ?>
+                                                                <img src="<?php bloginfo('template_directory'); ?>/assets/img/jkc-no-image-288x140.jpg" alt="<?php the_title(); ?>" draggable="false">
+                                                                 <?php }
+                                ?>
+                                </a>
+                    </div>
+                    <div class="info-wrap right col-14">
+                        <?php 
+                            $strFromatedtitleforReleatedArticle = get_the_title();
+                            $strlen = strlen($strFromatedtitleforReleatedArticle);
+                            if($strlen >= 45){
+                            $formatedC = substr($strFromatedtitleforReleatedArticle, 0, 45 ).'...'; 
+                            }else{
+                            $formatedC = $strFromatedtitleforReleatedArticle;
+                            }
+                        ?>
+                        <h4 class="title-wrap"><a class="list-title" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php echo $formatedC; ?></a></h4>
+                        
+                    </div>
+
+                </div>
+            
+        <?php   
+$i++; 
+        }     
+   
+}
+			?>
+				
+			</div>
+		<!-- related -->
+
+		 <?php echo do_shortcode( '[stay_connected]' ) ?>
+		<?php echo do_shortcode( '[gpt_add_block name="gpt-mrec-ad-dyn" data-ads="3"]') ?>
+		</div>
+
+	<?php 
+	}else{
+	?>
+		<div class="right-column right col-18">
 		<?php echo do_shortcode( '[add_block name="life-with-jean"]' ) ?>
 		<?php echo do_shortcode( '[gpt_add_block name="gpt-mrec-ad-dyn" data-ads="2"]') ?>
 		<?php echo do_shortcode( '[social_widget]' ) ?>
 		<?php echo do_shortcode( '[gpt_add_block name="gpt-mrec-ad-dyn" data-ads="3"]') ?>
-	</div>
+		</div>
+
+	<?php
+		}
+	?>
 </div>	
 
 <?php get_footer(); ?>
