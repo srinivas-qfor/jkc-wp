@@ -21,15 +21,15 @@ $noByline = array(226083);
 		<h1 class="page-title" itemprop="name"><?php the_title(); ?></h1>
 		<h2 class="subtitle"><?php echo get_post_meta($post->ID, 'subTitle', true);  ?></h2>
 		<div class="info clearfix">
-                    <?php
-                    if(get_the_author() == 'admin' && in_array(get_the_ID(), $noByline)){ ?>
-                            <span class="timestamp"><?php the_date(); ?></span>
+                    <?php if( get_the_author() == 'admin' ){ ?>
+                        <span class="timestamp"><?php the_date(); ?></span>
+                    <?php } else{ ?>
+                        <span class="timestamp"><?php the_date(); ?></span>
+                        <span class="separator-date-author">- by</span>
+                        <span class="author" itemprop="creator author" itemscope="" itemtype="http://schema.org/Person">
+                                <span itemprop="name"><?php the_author(); ?></span>
+                        </span>
                     <?php } ?>
-                    <?php if(!in_array(get_the_ID(), $noByline) && get_the_author() !== 'admin') { ?>
-			<span class="timestamp"><?php the_date(); ?></span>
-			<span class="separator-date-author">- by</span>
-			<span class="author" itemprop="creator author" itemscope="" itemtype="http://schema.org/Person"><span itemprop="name"><?php the_author(); ?></span></span>
-                     <?php } ?>
                         <div class="social right">
                                 <span class="share-btn left">Share</span>
                                 <div class="mod-addthis-hover">
