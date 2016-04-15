@@ -97,6 +97,10 @@ $categories = get_categories( array(
                         <option value="">Choose Make</option>
                     
                             <?php 
+                                foreach ($categories as $key => $row) {
+                                    $mid[$key]  = $row->cat_name;
+                                    }
+                                array_multisort($mid, SORT_ASC, $categories);
                                 foreach( $categories as $category ) {
                                      $name = $category->cat_name;
                                      $slug_tx = $category->slug;
@@ -140,6 +144,10 @@ $categories = get_categories( array(
 
     <?php 
     $i =0;
+    foreach ($categories as $key => $row) {
+        $mid[$key]  = $row->cat_name;
+    }
+    array_multisort($mid, SORT_ASC, $categories);
     foreach( $categories as $category ) {
             $name = $category->cat_name;
             $slug = $category->slug;
