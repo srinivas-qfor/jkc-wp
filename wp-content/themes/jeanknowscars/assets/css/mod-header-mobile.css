@@ -171,3 +171,7 @@
     border: none;
     border-left: solid 1px #ccc;
 }
+
+.search-results .mobile-column{
+    background-color:#fff;
+}

@@ -10,7 +10,7 @@
 get_header(); ?>
 
 
-        <div class="mod-title">
+        <div class="mod-title-mobile">
             <h1 class="pagetitle" itemprop="name">Search Results: <?php echo esc_html( get_search_query() ) ?></h1>
         </div>
 
