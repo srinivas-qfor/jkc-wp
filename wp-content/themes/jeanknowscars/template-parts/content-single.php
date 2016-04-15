@@ -142,6 +142,7 @@ $currentCategory = get_category_by_slug('/'.end($slugs));
 		<?php echo do_shortcode( '[gpt_add_block name="gpt-mrec-ad-dyn" data-ads="2"]') ?>
 <!-- related -->
 <?php
+				$single_id = $post->ID;
 				$cat_name = $currentCategory->name;
 				$args = array( 'category_name' => $cat_name ,
 				'order'   => 'DESC' , 

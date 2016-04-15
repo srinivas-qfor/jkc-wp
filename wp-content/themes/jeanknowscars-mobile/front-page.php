@@ -151,7 +151,10 @@ endif;
                     foreach ($makes as $key => $row) {
                                         $mid[$key]  = $row->cat_name;
                                     }
-                                 array_multisort($mid, SORT_ASC, $makes);
+                            if(!empty($mid)){
+                             array_multisort($mid, SORT_ASC, $makes);   
+                            }
+                                 
                     foreach ($makes as $make) {
                         echo "<option value=\"{$make->slug}\">{$make->name}</option>";
                     }
