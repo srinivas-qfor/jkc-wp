@@ -59,8 +59,8 @@ $noByline = array(226083);
 								<div class="addthis_toolbox"></div>
 							</div>
 						</div>
-						<?php get_template_part('template-parts/featured-image');  ?>
 					</div>
+                                        <?php get_template_part('template-parts/featured-image');  ?>
 					<div class="main-content" itemprop="articleBody">
 					<?php the_content(); ?>
 					</div>    
