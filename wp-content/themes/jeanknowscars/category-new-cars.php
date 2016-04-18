@@ -114,7 +114,9 @@ $categories = get_categories( array(
                                 foreach ($categories as $key => $row) {
                                 $mid[$key]  = $row->cat_name;
                                 }
+                                if(!empty($mid)){
                                 array_multisort($mid, SORT_ASC, $categories);
+                                 }
                                 foreach( $categories as $category ) {
                                      $name = $category->cat_name;
                                      $slug_tx = $category->slug;
@@ -165,7 +167,9 @@ $categories = get_categories( array(
     foreach ($categories as $key => $row) {
         $mid[$key]  = $row->cat_name;
     }
-    array_multisort($mid, SORT_ASC, $categories);
+    if(!empty($mid)){
+      array_multisort($mid, SORT_ASC, $categories);  
+    }
 
     foreach( $categories as $category ) {
             $name = $category->cat_name;

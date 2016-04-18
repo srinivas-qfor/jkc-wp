@@ -49,6 +49,9 @@ if($pageNum >= 2 && $pageNum <= 6) {
 if (is_category()) {
 	$this_category = get_category($cat);
 }
+$parent = $this_category->category_parent;
+$parent_name = get_cat_name($parent);
+
 ?>
 
 <div class="content-top-wrap">
@@ -60,7 +63,8 @@ if (is_category()) {
 					if( $cat == '126') {
 						 echo "What's in Jean's Driveway";
 					}else{
-					  printf(single_cat_title( '', false )); 
+					$parent_txt = (!empty($parent_name)) ? $parent_name . ' -' : ' ';
+					echo $parent_txt ; echo ' '; printf(single_cat_title( '', false )); 
 					} 
 				?></h1>
 			<div class="desc"><?php $term_description = term_description(); echo $term_description; ?></div>
