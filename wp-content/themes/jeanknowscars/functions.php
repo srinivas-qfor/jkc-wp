@@ -270,3 +270,13 @@ function fb_change_search_url_rewrite() {
 }
 add_action( 'template_redirect', 'fb_change_search_url_rewrite' );
 */
+
+add_filter( 'body_class', 'jkc_article_car_guide_classname' );
+function jkc_article_car_guide_classname( $classes ) {
+        $slugs = explode('/', get_query_var('category_name'));
+        $currentCategory = get_category_by_slug('/'.end($slugs));
+        if($currentCategory->category_parent == '119'){
+        	$classes[] = 'article-car-guide';
+        }
+	return $classes;
+}

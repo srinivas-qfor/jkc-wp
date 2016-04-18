@@ -14,6 +14,9 @@ wp_enqueue_script( 'addthis_close', get_template_directory_uri() . '/assets/js/a
 get_header(); 
 global $post;
 $noByline = array(226083);
+
+$slugs = explode('/', get_query_var('category_name'));
+$currentCategory = get_category_by_slug('/'.end($slugs));
 ?>
 
 <div class="mod-article-mobile article-detail" data-omnituremodule="{&quot;name&quot;: &quot;Mod: Article&quot;, &quot;id&quot;: &quot;Mod062&quot;}">
@@ -66,15 +69,22 @@ $noByline = array(226083);
 				$strImageURL = '';
 				$strImageURL = $strDefaultUploadBaseURL."/".$arrAttachedImageDetails['file'];
 				?>
-			<li>
+						 
+                         <?php if($currentCategory->category_parent == 119 && $key == 3 ) { ?>
+                            <li class="guide-photos-image-all">
+                                <a title="See All Photos of the <?php echo $arrAttachedImagePostDetails->post_title; ?> - JeanKnowsCars.com" href="<?php the_permalink(); ?>photo-01.html">See All Photos</a>
+                            </li>
+                         <?php } else { ?>
+                            <li>
 				<a href="<?php the_permalink(); ?>photo-0<?php echo $key+2; ?>.html" title="<?php echo $arrAttachedImagePostDetails->post_title; ?>">
 					<img src="<?php echo $strImageURL;?>" alt="<?php echo $arrAttachedImagePostDetails->post_title; ?>" height="200" width="320"/>
 					<span><?php echo $arrAttachedImagePostDetails->post_title; ?></span>
 				</a>
 			</li>
+                         <?php } ?>
 			<?php } ?>
 		</ul>
-		<?php if(count($arrAttachedImages[0]) > 4) { ?>
+		<?php if(count($arrAttachedImages[0]) > 4 && $currentCategory->category_parent != 119 ) { ?>
 		<a href="<?php the_permalink(); ?>photo-01.html" title="See All Photos of the <?php ?> - JeanKnowsCars.com" class="btn-see-photos">See All Photos</a>
 		<?php } ?>
 	</div>
