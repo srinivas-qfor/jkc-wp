@@ -43,11 +43,22 @@ if($pageNum >= 2 && $pageNum <= 6) {
 if (is_category()) {
 	$this_category = get_category($cat);
 }
+$parent = $this_category->category_parent;
+$parent_name = get_cat_name($parent);
+
 $grid = new Grid;
 ?>
 
 <div class="mod-title-mobile">
-	<h1 class="pagetitle" itemprop="name"><?php echo (($cat == '126') ? "What's in Jean's Driveway" : single_cat_title());  ?></h1>
+	<h1 class="pagetitle" itemprop="name">
+				<?php 
+					if( $cat == '126') {
+						 echo "What's in Jean's Driveway";
+					}else{
+					$parent_txt = (!empty($parent_name)) ? $parent_name . ' -' : ' ';
+					echo $parent_txt ; echo ' '; printf(single_cat_title( '', false )); 
+					} 
+				?></h1>
 </div>
 
 <!--Flipper-->

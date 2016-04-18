@@ -168,8 +168,9 @@ $sub_str = (!empty($sub_cat)) ? '-'.' '.$sub_cat : ' ';
                      foreach ($categories as $key => $row) {
                             $mid[$key] = $row->name;
                          }
-                        
+                        if(!empty($mid)){
                          array_multisort($mid, SORT_ASC, $categories);
+                        }
                     foreach($categories as $category) { 
                         $model_link = site_url('/'.$parent_category->slug.'/'.$category->slug.'/');
                         ?>
