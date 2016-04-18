@@ -49,12 +49,10 @@ $currentCategory = get_category_by_slug('/'.end($slugs));
 				<h1 class="page-title" itemprop="name"><?php the_title(); ?></h1>
                     <h2 class="subtitle"><?php echo get_post_meta($post->ID, 'subTitle', true);  ?></h2>
 					<div class="info clearfix">
-                                            <?php
-                                            if(get_the_author() == 'admin' && in_array(get_the_ID(), $noByline)){ ?>
-                                                    <span class="timestamp"><?php the_date(); ?></span>
-                                            <?php } ?>
-                                            <?php if(!in_array(get_the_ID(), $noByline) && get_the_author() !== 'admin') { ?>
-						<span class="timestamp"><?php the_date(); ?></span>
+                                            <?php if( get_the_author() == 'admin' ){ ?>
+                                                <span class="timestamp"><?php the_date(); ?></span>
+                                            <?php } else{ ?>
+                                                <span class="timestamp"><?php the_date(); ?></span>
                                                 <span class="separator-date-author">- by</span>
 						<span class="author" itemprop="creator author" itemscope="" itemtype="http://schema.org/Person">
 							<span itemprop="name"><?php the_author(); ?></span>
@@ -80,7 +78,7 @@ $currentCategory = get_category_by_slug('/'.end($slugs));
 	$arrDefalutUploadURL = wp_upload_dir();
 	$strDefaultUploadBaseURL = $arrDefalutUploadURL['baseurl'];
 	$arrAttachedImages = get_post_meta($post->ID,'galleryImages');
-        $arr4Images = '';
+        $arr4Images = '';         
 	if(count($arrAttachedImages[0]) > 4) {
 		$arr4Images =  array_slice($arrAttachedImages[0],0,4);
         }else{
@@ -98,15 +96,22 @@ $currentCategory = get_category_by_slug('/'.end($slugs));
 						$strImageURL = '';
 						$strImageURL = $strDefaultUploadBaseURL."/".$arrAttachedImageDetails['file'];
 						?>
-			 <li>
+			 
+                         <?php if($currentCategory->category_parent == 119 && $key == 3 ) { ?>
+                            <li class="guide-photos-image-all">
+                                <a title="See All Photos of the <?php echo $arrAttachedImagePostDetails->post_title; ?> - JeanKnowsCars.com" href="<?php the_permalink(); ?>photo-01.html">See All Photos</a>
+                            </li>
+                         <?php } else { ?>
+                            <li>
 				<a href="<?php the_permalink(); ?>photo-0<?php echo $key+2; ?>.html" title="<?php echo $arrAttachedImagePostDetails->post_title; ?>">
 					<img src="<?php echo $strImageURL;?>" alt="<?php echo $arrAttachedImagePostDetails->post_title; ?>" height="200" width="320"/>
 					<span><?php echo $arrAttachedImagePostDetails->post_title; ?></span>
 				</a>
 			</li>
+                         <?php } ?>
 			<?php } ?>
 		</ul>
-		<?php if(count($arrAttachedImages[0]) > 4) { ?>
+		<?php if(count($arrAttachedImages[0]) > 4 && $currentCategory->category_parent != 119 ) { ?>
 		<a href="<?php the_permalink(); ?>photo-01.html" title="See All Photos of the <?php ?> - JeanKnowsCars.com" class="btn-see-photos">See All Photos</a>
 		<?php } ?>
 	</div>

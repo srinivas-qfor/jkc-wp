@@ -112,3 +112,13 @@ function jkc_custom_dropdown_categories( $output, $args ){
     return $output;
 }
 //add_filter( 'wp_dropdown_cats', 'jkc_custom_dropdown_categories', 10, 2 );
+
+add_filter( 'body_class', 'jkc_article_car_guide_classname_mobile' );
+function jkc_article_car_guide_classname_mobile( $classes ) {
+        $slugs = explode('/', get_query_var('category_name'));
+        $currentCategory = get_category_by_slug('/'.end($slugs));
+        if($currentCategory->category_parent == '119'){
+        	$classes[] = 'article-car-guide';
+        }
+	return $classes;
+}
