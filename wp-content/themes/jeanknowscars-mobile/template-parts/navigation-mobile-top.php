@@ -25,7 +25,7 @@ function add_classes_on_a($atts, $item, $args) {
 add_filter('nav_menu_link_attributes', 'add_classes_on_a', 10, 3);
 
 
-$defaults = array('menu' => 'main-menu', 'container' => 'nav', 'container_class' => 'menu-wrap', 'container_id' => '', 'menu_class' => 'main-menu nav-list clearfix', 'menu_id' => '', 'echo' => true, 'items_wrap' => '<ul id="%1$s" class="primary-menu">%3$s</ul>',
+$defaults = array('menu' => 'mobile', 'container' => 'nav', 'container_class' => 'menu-wrap', 'container_id' => '', 'menu_class' => 'main-menu nav-list clearfix', 'menu_id' => '', 'echo' => true, 'items_wrap' => '<ul id="%1$s" class="primary-menu">%3$s</ul>',
     'depth' => 1, 'walker' => '', 'theme_location' => '');
 
 // Render main menu

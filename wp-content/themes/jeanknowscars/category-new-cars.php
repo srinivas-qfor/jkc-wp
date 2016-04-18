@@ -43,7 +43,7 @@ $categories = get_categories( array(
     <div class="row">
         <?php get_template_part('template-parts/navigation','breadcrumb'); ?>   
         <div class="mod-title">
-            <h1 class="pagetitle" itemprop="name"><?php printf(single_cat_title( '', false ));?></h1>
+            <h1 class="pagetitle" itemprop="name"><?php echo "Car Guide";?></h1>
             <div class="desc"><?php $term_description = term_description(); echo strip_tags($term_description); ?></div>
         </div> 
     </div>

@@ -146,7 +146,12 @@ endif;
                     <?php 
                     $makes = get_categories(array(
                             'child_of' => 119,
+                            'exclude' => array(138,146,148,152,154,157,192,167,171,175,176,177,181,182)
                         ));
+                    foreach ($makes as $key => $row) {
+                                        $mid[$key]  = $row->cat_name;
+                                    }
+                                 array_multisort($mid, SORT_ASC, $makes);
                     foreach ($makes as $make) {
                         echo "<option value=\"{$make->slug}\">{$make->name}</option>";
                     }
