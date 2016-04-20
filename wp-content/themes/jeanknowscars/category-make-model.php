@@ -75,7 +75,7 @@ $sub_str = (!empty($sub_cat)) ? '-'.' '.$sub_cat : ' ';
                                 <div class="img-wrap">
                                 <?php
                                 if (class_exists('MultiPostThumbnails')){ 
-                                MultiPostThumbnails::the_post_thumbnail('post', 'flipper-image', NULL, 'full', NULL, false);
+                                MultiPostThumbnails::the_post_thumbnail('post', 'home-image', NULL, 'full', NULL, false);
                                 }else {  ?>
                                 <img src="<?php bloginfo('template_directory'); ?>/assets/img/jkc-no-image-620x387.jpg" alt="<?php the_title(); ?>" draggable="false">
                                 <?php }

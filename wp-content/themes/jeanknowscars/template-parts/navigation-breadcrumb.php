@@ -16,10 +16,15 @@ global $post;
         echo '</a></div><div class="separator"></div>';
         if (is_category() || is_single()) {
             $category = get_category(get_query_var('cat'));
+
             if(is_single()) {
                 $category = get_the_category();
+                if($category[0]->category_parent == 119){
+                   $output .= '<div class="crumb-wrap" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a class="crumb" href="/new-cars/" title="Ultimate Car Guide" itemprop="url"><span itemprop="title">Ultimate Car Guide</span></a></div>';
+                    echo $output; 
+                }
             }
-            if(!empty($category)) {
+            if(!empty($category) && !is_single()) {
                 $cat_id = is_array($category) ? $category[0]->cat_ID : $category->cat_ID;
                 echo get_category_parents_custom($cat_id, true, '', false, array(), '<div class="crumb-wrap" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">', '</div>');
             }
