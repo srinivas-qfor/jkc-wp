@@ -24,6 +24,7 @@
      <!-- Typekit -->
     <script type="text/javascript" src="//use.typekit.net/hcl6hob.js"></script>
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
     <?php wp_head(); ?>
 	<script type="text/javascript">
     var ajaxurl = "<?php echo admin_url('admin-ajax.php'); ?>";
