@@ -24,9 +24,23 @@ global $post;
                 echo get_category_parents_custom($cat_id, true, '', false, array(), '<div class="crumb-wrap" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">', '</div>');
             }
             if (is_single()) {
-                echo '<div class="crumb-wrap" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><span class="crumb" itemprop="title">';
-                the_title();
-                echo '</div></span>';
+                 $pattern = '';  $searchStringArr = ''; $replaceStringArr = ''; $currentPhotoGalleryBCname = '';
+                 $pattern = '/photo-(.*?).html/';
+		 preg_match($pattern,$_SERVER['REQUEST_URI'],$matches);
+                 $searchStringArr = array('-','.html');
+                 $replaceStringArr = array(' ');
+                 $currentPhotoGalleryBCname = str_replace($searchStringArr, $replaceStringArr, $matches[0]);
+                 if($matches){
+                    echo '<div class="crumb-wrap" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="'.  get_the_permalink() .'">';
+                    the_title();
+                    echo '</a></div><div class="crumb-wrap" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><span class="crumb" itemprop="title">';
+                    echo ucfirst($currentPhotoGalleryBCname);
+                    echo '</div></span>';
+                 }else{
+                    echo '<div class="crumb-wrap" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><span class="crumb" itemprop="title">';
+                    the_title();
+                    echo '</div></span>';
+                 }
             }
             if($category->category_parent == 119){
 

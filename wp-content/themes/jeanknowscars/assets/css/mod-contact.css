@@ -73,7 +73,7 @@ label {
 }
 
 .mod-contact .dropdown-custom {
-    height: 30px;
+    min-height: 30px;
     position: relative;
     margin: 0 10px 10px 0;
     width: 225px;
@@ -264,8 +264,12 @@ span.wpcf7-not-valid-tip{
   border: 2px solid #e2e1e1;
   border-radius: 3px;
   width: 100%;
-  margin:0 10px 25px 0;
+  margin:0 10px 5px 0;
 }
 .mod-sort-by-category-mobile .wpcf7-not-valid-tip {
   padding-left: 0;
+}
+
+.wpcf7-recaptcha{
+    padding-bottom: 10px;
 }
