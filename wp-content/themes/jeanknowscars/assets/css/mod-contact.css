@@ -269,3 +269,7 @@ span.wpcf7-not-valid-tip{
 .mod-sort-by-category-mobile .wpcf7-not-valid-tip {
   padding-left: 0;
 }
+
+.wpcf7-recaptcha{
+    padding-bottom: 10px;
+}
