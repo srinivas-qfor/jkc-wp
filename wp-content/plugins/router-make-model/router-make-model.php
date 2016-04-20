@@ -13,6 +13,7 @@ class JkcRouterHelper {
 		register_deactivation_hook( __FILE__, array($this, 'deactivate') );
 		add_action( 'generate_rewrite_rules', array($this, 'add_rewrite_rules') );
 		add_filter( 'query_vars', array($this, 'query_vars') );
+		add_action('pre_get_posts', array($this, 'jkc_router_assign_search_value_to_var'), 2);
 	}
 
 	function activate() {
@@ -72,12 +73,25 @@ class JkcRouterHelper {
 			$rules[ '(' . $vehicle_type->slug . ')/?$' ] = 'index.php?vehicle-type=$matches[1]';
 		}
 
+		// search page
+		$rules[ 'search/page/?([0-9]{1,})/?([^/]*)' ] = 'index.php?paged=$matches[1]&s=$matches[2]';
+		$rules[ 'search/?([^/]*)' ] = 'index.php?s=$matches[1]';
+
 	    $wp_rewrite->rules = $rules + (array)$wp_rewrite->rules;
 	}
 
 	function query_vars($public_query_vars){
 		array_push($public_query_vars, 'make-model');
+		array_push($public_query_vars, 'q');
 		return $public_query_vars;
+	}
+
+	function jkc_router_assign_search_value_to_var() {
+		if(is_search()) {
+			$q = get_query_var('q', '');
+			set_query_var('s', $q);
+		}
 	}
 }
 $routerHelper = new JkcRouterHelper();
+
