@@ -87,7 +87,7 @@ class JkcRouterHelper {
 	}
 
 	function jkc_router_assign_search_value_to_var() {
-		if(is_search()) {
+		if(is_search() && !is_admin ()) {
 			$q = get_query_var('q', '');
 			set_query_var('s', $q);
 		}
