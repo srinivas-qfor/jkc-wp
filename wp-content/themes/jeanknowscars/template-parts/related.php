@@ -27,7 +27,7 @@ if ( $the_query->have_posts() ) {
                                 <?php
                             
                                                                 if (class_exists('MultiPostThumbnails')){ 
-                                    +                                MultiPostThumbnails::the_post_thumbnail('post', 'flipper-image', NULL, 'full', NULL, false);
+                                    +                                MultiPostThumbnails::the_post_thumbnail('post', 'home-image', NULL, 'full', NULL, false);
                                 } else { ?>
                                                                 <img src="<?php bloginfo('template_directory'); ?>/assets/img/jkc-no-image-288x140.jpg" alt="<?php the_title(); ?>" draggable="false">
                                                                  <?php }
