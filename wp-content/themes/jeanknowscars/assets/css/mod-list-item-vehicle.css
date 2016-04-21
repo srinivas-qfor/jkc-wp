@@ -51,6 +51,10 @@
     width: 100%;
 }
 
+.mod-list-item-vehicle .row .img-wrap img {
+    width: 310px !important;
+}
+
 .mod-list-item-vehicle .img-hover {
     background: #ffff00;
     background-color: rgb(77, 191, 192);
