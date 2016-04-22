@@ -35,15 +35,18 @@ get_header(); ?>
            
             </div>
         </div>
-            
+         <div class='mod-load-more'>
          <?php 
          the_posts_pagination( array(
                 'prev_text'          => __( 'Previous page', 'twentysixteen' ),
                 'next_text'          => __( 'Next page', 'twentysixteen' ),
                 'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentysixteen' ) . ' </span>',
         ) );
-         ?>
-
+         ?><a class="button btn-main-cta btn-loading"
+                style = "display:none;" href="/" title="Load more">
+                <i class="fa fa-refresh fa-spin"></i>
+                </a>
+         </div>
      </div>
     <div class="right-column right col-18">
          <?php echo do_shortcode('[add_block name="car-confessions" ad_col_wrap="off"]'); ?>
