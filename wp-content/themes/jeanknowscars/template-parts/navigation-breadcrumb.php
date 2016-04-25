@@ -22,6 +22,22 @@ global $post;
                 if($category[0]->category_parent == 119){
                    $output .= '<div class="crumb-wrap" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a class="crumb" href="/new-cars/" title="Ultimate Car Guide" itemprop="url"><span itemprop="title">Ultimate Car Guide</span></a></div>';
                     echo $output; 
+                }else{
+                    
+                    $cat_name =  get_cat_name( $category[0]->cat_ID);
+                    $cat_slug = get_category($category[0]->cat_ID);
+
+                    if($category[0]->category_parent !=''){
+                      $catparent_name =  get_cat_name( $category[0]->category_parent);
+                      $catparent_slug = get_category($category[0]->category_parent);
+                      $output .= '<div class="crumb-wrap" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a class="crumb" href="'. get_site_url() .'/'. $catparent_slug->slug .'" title="'. $catparent_name .'" itemprop="url"><span itemprop="title">'. $catparent_name .'</span></a></div><div class="crumb-wrap" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a class="crumb" href="'. get_site_url() .'/'. $catparent_slug->slug.'/'.$cat_slug->slug.'" title="'. $cat_name .'" itemprop="url"><span itemprop="title">'. $cat_name .'</span></a></div>';
+                    echo $output;
+                    }else{
+                     
+                    $output .= '<div class="crumb-wrap" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a class="crumb" href="'. get_site_url() .'/'.$cat_slug->slug.'" title="'. $cat_name .'" itemprop="url"><span itemprop="title">'. $cat_name .'</span></a></div>';
+                    echo $output;
+                    }
+                    
                 }
             }
             if(!empty($category) && !is_single()) {
