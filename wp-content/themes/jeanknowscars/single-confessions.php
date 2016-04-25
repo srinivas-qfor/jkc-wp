@@ -39,9 +39,14 @@ wp_enqueue_script( 'mod-confessions-title', get_template_directory_uri() . '/ass
 
 ?>
 <style>
- .mod-confessions-title{ position: relative; }
- .mod-confessions-title >img { position: absolute; }
+.mod-confessions-title{ position: relative; }
 .confessions-title-inner{ position: relative; }
+.mod-confessions-title h1 { margin-top: -222px; float: left; position: relative; margin-bottom: 0; }
+.confessions-title-inner > div{ position: relative; float: left; margin-top: -194px !important; }
+.confessions-rules { top:170px !important; }
+.confessions-title-inner >img { border-radius: 6px; height: 236px;}
+.mod-confessions-title { height: 252px; }
+.mod-confessions-title h1 {     margin-top: -222px !important; margin-left: 20px !important; }
 </style>
 <div class="content-top-wrap">
 	<div class="row">
@@ -98,7 +103,7 @@ wp_enqueue_script( 'mod-confessions-title', get_template_directory_uri() . '/ass
             </div>
        </div>
 	<div class="right-column right col-18">
-		<?php echo do_shortcode( '[add_block name="life-with-jean"]' ) ?>
+		<?php //echo do_shortcode( '[add_block name="life-with-jean"]' ) ?>
 		<?php echo do_shortcode( '[social_widget]' ) ?>
 	</div>
 </div>
