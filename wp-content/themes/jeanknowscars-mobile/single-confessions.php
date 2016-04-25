@@ -1,7 +1,7 @@
 <?php
 /**
  * The template for displaying single article for confession  post type
- * @package jkc
+ * @package jkc 
  */
 
 get_header(); 
@@ -27,6 +27,7 @@ wp_enqueue_script( 'mod-confessions-title', get_template_directory_uri() . '/ass
  .mod-confessions-title{ position: relative; }
  .mod-confessions-title >img { position: absolute; }
 .confessions-title-inner{ position: relative; }
+.mobile-page .mod-confessions-title h1{ top:-170px !important;}
 </style>
 
 
