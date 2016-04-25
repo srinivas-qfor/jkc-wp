@@ -56,8 +56,18 @@ $sub_cat = get_query_var('vehicle-type');
                                 <div class="img-wrap">
                                 <?php
                                 if (class_exists('MultiPostThumbnails')){ 
-                                MultiPostThumbnails::the_post_thumbnail('post', 'home-image', NULL, 'full', NULL, false);
-                                }else {  ?>
+
+                                if(MultiPostThumbnails::get_the_post_thumbnail('post', 'home-image', NULL, 'full', NULL, false) == ''){?>
+                                    <img src="<?php bloginfo('template_directory'); ?>/assets/img/jkc-no-image-620x387.jpg" alt="<?php the_title(); ?>" draggable="false">
+                                    <?php 
+                                }else{
+
+                                 MultiPostThumbnails::the_post_thumbnail('post', 'home-image', NULL, 'full', NULL, false);   
+                                }
+                                
+                                }
+                                else { ?>
+
                                 <img src="<?php bloginfo('template_directory'); ?>/assets/img/jkc-no-image-620x387.jpg" alt="<?php the_title(); ?>" draggable="false">
                                 <?php }
                                 ?>

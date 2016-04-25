@@ -69,8 +69,18 @@ $sub_cat = get_query_var('vehicle-type');
                                 <div class="img-wrap">
                                 <?php
                                 if (class_exists('MultiPostThumbnails')){ 
-                                MultiPostThumbnails::the_post_thumbnail('post', 'home-image', NULL, 'full', NULL, false);
-                                }else {  ?>
+
+                                if(MultiPostThumbnails::get_the_post_thumbnail('post', 'home-image', NULL, 'full', NULL, false) == ''){?>
+                                    <img src="<?php bloginfo('template_directory'); ?>/assets/img/jkc-no-image-620x387.jpg" alt="<?php the_title(); ?>" draggable="false">
+                                    <?php 
+                                }else{
+
+                                 MultiPostThumbnails::the_post_thumbnail('post', 'home-image', NULL, 'full', NULL, false);   
+                                }
+                                
+                                }
+                                else { ?>
+
                                 <img src="<?php bloginfo('template_directory'); ?>/assets/img/jkc-no-image-620x387.jpg" alt="<?php the_title(); ?>" draggable="false">
                                 <?php }
                                 ?>
@@ -141,11 +151,10 @@ $sub_cat = get_query_var('vehicle-type');
                 global $wp_query;
                 if ( have_posts() && $wp_query->max_num_pages > 1) : ?>
                 <div class="mod-load-more-vehicle clearfix">
-                  <div class="right" style="width:45%;">
+                  <div class="right" style="width:55%;">
                     <a class="first page-numbers" href="<?=get_pagenum_link(1);?>"><i class="fa fa-step-backward"></i></a>
                     <?php
                     the_posts_pagination( array(
-                        'mid_size' => 2,
                         'prev_text'          => __( '<i class="fa fa-caret-left"></i>', 'twentysixteen' ),
                         'next_text'          => __( '<i class="fa fa-caret-right"></i>', 'twentysixteen' ),
                         'screen_reader_text' => __('', 'twentysixteen'),
