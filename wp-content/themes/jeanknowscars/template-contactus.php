@@ -29,7 +29,7 @@
 		<div class="mod-contact" xmlns="http://www.w3.org/1999/html">
 			<?php echo $posts[0]->post_content; ?>
 			 <div class="contact-form">
-			<?php echo do_shortcode(' [contact-form-7 id="747270" title="Contact JeanKnowsCars.com"] ')?>
+			<?php echo do_shortcode(' [contact-form-7 id="747754" title="Contact JeanKnowsCars.com"] ')?>
 			</div>
 		</div></div>
 		</div>
