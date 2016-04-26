@@ -156,7 +156,7 @@ $sub_str = (!empty($sub_cat)) ? '-'.' '.$sub_cat : ' ';
                 global $wp_query;
                 if ( have_posts() && $wp_query->max_num_pages > 1) : ?>
                 <div class="mod-load-more-vehicle clearfix">
-                  <div class="right" style="width:40%;">
+                  <div class="right" style="width:45%;">
                     <a class="first page-numbers" href="<?=get_pagenum_link(1);?>"><i class="fa fa-step-backward"></i></a>
                     <?php
                     the_posts_pagination( array(
