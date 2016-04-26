@@ -33,6 +33,9 @@ $noByline = array(226083);
 $slugs = explode('/', get_query_var('category_name'));
 $currentCategory = get_category_by_slug('/'.end($slugs));
 
+$categories = get_the_category();
+$catpost_name = $categories[0]->name;
+
 ?>
 
 <!--Breadcrumb-->
@@ -117,7 +120,7 @@ $currentCategory = get_category_by_slug('/'.end($slugs));
 	</div>
 	
 	<?php 
-	if($currentCategory->category_parent != 119){
+	if(($currentCategory->category_parent != 119) && ($currentCategory->cat_ID != 119)){
 	?>
 	<div class="mod-related-articles">
         <?php get_template_part('template-parts/related');  ?>
@@ -132,7 +135,7 @@ $currentCategory = get_category_by_slug('/'.end($slugs));
 </div>
 <!-- sidebar -->
 	<?php 
-	if($currentCategory->category_parent == 119){
+	if(($currentCategory->category_parent == 119) ||($currentCategory->cat_ID == 119)) {
 	?>	
 
 		<div class="right-column right col-18">
@@ -146,13 +149,24 @@ $currentCategory = get_category_by_slug('/'.end($slugs));
 		
 		<?php echo do_shortcode( '[gpt_add_block name="gpt-mrec-ad-dyn" data-ads="2"]') ?>
 <!-- related -->
-<?php
+<?php        
 				$single_id = $post->ID;
 				$cat_name = $currentCategory->name;
+				if($cat_name== "Ultimate Car Guide"){
+					$cat_name = $catpost_name;
+					$args = array( 'category_name' => $cat_name ,
+				'order'   => 'DESC' , 
+				'posts_per_page' =>'5',
+				'post__not_in' =>array($single_id));
+					
+				}else{
+
 				$args = array( 'category_name' => $cat_name ,
 				'order'   => 'DESC' , 
 				'posts_per_page' =>'5',
 				'post__not_in' =>array($single_id));
+
+				}
 
 				$the_query = new WP_Query( $args );
 				
