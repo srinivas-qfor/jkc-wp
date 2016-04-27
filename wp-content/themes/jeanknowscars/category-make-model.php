@@ -35,7 +35,7 @@ if (is_category()) {
 }
 
 $cat_nam = $this_category->name;
-$sub_cat = strtoupper(get_query_var('make-model'));
+$sub_cat = ucwords(get_query_var('make-model'));
 $sub_str = (!empty($sub_cat)) ? '-'.' '.$sub_cat : ' ';
 ?>
 
