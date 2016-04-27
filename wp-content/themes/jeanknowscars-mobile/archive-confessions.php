@@ -6,6 +6,7 @@ get_header();
  .mod-confessions-title >img { position: absolute; }
 .confessions-title-inner{ position: relative; }
 .mobile-page .confessions-title-inner{ margin-top: 0;}
+.mobile-page .confessions-title-inner > div { display: none; }
 </style>
         <div class="mod-confessions-title">
 	<?php
