@@ -267,6 +267,10 @@
     display: block;
 }
 
+.mod-gallery .thumbnail-item .thumbnail-link > img{
+    height: 101px;
+}
+
 .mod-gallery .social {
     position: relative;
 }
@@ -314,3 +318,4 @@
 .pg-control .thumbnail-1 .thumbnail-link img{
     height: 99px;
 }
+
