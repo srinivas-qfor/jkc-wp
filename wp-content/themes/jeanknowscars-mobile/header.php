@@ -58,8 +58,8 @@
     </div>
 </div>
 <div class="search-content search-cont hide">
-    <form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-            <input class="search" type="search" class="search-field" id='jkc_searchfield' placeholder="<?php echo esc_attr_x( 'Type your search here...', 'placeholder', '' ); ?>" value="<?php echo get_search_query(); ?>" name="s" title="<?php echo esc_attr_x( 'Search for:', 'label', '' ); ?>" />
+    <form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/search/' ) ); ?>">
+            <input class="search" type="search" class="search-field" id='jkc_searchfield' placeholder="<?php echo esc_attr_x( 'Type your search here...', 'placeholder', '' ); ?>" value="<?php echo get_search_query(); ?>" name="q" title="<?php echo esc_attr_x( 'Search for:', 'label', '' ); ?>" />
             <button class="search-button search-btn" tabindex="1" onclick="return checkmeNotEmpty();" style="border:none;"><i class="fa fa-search"></i></button>
     </form>
 </div>

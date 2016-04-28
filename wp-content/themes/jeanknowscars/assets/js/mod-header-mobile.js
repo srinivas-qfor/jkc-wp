@@ -68,7 +68,7 @@
                 $('.mobile-column').css({'padding-top' : 60}).animate({'bottom' : 0}, 100);
             }
         });
-
+        /*
         mod.search.on('click', '.search-button', function(e){
             var valueStr = mod.searchInput.val().trim(),
                 value = valueStr.toLowerCase();
@@ -93,9 +93,10 @@
         });
 
         mod.doSearch = function(value) {
-            var url = '/?s=' + value;
+            var url = '/search/?q=' + value;
             window.location.href = url;
         };
+        */
 	};
 
 	return mod.init();
